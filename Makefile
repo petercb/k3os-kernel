@@ -23,22 +23,25 @@ $(DIST_DIR)/kernel-$(ARCH).squashfs: $(BUILD_DIR)/CID
 	rm $?
 
 
-$(BUILD_DIR)/CID: build
+$(BUILD_DIR)/CID: docker-build
 	docker create "${IMAGE_FQN}:${VERSION}" > $@
 
 
-$(BUILD_DIR)/ubuntu-firmware.deb:
-	wget -cO $@ \
+$(BUILD_DIR)/ubuntu-firmware.deb: $(BUILD_DIR)
+	wget --no-verbose -cO $@ \
     http://launchpadlibrarian.net/698045658/linux-firmware_20220329.git681281e4-0ubuntu3.23_all.deb
 
 
-$(BUILD_DIR)/ubuntu-kernel.deb:
-	wget -cO $@ \
+$(BUILD_DIR)/ubuntu-kernel.deb: $(BUILD_DIR)
+	wget --no-verbose -cO $@ \
     http://launchpadlibrarian.net/695331190/linux-source-5.15.0_${KERNEL_VERSION}.${KERNEL_PATCH}_all.deb
 
 
-.PHONY: build
-build: $(BUILD_DIR)/ubuntu-kernel.deb $(BUILD_DIR)/ubuntu-firmware.deb
+$(BUILD_DIR):
+	mkdir -p $@
+
+.PHONY: docker-build
+docker-build: $(BUILD_DIR)/ubuntu-kernel.deb $(BUILD_DIR)/ubuntu-firmware.deb
 	@echo "Building k3os kernel ${VERSION}"
 	DOCKER_BUILDKIT=1 docker build \
 		--tag "${IMAGE_FQN}:${VERSION}" \
