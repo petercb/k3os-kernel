@@ -43,13 +43,21 @@ $(BUILD_DIR):
 .PHONY: docker-build
 docker-build: $(BUILD_DIR)/ubuntu-kernel.deb $(BUILD_DIR)/ubuntu-firmware.deb
 	@echo "Building k3os kernel ${VERSION}"
-	DOCKER_BUILDKIT=1 docker build \
+	docker buildx create --driver docker-container --name container --node container0 --use
+	docker run --privileged --rm tonistiigi/binfmt --install all
+	docker buildx build \
+		--builder=container \
+		--platform "linux/${ARCH}" \
+		--load \
 		--tag "${IMAGE_FQN}:${VERSION}" \
-		--build-arg BUILDKIT_INLINE_CACHE=1 \
 		--build-arg "KERNEL_PATCH=${KERNEL_PATCH}" \
 		--build-arg "KERNEL_VERSION=${KERNEL_VERSION}" \
+		--progress=plain \
+		--cache-from="${IMAGE_FQN}:cache" \
+		--cache-to="${IMAGE_FQN}:cache" \
 		--target=kernel \
 		.
+	docker buildx stop container
 
 
 clean:

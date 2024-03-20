@@ -15,8 +15,8 @@ WORKDIR "${DOWNLOADS}"
 
 SHELL ["/bin/bash", "-euo", "pipefail", "-c"]
 
-COPY build/ubuntu-firmware.deb .
-COPY build/ubuntu-kernel.deb .
+COPY --link build/ubuntu-firmware.deb .
+COPY --link build/ubuntu-kernel.deb .
 
 WORKDIR "${DOWNLOADS}/kernel"
 
