@@ -48,6 +48,7 @@ docker-build: $(BUILD_DIR)/ubuntu-kernel.deb $(BUILD_DIR)/ubuntu-firmware.deb
 	docker buildx build \
 		--builder=container \
 		--platform "linux/${ARCH}" \
+		--pull \
 		--load \
 		--tag "${IMAGE_FQN}:${VERSION}" \
 		--build-arg "KERNEL_PATCH=${KERNEL_PATCH}" \
