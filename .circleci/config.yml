@@ -78,14 +78,14 @@ workflows:
   continuous:
     jobs:
       - build: &rc-build
-          name: Release candidate build (AMD64)
+          name: AMD64 RC build
           executor: amd64
           filters:
             branches:
               only: master
       - build:
           <<: *rc-build
-          name: Release candidate build (ARM64)
+          name: ARM64 RC build
           executor: arm64
 
   tags:
@@ -99,7 +99,7 @@ workflows:
             tags:
               only: /.*/
       - build: &tag-build
-          name: Tagged AMD64 release
+          name: AMD64 tag release
           context: github
           executor: amd64
           filters: *filter-tags
@@ -109,5 +109,5 @@ workflows:
             - push-artifacts
       - build:
           <<: *tag-build
-          name: Tagged ARM64 release
+          name: ARM64 tag release
           executor: arm64
