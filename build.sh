@@ -1,10 +1,7 @@
 #!/bin/bash
 
-KERNEL_VERSION="5.15.0-89"
-KERNEL_PATCH="99"
+KERNEL_VERSION="5.15.0"
 KERNEL_FLAVOUR="generic"
-FIRMWARE_URL="http://launchpadlibrarian.net/698045658/linux-firmware_20220329.git681281e4-0ubuntu3.23_all.deb"
-SOURCE_URL="http://launchpadlibrarian.net/695331190/linux-source-5.15.0_${KERNEL_VERSION}.${KERNEL_PATCH}_all.deb"
 
 set -euxo pipefail
 
@@ -14,7 +11,7 @@ if [ "${IN_CONTAINER:-false}" != "true" ]; then
     exit 1
 fi
 
-VERSION=${CIRCLE_TAG:-${KERNEL_VERSION}.${KERNEL_PATCH}-next$(git rev-list "$(git describe --always --tags --abbrev=0)..HEAD" --count)}
+VERSION=${CIRCLE_TAG:-$(git describe --abbrev=0 --tags)-next$(git rev-list "$(git describe --always --tags --abbrev=0)..HEAD" --count)}
 
 PROJECT_ROOT="$(git rev-parse --show-toplevel)"
 DIST_DIR="${PROJECT_ROOT}/dist"
@@ -54,11 +51,12 @@ apt-get --assume-yes -qq install --no-install-recommends \
     zstd
 
 mkdir -p "${BUILD_ROOT}"
-wget --no-verbose -cO "${BUILD_ROOT}/ubuntu-firmware.deb" ${FIRMWARE_URL}
-wget --no-verbose -cO "${BUILD_ROOT}/ubuntu-kernel.deb" ${SOURCE_URL}
+pushd "${BUILD_ROOT}"
+apt-get --assume-yes download linux-firmware linux-source-${KERNEL_VERSION}
+popd
 
 mkdir -p "${BUILD_ROOT}/kernel"
-dpkg-deb -x "${BUILD_ROOT}/ubuntu-kernel.deb" "${BUILD_ROOT}/kernel"
+dpkg-deb -x ${BUILD_ROOT}/linux-source-${KERNEL_VERSION}-*.deb "${BUILD_ROOT}/kernel"
 
 mkdir -p "${KERNEL_WORK}"
 cp -a "${BUILD_ROOT}"/kernel/usr/src/linux-source-*/debian* "${KERNEL_WORK}/"
@@ -93,7 +91,7 @@ dpkg-deb -x "${KERNEL_DIR}"/../linux-headers-5.*generic*.deb "${SOURCE_ROOT}"
 dpkg-deb -x "${KERNEL_DIR}"/../linux-headers-5.*all.deb "${SOURCE_ROOT}"
 dpkg-deb -x "${KERNEL_DIR}"/../linux-image-unsigned-5.*.deb "${SOURCE_ROOT}"
 dpkg-deb -x "${KERNEL_DIR}"/../linux-modules-5.*.deb "${SOURCE_ROOT}"
-dpkg-deb -x "${BUILD_ROOT}"/ubuntu-firmware.deb "${SOURCE_ROOT}"
+dpkg-deb -x "${BUILD_ROOT}"/linux-firmware_*.deb "${SOURCE_ROOT}"
 dpkg-deb -x "${KERNEL_DIR}"/../linux-modules-extra-5.*.deb "${SOURCE_ROOT}"
 {
     echo 'r8152'
