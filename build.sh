@@ -50,13 +50,12 @@ apt-get --assume-yes -qq install --no-install-recommends \
     xz-utils \
     zstd
 
-mkdir -p "${BUILD_ROOT}"
-pushd "${BUILD_ROOT}"
+pushd "/tmp"
 apt-get --assume-yes download linux-firmware linux-source-${KERNEL_VERSION}
 popd
 
 mkdir -p "${BUILD_ROOT}/kernel"
-dpkg-deb -x ${BUILD_ROOT}/linux-source-${KERNEL_VERSION}-*.deb "${BUILD_ROOT}/kernel"
+dpkg-deb -x /tmp/linux-source-${KERNEL_VERSION}-*.deb "${BUILD_ROOT}/kernel"
 
 mkdir -p "${KERNEL_WORK}"
 cp -a "${BUILD_ROOT}"/kernel/usr/src/linux-source-*/debian* "${KERNEL_WORK}/"
@@ -91,7 +90,7 @@ dpkg-deb -x "${KERNEL_DIR}"/../linux-headers-5.*generic*.deb "${SOURCE_ROOT}"
 dpkg-deb -x "${KERNEL_DIR}"/../linux-headers-5.*all.deb "${SOURCE_ROOT}"
 dpkg-deb -x "${KERNEL_DIR}"/../linux-image-unsigned-5.*.deb "${SOURCE_ROOT}"
 dpkg-deb -x "${KERNEL_DIR}"/../linux-modules-5.*.deb "${SOURCE_ROOT}"
-dpkg-deb -x "${BUILD_ROOT}"/linux-firmware_*.deb "${SOURCE_ROOT}"
+dpkg-deb -x /tmp/linux-firmware_*.deb "${SOURCE_ROOT}"
 dpkg-deb -x "${KERNEL_DIR}"/../linux-modules-extra-5.*.deb "${SOURCE_ROOT}"
 {
     echo 'r8152'
