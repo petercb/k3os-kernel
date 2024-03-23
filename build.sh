@@ -8,7 +8,7 @@ SOURCE_URL="http://launchpadlibrarian.net/695331190/linux-source-5.15.0_${KERNEL
 
 set -euxo pipefail
 
-if [ ! -f /.dockerenv ]; then
+if [ "${IN_CONTAINER:-false}" != "true" ]; then
     echo "FATAL: Not running in a docker container!"
     echo "This script modifies the system, and is not safe to run outside of a container!"
     exit 1

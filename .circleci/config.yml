@@ -8,12 +8,14 @@ executors:
   arm64:
     environment:
       TARGETARCH: arm64
+      IN_CONTAINER: "true"
     docker:
       - image: buildpack-deps:jammy
     resource_class: petercb/arm64
   amd64:
     environment:
       TARGETARCH: amd64
+      IN_CONTAINER: "true"
     docker:
       - image: buildpack-deps:jammy
     resource_class: petercb/amd64
