@@ -1,7 +1,9 @@
 #!/bin/bash
 
 KERNEL_VERSION="5.15.0"
-KERNEL_FLAVOUR="generic"
+KERNEL_FLAVOUR="k3os"
+
+: "${TARGETARCH=$(uname -m)}"
 
 set -euxo pipefail
 
@@ -19,6 +21,15 @@ BUILD_ROOT="${PROJECT_ROOT}/build"
 KERNEL_WORK="${BUILD_ROOT}/kernel-work"
 
 apt-get --assume-yes -qq update
+
+pushd "/tmp"
+apt-get --assume-yes -q download linux-firmware linux-source-${KERNEL_VERSION}
+ls -lFa
+popd
+
+mkdir -p "${BUILD_ROOT}/kernel"
+dpkg-deb -x /tmp/linux-source-${KERNEL_VERSION}_*.deb "${BUILD_ROOT}/kernel"
+
 apt-get --assume-yes -qq install --no-install-recommends \
     bc \
     bison \
@@ -50,13 +61,6 @@ apt-get --assume-yes -qq install --no-install-recommends \
     xz-utils \
     zstd
 
-pushd "/tmp"
-apt-get --assume-yes download linux-firmware linux-source-${KERNEL_VERSION}
-popd
-
-mkdir -p "${BUILD_ROOT}/kernel"
-dpkg-deb -x /tmp/linux-source-${KERNEL_VERSION}-*.deb "${BUILD_ROOT}/kernel"
-
 mkdir -p "${KERNEL_WORK}"
 cp -a "${BUILD_ROOT}"/kernel/usr/src/linux-source-*/debian* "${KERNEL_WORK}/"
 chmod a+x "${KERNEL_WORK}"/debian*/rules
@@ -64,34 +68,34 @@ chmod a+x "${KERNEL_WORK}"/debian*/scripts/*
 chmod a+x "${KERNEL_WORK}"/debian*/scripts/misc/*
 mkdir -p "${KERNEL_WORK}/debian/stamps"
 tar xf "${BUILD_ROOT}"/kernel/usr/src/linux-source-*/linux-source*.tar.bz2 --strip-components=1 -C "${KERNEL_WORK}"
+rsync -a "${PROJECT_ROOT}/overlay/" "${KERNEL_WORK}"
+cp -a "${KERNEL_WORK}/debian/changelog" "${KERNEL_WORK}/debian.${KERNEL_FLAVOUR}/"
+cp -a "${KERNEL_WORK}/debian.master/control.stub.in" "${KERNEL_WORK}/debian.${KERNEL_FLAVOUR}/"
+cp -a "${KERNEL_WORK}/debian.master/rules.d/hooks.mk" "${KERNEL_WORK}/debian.${KERNEL_FLAVOUR}/rules.d/"
+cp -a "${KERNEL_WORK}/debian.master/control.d/generic.inclusion-list" "${KERNEL_WORK}/debian.${KERNEL_FLAVOUR}/control.d/k3os.inclusion-list"
 
-shopt -s globstar nullglob
-for p in "${PROJECT_ROOT}"/patches/*.patch; do
-    patch -p1 --verbose --batch -i "${p}" -d "${KERNEL_WORK}"
-done
-
+export CCACHE_DIR="${BUILD_ROOT}/ccache"
+mkdir -p "${CCACHE_DIR}"
 pushd "${KERNEL_WORK}"
 debian/rules clean
 # see https://wiki.ubuntu.com/KernelTeam/KernelMaintenance#Overriding_module_check_failures
 debian/rules binary-headers binary-${KERNEL_FLAVOUR} \
-    do_zfs=false \
-    do_dkms_nvidia=false \
-    do_dkms_nvidia_server=false \
     skipabi=true \
     skipmodule=true \
-    skipretpoline=true
+    skipretpoline=true \
+    skipdbg=true
 popd
 
 SOURCE_ROOT=/usr/src/root
 KERNEL_ROOT=/usr/src/kernel
 mkdir -p "${SOURCE_ROOT}"
 
-dpkg-deb -x "${KERNEL_DIR}"/../linux-headers-5.*generic*.deb "${SOURCE_ROOT}"
-dpkg-deb -x "${KERNEL_DIR}"/../linux-headers-5.*all.deb "${SOURCE_ROOT}"
-dpkg-deb -x "${KERNEL_DIR}"/../linux-image-unsigned-5.*.deb "${SOURCE_ROOT}"
-dpkg-deb -x "${KERNEL_DIR}"/../linux-modules-5.*.deb "${SOURCE_ROOT}"
+dpkg-deb -x "${KERNEL_DIR}"/../linux-headers-${KERNEL_VERSION}-*-${KERNEL_FLAVOUR}_*_${TARGETARCH}.deb "${SOURCE_ROOT}"
+dpkg-deb -x "${KERNEL_DIR}"/../linux-headers-${KERNEL_VERSION}-*_all.deb "${SOURCE_ROOT}"
+dpkg-deb -x "${KERNEL_DIR}"/../linux-image-unsigned-${KERNEL_VERSION}-*_${TARGETARCH}.deb "${SOURCE_ROOT}"
+dpkg-deb -x "${KERNEL_DIR}"/../linux-modules-${KERNEL_VERSION}-*-${KERNEL_FLAVOUR}_*_${TARGETARCH}.deb "${SOURCE_ROOT}"
 dpkg-deb -x /tmp/linux-firmware_*.deb "${SOURCE_ROOT}"
-dpkg-deb -x "${KERNEL_DIR}"/../linux-modules-extra-5.*.deb "${SOURCE_ROOT}"
+dpkg-deb -x "${KERNEL_DIR}"/../linux-modules-extra-${KERNEL_VERSION}-*-${KERNEL_FLAVOUR}_*_${TARGETARCH}.deb "${SOURCE_ROOT}"
 {
     echo 'r8152'
     echo 'hfs'
@@ -137,5 +141,5 @@ tar cf - -T initrd-modules -T initrd-firmware | tar xf - -C ${INITRD_ROOT}/
 depmod -b ${INITRD_ROOT} "${VERSION}"
 depmod -b . "${VERSION}"
 mkdir -p "${DIST_DIR}"
-mksquashfs . "${DIST_DIR}/kernel-${TARGETARCH:-$(uname -m)}.squashfs"
+mksquashfs . "${DIST_DIR}/kernel-${TARGETARCH}.squashfs"
 popd

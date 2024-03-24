@@ -1,0 +1,16 @@
+# Menu: HEADER
+# FORMAT: 4
+# ARCH: amd64 arm64
+# FLAVOUR: amd64-k3os arm64-k3os
+# FLAVOUR_DEP: {'amd64-k3os': 'amd64-generic', 'arm64-k3os': 'arm64-generic'}
+
+include "../../debian.master/config/annotations"
+
+CONFIG_AAEON_IWMI_WDT                           policy<{'amd64': '-'}>
+CONFIG_GPIO_AAEON                               policy<{'amd64': '-'}>
+CONFIG_GPIO_M058SSAN                            policy<{'amd64': '-'}>
+CONFIG_LEDS_AAEON                               policy<{'amd64': '-'}>
+CONFIG_MFD_AAEON                                policy<{'amd64': '-'}>
+CONFIG_RTC_DRV_PCF85263                         policy<{'amd64': '-'}>
+CONFIG_SENSORS_AAEON                            policy<{'amd64': '-'}>
+CONFIG_UBUNTU_ODM_DRIVERS                       policy<{'amd64': '-'}>
