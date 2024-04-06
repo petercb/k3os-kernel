@@ -1,10 +1,5 @@
 #!/bin/bash
 
-KERNEL_VERSION="5.15.0"
-KERNEL_FLAVOUR="k3os"
-
-: "${TARGETARCH=$(uname -m)}"
-
 set -euxo pipefail
 
 if [ "${IN_CONTAINER:-false}" != "true" ]; then
@@ -12,6 +7,51 @@ if [ "${IN_CONTAINER:-false}" != "true" ]; then
     echo "This script modifies the system, and is not safe to run outside of a container!"
     exit 1
 fi
+
+KERNEL_VERSION="5.15.0"
+KERNEL_FLAVOUR="k3os"
+
+PACKAGE_LIST=(
+    "bc"
+    "bison"
+    "ccache"
+    "cpio"
+    "dkms"
+    "dwarves"
+    "fakeroot"
+    "flex"
+    "gawk"
+    "gnupg2"
+    "initramfs-tools"
+    "kernel-wedge"
+    "kmod"
+    "libelf-dev"
+    "libiberty-dev"
+    "liblz4-tool"
+    "libncurses-dev"
+    "libpci-dev"
+    "libssl-dev"
+    "libudev-dev"
+    "linux-libc-dev"
+    "locales"
+    "rsync"
+    "squashfs-tools"
+    "vim"
+    "xz-utils"
+    "zstd"
+)
+
+case "${TARGETARCH=$(uname -m)}" in
+    amd64)
+        PACKAGE_LIST+=("gcc-aarch64-linux-gnu")
+        ;;
+    arm64)
+        PACKAGE_LIST+=("gcc-x86-64-linux-gnu")
+        ;;
+    *)
+        echo "ERROR: Unsupported TARGETARCH '${TARGETARCH}' !!"
+        exit 1
+esac
 
 PROJECT_ROOT="$(git rev-parse --show-toplevel)"
 DIST_DIR="${PROJECT_ROOT}/dist"
@@ -26,6 +66,8 @@ INITRD_CONFDIR="${BUILD_ROOT}/initrd-conf"
 
 apt-get --assume-yes -qq update
 
+apt-get --assume-yes -qq install --no-install-recommends "${PACKAGE_LIST[@]}"
+
 rm -rf "${DOWNLOAD_DIR}"
 mkdir -p "${DOWNLOAD_DIR}"
 pushd "${DOWNLOAD_DIR}"
@@ -37,49 +79,6 @@ popd
 rm -rf "${KERNEL_ORIG}"
 mkdir -p "${KERNEL_ORIG}"
 dpkg-deb -x "${DOWNLOAD_DIR}"/linux-source-${KERNEL_VERSION}_*.deb "${KERNEL_ORIG}"
-
-apt-get --assume-yes -qq install --no-install-recommends \
-    bc \
-    bison \
-    ccache \
-    cpio \
-    dkms \
-    dwarves \
-    fakeroot \
-    flex \
-    gawk \
-    gnupg2 \
-    initramfs-tools \
-    kernel-wedge \
-    kmod \
-    less \
-    libelf-dev \
-    libiberty-dev \
-    liblz4-tool \
-    libncurses-dev \
-    libpci-dev \
-    libssl-dev \
-    libudev-dev \
-    linux-libc-dev \
-    locales \
-    rsync \
-    squashfs-tools \
-    vim \
-    xz-utils \
-    zstd
-
-case "${TARGETARCH}" in
-    amd64)
-        apt-get --assume-yes -qq install --no-install-recommends gcc-aarch64-linux-gnu
-        ;;
-    arm64)
-        apt-get --assume-yes -qq install --no-install-recommends gcc-x86-64-linux-gnu
-        ;;
-    *)
-        echo "ERROR: Unsupported TARGETARCH '${TARGETARCH}' !!"
-        exit 1
-esac
-
 
 rm -rf "${KERNEL_WORK}"
 mkdir -p "${KERNEL_WORK}"
