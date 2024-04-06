@@ -68,6 +68,19 @@ apt-get --assume-yes -qq install --no-install-recommends \
     xz-utils \
     zstd
 
+case "${TARGETARCH}" in
+    amd64)
+        apt-get --assume-yes -qq install --no-install-recommends gcc-aarch64-linux-gnu
+        ;;
+    arm64)
+        apt-get --assume-yes -qq install --no-install-recommends gcc-x86-64-linux-gnu
+        ;;
+    *)
+        echo "ERROR: Unsupported TARGETARCH '${TARGETARCH}' !!"
+        exit 1
+esac
+
+
 rm -rf "${KERNEL_WORK}"
 mkdir -p "${KERNEL_WORK}"
 cp -a "${KERNEL_ORIG}"/usr/src/linux-source-*/debian* "${KERNEL_WORK}/"
