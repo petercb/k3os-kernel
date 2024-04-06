@@ -67,24 +67,12 @@ jobs:
 
 
 workflows:
-  feature:
-    jobs:
-      - build:
-          executor: amd64
-          filters:
-            branches:
-              ignore: master
-
   continuous:
     jobs:
-      - build: &rc-build
+      - build:
           name: AMD64 RC build
           executor: amd64
-          filters:
-            branches:
-              only: master
       - build:
-          <<: *rc-build
           name: ARM64 RC build
           executor: arm64
 

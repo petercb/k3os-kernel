@@ -47,8 +47,7 @@ apt-get --assume-yes -qq install --no-install-recommends \
     dwarves \
     fakeroot \
     flex \
-    gawk  \
-    gcc-aarch64-linux-gnu \
+    gawk \
     gnupg2 \
     initramfs-tools \
     kernel-wedge \
