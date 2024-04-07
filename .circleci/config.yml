@@ -5,21 +5,21 @@ orbs:
   github: circleci/github-cli@2
 
 executors:
-  arm64:
+  build:
+    parameters:
+      arch:
+        type: string
+      tag:
+        type: string
+        default: jammy
+      resource_class:
+        type: string
     environment:
-      TARGETARCH: arm64
+      TARGETARCH: << parameters.arch >>
       IN_CONTAINER: "true"
     docker:
-      - image: buildpack-deps:jammy
-    resource_class: petercb/arm64
-  amd64:
-    environment:
-      TARGETARCH: amd64
-      IN_CONTAINER: "true"
-    docker:
-      - image: buildpack-deps:jammy
-    resource_class: petercb/amd64
-
+      - image: buildpack-deps:<< parameters.tag >>
+    resource_class: << parameters.resource_class >>
 
 commands:
   push-artifacts:
@@ -37,10 +37,17 @@ commands:
 jobs:
   build:
     parameters:
+      arch:
+        type: string
       executor:
-        type: executor
-        default: amd64
-    executor: << parameters.executor >>
+        type: string
+        default: build
+      resource_class:
+        type: string
+    executor:
+      name: << parameters.executor >>
+      arch: << parameters.arch >>
+      resource_class: << parameters.resource_class >>
     steps:
       - checkout
       - run:
@@ -71,10 +78,12 @@ workflows:
     jobs:
       - build:
           name: AMD64 RC build
-          executor: amd64
+          arch: amd64
+          resource_class: petercb/amd64
       - build:
           name: ARM64 RC build
-          executor: arm64
+          arch: arm64
+          resource_class: petercb/arm64
 
   tags:
     jobs:
@@ -89,7 +98,8 @@ workflows:
       - build: &tag-build
           name: AMD64 tag release
           context: github
-          executor: amd64
+          arch: amd64
+          resource_class: large
           filters: *filter-tags
           requires:
             - "Create github release"
@@ -98,4 +108,5 @@ workflows:
       - build:
           <<: *tag-build
           name: ARM64 tag release
-          executor: arm64
+          arch: arm64
+          resource_class: arm.large

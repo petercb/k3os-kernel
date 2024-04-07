@@ -16,12 +16,10 @@ PACKAGE_LIST=(
     "bison"
     "ccache"
     "cpio"
-    "dkms"
     "dwarves"
     "fakeroot"
     "flex"
     "gawk"
-    "gnupg2"
     "initramfs-tools"
     "kernel-wedge"
     "kmod"
@@ -36,8 +34,6 @@ PACKAGE_LIST=(
     "locales"
     "rsync"
     "squashfs-tools"
-    "xz-utils"
-    "zstd"
 )
 
 case "${TARGETARCH=$(uname -m)}" in
@@ -127,7 +123,7 @@ dpkg-deb -x linux-modules-extra-${KERNEL_VERSION}-*-${KERNEL_FLAVOUR}_*_${TARGET
 popd
 
 # Setup initrd
-mkdir -p "${INITRD_CONFDIR}"
+mkdir -p "${INITRD_CONFDIR}/scripts"
 cp /etc/initramfs-tools/initramfs.conf "${INITRD_CONFDIR}/"
 cat <<EOF > "${INITRD_CONFDIR}/modules"
 r8152
@@ -140,7 +136,7 @@ EOF
 rm -rf "/lib/modules/${VERSION}"
 rsync -a "${SOURCE_ROOT}/lib/" /lib/
 
-# Create initrd
+# Create initrd packing lists
 mkdir -p "${KERNEL_ROOT}/lib"
 mkdir -p "${KERNEL_ROOT}/headers"
 rm -rf "${INITRD_ROOT}"
