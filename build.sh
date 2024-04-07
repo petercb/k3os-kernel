@@ -36,7 +36,6 @@ PACKAGE_LIST=(
     "locales"
     "rsync"
     "squashfs-tools"
-    "vim"
     "xz-utils"
     "zstd"
 )
@@ -52,6 +51,10 @@ case "${TARGETARCH=$(uname -m)}" in
         echo "ERROR: Unsupported TARGETARCH '${TARGETARCH}' !!"
         exit 1
 esac
+
+if mountpoint -q "$(pwd)"; then
+    git config --global --add safe.directory "$(pwd)"
+fi
 
 PROJECT_ROOT="$(git rev-parse --show-toplevel)"
 DIST_DIR="${PROJECT_ROOT}/dist"
