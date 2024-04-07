@@ -99,7 +99,10 @@ cp -a "${KERNEL_WORK}"/debian.master/reconstruct "${KERNEL_WORK}/debian.${KERNEL
 
 pushd "${KERNEL_WORK}"
 debian/rules clean
-debian/rules updateconfigs
+
+if [ "${UPDATECONFIGS:-no}" == "yes" ]; then
+    debian/rules updateconfigs
+fi
 # see https://wiki.ubuntu.com/KernelTeam/KernelMaintenance#Overriding_module_check_failures
 debian/rules binary-headers binary-${KERNEL_FLAVOUR} \
     skipabi=true \

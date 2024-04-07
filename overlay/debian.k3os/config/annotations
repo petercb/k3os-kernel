@@ -1300,13 +1300,6 @@ CONFIG_CB710_DEBUG                              policy<{'amd64': '-', 'arm64': '
 CONFIG_CB710_DEBUG_ASSUMPTIONS                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CC10001_ADC                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CCS811                                   policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_CC_CAN_LINK                              policy<{'amd64': 'y', 'arm64': '-'}>
-CONFIG_CC_CAN_LINK_STATIC                       policy<{'amd64': 'y', 'arm64': '-'}>
-CONFIG_CC_HAS_AUTO_VAR_INIT_PATTERN             policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_CC_HAS_AUTO_VAR_INIT_ZERO                policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_CC_HAS_AUTO_VAR_INIT_ZERO_BARE           policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_CC_HAS_UBSAN_BOUNDS                      policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_CC_HAVE_SHADOW_CALL_STACK                policy<{'arm64': '-'}>
 CONFIG_CDNS_I3C_MASTER                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CDROM_PKTCDVD                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CDROM_PKTCDVD_BUFFERS                    policy<{'amd64': '-', 'arm64': '-'}>
