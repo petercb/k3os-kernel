@@ -22,5 +22,7 @@ do_tools_common = true
 do_tools_acpidbg = true
 do_odm_drivers  = false
 do_zfs      = false
+do_v4l2loopback = false
+do_iwlwifi = false
 do_dkms_nvidia = false
 do_dkms_nvidia_server = false

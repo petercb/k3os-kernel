@@ -20,5 +20,7 @@ do_tools_bpftool = true
 
 do_dtbs		= true
 do_zfs      = false
+do_v4l2loopback = false
+do_iwlwifi = false
 do_dkms_nvidia = false
 do_dkms_nvidia_server = false
