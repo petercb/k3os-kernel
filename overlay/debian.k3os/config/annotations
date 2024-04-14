@@ -4745,7 +4745,7 @@ CONFIG_MMC_REALTEK_PCI                          policy<{'amd64': '-', 'arm64': '
 CONFIG_MMC_REALTEK_USB                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MMC_RICOH_MMC                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MMC_SDHCI_ACPI                           policy<{'amd64': 'm', 'arm64': 'n'}>
-CONFIG_MMC_SDHCI_AM654                          policy<{'arm64': 'n'}>
+CONFIG_MMC_SDHCI_AM654                          policy<{'arm64': '-'}>
 CONFIG_MMC_SDHCI_BRCMSTB                        policy<{'arm64': '-'}>
 CONFIG_MMC_SDHCI_CADENCE                        policy<{'arm64': 'n'}>
 CONFIG_MMC_SDHCI_ESDHC_IMX                      policy<{'arm64': '-'}>
@@ -4759,7 +4759,7 @@ CONFIG_MMC_SDHCI_OF_AT91                        policy<{'arm64': 'n'}>
 CONFIG_MMC_SDHCI_OF_DWCMSHC                     policy<{'arm64': 'n'}>
 CONFIG_MMC_SDHCI_OF_ESDHC                       policy<{'arm64': '-'}>
 CONFIG_MMC_SDHCI_OF_SPARX5                      policy<{'arm64': '-'}>
-CONFIG_MMC_SDHCI_OMAP                           policy<{'arm64': 'n'}>
+CONFIG_MMC_SDHCI_OMAP                           policy<{'arm64': '-'}>
 CONFIG_MMC_SDHCI_PXAV3                          policy<{'arm64': '-'}>
 CONFIG_MMC_SDHCI_SPRD                           policy<{'arm64': 'n'}>
 CONFIG_MMC_SDHCI_TEGRA                          policy<{'arm64': 'n'}>
@@ -5364,7 +5364,6 @@ CONFIG_NVME_TARGET_FCLOOP                       policy<{'amd64': '-', 'arm64': '
 CONFIG_NVME_TARGET_PASSTHRU                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NVME_TARGET_RDMA                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NVME_TARGET_TCP                          policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_NVME_TCP                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NV_TCO                                   policy<{'amd64': 'n'}>
 CONFIG_NXP_C45_TJA11XX_PHY                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NXP_TJA11XX_PHY                          policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -8000,7 +7999,7 @@ CONFIG_SPI_TLE62X0                              policy<{'amd64': '-', 'arm64': '
 CONFIG_SPI_XCOMM                                policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SPI_XILINX                               policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SPI_XLP                                  policy<{'arm64': '-'}>
-CONFIG_SPI_ZYNQMP_GQSPI                         policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_SPI_ZYNQMP_GQSPI                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SPMI                                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SPMI_HISI3670                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SPMI_MSM_PMIC_ARB                        policy<{'arm64': '-'}>
@@ -8527,7 +8526,6 @@ CONFIG_UIO_DMEM_GENIRQ                          policy<{'amd64': 'n', 'arm64': '
 CONFIG_UIO_HV_GENERIC                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_UIO_MF624                                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_UIO_NETX                                 policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_UIO_PCI_GENERIC                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_UIO_PDRV_GENIRQ                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_UIO_PRUSS                                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_UIO_SERCOS3                              policy<{'amd64': 'n', 'arm64': 'n'}>
