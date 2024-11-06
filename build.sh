@@ -86,7 +86,8 @@ chmod a+x "${KERNEL_WORK}"/debian*/rules
 chmod a+x "${KERNEL_WORK}"/debian*/scripts/*
 chmod a+x "${KERNEL_WORK}"/debian*/scripts/misc/*
 mkdir -p "${KERNEL_WORK}/debian/stamps"
-tar xf "${KERNEL_ORIG}"/usr/src/linux-source-*/linux-source*.tar.bz2 --strip-components=1 -C "${KERNEL_WORK}"
+tar xf "${KERNEL_ORIG}"/usr/src/linux-source-*/linux-source*.tar.bz2 \
+    --strip-components=1 -C "${KERNEL_WORK}"
 rsync -a "${PROJECT_ROOT}/overlay/" "${KERNEL_WORK}"
 cp -a "${KERNEL_WORK}/debian/changelog" "${KERNEL_WORK}/debian.${KERNEL_FLAVOUR}/"
 cp -a "${KERNEL_WORK}/debian.master/control.stub.in" "${KERNEL_WORK}/debian.${KERNEL_FLAVOUR}/"
@@ -112,14 +113,18 @@ popd
 
 rm -rf "${SOURCE_ROOT}"
 mkdir -p "${SOURCE_ROOT}"
+mkdir -p "${DIST_DIR}"
 
 pushd "${KERNEL_WORK}/.."
-dpkg-deb -x linux-headers-${KERNEL_VERSION}-*-${KERNEL_FLAVOUR}_*_${TARGETARCH}.deb "${SOURCE_ROOT}"
-dpkg-deb -x linux-headers-${KERNEL_VERSION}-*_all.deb "${SOURCE_ROOT}"
-dpkg-deb -x linux-image-unsigned-${KERNEL_VERSION}-*_${TARGETARCH}.deb "${SOURCE_ROOT}"
-dpkg-deb -x linux-modules-${KERNEL_VERSION}-*-${KERNEL_FLAVOUR}_*_${TARGETARCH}.deb "${SOURCE_ROOT}"
+for deb in \
+    linux-image-unsigned-${KERNEL_VERSION}-*_${TARGETARCH}.deb \
+    linux-modules-${KERNEL_VERSION}-*-${KERNEL_FLAVOUR}_*_${TARGETARCH}.deb \
+    linux-modules-extra-${KERNEL_VERSION}-*-${KERNEL_FLAVOUR}_*_${TARGETARCH}.deb
+do
+    dpkg-deb -x "${deb}" "${SOURCE_ROOT}"
+    rm "${deb}"
+done
 dpkg-deb -x "${DOWNLOAD_DIR}"/linux-firmware_*.deb "${SOURCE_ROOT}"
-dpkg-deb -x linux-modules-extra-${KERNEL_VERSION}-*-${KERNEL_FLAVOUR}_*_${TARGETARCH}.deb "${SOURCE_ROOT}"
 popd
 
 # Setup initrd
@@ -127,49 +132,37 @@ mkdir -p "${INITRD_CONFDIR}/scripts"
 cp /etc/initramfs-tools/initramfs.conf "${INITRD_CONFDIR}/"
 cat <<EOF > "${INITRD_CONFDIR}/modules"
 r8152
-hfs
-hfsplus
-nls_utf8
-nls_iso8859_1
 EOF
 
 rm -rf "/lib/modules/${VERSION}"
 rsync -a "${SOURCE_ROOT}/lib/" /lib/
 
 # Create initrd packing lists
-mkdir -p "${KERNEL_ROOT}/lib"
-mkdir -p "${KERNEL_ROOT}/headers"
 rm -rf "${INITRD_ROOT}"
 mkdir -p "${INITRD_ROOT}"
 pushd "${INITRD_ROOT}"
 echo "Generate initrd"
 depmod "${VERSION}"
-mkinitramfs -d "${INITRD_CONFDIR}" -c gzip -o "${INITRD_ROOT}.tmp" "${VERSION}"
-zcat "${INITRD_ROOT}.tmp" | cpio -idm
-rm "${INITRD_ROOT}.tmp"
-echo "Generate firmware and module lists"
-find lib/modules -name \*.ko > "${KERNEL_ROOT}/initrd-modules"
-echo "lib/modules/${VERSION}/modules.order" >> "${KERNEL_ROOT}/initrd-modules"
-echo "lib/modules/${VERSION}/modules.builtin" >> "${KERNEL_ROOT}/initrd-modules"
-find lib/firmware -type f > "${KERNEL_ROOT}/initrd-firmware"
-find usr/lib/firmware -type f | sed 's!usr/!!' >> "${KERNEL_ROOT}/initrd-firmware"
+mkinitramfs -d "${INITRD_CONFDIR}" -c gzip \
+    -o "${DIST_DIR}/k3os-initrd-${TARGETARCH}.gz" "${VERSION}"
 popd
 
-# Copy output assets
+# Assemble kernel
+mkdir -p "${KERNEL_ROOT}/lib"
+mkdir -p "${KERNEL_ROOT}/headers"
 pushd "${SOURCE_ROOT}"
-cp -r usr/src/linux-headers* "${KERNEL_ROOT}/headers"
-cp -r lib/firmware "${KERNEL_ROOT}/lib/firmware"
-cp -r lib/modules "${KERNEL_ROOT}/lib/modules"
-cp boot/System.map* "${KERNEL_ROOT}/System.map"
-cp boot/config* "${KERNEL_ROOT}/config"
-cp boot/vmlinuz-* "${KERNEL_ROOT}/vmlinuz"
+mv lib/firmware "${KERNEL_ROOT}/lib/firmware"
+mv lib/modules "${KERNEL_ROOT}/lib/modules"
+mv boot/System.map* "${KERNEL_ROOT}/System.map"
+mv boot/config* "${KERNEL_ROOT}/config"
+mv boot/vmlinuz-* "${KERNEL_ROOT}/vmlinuz"
 echo "${VERSION}" > "${KERNEL_ROOT}/version"
 popd
 
-mkdir -p "${DIST_DIR}"
 pushd "${KERNEL_ROOT}"
 depmod -b . "${VERSION}"
 OUTFILE="${DIST_DIR}/k3os-kernel-${TARGETARCH}.squashfs"
 rm -f "${OUTFILE}"
 mksquashfs . "${OUTFILE}"
 popd
+rm -rf "${KERNEL_ROOT}"

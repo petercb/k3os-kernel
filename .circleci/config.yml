@@ -74,17 +74,6 @@ jobs:
 
 
 workflows:
-  continuous:
-    jobs:
-      - build:
-          name: AMD64 RC build
-          arch: amd64
-          resource_class: petercb/amd64
-      - build:
-          name: ARM64 RC build
-          arch: arm64
-          resource_class: petercb/arm64
-
   tags:
     jobs:
       - draft-release:
