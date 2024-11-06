@@ -6,29 +6,32 @@
 
 include "../../debian.master/config/annotations"
 
+CONFIG_SAMPLE_TRACE_PRINTK                      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SAMPLE_TRACE_PRINTK                      note<'TODO: update note'>
+
 CONFIG_SND                                      policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND                                      note<TODO: update note>
+CONFIG_SND                                      note<'TODO: update note'>
 
 CONFIG_SND_HDA_POWER_SAVE_DEFAULT               policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_HDA_POWER_SAVE_DEFAULT               note<TODO: update note>
+CONFIG_SND_HDA_POWER_SAVE_DEFAULT               note<'TODO: update note'>
 
 CONFIG_SND_HDA_RECONFIG                         policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_HDA_RECONFIG                         note<TODO: update note>
+CONFIG_SND_HDA_RECONFIG                         note<'TODO: update note'>
 
 CONFIG_SND_HDA_SCODEC_CS35L41                   policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_HDA_SCODEC_CS35L41                   note<TODO: update note>
+CONFIG_SND_HDA_SCODEC_CS35L41                   note<'TODO: update note'>
 
 CONFIG_SND_HDA_SCODEC_CS35L41_I2C               policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_HDA_SCODEC_CS35L41_I2C               note<TODO: update note>
+CONFIG_SND_HDA_SCODEC_CS35L41_I2C               note<'TODO: update note'>
 
 CONFIG_SND_HDA_SCODEC_CS35L41_SPI               policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_HDA_SCODEC_CS35L41_SPI               note<TODO: update note>
+CONFIG_SND_HDA_SCODEC_CS35L41_SPI               note<'TODO: update note'>
 
 CONFIG_SND_PCM_OSS                              policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_PCM_OSS                              note<TODO: update note>
+CONFIG_SND_PCM_OSS                              note<'TODO: update note'>
 
 CONFIG_SND_SOC                                  policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC                                  note<TODO: update note>
+CONFIG_SND_SOC                                  note<'TODO: update note'>
 
 CONFIG_SND_SOC_AMD_ACP6x                        policy<{'amd64': '-'}>
 CONFIG_SND_SOC_AMD_ACP6x                        note<'TODO: update note'>
@@ -43,16 +46,16 @@ CONFIG_SND_SOC_AMD_YC_MACH                      policy<{'amd64': '-'}>
 CONFIG_SND_SOC_AMD_YC_MACH                      note<'TODO: update note'>
 
 CONFIG_SND_SOC_CS35L41                          policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC_CS35L41                          note<TODO: update note>
+CONFIG_SND_SOC_CS35L41                          note<'TODO: update note'>
 
 CONFIG_SND_SOC_CS35L41_I2C                      policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC_CS35L41_I2C                      note<TODO: update note>
+CONFIG_SND_SOC_CS35L41_I2C                      note<'TODO: update note'>
 
 CONFIG_SND_SOC_CS35L41_LIB                      policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC_CS35L41_LIB                      note<TODO: update note>
+CONFIG_SND_SOC_CS35L41_LIB                      note<'TODO: update note'>
 
 CONFIG_SND_SOC_CS35L41_SPI                      policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC_CS35L41_SPI                      note<TODO: update note>
+CONFIG_SND_SOC_CS35L41_SPI                      note<'TODO: update note'>
 
 CONFIG_SND_SOC_INTEL_CFL                        policy<{'amd64': '-'}>
 CONFIG_SND_SOC_INTEL_CFL                        note<'TODO: update note'>
@@ -91,16 +94,15 @@ CONFIG_SOUNDWIRE                                policy<{'amd64': 'n', 'arm64': '
 CONFIG_SOUNDWIRE                                note<'LP:1855685'>
 
 CONFIG_SOUND_OSS_CORE_PRECLAIM                  policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SOUND_OSS_CORE_PRECLAIM                  note<TODO: update note>
+CONFIG_SOUND_OSS_CORE_PRECLAIM                  note<'TODO: update note'>
 
 
 # ---- Annotations without notes ----
 
 CONFIG_AAEON_IWMI_WDT                           policy<{'amd64': '-'}>
 CONFIG_AC97_BUS                                 policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_BPFILTER_UMH                             policy<{'amd64': 'm', 'arm64': '-'}>
-CONFIG_CC_CAN_LINK                              policy<{'amd64': 'y', 'arm64': '-'}>
-CONFIG_CC_CAN_LINK_STATIC                       policy<{'amd64': 'y', 'arm64': '-'}>
+CONFIG_BPFILTER                                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_BPFILTER_UMH                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DRM_DW_HDMI_AHB_AUDIO                    policy<{'arm64': '-'}>
 CONFIG_DRM_DW_HDMI_I2S_AUDIO                    policy<{'arm64': 'n'}>
 CONFIG_DRM_I2C_ADV7511_AUDIO                    policy<{'arm64': '-'}>
@@ -127,8 +129,25 @@ CONFIG_REGMAP_SOUNDWIRE_MBQ                     policy<{'amd64': '-', 'arm64': '
 CONFIG_REGULATOR_ARIZONA_LDO1                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_ARIZONA_MICSUPP                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RTC_DRV_PCF85263                         policy<{'amd64': '-'}>
-CONFIG_SAMPLE_AUXDISPLAY                        policy<{'amd64': 'n', 'arm64': '-'}>
-CONFIG_SAMPLE_WATCHDOG                          policy<{'amd64': 'n', 'arm64': '-'}>
+CONFIG_SAMPLES                                  policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SAMPLE_AUXDISPLAY                        policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SAMPLE_CONFIGFS                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SAMPLE_FTRACE_DIRECT                     policy<{'amd64': '-'}>
+CONFIG_SAMPLE_HW_BREAKPOINT                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SAMPLE_KDB                               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SAMPLE_KFIFO                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SAMPLE_KOBJECT                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SAMPLE_KPROBES                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SAMPLE_LIVEPATCH                         policy<{'amd64': '-'}>
+CONFIG_SAMPLE_QMI_CLIENT                        policy<{'arm64': '-'}>
+CONFIG_SAMPLE_RPMSG_CLIENT                      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SAMPLE_TRACE_ARRAY                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SAMPLE_TRACE_EVENTS                      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SAMPLE_VFIO_MDEV_MBOCHS                  policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SAMPLE_VFIO_MDEV_MDPY                    policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SAMPLE_VFIO_MDEV_MDPY_FB                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SAMPLE_VFIO_MDEV_MTTY                    policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SAMPLE_WATCHDOG                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_AAEON                            policy<{'amd64': '-'}>
 CONFIG_SND_AC97_CODEC                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SND_AC97_POWER_SAVE                      policy<{'amd64': '-', 'arm64': '-'}>
@@ -848,6 +867,7 @@ CONFIG_USB_F_UAC1_LEGACY                        policy<{'amd64': '-', 'arm64': '
 CONFIG_USB_F_UAC2                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_USB_MIDI_GADGET                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_USB_U_AUDIO                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_USERMODE_DRIVER                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_VIDEO_COBALT                             policy<{'amd64': '-'}>
 CONFIG_VIDEO_CX18_ALSA                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_VIDEO_CX231XX_ALSA                       policy<{'amd64': '-', 'arm64': '-'}>
@@ -860,6 +880,7 @@ CONFIG_VIDEO_GO7007_LOADER                      policy<{'amd64': '-', 'arm64': '
 CONFIG_VIDEO_GO7007_USB                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_VIDEO_GO7007_USB_S2250_BOARD             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_VIDEO_IVTV_ALSA                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_VIDEO_PCI_SKELETON                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_VIDEO_SAA7134_ALSA                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_VIDEO_SAA7134_GO7007                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_VIDEO_SOLO6X10                           policy<{'amd64': '-', 'arm64': '-'}>
