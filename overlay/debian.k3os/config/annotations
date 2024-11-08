@@ -7,31 +7,31 @@
 include "../../debian.master/config/annotations"
 
 CONFIG_SAMPLE_TRACE_PRINTK                      policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SAMPLE_TRACE_PRINTK                      note<'TODO: update note'>
+CONFIG_SAMPLE_TRACE_PRINTK                      note<TODO: update note>
 
 CONFIG_SND                                      policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND                                      note<'TODO: update note'>
+CONFIG_SND                                      note<TODO: update note>
 
 CONFIG_SND_HDA_POWER_SAVE_DEFAULT               policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_HDA_POWER_SAVE_DEFAULT               note<'TODO: update note'>
+CONFIG_SND_HDA_POWER_SAVE_DEFAULT               note<TODO: update note>
 
 CONFIG_SND_HDA_RECONFIG                         policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_HDA_RECONFIG                         note<'TODO: update note'>
+CONFIG_SND_HDA_RECONFIG                         note<TODO: update note>
 
 CONFIG_SND_HDA_SCODEC_CS35L41                   policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_HDA_SCODEC_CS35L41                   note<'TODO: update note'>
+CONFIG_SND_HDA_SCODEC_CS35L41                   note<TODO: update note>
 
 CONFIG_SND_HDA_SCODEC_CS35L41_I2C               policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_HDA_SCODEC_CS35L41_I2C               note<'TODO: update note'>
+CONFIG_SND_HDA_SCODEC_CS35L41_I2C               note<TODO: update note>
 
 CONFIG_SND_HDA_SCODEC_CS35L41_SPI               policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_HDA_SCODEC_CS35L41_SPI               note<'TODO: update note'>
+CONFIG_SND_HDA_SCODEC_CS35L41_SPI               note<TODO: update note>
 
 CONFIG_SND_PCM_OSS                              policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_PCM_OSS                              note<'TODO: update note'>
+CONFIG_SND_PCM_OSS                              note<TODO: update note>
 
 CONFIG_SND_SOC                                  policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC                                  note<'TODO: update note'>
+CONFIG_SND_SOC                                  note<TODO: update note>
 
 CONFIG_SND_SOC_AMD_ACP6x                        policy<{'amd64': '-'}>
 CONFIG_SND_SOC_AMD_ACP6x                        note<'TODO: update note'>
@@ -46,16 +46,16 @@ CONFIG_SND_SOC_AMD_YC_MACH                      policy<{'amd64': '-'}>
 CONFIG_SND_SOC_AMD_YC_MACH                      note<'TODO: update note'>
 
 CONFIG_SND_SOC_CS35L41                          policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC_CS35L41                          note<'TODO: update note'>
+CONFIG_SND_SOC_CS35L41                          note<TODO: update note>
 
 CONFIG_SND_SOC_CS35L41_I2C                      policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC_CS35L41_I2C                      note<'TODO: update note'>
+CONFIG_SND_SOC_CS35L41_I2C                      note<TODO: update note>
 
 CONFIG_SND_SOC_CS35L41_LIB                      policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC_CS35L41_LIB                      note<'TODO: update note'>
+CONFIG_SND_SOC_CS35L41_LIB                      note<TODO: update note>
 
 CONFIG_SND_SOC_CS35L41_SPI                      policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SND_SOC_CS35L41_SPI                      note<'TODO: update note'>
+CONFIG_SND_SOC_CS35L41_SPI                      note<TODO: update note>
 
 CONFIG_SND_SOC_INTEL_CFL                        policy<{'amd64': '-'}>
 CONFIG_SND_SOC_INTEL_CFL                        note<'TODO: update note'>
@@ -94,7 +94,7 @@ CONFIG_SOUNDWIRE                                policy<{'amd64': 'n', 'arm64': '
 CONFIG_SOUNDWIRE                                note<'LP:1855685'>
 
 CONFIG_SOUND_OSS_CORE_PRECLAIM                  policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SOUND_OSS_CORE_PRECLAIM                  note<'TODO: update note'>
+CONFIG_SOUND_OSS_CORE_PRECLAIM                  note<TODO: update note>
 
 
 # ---- Annotations without notes ----
@@ -122,6 +122,8 @@ CONFIG_LEDS_AAEON                               policy<{'amd64': '-'}>
 CONFIG_MEDIA_ALTERA_CI                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MFD_AAEON                                policy<{'amd64': '-'}>
 CONFIG_MOST_SND                                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_NET_ACT_SAMPLE                           policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_PSAMPLE                                  policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_RADIO_SI476X                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGMAP_AC97                              policy<{'arm64': '-'}>
 CONFIG_REGMAP_SOUNDWIRE                         policy<{'amd64': '-', 'arm64': '-'}>
