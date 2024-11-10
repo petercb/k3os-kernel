@@ -114,8 +114,11 @@ CONFIG_X86_POWERNOW_K8                          note<'not autoloadable'>
 CONFIG_A11Y_BRAILLE_CONSOLE                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_AAEON_IWMI_WDT                           policy<{'amd64': '-'}>
 CONFIG_AC97_BUS                                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_AIX_PARTITION                            policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_ATARI_PARTITION                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BPFILTER                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BPFILTER_UMH                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CMDLINE_PARTITION                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_DRM_DW_HDMI_AHB_AUDIO                    policy<{'arm64': '-'}>
 CONFIG_DRM_DW_HDMI_I2S_AUDIO                    policy<{'arm64': 'n'}>
 CONFIG_DRM_I2C_ADV7511_AUDIO                    policy<{'arm64': '-'}>
@@ -132,6 +135,8 @@ CONFIG_HDMI_LPE_AUDIO                           policy<{'amd64': '-'}>
 CONFIG_HID_PRODIKEYS                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INFINIBAND_VMWARE_PVRDMA                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_INPUT_ARIZONA_HAPTICS                    policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_LDM_DEBUG                                policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_LDM_PARTITION                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_LEDS_AAEON                               policy<{'amd64': '-'}>
 CONFIG_MEDIA_ALTERA_CI                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MFD_AAEON                                policy<{'amd64': '-'}>
@@ -884,6 +889,7 @@ CONFIG_TOUCHSCREEN_WM9713                       policy<{'amd64': '-', 'arm64': '
 CONFIG_TOUCHSCREEN_WM97XX                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_UBUNTU_ODM_DRIVERS                       policy<{'amd64': '-'}>
 CONFIG_UCB1400_CORE                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_ULTRIX_PARTITION                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_USB_AUDIO                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_USB_CONFIGFS_F_MIDI                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_USB_CONFIGFS_F_UAC1                      policy<{'amd64': '-', 'arm64': '-'}>
