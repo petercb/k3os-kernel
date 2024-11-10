@@ -9,6 +9,9 @@ include "../../debian.master/config/annotations"
 CONFIG_ACCESSIBILITY                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_ACCESSIBILITY                            note<'LP: #1967702'>
 
+CONFIG_BLK_DEV_LOOP                             policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_BLK_DEV_LOOP                             note<'k3os required'>
+
 CONFIG_SAMPLE_TRACE_PRINTK                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SAMPLE_TRACE_PRINTK                      note<'TODO: update note'>
 
@@ -102,6 +105,9 @@ CONFIG_SOUND_OSS_CORE_PRECLAIM                  note<'TODO: update note'>
 CONFIG_SPEAKUP                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SPEAKUP                                  note<'TODO: update note'>
 
+CONFIG_SQUASHFS                                 policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_SQUASHFS                                 note<'LP#1593134; k3os required'>
+
 CONFIG_VMWARE_VMCI_VSOCKETS                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_VMWARE_VMCI_VSOCKETS                     note<'LP: #1978145'>
 
@@ -116,6 +122,18 @@ CONFIG_AAEON_IWMI_WDT                           policy<{'amd64': '-'}>
 CONFIG_AC97_BUS                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_AIX_PARTITION                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_ATARI_PARTITION                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_BACKLIGHT_ADP8860                        policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_BACKLIGHT_ADP8870                        policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_BACKLIGHT_APPLE                          policy<{'amd64': 'n', 'arm64': '-'}>
+CONFIG_BACKLIGHT_ARCXCNN                        policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_BACKLIGHT_BD6107                         policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_BACKLIGHT_LM3630A                        policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_BACKLIGHT_LM3639                         policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_BACKLIGHT_LP855X                         policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_BACKLIGHT_LV5207LP                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_BACKLIGHT_PWM                            policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_BACKLIGHT_QCOM_WLED                      policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_BACKLIGHT_SAHARA                         policy<{'amd64': 'n', 'arm64': '-'}>
 CONFIG_BPFILTER                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BPFILTER_UMH                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CMDLINE_PARTITION                        policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -138,6 +156,7 @@ CONFIG_INPUT_ARIZONA_HAPTICS                    policy<{'amd64': '-', 'arm64': '
 CONFIG_LDM_DEBUG                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_LDM_PARTITION                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_LEDS_AAEON                               policy<{'amd64': '-'}>
+CONFIG_LEDS_TRIGGER_BACKLIGHT                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MEDIA_ALTERA_CI                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MFD_AAEON                                policy<{'amd64': '-'}>
 CONFIG_MOST_SND                                 policy<{'amd64': '-', 'arm64': '-'}>
@@ -887,7 +906,8 @@ CONFIG_TOUCHSCREEN_WM9705                       policy<{'amd64': '-', 'arm64': '
 CONFIG_TOUCHSCREEN_WM9712                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TOUCHSCREEN_WM9713                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TOUCHSCREEN_WM97XX                       policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_UBUNTU_ODM_DRIVERS                       policy<{'amd64': '-'}>
+CONFIG_UBUNTU_HOST                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_UBUNTU_ODM_DRIVERS                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_UCB1400_CORE                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ULTRIX_PARTITION                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_USB_AUDIO                                policy<{'amd64': '-', 'arm64': '-'}>
