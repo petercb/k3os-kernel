@@ -6,6 +6,9 @@
 
 include "../../debian.master/config/annotations"
 
+CONFIG_ACCESSIBILITY                            policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_ACCESSIBILITY                            note<'LP: #1967702'>
+
 CONFIG_SAMPLE_TRACE_PRINTK                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SAMPLE_TRACE_PRINTK                      note<'TODO: update note'>
 
@@ -96,6 +99,9 @@ CONFIG_SOUNDWIRE                                note<'LP:1855685'>
 CONFIG_SOUND_OSS_CORE_PRECLAIM                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SOUND_OSS_CORE_PRECLAIM                  note<'TODO: update note'>
 
+CONFIG_SPEAKUP                                  policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SPEAKUP                                  note<'TODO: update note'>
+
 CONFIG_VMWARE_VMCI_VSOCKETS                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_VMWARE_VMCI_VSOCKETS                     note<'LP: #1978145'>
 
@@ -105,6 +111,7 @@ CONFIG_X86_POWERNOW_K8                          note<'not autoloadable'>
 
 # ---- Annotations without notes ----
 
+CONFIG_A11Y_BRAILLE_CONSOLE                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_AAEON_IWMI_WDT                           policy<{'amd64': '-'}>
 CONFIG_AC97_BUS                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BPFILTER                                 policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -857,6 +864,18 @@ CONFIG_SOUNDWIRE_GENERIC_ALLOCATION             policy<{'amd64': '-', 'arm64': '
 CONFIG_SOUNDWIRE_INTEL                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SOUNDWIRE_QCOM                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SOUND_OSS_CORE                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SPEAKUP_SYNTH_ACNTSA                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SPEAKUP_SYNTH_APOLLO                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SPEAKUP_SYNTH_AUDPTR                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SPEAKUP_SYNTH_BNS                        policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SPEAKUP_SYNTH_DECEXT                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SPEAKUP_SYNTH_DECTLK                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SPEAKUP_SYNTH_DUMMY                      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SPEAKUP_SYNTH_LTLK                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SPEAKUP_SYNTH_SOFT                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SPEAKUP_SYNTH_SPKOUT                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SPEAKUP_SYNTH_TXPRT                      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SYSV68_PARTITION                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_THINKPAD_ACPI_ALSA_SUPPORT               policy<{'amd64': '-'}>
 CONFIG_TOUCHSCREEN_UCB1400                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TOUCHSCREEN_WM9705                       policy<{'amd64': '-', 'arm64': '-'}>
