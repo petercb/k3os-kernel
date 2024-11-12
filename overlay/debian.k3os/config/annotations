@@ -12,20 +12,23 @@ CONFIG_ACCESSIBILITY                            note<'LP: #1967702'>
 CONFIG_BLK_DEV_LOOP                             policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_BLK_DEV_LOOP                             note<'k3os required'>
 
+CONFIG_DRM_MGAG200                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_DRM_MGAG200                              note<'LP#1693337'>
+
 CONFIG_DVB_DUMMY_FE                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DVB_DUMMY_FE                             note<'TODO: update note'>
 
 CONFIG_GPIO_TWL4030                             policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_GPIO_TWL4030                             note<TODO: update note>
+CONFIG_GPIO_TWL4030                             note<'TODO: update note'>
 
 CONFIG_MEMORY_HOTPLUG_DEFAULT_ONLINE            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MEMORY_HOTPLUG_DEFAULT_ONLINE            note<'TODO: update note'>
 
 CONFIG_REGULATOR_TWL4030                        policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_REGULATOR_TWL4030                        note<TODO: update note>
+CONFIG_REGULATOR_TWL4030                        note<'TODO: update note'>
 
 CONFIG_RTC_DRV_TWL4030                          policy<{'arm64': '-'}>
-CONFIG_RTC_DRV_TWL4030                          note<TODO: update note>
+CONFIG_RTC_DRV_TWL4030                          note<'TODO: update note'>
 
 CONFIG_SAMPLE_TRACE_PRINTK                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SAMPLE_TRACE_PRINTK                      note<'TODO: update note'>
@@ -143,8 +146,14 @@ CONFIG_AAEON_IWMI_WDT                           policy<{'amd64': '-'}>
 CONFIG_AC97_BUS                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ACPI_HOTPLUG_MEMORY                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_AIX_PARTITION                            policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_ANDROID                                  policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_ANDROID_BINDERFS                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_ANDROID_BINDER_DEVICES                   policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_ANDROID_BINDER_IPC                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_ANDROID_BINDER_IPC_SELFTEST              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ARCH_ENABLE_MEMORY_HOTREMOVE             policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_ARCH_MEMORY_PROBE                        policy<{'amd64': '-'}>
+CONFIG_ASHMEM                                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ATARI_PARTITION                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BACKLIGHT_ADP8860                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BACKLIGHT_ADP8870                        policy<{'amd64': 'n', 'arm64': 'n'}>
