@@ -13,10 +13,19 @@ CONFIG_BLK_DEV_LOOP                             policy<{'amd64': 'y', 'arm64': '
 CONFIG_BLK_DEV_LOOP                             note<'k3os required'>
 
 CONFIG_DVB_DUMMY_FE                             policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_DVB_DUMMY_FE                             note<TODO: update note>
+CONFIG_DVB_DUMMY_FE                             note<'TODO: update note'>
+
+CONFIG_GPIO_TWL4030                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_GPIO_TWL4030                             note<TODO: update note>
 
 CONFIG_MEMORY_HOTPLUG_DEFAULT_ONLINE            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MEMORY_HOTPLUG_DEFAULT_ONLINE            note<'TODO: update note'>
+
+CONFIG_REGULATOR_TWL4030                        policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_REGULATOR_TWL4030                        note<TODO: update note>
+
+CONFIG_RTC_DRV_TWL4030                          policy<{'arm64': '-'}>
+CONFIG_RTC_DRV_TWL4030                          note<TODO: update note>
 
 CONFIG_SAMPLE_TRACE_PRINTK                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SAMPLE_TRACE_PRINTK                      note<'TODO: update note'>
@@ -118,7 +127,7 @@ CONFIG_TEST_BLACKHOLE_DEV                       policy<{'amd64': 'n', 'arm64': '
 CONFIG_TEST_BLACKHOLE_DEV                       note<'Used by net selftests'>
 
 CONFIG_VIDEO_VIMC                               policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_VIDEO_VIMC                               note<TODO: update note>
+CONFIG_VIDEO_VIMC                               note<'TODO: update note'>
 
 CONFIG_VMWARE_VMCI_VSOCKETS                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_VMWARE_VMCI_VSOCKETS                     note<'LP: #1978145'>
@@ -146,19 +155,49 @@ CONFIG_BACKLIGHT_LM3630A                        policy<{'amd64': 'n', 'arm64': '
 CONFIG_BACKLIGHT_LM3639                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BACKLIGHT_LP855X                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BACKLIGHT_LV5207LP                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_BACKLIGHT_PANDORA                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BACKLIGHT_PWM                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BACKLIGHT_QCOM_WLED                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BACKLIGHT_SAHARA                         policy<{'amd64': 'n', 'arm64': '-'}>
+CONFIG_BATTERY_RX51                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_BATTERY_TWL4030_MADC                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BCACHE                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BCACHE_ASYNC_REGISTRATION                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BCACHE_CLOSURES_DEBUG                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BCACHE_DEBUG                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BPFILTER                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BPFILTER_UMH                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CEC_CROS_EC                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CHARGER_CROS_PCHG                        policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CHARGER_CROS_USBPD                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CHARGER_TWL4030                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CHARGER_WILCO                            policy<{'amd64': '-'}>
+CONFIG_CHROMEOS_LAPTOP                          policy<{'amd64': '-'}>
+CONFIG_CHROMEOS_PSTORE                          policy<{'amd64': '-'}>
+CONFIG_CHROMEOS_TBMC                            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CHROME_PLATFORMS                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CIO2_BRIDGE                              policy<{'amd64': '-'}>
 CONFIG_CMDLINE_PARTITION                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CRC4                                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CRC64                                    policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_CROS_EC                                  policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CROS_EC_CHARDEV                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CROS_EC_DEBUGFS                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CROS_EC_I2C                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CROS_EC_ISHTP                            policy<{'amd64': '-'}>
+CONFIG_CROS_EC_LIGHTBAR                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CROS_EC_LPC                              policy<{'amd64': '-'}>
+CONFIG_CROS_EC_MKBP_PROXIMITY                   policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CROS_EC_PROTO                            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CROS_EC_RPMSG                            policy<{'arm64': '-'}>
+CONFIG_CROS_EC_SENSORHUB                        policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CROS_EC_SPI                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CROS_EC_SYSFS                            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CROS_EC_TYPEC                            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CROS_EC_VBC                              policy<{'arm64': '-'}>
+CONFIG_CROS_KBD_LED_BACKLIGHT                   policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CROS_USBPD_LOGGER                        policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CROS_USBPD_NOTIFY                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CRYPTO_CRC32_PCLMUL                      policy<{'amd64': 'n'}>
 CONFIG_CXD2880_SPI_DRV                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CYPRESS_FIRMWARE                         policy<{'amd64': '-', 'arm64': '-'}>
@@ -167,6 +206,7 @@ CONFIG_DEV_DAX_KMEM                             policy<{'amd64': '-', 'arm64': '
 CONFIG_DEV_DAX_PMEM                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DEV_DAX_PMEM_COMPAT                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DEV_PAGEMAP_OPS                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_DRM_CROS_EC_ANX7688                      policy<{'arm64': '-'}>
 CONFIG_DRM_DW_HDMI_AHB_AUDIO                    policy<{'arm64': '-'}>
 CONFIG_DRM_DW_HDMI_I2S_AUDIO                    policy<{'arm64': 'n'}>
 CONFIG_DRM_I2C_ADV7511_AUDIO                    policy<{'arm64': '-'}>
@@ -174,6 +214,7 @@ CONFIG_DRM_NOUVEAU_SVM                          policy<{'amd64': '-', 'arm64': '
 CONFIG_DRM_RCAR_VSP                             policy<{'arm64': '-'}>
 CONFIG_DRM_VC4                                  policy<{'arm64': '-'}>
 CONFIG_DRM_VC4_HDMI_CEC                         policy<{'arm64': '-'}>
+CONFIG_DRM_ZYNQMP_DPSUB                         policy<{'arm64': '-'}>
 CONFIG_DVB_A8293                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DVB_AF9013                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DVB_AF9033                               policy<{'amd64': '-', 'arm64': '-'}>
@@ -372,6 +413,7 @@ CONFIG_DVB_ZD1301_DEMOD                         policy<{'amd64': '-', 'arm64': '
 CONFIG_DVB_ZL10036                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DVB_ZL10039                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DVB_ZL10353                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_EXTCON_USBC_CROS_EC                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_FSI                                      policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_FSI_MASTER_ASPEED                        policy<{'arm64': '-'}>
 CONFIG_FSI_MASTER_GPIO                          policy<{'arm64': '-'}>
@@ -391,19 +433,31 @@ CONFIG_GREYBUS_AUDIO                            policy<{'amd64': '-', 'arm64': '
 CONFIG_GREYBUS_AUDIO_APB_CODEC                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_HAVE_BOOTMEM_INFO_NODE                   policy<{'amd64': '-'}>
 CONFIG_HDMI_LPE_AUDIO                           policy<{'amd64': '-'}>
+CONFIG_HID_GOOGLE_HAMMER                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_HID_PRODIKEYS                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_HOTPLUG_PCI_ACPI_IBM                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HOTPLUG_PCI_CPCI                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HOTPLUG_PCI_CPCI_GENERIC                 policy<{'amd64': '-'}>
 CONFIG_HOTPLUG_PCI_CPCI_ZT5550                  policy<{'amd64': '-'}>
 CONFIG_HSA_AMD_SVM                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_I2C_CROS_EC_TUNNEL                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_I2C_FSI                                  policy<{'arm64': '-'}>
 CONFIG_I2C_SI470X                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_I2C_SI4713                               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_IIO_CROS_EC_ACCEL_LEGACY                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_IIO_CROS_EC_BARO                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_IIO_CROS_EC_LIGHT_PROX                   policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_IIO_CROS_EC_SENSORS                      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_IIO_CROS_EC_SENSORS_CORE                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_IIO_CROS_EC_SENSORS_LID_ANGLE            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INFINIBAND_VMWARE_PVRDMA                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_INPUT_ARIZONA_HAPTICS                    policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_INPUT_TWL4030_PWRBUTTON                  policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_INPUT_TWL4030_VIBRA                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INTEL_ATOMISP                            policy<{'amd64': '-'}>
 CONFIG_INTEL_ATOMISP2_PM                        policy<{'amd64': 'n'}>
+CONFIG_KEYBOARD_CROS_EC                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_KEYBOARD_TWL4030                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_LDM_DEBUG                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_LDM_PARTITION                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_LEDS_AAEON                               policy<{'amd64': '-'}>
@@ -470,6 +524,8 @@ CONFIG_MEMORY_HOTPLUG_SPARSE                    policy<{'amd64': '-', 'arm64': '
 CONFIG_MEMORY_HOTREMOVE                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MEMORY_NOTIFIER_ERROR_INJECT             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MFD_AAEON                                policy<{'amd64': '-'}>
+CONFIG_MFD_CROS_EC_DEV                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_MFD_TWL4030_AUDIO                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MHP_MEMMAP_ON_MEMORY                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MOST_SND                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MOST_VIDEO                               policy<{'amd64': '-', 'arm64': '-'}>
@@ -482,6 +538,9 @@ CONFIG_PCI_P2PDMA                               policy<{'amd64': '-', 'arm64': '
 CONFIG_PLATFORM_SI4713                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_POWER_CTRL_LOGIC                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PSAMPLE                                  policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_PWM_CROS_EC                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_PWM_TWL                                  policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_PWM_TWL_LED                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RADIO_ADAPTERS                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RADIO_MAXIRADIO                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RADIO_SAA7706H                           policy<{'amd64': '-', 'arm64': '-'}>
@@ -501,8 +560,11 @@ CONFIG_REGMAP_SOUNDWIRE                         policy<{'amd64': '-', 'arm64': '
 CONFIG_REGMAP_SOUNDWIRE_MBQ                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_ARIZONA_LDO1                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_ARIZONA_MICSUPP                policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_REGULATOR_CROS_EC                        policy<{'arm64': '-'}>
 CONFIG_RMI4_F54                                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RTC_DRV_CROS_EC                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RTC_DRV_PCF85263                         policy<{'amd64': '-'}>
+CONFIG_RTC_DRV_WILCO_EC                         policy<{'amd64': '-'}>
 CONFIG_SAMPLES                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SAMPLE_AUXDISPLAY                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SAMPLE_CONFIGFS                          policy<{'amd64': '-', 'arm64': '-'}>
@@ -1258,6 +1320,10 @@ CONFIG_TOUCHSCREEN_WM9712                       policy<{'amd64': '-', 'arm64': '
 CONFIG_TOUCHSCREEN_WM9713                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TOUCHSCREEN_WM97XX                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TTPCI_EEPROM                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TWL4030_CORE                             policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TWL4030_MADC                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TWL4030_WATCHDOG                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TWL6030_GPADC                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_UBUNTU_HOST                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_UBUNTU_ODM_DRIVERS                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_UCB1400_CORE                             policy<{'amd64': '-', 'arm64': '-'}>
@@ -1653,9 +1719,34 @@ CONFIG_VIDEO_ZORAN_LML33R10                     policy<{'amd64': '-', 'arm64': '
 CONFIG_VIDEO_ZORAN_ZR36060                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_VIRTIO_MEM                               policy<{'amd64': '-'}>
 CONFIG_WILC1000_SPI                             policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_WILCO_EC                                 policy<{'amd64': '-'}>
+CONFIG_WILCO_EC_DEBUGFS                         policy<{'amd64': '-'}>
+CONFIG_WILCO_EC_EVENTS                          policy<{'amd64': '-'}>
+CONFIG_WILCO_EC_TELEMETRY                       policy<{'amd64': '-'}>
+CONFIG_WIZNET_BUS_ANY                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_WIZNET_BUS_DIRECT                        policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_WIZNET_BUS_INDIRECT                      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_WIZNET_W5100                             policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_WIZNET_W5100_SPI                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_WIZNET_W5300                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_XEN_BALLOON_MEMORY_HOTPLUG               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_XEN_MEMORY_HOTPLUG_LIMIT                 policy<{'amd64': '-'}>
 CONFIG_XEN_UNPOPULATED_ALLOC                    policy<{'amd64': '-'}>
+CONFIG_XILINX_AXI_EMAC                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_XILINX_DMA                               policy<{'arm64': 'n'}>
+CONFIG_XILINX_EMACLITE                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_XILINX_GMII2RGMII                        policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_XILINX_INTC                              policy<{'arm64': 'n'}>
+CONFIG_XILINX_LL_TEMAC                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_XILINX_SDFEC                             policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_XILINX_VCU                               policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_XILINX_WATCHDOG                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_XILINX_XADC                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_XILINX_ZYNQMP_DMA                        policy<{'arm64': 'n'}>
+CONFIG_XILINX_ZYNQMP_DPDMA                      policy<{'arm64': 'n'}>
+CONFIG_XILLYBUS                                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_XILLYBUS_OF                              policy<{'arm64': '-'}>
+CONFIG_XILLYBUS_PCIE                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_YAMAHA_YAS530                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_YELLOWFIN                                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_ZONE_DEVICE                              policy<{'amd64': '-', 'arm64': '-'}>
