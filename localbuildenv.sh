@@ -1,8 +1,15 @@
 #!/bin/bash
 
+set -eu pipefail
+
+source envvars
+
+IMAGE_ID=$(docker image ls -q "${IMAGE_FQN}:${IMAGE_TAG}")
+if [ "${IMAGE_ID}" == "" ]
+then
+    ./build-builder.sh
+fi
+
 docker run -it --rm \
-    -e IN_CONTAINER="true" \
-    -e TARGETARCH="$(go env GOHOSTARCH)" \
     -v "$(git rev-parse --show-toplevel):/root/project" \
-    -w /root/project \
-    buildpack-deps:jammy
+    "${IMAGE_FQN}:${IMAGE_TAG}"

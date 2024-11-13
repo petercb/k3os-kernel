@@ -1,0 +1,30 @@
+if [ -z "${TARGETARCH:-}" ]
+then
+    case "$(uname -m)" in
+        x86_64)
+            TARGETARCH="amd64"
+            ;;
+        aarch64)
+            TARGETARCH="arm64"
+            ;;
+    esac
+fi
+
+if [ -z "${REGISTRY:-}" ]
+then
+    if [[ "$(git config --get remote.origin.url)" =~ @github\.com: ]]; then
+        REGISTRY="ghcr.io"
+    else
+        REGISTRY="docker.io"
+    fi
+fi
+
+GIT_TAG=$(git tag -l --contains HEAD | head -n 1)
+if [ -z "${GIT_TAG}" ]; then
+    GIT_TAG="$(git describe --always --tags --abbrev=0)"
+fi
+
+: "${IMAGE_TAG=${GIT_TAG}-${TARGETARCH}}"
+: "${REPO=petercb}"
+: "${IMAGE_NAME=k3os-kernel-builder}"
+IMAGE_FQN="${REGISTRY}/${REPO}/${IMAGE_NAME}"
