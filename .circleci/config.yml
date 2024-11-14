@@ -60,6 +60,9 @@ jobs:
           image: ${IMAGE_FQN}
           registry: ${REGISTRY}
           tag: ${IMAGE_TAG}
+          use-buildkit: true
+          cache_from: ${IMAGE_FQN}:${IMAGE_TAG}
+          extra_build_args: --build-arg BUILDKIT_INLINE_CACHE=1
       - docker/push:
           image: ${IMAGE_FQN}
           registry: ${REGISTRY}
