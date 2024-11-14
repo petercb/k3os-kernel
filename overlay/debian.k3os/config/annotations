@@ -129,6 +129,9 @@ CONFIG_SQUASHFS                                 note<'LP#1593134; k3os required'
 CONFIG_TEST_BLACKHOLE_DEV                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TEST_BLACKHOLE_DEV                       note<'Used by net selftests'>
 
+CONFIG_TOUCHSCREEN_ELAN                         policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_ELAN                         note<'LP #1630238'>
+
 CONFIG_USB_M66592                               policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_USB_M66592                               note<'TODO: update note'>
 
@@ -350,6 +353,7 @@ CONFIG_DEV_DAX_KMEM                             policy<{'amd64': '-', 'arm64': '
 CONFIG_DEV_DAX_PMEM                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DEV_DAX_PMEM_COMPAT                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DEV_PAGEMAP_OPS                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_DRAGONRISE_FF                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DRM_CROS_EC_ANX7688                      policy<{'arm64': '-'}>
 CONFIG_DRM_DW_HDMI_AHB_AUDIO                    policy<{'arm64': '-'}>
 CONFIG_DRM_DW_HDMI_I2S_AUDIO                    policy<{'arm64': 'n'}>
@@ -557,6 +561,7 @@ CONFIG_DVB_ZD1301_DEMOD                         policy<{'amd64': '-', 'arm64': '
 CONFIG_DVB_ZL10036                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DVB_ZL10039                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DVB_ZL10353                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_EFI_EMBEDDED_FIRMWARE                    policy<{'amd64': '-'}>
 CONFIG_EXTCON_USBC_CROS_EC                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_FB_3DFX                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_FB_3DFX_ACCEL                            policy<{'amd64': '-', 'arm64': '-'}>
@@ -638,6 +643,7 @@ CONFIG_FB_VGA16                                 policy<{'amd64': 'n', 'arm64': '
 CONFIG_FB_VOODOO1                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_FB_VT8623                                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_FB_XILINX                                policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_FIREWIRE_NOSY                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_FSI                                      policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_FSI_MASTER_ASPEED                        policy<{'arm64': '-'}>
 CONFIG_FSI_MASTER_GPIO                          policy<{'arm64': '-'}>
@@ -653,13 +659,111 @@ CONFIG_GPIO_AAEON                               policy<{'amd64': '-'}>
 CONFIG_GPIO_BT8XX                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_GPIO_M058SSAN                            policy<{'amd64': '-'}>
 CONFIG_GPIO_UCB1400                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_GREENASIA_FF                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GREYBUS_AUDIO                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GREYBUS_AUDIO_APB_CODEC                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_HAVE_BOOTMEM_INFO_NODE                   policy<{'amd64': '-'}>
 CONFIG_HDMI_LPE_AUDIO                           policy<{'amd64': '-'}>
+CONFIG_HID_ACCUTOUCH                            policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_ACRUX                                policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_ACRUX_FF                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_HID_ALPS                                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_APPLEIR                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_ASUS                                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_AUREAL                               policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_BATTERY_STRENGTH                     policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_BETOP_FF                             policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_BIGBEN_FF                            policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_CMEDIA                               policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_CORSAIR                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_COUGAR                               policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_CP2112                               policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_CREATIVE_SB0540                      policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_DRAGONRISE                           policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_ELAN                                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_ELECOM                               policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_ELO                                  policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_EMS_FF                               policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_FT260                                policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_GEMBIRD                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_GFRM                                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_GLORIOUS                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HID_GOOGLE_HAMMER                        policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_HID_GREENASIA                            policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_GT683R                               policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_HOLTEK                               policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_HYPERV_MOUSE                         policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_ICADE                                policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_JABRA                                policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_KEYTOUCH                             policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_KYE                                  policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_LCPOWER                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_LED                                  policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_LENOVO                               policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_LOGITECH_DJ                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_LOGITECH_HIDPP                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_MACALLY                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_MAGICMOUSE                           policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_MALTRON                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_MAYFLASH                             policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_MCP2221                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_MULTITOUCH                           policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_NTI                                  policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_NTRIG                                policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_ORTEK                                policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_PENMOUNT                             policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_PICOLCD                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_PICOLCD_BACKLIGHT                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_HID_PICOLCD_CIR                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_HID_PICOLCD_FB                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_HID_PICOLCD_LCD                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_HID_PICOLCD_LEDS                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_HID_PID                                  policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_PLANTRONICS                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_PLAYSTATION                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_PRIMAX                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HID_PRODIKEYS                            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_HID_RETRODE                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_RMI                                  policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_ROCCAT                               policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_SAITEK                               policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_SEMITEK                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_SENSOR_ACCEL_3D                      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_HID_SENSOR_ALS                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_HID_SENSOR_CUSTOM_INTEL_HINGE            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_HID_SENSOR_CUSTOM_SENSOR                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_HID_SENSOR_DEVICE_ROTATION               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_HID_SENSOR_GYRO_3D                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_HID_SENSOR_HUB                           policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_SENSOR_HUMIDITY                      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_HID_SENSOR_IIO_COMMON                    policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_HID_SENSOR_IIO_TRIGGER                   policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_HID_SENSOR_INCLINOMETER_3D               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_HID_SENSOR_MAGNETOMETER_3D               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_HID_SENSOR_PRESS                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_HID_SENSOR_PROX                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_HID_SENSOR_TEMP                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_HID_SMARTJOYPLUS                         policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_SONY                                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_SPEEDLINK                            policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_STEAM                                policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_STEELSERIES                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_THINGM                               policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_THRUSTMASTER                         policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_TIVO                                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_TWINHAN                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_U2FZERO                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_UCLOGIC                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_UDRAW_PS3                            policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_VIEWSONIC                            policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_VIVALDI                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_WACOM                                policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_WALTOP                               policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_WIIMOTE                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_XINMO                                policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_ZEROPLUS                             policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_ZYDACRON                             policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HOLTEK_FF                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_HOSTAP_CS                                policy<{'amd64': '-'}>
 CONFIG_HOTPLUG_PCI_ACPI_IBM                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HOTPLUG_PCI_CPCI                         policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -680,6 +784,7 @@ CONFIG_IIO_CROS_EC_SENSORS_CORE                 policy<{'amd64': '-', 'arm64': '
 CONFIG_IIO_CROS_EC_SENSORS_LID_ANGLE            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INFINIBAND_VMWARE_PVRDMA                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_INPUT_ARIZONA_HAPTICS                    policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_INPUT_TABLET                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_INPUT_TWL4030_PWRBUTTON                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INPUT_TWL4030_VIBRA                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INTEL_ATOMISP                            policy<{'amd64': '-'}>
@@ -920,6 +1025,7 @@ CONFIG_PCMCIA_XIRC2PS                           policy<{'amd64': '-'}>
 CONFIG_PCMCIA_XIRCOM                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PD6729                                   policy<{'amd64': '-'}>
 CONFIG_PLATFORM_SI4713                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_PLAYSTATION_FF                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PLIP                                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_POWER_CTRL_LOGIC                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PPDEV                                    policy<{'amd64': '-', 'arm64': '-'}>
@@ -960,6 +1066,7 @@ CONFIG_RMI4_F54                                 policy<{'amd64': '-', 'arm64': '
 CONFIG_RSI_COEX                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RT2X00_LIB_DEBUGFS                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RTC_DRV_CROS_EC                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RTC_DRV_HID_SENSOR_TIME                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RTC_DRV_PCF85263                         policy<{'amd64': '-'}>
 CONFIG_RTC_DRV_WILCO_EC                         policy<{'amd64': '-'}>
 CONFIG_SAMPLES                                  policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -995,6 +1102,7 @@ CONFIG_SENSORS_AAEON                            policy<{'amd64': '-'}>
 CONFIG_SENSORS_OCC_P9_SBE                       policy<{'arm64': '-'}>
 CONFIG_SERIAL_8250_CS                           policy<{'amd64': '-'}>
 CONFIG_SERIO_PARKBD                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SMARTJOYPLUS_FF                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SMS_SDIO_DRV                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SMS_SIANO_DEBUGFS                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SMS_SIANO_MDTV                           policy<{'amd64': '-', 'arm64': '-'}>
@@ -1694,6 +1802,7 @@ CONFIG_SND_VX_LIB                               policy<{'amd64': '-', 'arm64': '
 CONFIG_SND_X86                                  policy<{'amd64': '-'}>
 CONFIG_SND_XEN_FRONTEND                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SND_YMFPCI                               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SONY_FF                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SOUNDWIRE_CADENCE                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SOUNDWIRE_GENERIC_ALLOCATION             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SOUNDWIRE_INTEL                          policy<{'amd64': '-', 'arm64': '-'}>
@@ -1717,18 +1826,123 @@ CONFIG_SSB_PCMCIAHOST                           policy<{'amd64': '-'}>
 CONFIG_SSB_PCMCIAHOST_POSSIBLE                  policy<{'amd64': '-'}>
 CONFIG_SYNCLINK_CS                              policy<{'amd64': '-'}>
 CONFIG_SYSV68_PARTITION                         policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TABLET_SERIAL_WACOM4                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TABLET_USB_ACECAD                        policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TABLET_USB_AIPTEK                        policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TABLET_USB_HANWANG                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TABLET_USB_KBTAB                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TABLET_USB_PEGASUS                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TEGRA_VDE                                policy<{'arm64': '-'}>
 CONFIG_TEST_BPF                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TEST_HMM                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TEST_POWER                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_THINKPAD_ACPI_ALSA_SUPPORT               policy<{'amd64': '-'}>
+CONFIG_THRUSTMASTER_FF                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_AD7877                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_AD7879                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_AD7879_I2C                   policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_AD7879_SPI                   policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_ADC                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_ADS7846                      policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_AR1021_I2C                   policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_ATMEL_MXT                    policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TOUCHSCREEN_ATMEL_MXT_T37                policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_AUO_PIXCIR                   policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_BU21013                      policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_BU21029                      policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_CHIPONE_ICN8318              policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_CHIPONE_ICN8505              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_CY8CTMA140                   policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_CY8CTMG110                   policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_CYTTSP4_CORE                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_CYTTSP4_I2C                  policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_CYTTSP4_SPI                  policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_CYTTSP_CORE                  policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_CYTTSP_I2C                   policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_CYTTSP_SPI                   policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_DMI                          policy<{'amd64': '-'}>
+CONFIG_TOUCHSCREEN_DYNAPRO                      policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_EDT_FT5X06                   policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_EETI                         policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_EGALAX                       policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_EGALAX_SERIAL                policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_EKTF2127                     policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_ELO                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_EXC3000                      policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_FUJITSU                      policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_GOODIX                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_GUNZE                        policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_HAMPSHIRE                    policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_HIDEEP                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_HYCON_HY46XX                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_ILI210X                      policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_ILITEK                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_IMX6UL_TSC                   policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_INEXIO                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_IPROC                        policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_IQS5XX                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_MAX11801                     policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_MCS5000                      policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_MELFAS_MIP4                  policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_MK712                        policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_MMS114                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_MSG2638                      policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_MTOUCH                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_PENMOUNT                     policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_PIXCIR                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_RASPBERRYPI_FW               policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_RM_TS                        policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_ROHM_BU21023                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_S6SY761                      policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_SILEAD                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_SIS_I2C                      policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_ST1232                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_STMFTS                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_SUN4I                        policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_TOUCHSCREEN_SUR40                        policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_SURFACE3_SPI                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_SX8654                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_TOUCHIT213                   policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_TOUCHRIGHT                   policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_TOUCHWIN                     policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_TPS6507X                     policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_TSC2004                      policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_TSC2005                      policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_TSC2007                      policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_TSC2007_IIO                  policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_TSC200X_CORE                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_TSC_SERIO                    policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TOUCHSCREEN_UCB1400                      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_USB_3M                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_USB_COMPOSITE                policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_USB_DMC_TSC10                policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_USB_E2I                      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_USB_EASYTOUCH                policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_USB_EGALAX                   policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_USB_ELO                      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_USB_ETT_TC45USB              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_USB_ETURBO                   policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_USB_GENERAL_TOUCH            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_USB_GOTOP                    policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_USB_GUNZE                    policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_USB_IDEALTEK                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_USB_IRTOUCH                  policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_USB_ITM                      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_USB_JASTEC                   policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_USB_NEXIO                    policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_USB_PANJIT                   policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_USB_ZYTRONIC                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_WACOM_I2C                    policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_WACOM_W8001                  policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_WDT87XX_I2C                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TOUCHSCREEN_WM9705                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TOUCHSCREEN_WM9712                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TOUCHSCREEN_WM9713                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TOUCHSCREEN_WM97XX                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_ZET6223                      policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_ZFORCE                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_ZINITIX                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TTPCI_EEPROM                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TWL4030_CORE                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TWL4030_MADC                             policy<{'amd64': '-', 'arm64': '-'}>
@@ -2278,4 +2492,5 @@ CONFIG_YENTA_O2                                 policy<{'amd64': '-', 'arm64': '
 CONFIG_YENTA_RICOH                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_YENTA_TI                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_YENTA_TOSHIBA                            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_ZEROPLUS_FF                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ZONE_DEVICE                              policy<{'amd64': '-', 'arm64': '-'}>
