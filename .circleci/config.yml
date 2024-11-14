@@ -77,7 +77,10 @@ jobs:
         type: string
         default: medium
     docker:
-      - image: ${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}-builder:${CIRCLE_TAG}-<<parameters.arch>>
+      - image: ghcr.io/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}-builder:${CIRCLE_TAG}-<<parameters.arch>>
+        auth:
+          username: ${CIRCLE_PROJECT_USERNAME}
+          password: ${GITHUB_TOKEN}
     resource_class: <<parameters.resource_class>>
     steps:
       - checkout
