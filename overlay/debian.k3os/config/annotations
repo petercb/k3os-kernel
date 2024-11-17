@@ -13,7 +13,7 @@ CONFIG_BLK_DEV_LOOP                             policy<{'amd64': 'y', 'arm64': '
 CONFIG_BLK_DEV_LOOP                             note<'k3os required'>
 
 CONFIG_DRM_AMDGPU_CIK                           policy<{'amd64': 'y', 'arm64': '-'}>
-CONFIG_DRM_AMDGPU_CIK                           note<TODO: update note>
+CONFIG_DRM_AMDGPU_CIK                           note<'TODO: update note'>
 
 CONFIG_DRM_HISI_HIBMC                           policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_HISI_HIBMC                           note<'TODO: update note'>
@@ -1102,11 +1102,13 @@ CONFIG_LEDS_TRIGGER_BACKLIGHT                   policy<{'amd64': 'n', 'arm64': '
 CONFIG_LIBERTAS_CS                              policy<{'amd64': '-'}>
 CONFIG_LIRC                                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_LP_CONSOLE                               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_LSM                                      policy<{'amd64': '"yama,loadpin,safesetid,integrity"', 'arm64': '"yama,loadpin,safesetid,integrity"'}>
 CONFIG_LTPC                                     policy<{'amd64': '-'}>
 CONFIG_MAC80211_DEBUGFS                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MAC80211_HWSIM                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MAC80211_MESH                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MAC80211_MESSAGE_TRACING                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_MAGIC_SYSRQ_DEFAULT_ENABLE               policy<{'amd64': '0x1', 'arm64': '0x1'}>
 CONFIG_MANTIS_CORE                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MAPPING_DIRTY_HELPERS                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MEDIA_ALTERA_CI                          policy<{'amd64': '-', 'arm64': '-'}>
@@ -1247,6 +1249,7 @@ CONFIG_NVDIMM_PFN                               policy<{'amd64': '-', 'arm64': '
 CONFIG_PANEL                                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PANEL_PARPORT                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PANEL_PROFILE                            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_PANIC_TIMEOUT                            policy<{'amd64': '30', 'arm64': '30'}>
 CONFIG_PARIDE                                   policy<{'amd64': '-'}>
 CONFIG_PARIDE_ATEN                              policy<{'amd64': '-'}>
 CONFIG_PARIDE_BPCK                              policy<{'amd64': '-'}>
@@ -1330,6 +1333,7 @@ CONFIG_RADIO_TEA5764                            policy<{'amd64': '-', 'arm64': '
 CONFIG_RADIO_TEF6862                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RADIO_WL1273                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RADIO_WL128X                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RANDOMIZE_MEMORY_PHYSICAL_PADDING        policy<{'amd64': '0x0'}>
 CONFIG_RC_ATI_REMOTE                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RC_CORE                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_RC_DECODERS                              policy<{'amd64': '-', 'arm64': '-'}>
@@ -1370,6 +1374,7 @@ CONFIG_SAMPLE_VFIO_MDEV_MDPY                    policy<{'amd64': '-', 'arm64': '
 CONFIG_SAMPLE_VFIO_MDEV_MDPY_FB                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SAMPLE_VFIO_MDEV_MTTY                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SAMPLE_WATCHDOG                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SATA_MOBILE_LPM_POLICY                   policy<{'amd64': '0', 'arm64': '0'}>
 CONFIG_SCR24X                                   policy<{'amd64': '-'}>
 CONFIG_SCSI_AHA1740                             policy<{'amd64': '-'}>
 CONFIG_SCSI_IMM                                 policy<{'amd64': '-'}>
@@ -1385,6 +1390,9 @@ CONFIG_SDR_PLATFORM_DRIVERS                     policy<{'amd64': '-', 'arm64': '
 CONFIG_SENSORS_AAEON                            policy<{'amd64': '-'}>
 CONFIG_SENSORS_OCC_P9_SBE                       policy<{'arm64': '-'}>
 CONFIG_SERIAL_8250_CS                           policy<{'amd64': '-'}>
+CONFIG_SERIAL_8250_NR_UARTS                     policy<{'amd64': '32', 'arm64': '32'}>
+CONFIG_SERIAL_8250_RUNTIME_UARTS                policy<{'amd64': '4', 'arm64': '4'}>
+CONFIG_SERIAL_SH_SCI_NR_UARTS                   policy<{'arm64': '11'}>
 CONFIG_SERIO_PARKBD                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SMARTJOYPLUS_FF                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SMS_SDIO_DRV                             policy<{'amd64': '-', 'arm64': '-'}>
@@ -2109,6 +2117,7 @@ CONFIG_SPI_LM70_LLP                             policy<{'amd64': '-', 'arm64': '
 CONFIG_SSB_PCMCIAHOST                           policy<{'amd64': '-'}>
 CONFIG_SSB_PCMCIAHOST_POSSIBLE                  policy<{'amd64': '-'}>
 CONFIG_SYNCLINK_CS                              policy<{'amd64': '-'}>
+CONFIG_SYSTEM_TRUSTED_KEYS                      policy<{'amd64': '""', 'arm64': '""'}>
 CONFIG_SYSV68_PARTITION                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TABLET_SERIAL_WACOM4                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TABLET_USB_ACECAD                        policy<{'amd64': '-', 'arm64': '-'}>
