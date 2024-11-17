@@ -134,7 +134,7 @@ workflows:
           name: AMD64 tag release
           context: github
           arch: amd64
-          resource_class: large
+          resource_class: xlarge
           filters: *filter-tags
           requires:
             - "Create github release"
@@ -144,4 +144,4 @@ workflows:
           <<: *tag-build
           name: ARM64 tag release
           arch: arm64
-          resource_class: arm.large
+          resource_class: arm.xlarge
