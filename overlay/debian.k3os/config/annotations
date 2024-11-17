@@ -12,8 +12,8 @@ CONFIG_ACCESSIBILITY                            note<'LP: #1967702'>
 CONFIG_BLK_DEV_LOOP                             policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_BLK_DEV_LOOP                             note<'k3os required'>
 
-CONFIG_DRM_AMDGPU_CIK                           policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_DRM_AMDGPU_CIK                           note<'TODO: update note'>
+CONFIG_DRM_AMDGPU_CIK                           policy<{'amd64': 'y', 'arm64': '-'}>
+CONFIG_DRM_AMDGPU_CIK                           note<TODO: update note>
 
 CONFIG_DRM_HISI_HIBMC                           policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_HISI_HIBMC                           note<'TODO: update note'>
@@ -360,22 +360,20 @@ CONFIG_CRYPTO_POLY1305_NEON                     policy<{'arm64': 'y'}>
 CONFIG_CRYPTO_POLY1305_X86_64                   policy<{'amd64': 'y'}>
 CONFIG_CXD2880_SPI_DRV                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CYPRESS_FIRMWARE                         policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_DEBUG_KERNEL_DC                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_DEBUG_KERNEL_DC                          policy<{'amd64': 'n', 'arm64': '-'}>
 CONFIG_DEVICE_PRIVATE                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DEV_DAX_KMEM                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DEV_DAX_PMEM                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DEV_DAX_PMEM_COMPAT                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DEV_PAGEMAP_OPS                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DRAGONRISE_FF                            policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_DRM_AMDGPU                               policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_DRM_AMDGPU_SI                            policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_DRM_AMDGPU_USERPTR                       policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_DRM_AMD_ACP                              policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_DRM_AMD_DC                               policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_DRM_AMD_DC_DCN                           policy<{'amd64': '-'}>
-CONFIG_DRM_AMD_DC_HDCP                          policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_DRM_AMD_DC_SI                            policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_DRM_AMD_SECURE_DISPLAY                   policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_DRM_AMDGPU                               policy<{'amd64': 'm', 'arm64': 'n'}>
+CONFIG_DRM_AMDGPU_SI                            policy<{'amd64': 'y', 'arm64': '-'}>
+CONFIG_DRM_AMDGPU_USERPTR                       policy<{'amd64': 'y', 'arm64': '-'}>
+CONFIG_DRM_AMD_ACP                              policy<{'amd64': 'n', 'arm64': '-'}>
+CONFIG_DRM_AMD_DC                               policy<{'amd64': 'y', 'arm64': '-'}>
+CONFIG_DRM_AMD_DC_HDCP                          policy<{'amd64': 'n', 'arm64': '-'}>
+CONFIG_DRM_AMD_DC_SI                            policy<{'amd64': 'n', 'arm64': '-'}>
 CONFIG_DRM_ANALOGIX_ANX6345                     policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_ANALOGIX_ANX7625                     policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_ANALOGIX_ANX78XX                     policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -517,7 +515,7 @@ CONFIG_DRM_RADEON                               policy<{'amd64': 'n', 'arm64': '
 CONFIG_DRM_RADEON_USERPTR                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DRM_RCAR_DW_HDMI                         policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_RCAR_VSP                             policy<{'arm64': '-'}>
-CONFIG_DRM_SCHED                                policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_DRM_SCHED                                policy<{'amd64': 'm', 'arm64': '-'}>
 CONFIG_DRM_SII902X                              policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_SII9234                              policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_SIL_SII8620                          policy<{'amd64': '-', 'arm64': 'n'}>
@@ -536,7 +534,7 @@ CONFIG_DRM_TOSHIBA_TC358767                     policy<{'amd64': '-', 'arm64': '
 CONFIG_DRM_TOSHIBA_TC358768                     policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_TOSHIBA_TC358775                     policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_TTM                                  policy<{'amd64': 'm', 'arm64': '-'}>
-CONFIG_DRM_TTM_HELPER                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_DRM_TTM_HELPER                           policy<{'amd64': 'm', 'arm64': '-'}>
 CONFIG_DRM_UDL                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_DRM_VC4                                  policy<{'arm64': '-'}>
 CONFIG_DRM_VC4_HDMI_CEC                         policy<{'arm64': '-'}>
@@ -748,6 +746,12 @@ CONFIG_DVB_ZL10036                              policy<{'amd64': '-', 'arm64': '
 CONFIG_DVB_ZL10039                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DVB_ZL10353                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_EFI_EMBEDDED_FIRMWARE                    policy<{'amd64': '-'}>
+CONFIG_EISA                                     policy<{'amd64': 'n', 'arm64': '-'}>
+CONFIG_EISA_NAMES                               policy<{'amd64': '-'}>
+CONFIG_EISA_PCI_EISA                            policy<{'amd64': '-'}>
+CONFIG_EISA_VIRTUAL_ROOT                        policy<{'amd64': '-'}>
+CONFIG_EISA_VLB_PRIMING                         policy<{'amd64': '-'}>
+CONFIG_EL3                                      policy<{'amd64': '-'}>
 CONFIG_EXTCON_USBC_CROS_EC                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_FB_3DFX                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_FB_3DFX_ACCEL                            policy<{'amd64': '-', 'arm64': '-'}>
@@ -955,7 +959,7 @@ CONFIG_HOTPLUG_PCI_ACPI_IBM                     policy<{'amd64': 'n', 'arm64': '
 CONFIG_HOTPLUG_PCI_CPCI                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HOTPLUG_PCI_CPCI_GENERIC                 policy<{'amd64': '-'}>
 CONFIG_HOTPLUG_PCI_CPCI_ZT5550                  policy<{'amd64': '-'}>
-CONFIG_HSA_AMD                                  policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_HSA_AMD                                  policy<{'amd64': 'n', 'arm64': '-'}>
 CONFIG_HSA_AMD_SVM                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_I2C_CROS_EC_TUNNEL                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_I2C_FSI                                  policy<{'arm64': '-'}>
@@ -1098,6 +1102,7 @@ CONFIG_LEDS_TRIGGER_BACKLIGHT                   policy<{'amd64': 'n', 'arm64': '
 CONFIG_LIBERTAS_CS                              policy<{'amd64': '-'}>
 CONFIG_LIRC                                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_LP_CONSOLE                               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_LTPC                                     policy<{'amd64': '-'}>
 CONFIG_MAC80211_DEBUGFS                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MAC80211_HWSIM                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MAC80211_MESH                            policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -1228,6 +1233,7 @@ CONFIG_NET_DSA_XRS700X_I2C                      policy<{'amd64': 'n', 'arm64': '
 CONFIG_NET_DSA_XRS700X_MDIO                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NET_IP_TUNNEL                            policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_NET_UDP_TUNNEL                           policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_NET_VENDOR_CIRRUS                        policy<{'amd64': '-'}>
 CONFIG_NET_VENDOR_FUJITSU                       policy<{'amd64': '-'}>
 CONFIG_NET_VENDOR_XIRCOM                        policy<{'amd64': '-'}>
 CONFIG_NOUVEAU_DEBUG                            policy<{'amd64': '-', 'arm64': '-'}>
@@ -1365,6 +1371,7 @@ CONFIG_SAMPLE_VFIO_MDEV_MDPY_FB                 policy<{'amd64': '-', 'arm64': '
 CONFIG_SAMPLE_VFIO_MDEV_MTTY                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SAMPLE_WATCHDOG                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SCR24X                                   policy<{'amd64': '-'}>
+CONFIG_SCSI_AHA1740                             policy<{'amd64': '-'}>
 CONFIG_SCSI_IMM                                 policy<{'amd64': '-'}>
 CONFIG_SCSI_IZIP_EPP16                          policy<{'amd64': '-'}>
 CONFIG_SCSI_IZIP_SLOW_CTR                       policy<{'amd64': '-'}>
@@ -1372,6 +1379,7 @@ CONFIG_SCSI_LOWLEVEL_PCMCIA                     policy<{'amd64': '-'}>
 CONFIG_SCSI_LPFC                                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SCSI_LPFC_DEBUG_FS                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SCSI_PPA                                 policy<{'amd64': '-'}>
+CONFIG_SCSI_SIM710                              policy<{'amd64': '-'}>
 CONFIG_SDR_MAX2175                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SDR_PLATFORM_DRIVERS                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_AAEON                            policy<{'amd64': '-'}>
