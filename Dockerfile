@@ -24,7 +24,6 @@ RUN <<-EOF
         fakeroot \
         flex \
         gawk \
-        initramfs-tools \
         kernel-wedge \
         kmod \
         libelf-dev \
@@ -34,12 +33,14 @@ RUN <<-EOF
         libpci-dev \
         libssl-dev \
         libudev-dev \
+        linux-base \
         linux-firmware \
         linux-libc-dev \
         "linux-source-${KERNEL_VERSION}" \
         locales \
         rsync \
-        squashfs-tools
+        squashfs-tools \
+        zstd
     mkdir -p "${KERNEL_WORK}"
     cp -a "${KERNEL_ORIG}"/debian* "${KERNEL_WORK}/"
     chmod a+x "${KERNEL_WORK}"/debian*/rules
