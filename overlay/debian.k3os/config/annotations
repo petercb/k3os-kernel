@@ -1937,7 +1937,7 @@ CONFIG_FB_SAVAGE_ACCEL                          policy<{'amd64': '-', 'arm64': '
 CONFIG_FB_SAVAGE_I2C                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_FB_SH_MOBILE_LCD                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_FB_SH_MOBILE_LCDC                        policy<{'amd64': '-', 'arm64': 'n'}>
-CONFIG_FB_SIMPLE                                policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_FB_SIMPLE                                policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_FB_SIS                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_FB_SIS_300                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_FB_SIS_315                               policy<{'amd64': '-', 'arm64': '-'}>
@@ -6250,6 +6250,7 @@ CONFIG_X86_SPEEDSTEP_LIB                        policy<{'amd64': '-'}>
 CONFIG_X86_VERBOSE_BOOTUP                       policy<{'amd64': 'y'}>
 CONFIG_X86_X32                                  policy<{'amd64': 'n'}>
 CONFIG_XEN_BALLOON_MEMORY_HOTPLUG               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_XEN_FBDEV_FRONTEND                       policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_XEN_FRONT_PGDIR_SHBUF                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_XEN_MEMORY_HOTPLUG_LIMIT                 policy<{'amd64': '-'}>
 CONFIG_XEN_SCSI_BACKEND                         policy<{'amd64': '-', 'arm64': '-'}>
