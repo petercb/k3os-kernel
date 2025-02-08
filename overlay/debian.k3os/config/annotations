@@ -3298,6 +3298,7 @@ CONFIG_MFD_WM8997                               policy<{'amd64': '-', 'arm64': '
 CONFIG_MFD_WM8998                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MHP_MEMMAP_ON_MEMORY                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MICREL_KS8995MA                          policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_MICROCHIP_PHY                            policy<{'amd64': 'm', 'arm64': 'y'}>
 CONFIG_MII                                      policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_MINIX_FS                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MKISS                                    policy<{'amd64': '-', 'arm64': '-'}>
@@ -4085,6 +4086,7 @@ CONFIG_RC_DEVICES                               policy<{'amd64': '-', 'arm64': '
 CONFIG_RC_LOOPBACK                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RC_MAP                                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RC_XBOX_DVD                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_REALTEK_AUTOPM                           policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_REED_SOLOMON                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REED_SOLOMON_DEC16                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REED_SOLOMON_DEC8                        policy<{'amd64': '-', 'arm64': '-'}>
@@ -5950,6 +5952,7 @@ CONFIG_USB_ISP1761_UDC                          policy<{'amd64': '-', 'arm64': '
 CONFIG_USB_KBD                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_USB_KC2190                               policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_USB_KEENE                                policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_USB_LAN78XX                              policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_USB_LIBCOMPOSITE                         policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_USB_M5602                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_USB_MA901                                policy<{'amd64': '-', 'arm64': '-'}>
@@ -6024,8 +6027,23 @@ CONFIG_USB_SL811_CS                             policy<{'amd64': '-'}>
 CONFIG_USB_SNP_CORE                             policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_USB_SNP_UDC_PLAT                         policy<{'arm64': 'y'}>
 CONFIG_USB_STKWEBCAM                            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_USB_STORAGE                              policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_USB_STORAGE_ALAUDA                       policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_USB_STORAGE_CYPRESS_ATACB                policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_USB_STORAGE_DATAFAB                      policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_USB_STORAGE_ENE_UB6250                   policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_USB_STORAGE_FREECOM                      policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_USB_STORAGE_ISD200                       policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_USB_STORAGE_JUMPSHOT                     policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_USB_STORAGE_KARMA                        policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_USB_STORAGE_ONETOUCH                     policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_USB_STORAGE_REALTEK                      policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_USB_STORAGE_SDDR09                       policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_USB_STORAGE_SDDR55                       policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_USB_STORAGE_USBAT                        policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_USB_STV06XX                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_USB_TEGRA_PHY                            policy<{'arm64': 'y'}>
+CONFIG_USB_UAS                                  policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_USB_ULPI_BUS                             policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_USB_USBNET                               policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_USB_USS720                               policy<{'amd64': '-', 'arm64': '-'}>
