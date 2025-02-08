@@ -4,6 +4,7 @@ version: 2.1
 orbs:
   docker: circleci/docker@2
   github: circleci/github-cli@2
+  go: circleci/go@1
 
 executors:
   build:
@@ -18,7 +19,6 @@ executors:
       - image: ghcr.io/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}-builder:${CIRCLE_TAG}-<< parameters.arch >>
     resource_class: << parameters.resource_class >>
 
-
 commands:
   push-artifacts:
     steps:
@@ -31,7 +31,6 @@ commands:
               "$CIRCLE_TAG" \
               ./dist/* \
               --repo "$(git config --get remote.origin.url)"
-
 
 jobs:
   builder:
@@ -87,24 +86,37 @@ jobs:
       - run: ./build.sh
 
   draft-release:
-    docker:
-      - image: cimg/base:current
+    executor:
+      name: go/default
+      tag: "1.21"
     resource_class: small
     steps:
-      - github/setup:
-          version: "2.43.1"
       - checkout
       - run:
-          name: Create draft release
-          command: >-
-            gh release create "${CIRCLE_TAG}"
-            --draft
-            --prerelease
-            --generate-notes
-            --verify-tag
-
+          name: go-semantic-release
+          command: |
+            curl -sSL https://get-release.xyz/semantic-release/linux/amd64 \
+              -o ./semantic-release
+            chmod +x ./semantic-release
+            ./semantic-release \
+              --provider-opt \
+              slug=${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME} \
+              --allow-no-changes \
+              --prerelease \
+              --allow-initial-development-versions
 
 workflows:
+  release:
+    jobs:
+      - draft-release:
+          name: Create github release
+          context: github
+          filters:
+            branches:
+              only: master
+            tags:
+              ignore: /.*/
+
   tags:
     jobs:
       - builder: &tag-builder
@@ -123,13 +135,7 @@ workflows:
           arch: arm64
           resource_class: arm.medium
           filters: *filter-tags
-      - draft-release:
-          name: Create github release
-          context: github
-          filters: *filter-tags
-          requires:
-            - "AMD64 builder"
-            - "ARM64 builder"
+
       - build: &tag-build
           name: AMD64 tag release
           context: github
@@ -137,7 +143,7 @@ workflows:
           resource_class: xlarge
           filters: *filter-tags
           requires:
-            - "Create github release"
+            - "AMD64 builder"
           post-steps:
             - push-artifacts
       - build:
@@ -145,3 +151,5 @@ workflows:
           name: ARM64 tag release
           arch: arm64
           resource_class: arm.xlarge
+          requires:
+            - "ARM64 builder"
