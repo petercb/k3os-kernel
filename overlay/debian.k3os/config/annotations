@@ -1381,9 +1381,17 @@ CONFIG_CIFS_ROOT                                policy<{'amd64': 'n', 'arm64': '
 CONFIG_CIFS_SWN_UPCALL                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CIO2_BRIDGE                              policy<{'amd64': '-'}>
 CONFIG_CIO_DAC                                  policy<{'amd64': '-'}>
+CONFIG_CLEANCACHE                               policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_CLK_BCM2711_DVP                          policy<{'arm64': 'y'}>
+CONFIG_CLK_GFM_LPASS_SM8250                     policy<{'arm64': 'n'}>
+CONFIG_CLK_IMX8MM                               policy<{'arm64': 'n'}>
+CONFIG_CLK_IMX8MN                               policy<{'arm64': 'n'}>
+CONFIG_CLK_IMX8MP                               policy<{'arm64': 'n'}>
+CONFIG_CLK_IMX8MQ                               policy<{'arm64': 'n'}>
 CONFIG_CLK_IMX8QXP                              policy<{'arm64': '-'}>
 CONFIG_CLK_INTEL_SOCFPGA                        policy<{'arm64': '-'}>
 CONFIG_CLK_INTEL_SOCFPGA64                      policy<{'arm64': '-'}>
+CONFIG_CLK_LS1028A_PLLDIG                       policy<{'arm64': 'y'}>
 CONFIG_CLK_R8A774A1                             policy<{'arm64': '-'}>
 CONFIG_CLK_R8A774B1                             policy<{'arm64': '-'}>
 CONFIG_CLK_R8A774C0                             policy<{'arm64': '-'}>
@@ -1401,12 +1409,17 @@ CONFIG_CLK_R9A07G044                            policy<{'arm64': '-'}>
 CONFIG_CLK_RASPBERRYPI                          policy<{'arm64': 'y'}>
 CONFIG_CLK_RCAR_CPG_LIB                         policy<{'arm64': '-'}>
 CONFIG_CLK_RCAR_GEN3_CPG                        policy<{'arm64': '-'}>
+CONFIG_CLK_RCAR_USB2_CLOCK_SEL                  policy<{'arm64': 'n'}>
 CONFIG_CLK_RENESAS_CPG_MSSR                     policy<{'arm64': '-'}>
 CONFIG_CLK_RENESAS_DIV6                         policy<{'arm64': '-'}>
+CONFIG_CLK_RK3568                               policy<{'arm64': 'y'}>
 CONFIG_CLK_RZG2L                                policy<{'arm64': '-'}>
+CONFIG_CLK_SP810                                policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_CLS_U32_MARK                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CM32181                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_CM3232                                   policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_CM3323                                   policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_CM3605                                   policy<{'arm64': 'n'}>
 CONFIG_CM36651                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_CMDLINE_PARTITION                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CNIC                                     policy<{'amd64': 'n', 'arm64': 'n'}>
