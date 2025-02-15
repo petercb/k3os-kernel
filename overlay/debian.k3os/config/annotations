@@ -418,6 +418,7 @@ CONFIG_ACENIC_OMIT_TIGON_I                      policy<{'amd64': '-', 'arm64': '
 CONFIG_ACERHDF                                  policy<{'amd64': 'n'}>
 CONFIG_ACER_WIRELESS                            policy<{'amd64': 'n'}>
 CONFIG_ACER_WMI                                 policy<{'amd64': '-'}>
+CONFIG_ACPI_ADXL                                policy<{'amd64': '-'}>
 CONFIG_ACPI_ALS                                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_ACPI_APEI                                policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_ACPI_APEI_EINJ                           policy<{'amd64': '-', 'arm64': 'y'}>
@@ -2405,9 +2406,32 @@ CONFIG_EDAC_ALTERA_QSPI                         policy<{'arm64': '-'}>
 CONFIG_EDAC_ALTERA_SDMMC                        policy<{'arm64': '-'}>
 CONFIG_EDAC_ALTERA_SDRAM                        policy<{'arm64': '-'}>
 CONFIG_EDAC_ALTERA_USB                          policy<{'arm64': '-'}>
+CONFIG_EDAC_AMD64                               policy<{'amd64': 'n'}>
 CONFIG_EDAC_BLUEFIELD                           policy<{'arm64': '-'}>
+CONFIG_EDAC_DECODE_MCE                          policy<{'amd64': 'y'}>
+CONFIG_EDAC_DMC520                              policy<{'arm64': 'n'}>
+CONFIG_EDAC_E752X                               policy<{'amd64': 'n'}>
 CONFIG_EDAC_GHES                                policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_EDAC_I10NM                               policy<{'amd64': 'n'}>
+CONFIG_EDAC_I3000                               policy<{'amd64': 'n'}>
+CONFIG_EDAC_I3200                               policy<{'amd64': 'n'}>
+CONFIG_EDAC_I5000                               policy<{'amd64': 'n'}>
+CONFIG_EDAC_I5100                               policy<{'amd64': 'n'}>
+CONFIG_EDAC_I5400                               policy<{'amd64': 'n'}>
+CONFIG_EDAC_I7300                               policy<{'amd64': 'n'}>
+CONFIG_EDAC_I7CORE                              policy<{'amd64': 'n'}>
+CONFIG_EDAC_I82975X                             policy<{'amd64': 'n'}>
+CONFIG_EDAC_IE31200                             policy<{'amd64': 'n'}>
+CONFIG_EDAC_IGEN6                               policy<{'amd64': 'n'}>
+CONFIG_EDAC_LAYERSCAPE                          policy<{'arm64': 'n'}>
 CONFIG_EDAC_LEGACY_SYSFS                        policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_EDAC_PND2                                policy<{'amd64': 'n'}>
+CONFIG_EDAC_SBRIDGE                             policy<{'amd64': 'n'}>
+CONFIG_EDAC_SKX                                 policy<{'amd64': 'n'}>
+CONFIG_EDAC_SYNOPSYS                            policy<{'arm64': 'n'}>
+CONFIG_EDAC_THUNDERX                            policy<{'arm64': 'n'}>
+CONFIG_EDAC_X38                                 policy<{'amd64': 'n'}>
+CONFIG_EDAC_XGENE                               policy<{'arm64': 'n'}>
 CONFIG_EEEPC_WMI                                policy<{'amd64': '-'}>
 CONFIG_EEPROM_93XX46                            policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_EEPROM_AT25                              policy<{'amd64': '-', 'arm64': 'y'}>
