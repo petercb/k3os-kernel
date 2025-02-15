@@ -1201,6 +1201,7 @@ CONFIG_C2PORT                                   policy<{'amd64': 'n', 'arm64': '
 CONFIG_C2PORT_DURAMAR_2150                      policy<{'amd64': '-'}>
 CONFIG_CACHEFILES                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CACHEFILES_DEBUG                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CADENCE_WATCHDOG                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CAIF                                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CAIF_DEBUG                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CAIF_DRIVERS                             policy<{'amd64': '-', 'arm64': '-'}>
@@ -1276,9 +1277,17 @@ CONFIG_CARL9170_HWRNG                           policy<{'amd64': '-', 'arm64': '
 CONFIG_CARL9170_LEDS                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CARL9170_WPC                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CARMINE_DRAM_CUSTOM                      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CASSINI                                  policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_CAVIUM_CPT                               policy<{'arm64': 'n'}>
 CONFIG_CAVIUM_PTP                               policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_CB710_CORE                               policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_CB710_DEBUG                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CB710_DEBUG_ASSUMPTIONS                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CC10001_ADC                              policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_CCS811                                   policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_CDROM_PKTCDVD                            policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_CDROM_PKTCDVD_BUFFERS                    policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CDROM_PKTCDVD_WCACHE                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CEC_CH7322                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CEC_CORE                                 policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_CEC_CROS_EC                              policy<{'amd64': '-', 'arm64': '-'}>
@@ -1760,6 +1769,7 @@ CONFIG_CRYPTO_DEV_CCP_DD                        policy<{'amd64': '-', 'arm64': '
 CONFIG_CRYPTO_DEV_CCP_DEBUGFS                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CRYPTO_DEV_CCREE                         policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_CRYPTO_DEV_CHELSIO                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CRYPTO_DEV_CPT                           policy<{'arm64': '-'}>
 CONFIG_CRYPTO_DEV_FSL_CAAM                      policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_CRYPTO_DEV_FSL_CAAM_AHASH_API            policy<{'arm64': '-'}>
 CONFIG_CRYPTO_DEV_FSL_CAAM_AHASH_API_DESC       policy<{'arm64': '-'}>
