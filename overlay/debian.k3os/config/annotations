@@ -452,6 +452,7 @@ CONFIG_ACPI_THERMAL_REL                         policy<{'amd64': '-'}>
 CONFIG_ACPI_TOSHIBA                             policy<{'amd64': '-'}>
 CONFIG_ACPI_VIDEO                               policy<{'amd64': 'y'}>
 CONFIG_ACPI_VIOT                                policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_ACPI_WATCHDOG                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ACPI_WMI                                 policy<{'amd64': 'n', 'arm64': '-'}>
 CONFIG_ACQUIRE_WDT                              policy<{'amd64': 'n'}>
 CONFIG_ACRN_GUEST                               policy<{'amd64': 'n'}>
@@ -8279,6 +8280,7 @@ CONFIG_WATCHDOG_PRETIMEOUT_GOV_SEL              policy<{'amd64': '-', 'arm64': '
 CONFIG_WATCHDOG_SYSFS                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_WCN36XX                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_WCN36XX_DEBUGFS                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_WDAT_WDT                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_WDTPCI                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_WEXT_CORE                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_WEXT_PRIV                                policy<{'amd64': '-', 'arm64': '-'}>
