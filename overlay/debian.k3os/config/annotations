@@ -1074,9 +1074,11 @@ CONFIG_BMI160_SPI                               policy<{'amd64': '-', 'arm64': '
 CONFIG_BMP280                                   policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_BMP280_I2C                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BMP280_SPI                               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_BNA                                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BNX2                                     policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_BNX2X                                    policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_BNX2X_SRIOV                              policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_BNXT                                     policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_BNXT_DCB                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BNXT_SRIOV                               policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_BOARD_TPCI200                            policy<{'amd64': '-', 'arm64': '-'}>
