@@ -1352,6 +1352,7 @@ CONFIG_CHARLCD                                  policy<{'amd64': '-', 'arm64': '
 CONFIG_CHARLCD_BL_FLASH                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CHARLCD_BL_OFF                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CHARLCD_BL_ON                            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CHECKPOINT_RESTORE                       policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_CHELSIO_INLINE_CRYPTO                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CHELSIO_IPSEC_INLINE                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CHELSIO_LIB                              policy<{'amd64': '-', 'arm64': '-'}>
@@ -1367,6 +1368,8 @@ CONFIG_CHROMEOS_LAPTOP                          policy<{'amd64': '-'}>
 CONFIG_CHROMEOS_PSTORE                          policy<{'amd64': '-'}>
 CONFIG_CHROMEOS_TBMC                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CHROME_PLATFORMS                         policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_CHR_DEV_SCH                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_CHR_DEV_ST                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CHTCRC_PMIC_OPREGION                     policy<{'amd64': '-'}>
 CONFIG_CHT_DC_TI_PMIC_OPREGION                  policy<{'amd64': '-'}>
 CONFIG_CHT_WC_PMIC_OPREGION                     policy<{'amd64': '-'}>
@@ -4199,6 +4202,7 @@ CONFIG_MEMORY_NOTIFIER_ERROR_INJECT             policy<{'amd64': '-', 'arm64': '
 CONFIG_MEMREGION                                policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_MEMSTICK_REALTEK_PCI                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MEMSTICK_REALTEK_USB                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_MEM_SOFT_DIRTY                           policy<{'amd64': '-'}>
 CONFIG_MENZ069_WATCHDOG                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MEN_A21_WDT                              policy<{'amd64': '-', 'arm64': 'm'}>
 CONFIG_MEN_Z188_ADC                             policy<{'amd64': '-', 'arm64': '-'}>
