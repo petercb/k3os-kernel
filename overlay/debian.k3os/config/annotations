@@ -448,6 +448,7 @@ CONFIG_ACPI_PROCESSOR_AGGREGATOR                policy<{'amd64': 'n'}>
 CONFIG_ACPI_REDUCED_HARDWARE_ONLY               policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_ACPI_SBS                                 policy<{'amd64': 'n'}>
 CONFIG_ACPI_TAD                                 policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_ACPI_THERMAL_REL                         policy<{'amd64': '-'}>
 CONFIG_ACPI_TOSHIBA                             policy<{'amd64': '-'}>
 CONFIG_ACPI_VIDEO                               policy<{'amd64': 'y'}>
 CONFIG_ACPI_VIOT                                policy<{'amd64': '-', 'arm64': '-'}>
@@ -3404,6 +3405,8 @@ CONFIG_INPUT_TWL4030_VIBRA                      policy<{'amd64': '-', 'arm64': '
 CONFIG_INPUT_WM831X_ON                          policy<{'amd64': '-', 'arm64': 'm'}>
 CONFIG_INPUT_XEN_KBDDEV_FRONTEND                policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_INPUT_YEALINK                            policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_INT3406_THERMAL                          policy<{'amd64': '-'}>
+CONFIG_INT340X_THERMAL                          policy<{'amd64': 'n'}>
 CONFIG_INTEL_ATOMISP                            policy<{'amd64': '-'}>
 CONFIG_INTEL_ATOMISP2_LED                       policy<{'amd64': '-'}>
 CONFIG_INTEL_ATOMISP2_PDX86                     policy<{'amd64': '-'}>
@@ -7137,7 +7140,12 @@ CONFIG_TEST_POWER                               policy<{'amd64': 'n', 'arm64': '
 CONFIG_TEXTSEARCH_BM                            policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_TEXTSEARCH_FSM                           policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_TEXTSEARCH_KMP                           policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_THERMAL_EMULATION                        policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_THERMAL_GOV_BANG_BANG                    policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_THERMAL_GOV_FAIR_SHARE                   policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_THERMAL_MMIO                             policy<{'arm64': 'n'}>
 CONFIG_THERMAL_NETLINK                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_THERMAL_STATISTICS                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_THINKPAD_ACPI                            policy<{'amd64': 'n', 'arm64': '-'}>
 CONFIG_THINKPAD_ACPI_ALSA_SUPPORT               policy<{'amd64': '-'}>
 CONFIG_THINKPAD_ACPI_DEBUG                      policy<{'amd64': '-'}>
