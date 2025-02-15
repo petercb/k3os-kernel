@@ -1130,6 +1130,7 @@ CONFIG_BRIDGE_MRP                               policy<{'amd64': 'n', 'arm64': '
 CONFIG_BRIDGE_NETFILTER                         policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_BRIDGE_NF_EBTABLES                       policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_BROADCOM_PHY                             policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_BSD_PROCESS_ACCT_V3                      policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_BT                                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BTREE                                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BTRFS_ASSERT                             policy<{'amd64': '-', 'arm64': '-'}>
@@ -1196,6 +1197,8 @@ CONFIG_BT_SELFTEST                              policy<{'amd64': '-', 'arm64': '
 CONFIG_BT_VIRTIO                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BUG_ON_DATA_CORRUPTION                   policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_BYTCRC_PMIC_OPREGION                     policy<{'amd64': '-'}>
+CONFIG_C2PORT                                   policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_C2PORT_DURAMAR_2150                      policy<{'amd64': '-'}>
 CONFIG_CACHEFILES                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CACHEFILES_DEBUG                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CAIF                                     policy<{'amd64': 'n', 'arm64': 'n'}>
