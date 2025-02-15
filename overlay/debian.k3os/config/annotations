@@ -1088,6 +1088,8 @@ CONFIG_BOOT_CONFIG                              policy<{'amd64': 'n', 'arm64': '
 CONFIG_BOOT_PRINTK_DELAY                        policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_BPFILTER                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BPFILTER_UMH                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_BPF_KPROBE_OVERRIDE                      policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_BPF_LSM                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BPQETHER                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BRCMDBG                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BRCMFMAC                                 policy<{'amd64': '-', 'arm64': '-'}>
