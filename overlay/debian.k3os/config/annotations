@@ -686,6 +686,7 @@ CONFIG_ARCNET_COM90xxIO                         policy<{'amd64': '-', 'arm64': '
 CONFIG_ARCNET_RAW                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ARCNET_RIM_I                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ARCX_ANYBUS_CONTROLLER                   policy<{'arm64': '-'}>
+CONFIG_ARC_EMAC_CORE                            policy<{'arm64': '-'}>
 CONFIG_ARMADA_37XX_RWTM_MBOX                    policy<{'arm64': 'y'}>
 CONFIG_ARMADA_37XX_WATCHDOG                     policy<{'arm64': 'n'}>
 CONFIG_ARMADA_THERMAL                           policy<{'arm64': 'n'}>
@@ -2429,6 +2430,7 @@ CONFIG_EISA_PCI_EISA                            policy<{'amd64': '-'}>
 CONFIG_EISA_VIRTUAL_ROOT                        policy<{'amd64': '-'}>
 CONFIG_EISA_VLB_PRIMING                         policy<{'amd64': '-'}>
 CONFIG_EL3                                      policy<{'amd64': '-'}>
+CONFIG_EMAC_ROCKCHIP                            policy<{'arm64': 'n'}>
 CONFIG_ENA_ETHERNET                             policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_ENC28J60                                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_ENC28J60_WRITEVERIFY                     policy<{'amd64': '-', 'arm64': '-'}>
