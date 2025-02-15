@@ -1083,6 +1083,9 @@ CONFIG_BNXT_DCB                                 policy<{'amd64': 'n', 'arm64': '
 CONFIG_BNXT_SRIOV                               policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_BOARD_TPCI200                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BONDING                                  policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_BOOTTIME_TRACING                         policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_BOOT_CONFIG                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_BOOT_PRINTK_DELAY                        policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_BPFILTER                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BPFILTER_UMH                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BPQETHER                                 policy<{'amd64': '-', 'arm64': '-'}>
