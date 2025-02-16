@@ -141,6 +141,9 @@ CONFIG_KFENCE_STATIC_KEYS                       note<'TODO: update note'>
 CONFIG_KGDB_SERIAL_CONSOLE                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_KGDB_SERIAL_CONSOLE                      note<'TODO: update note'>
 
+CONFIG_KVM                                      policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_KVM                                      note<'LP:1532886'>
+
 CONFIG_MEMORY_HOTPLUG_DEFAULT_ONLINE            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MEMORY_HOTPLUG_DEFAULT_ONLINE            note<'TODO: update note'>
 
@@ -4116,7 +4119,6 @@ CONFIG_IP_VS_WRR                                policy<{'amd64': 'y', 'arm64': '
 CONFIG_IQS620AT_TEMP                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_IQS621_ALS                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_IQS624_POS                               policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_IRQ_BYPASS_MANAGER                       policy<{'amd64': 'm', 'arm64': 'y'}>
 CONFIG_IRQ_REMAP                                policy<{'amd64': 'n'}>
 CONFIG_IR_ENE                                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_IR_FINTEK                                policy<{'amd64': '-', 'arm64': '-'}>
@@ -4325,6 +4327,7 @@ CONFIG_KGDB_LOW_LEVEL_TRAP                      policy<{'amd64': '-'}>
 CONFIG_KGDB_TESTS                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_KHADAS_MCU_FAN_THERMAL                   policy<{'arm64': '-'}>
 CONFIG_KMX61                                    policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_KPSS_XCC                                 policy<{'arm64': 'n'}>
 CONFIG_KS0108                                   policy<{'amd64': '-'}>
 CONFIG_KS0108_DELAY                             policy<{'amd64': '-'}>
 CONFIG_KS0108_PORT                              policy<{'amd64': '-'}>
@@ -4332,8 +4335,12 @@ CONFIG_KS7010                                   policy<{'amd64': '-', 'arm64': '
 CONFIG_KS8842                                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_KS8851                                   policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_KS8851_MLL                               policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_KSM                                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_KSZ884X_PCI                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_KVM_AMD                                  policy<{'amd64': 'y'}>
 CONFIG_KVM_AMD_SEV                              policy<{'amd64': '-'}>
+CONFIG_KVM_INTEL                                policy<{'amd64': 'y'}>
+CONFIG_KVM_MMU_AUDIT                            policy<{'amd64': 'y'}>
 CONFIG_KVM_WERROR                               policy<{'amd64': '-'}>
 CONFIG_KVM_XEN                                  policy<{'amd64': 'n'}>
 CONFIG_KXCJK1013                                policy<{'amd64': '-', 'arm64': 'n'}>
