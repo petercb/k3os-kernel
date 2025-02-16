@@ -1727,6 +1727,7 @@ CONFIG_CRAMFS_MTD                               policy<{'amd64': '-', 'arm64': '
 CONFIG_CRC4                                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CRC64                                    policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CRC7                                     policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_CRC8                                     policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_CRC_ITU_T                                policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_CROS_EC                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CROS_EC_CHARDEV                          policy<{'amd64': '-', 'arm64': '-'}>
@@ -1882,6 +1883,7 @@ CONFIG_CRYPTO_DEV_SUN8I_SS_HASH                 policy<{'amd64': '-', 'arm64': '
 CONFIG_CRYPTO_DEV_SUN8I_SS_PRNG                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_CRYPTO_DEV_VIRTIO                        policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_CRYPTO_DEV_ZYNQMP_AES                    policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_CRYPTO_DH                                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CRYPTO_DRBG_CTR                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CRYPTO_DRBG_HASH                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CRYPTO_ECC                               policy<{'amd64': '-', 'arm64': '-'}>
@@ -1896,6 +1898,7 @@ CONFIG_CRYPTO_GHASH_ARM64_CE                    policy<{'arm64': 'y'}>
 CONFIG_CRYPTO_GHASH_CLMUL_NI_INTEL              policy<{'amd64': 'n'}>
 CONFIG_CRYPTO_KEYWRAP                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CRYPTO_KHAZAD                            policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_CRYPTO_KPP                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CRYPTO_LIB_ARC4                          policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_CRYPTO_LIB_CHACHA                        policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_CRYPTO_LIB_CHACHA20POLY1305              policy<{'amd64': 'y', 'arm64': 'y'}>
@@ -1991,6 +1994,7 @@ CONFIG_DEBUG_LIST                               policy<{'amd64': 'y', 'arm64': '
 CONFIG_DEBUG_MEMORY_INIT                        policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_DEBUG_PINCTRL                            policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DEBUG_RSEQ                               policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_DECOMPRESS_LZO                           policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_DEFAULT_BBR                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DEFAULT_CODEL                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_DEFAULT_FQ                               policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -3904,6 +3908,7 @@ CONFIG_KEYBOARD_TEGRA                           policy<{'amd64': '-', 'arm64': '
 CONFIG_KEYBOARD_TM2_TOUCHKEY                    policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_KEYBOARD_TWL4030                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_KEYBOARD_XTKBD                           policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_KEY_DH_OPERATIONS                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_KGDB                                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_KGDB_HONOUR_BLOCKLIST                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_KGDB_KDB                                 policy<{'amd64': '-', 'arm64': '-'}>
@@ -5110,6 +5115,15 @@ CONFIG_NVMEM_SPMI_SDAM                          policy<{'amd64': '-', 'arm64': '
 CONFIG_NVMEM_SUNXI_SID                          policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_NVMEM_ZYNQMP                             policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_NVME_CORE                                policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_NVME_FABRICS                             policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_NVME_TARGET                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_NVME_TARGET_FC                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_NVME_TARGET_FCLOOP                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_NVME_TARGET_LOOP                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_NVME_TARGET_PASSTHRU                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_NVME_TARGET_RDMA                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_NVME_TARGET_TCP                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_NVME_TCP                                 policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_NXP_C45_TJA11XX_PHY                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NXP_TJA11XX_PHY                          policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_OCFS2_DEBUG_FS                           policy<{'amd64': '-', 'arm64': '-'}>
@@ -5705,6 +5719,7 @@ CONFIG_RC_DEVICES                               policy<{'amd64': '-', 'arm64': '
 CONFIG_RC_LOOPBACK                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RC_MAP                                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RC_XBOX_DVD                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RD_LZO                                   policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_REALTEK_AUTOPM                           policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_REALTEK_PHY                              policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_REED_SOLOMON                             policy<{'amd64': '-', 'arm64': '-'}>
@@ -7134,6 +7149,7 @@ CONFIG_SPRD_DMA                                 policy<{'arm64': '-'}>
 CONFIG_SPS30                                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SPS30_I2C                                policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SPS30_SERIAL                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SQUASHFS_LZO                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SRF04                                    policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SRF08                                    policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SSB                                      policy<{'amd64': 'n', 'arm64': 'n'}>
