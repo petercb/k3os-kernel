@@ -1694,12 +1694,18 @@ CONFIG_COMMON_CLK_WM831X                        policy<{'amd64': '-', 'arm64': '
 CONFIG_COMMON_CLK_XGENE                         policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_COMMON_CLK_XLNX_CLKWZRD                  policy<{'arm64': '-'}>
 CONFIG_COMMON_CLK_ZYNQMP                        policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_COMMON_RESET_HI3660                      policy<{'arm64': 'y'}>
+CONFIG_COMMON_RESET_HI6220                      policy<{'arm64': 'y'}>
 CONFIG_COMPAL_LAPTOP                            policy<{'amd64': '-'}>
+CONFIG_COMPAT_32BIT_TIME                        policy<{'amd64': 'y', 'arm64': 'n'}>
 CONFIG_COMPAT_NETLINK_MESSAGES                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CONFIGFS_FS                              policy<{'amd64': 'm', 'arm64': 'y'}>
 CONFIG_CONSOLE_POLL                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CONTIG_ALLOC                             policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_CORDIC                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CORTINA_PHY                              policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_COUNTER                                  policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_CPU5_WDT                                 policy<{'amd64': 'n'}>
 CONFIG_CPU_FREQ_DEFAULT_GOV_ONDEMAND            policy<{'arm64': 'n'}>
 CONFIG_CPU_FREQ_DEFAULT_GOV_SCHEDUTIL           policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_CPU_IDLE_THERMAL                         policy<{'arm64': '-'}>
@@ -2799,6 +2805,7 @@ CONFIG_FS_VERITY                                policy<{'amd64': 'n', 'arm64': '
 CONFIG_FS_VERITY_BUILTIN_SIGNATURES             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_FS_VERITY_DEBUG                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_FTL                                      policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_FTM_QUADDEC                              policy<{'arm64': '-'}>
 CONFIG_FUSE_DAX                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_FUSION_FC                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_FUSION_LAN                               policy<{'amd64': '-', 'arm64': '-'}>
@@ -3529,6 +3536,7 @@ CONFIG_INTEL_MEI_VSC                            policy<{'amd64': '-'}>
 CONFIG_INTEL_MRFLD_ADC                          policy<{'amd64': '-'}>
 CONFIG_INTEL_MRFLD_PWRBTN                       policy<{'amd64': '-'}>
 CONFIG_INTEL_OAKTRAIL                           policy<{'amd64': '-'}>
+CONFIG_INTEL_QEP                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INTEL_RAPL                               policy<{'amd64': '-'}>
 CONFIG_INTEL_RAPL_CORE                          policy<{'amd64': '-'}>
 CONFIG_INTEL_SCU_PCI                            policy<{'amd64': 'n'}>
@@ -3556,7 +3564,7 @@ CONFIG_INTEL_WMI                                policy<{'amd64': '-'}>
 CONFIG_INTEL_WMI_SBL_FW_UPDATE                  policy<{'amd64': '-'}>
 CONFIG_INTEL_WMI_THUNDERBOLT                    policy<{'amd64': '-'}>
 CONFIG_INTEL_XWAY_PHY                           policy<{'amd64': 'n', 'arm64': 'y'}>
-CONFIG_INTERRUPT_CNT                            policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_INTERRUPT_CNT                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INV_ICM42600                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INV_ICM42600_I2C                         policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_INV_ICM42600_SPI                         policy<{'amd64': '-', 'arm64': 'n'}>
@@ -4299,6 +4307,7 @@ CONFIG_MICREL_KS8995MA                          policy<{'amd64': '-', 'arm64': '
 CONFIG_MICREL_PHY                               policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_MICROCHIP_PHY                            policy<{'amd64': 'm', 'arm64': 'y'}>
 CONFIG_MICROCHIP_T1_PHY                         policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_MICROCHIP_TCB_CAPTURE                    policy<{'arm64': '-'}>
 CONFIG_MICROSEMI_PHY                            policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_MICROSOFT_MANA                           policy<{'amd64': '-'}>
 CONFIG_MII                                      policy<{'amd64': 'y', 'arm64': 'y'}>
