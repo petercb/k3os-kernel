@@ -4354,6 +4354,7 @@ CONFIG_L2TP_IP                                  policy<{'amd64': '-', 'arm64': '
 CONFIG_L2TP_V3                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_LAN743X                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_LANMEDIA                                 policy<{'amd64': '-'}>
+CONFIG_LAPB                                     policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_LAPBETHER                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_LATTICE_ECP3_CONFIG                      policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_LCD2S                                    policy<{'amd64': '-', 'arm64': '-'}>
