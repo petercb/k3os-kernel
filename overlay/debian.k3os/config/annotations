@@ -787,10 +787,12 @@ CONFIG_ARM_TEGRA_DEVFREQ                        policy<{'amd64': '-', 'arm64': '
 CONFIG_AS3935                                   policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_AS73211                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_ASHMEM                                   policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_ASN1_ENCODER                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ASUS_LAPTOP                              policy<{'amd64': 'n'}>
 CONFIG_ASUS_NB_WMI                              policy<{'amd64': '-'}>
 CONFIG_ASUS_WIRELESS                            policy<{'amd64': 'n'}>
 CONFIG_ASUS_WMI                                 policy<{'amd64': '-'}>
+CONFIG_ASYMMETRIC_TPM_KEY_SUBTYPE               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ASYNC_TX_DISABLE_PQ_VAL_DMA              policy<{'arm64': '-'}>
 CONFIG_ASYNC_TX_DISABLE_XOR_VAL_DMA             policy<{'arm64': '-'}>
 CONFIG_ASYNC_TX_DMA                             policy<{'amd64': '-', 'arm64': '-'}>
@@ -4247,6 +4249,7 @@ CONFIG_KEYBOARD_TEGRA                           policy<{'amd64': '-', 'arm64': '
 CONFIG_KEYBOARD_TM2_TOUCHKEY                    policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_KEYBOARD_TWL4030                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_KEYBOARD_XTKBD                           policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_KEYS_REQUEST_CACHE                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_KEY_DH_OPERATIONS                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_KGDB                                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_KGDB_HONOUR_BLOCKLIST                    policy<{'amd64': '-', 'arm64': '-'}>
@@ -7915,12 +7918,14 @@ CONFIG_TOUCHSCREEN_ZET6223                      policy<{'amd64': 'n', 'arm64': '
 CONFIG_TOUCHSCREEN_ZFORCE                       policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_TOUCHSCREEN_ZINITIX                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TPL0102                                  policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_TPM_KEY_PARSER                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TPS65010                                 policy<{'amd64': '-', 'arm64': 'm'}>
 CONFIG_TPS68470_PMIC_OPREGION                   policy<{'amd64': '-'}>
 CONFIG_TQMX86_WDT                               policy<{'amd64': 'n'}>
 CONFIG_TRACE_EVENT_INJECT                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TRACING_MAP                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TRIM_UNUSED_KSYMS                        policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_TRUSTED_KEYS                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TSL2583                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_TSL2591                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_TSL2772                                  policy<{'amd64': '-', 'arm64': 'n'}>
