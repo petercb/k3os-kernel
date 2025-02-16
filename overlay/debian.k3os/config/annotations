@@ -5956,6 +5956,7 @@ CONFIG_POWER_RESET_SYSCON_POWEROFF              policy<{'arm64': 'n'}>
 CONFIG_POWER_RESET_TPS65086                     policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_POWER_RESET_XGENE                        policy<{'arm64': 'y'}>
 CONFIG_PPDEV                                    policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_PPS_CLIENT_GPIO                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PPS_CLIENT_PARPORT                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PRESTERA                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PRESTERA_PCI                             policy<{'amd64': '-', 'arm64': '-'}>
@@ -6618,6 +6619,7 @@ CONFIG_SENSORS_ADS7871                          policy<{'amd64': '-', 'arm64': '
 CONFIG_SENSORS_ADT7310                          policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SENSORS_APPLESMC                         policy<{'amd64': 'n', 'arm64': '-'}>
 CONFIG_SENSORS_DA9052_ADC                       policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_SENSORS_GPIO_FAN                         policy<{'arm64': 'n'}>
 CONFIG_SENSORS_HMC5843                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_HMC5843_I2C                      policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SENSORS_HMC5843_SPI                      policy<{'amd64': '-', 'arm64': 'n'}>
