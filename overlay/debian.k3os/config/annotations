@@ -198,6 +198,9 @@ CONFIG_NOP_USB_XCEIV                            note<'boot essential on omap/hig
 CONFIG_NOUVEAU_LEGACY_CTX_SUPPORT               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NOUVEAU_LEGACY_CTX_SUPPORT               note<'TODO: update note'>
 
+CONFIG_NR_CPUS                                  policy<{'amd64': '512', 'arm64': '256'}>
+CONFIG_NR_CPUS                                  note<'TODO: update note'>
+
 CONFIG_PATA_HPT3X3_DMA                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PATA_HPT3X3_DMA                          note<'TODO: update note'>
 
@@ -730,6 +733,7 @@ CONFIG_ARCH_R9A07G044                           policy<{'arm64': 'n'}>
 CONFIG_ARCH_RCAR_GEN3                           policy<{'arm64': '-'}>
 CONFIG_ARCH_S32                                 policy<{'arm64': 'n'}>
 CONFIG_ARCH_SPARX5                              policy<{'arm64': 'n'}>
+CONFIG_ARCH_SUPPORTS_KMAP_LOCAL_FORCE_MAP       policy<{'amd64': 'y'}>
 CONFIG_ARCH_VISCONTI                            policy<{'arm64': 'n'}>
 CONFIG_ARCNET                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_ARCNET_1051                              policy<{'amd64': '-', 'arm64': '-'}>
@@ -1781,6 +1785,7 @@ CONFIG_CORTINA_PHY                              policy<{'amd64': 'n', 'arm64': '
 CONFIG_COUNTER                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CPCAP_ADC                                policy<{'arm64': '-'}>
 CONFIG_CPU5_WDT                                 policy<{'amd64': 'n'}>
+CONFIG_CPUMASK_OFFSTACK                         policy<{'amd64': '-'}>
 CONFIG_CPU_FREQ_DEFAULT_GOV_ONDEMAND            policy<{'arm64': 'n'}>
 CONFIG_CPU_FREQ_DEFAULT_GOV_SCHEDUTIL           policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_CPU_IDLE_GOV_HALTPOLL                    policy<{'amd64': 'y', 'arm64': '-'}>
@@ -2068,6 +2073,7 @@ CONFIG_DEBUG_DEVRES                             policy<{'amd64': 'y', 'arm64': '
 CONFIG_DEBUG_FORCE_FUNCTION_ALIGN_64B           policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DEBUG_GPIO                               policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DEBUG_KERNEL_DC                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_DEBUG_KMAP_LOCAL_FORCE_MAP               policy<{'amd64': 'n'}>
 CONFIG_DEBUG_LIST                               policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_DEBUG_MEMORY_INIT                        policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_DEBUG_NOTIFIERS                          policy<{'amd64': 'y', 'arm64': 'y'}>
@@ -4498,15 +4504,21 @@ CONFIG_LIQUIDIO                                 policy<{'amd64': 'n', 'arm64': '
 CONFIG_LIQUIDIO_VF                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_LIRC                                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_LITEX                                    policy<{'arm64': '-'}>
+CONFIG_LITEX_LITEETH                            policy<{'arm64': 'n'}>
 CONFIG_LITEX_SOC_CONTROLLER                     policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_LIVEPATCH                                policy<{'amd64': '-'}>
 CONFIG_LLC                                      policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_LLC2                                     policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_LMK04832                                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_LMP91000                                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_LOAD_UEFI_KEYS                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_LOCKD                                    policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_LOGIG940_FF                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_LOGIRUMBLEPAD2_FF                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_LOOPBACK_TARGET                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_LP8788_ADC                               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_LPC_ICH                                  policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_LPC_SCH                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_LP_CONSOLE                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_LRU_CACHE                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_LSI_ET1011C_PHY                          policy<{'amd64': 'n', 'arm64': 'y'}>
@@ -4536,12 +4548,15 @@ CONFIG_MACB                                     policy<{'amd64': 'n', 'arm64': '
 CONFIG_MACB_PCI                                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_MACB_USE_HWSTAMP                         policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_MACHZ_WDT                                policy<{'amd64': 'n'}>
+CONFIG_MACINTOSH_DRIVERS                        policy<{'amd64': 'n'}>
 CONFIG_MACSEC                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MACVLAN                                  policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_MACVTAP                                  policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_MAC_EMUMOUSEBTN                          policy<{'amd64': '-'}>
 CONFIG_MADERA_IRQ                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MAG3110                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_MAGIC_SYSRQ_DEFAULT_ENABLE               policy<{'amd64': '0x1', 'arm64': '0x1'}>
+CONFIG_MAILBOX_TEST                             policy<{'arm64': 'n'}>
 CONFIG_MANAGER_SBS                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MANTIS_CORE                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MAPPING_DIRTY_HELPERS                    policy<{'amd64': '-', 'arm64': '-'}>
@@ -4562,10 +4577,15 @@ CONFIG_MAX517                                   policy<{'amd64': '-', 'arm64': '
 CONFIG_MAX5432                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_MAX5481                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_MAX5487                                  policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_MAX5821                                  policy<{'arm64': 'n'}>
+CONFIG_MAX63XX_WATCHDOG                         policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_MAX77620_THERMAL                         policy<{'arm64': 'y'}>
+CONFIG_MAX77620_WATCHDOG                        policy<{'arm64': 'y'}>
 CONFIG_MAX8925_POWER                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MAX9611                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_MAXIM_THERMOCOUPLE                       policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_MAXLINEAR_GPHY                           policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_MAXSMP                                   policy<{'amd64': 'n'}>
 CONFIG_MB1232                                   policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_MC3230                                   policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_MCB                                      policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -4580,6 +4600,7 @@ CONFIG_MCP4131                                  policy<{'amd64': '-', 'arm64': '
 CONFIG_MCP4531                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_MCP4725                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_MCP4922                                  policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_MCTP                                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MDIO                                     policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_MDIO_BCM_IPROC                           policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_MDIO_BCM_UNIMAC                          policy<{'amd64': 'n', 'arm64': 'y'}>
@@ -5593,6 +5614,9 @@ CONFIG_NOUVEAU_DEBUG_DEFAULT                    policy<{'amd64': '-', 'arm64': '
 CONFIG_NOUVEAU_DEBUG_MMU                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NOUVEAU_DEBUG_PUSH                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NOUVEAU_PLATFORM_DRIVER                  policy<{'arm64': '-'}>
+CONFIG_NR_CPUS_DEFAULT                          policy<{'amd64': '64'}>
+CONFIG_NR_CPUS_RANGE_BEGIN                      policy<{'amd64': '2'}>
+CONFIG_NR_CPUS_RANGE_END                        policy<{'amd64': '512'}>
 CONFIG_NTB                                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NTB_AMD                                  policy<{'amd64': '-'}>
 CONFIG_NTB_EPF                                  policy<{'amd64': '-', 'arm64': '-'}>
