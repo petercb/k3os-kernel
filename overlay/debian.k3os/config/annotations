@@ -2966,9 +2966,16 @@ CONFIG_FTM_QUADDEC                              policy<{'arm64': '-'}>
 CONFIG_FUJITSU_ES                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_FUJITSU_LAPTOP                           policy<{'amd64': 'n'}>
 CONFIG_FUJITSU_TABLET                           policy<{'amd64': 'n'}>
+CONFIG_FUNCTION_PROFILER                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_FUSE_DAX                                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_FUSION                                   policy<{'amd64': 'y', 'arm64': 'n'}>
+CONFIG_FUSION_CTL                               policy<{'amd64': 'n', 'arm64': '-'}>
 CONFIG_FUSION_FC                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_FUSION_LAN                               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_FUSION_LOGGING                           policy<{'amd64': 'n', 'arm64': '-'}>
+CONFIG_FUSION_MAX_SGE                           policy<{'amd64': '128', 'arm64': '-'}>
+CONFIG_FUSION_SAS                               policy<{'amd64': 'y', 'arm64': '-'}>
+CONFIG_FUSION_SPI                               policy<{'amd64': 'n', 'arm64': '-'}>
 CONFIG_FWTTY_MAX_CARD_PORTS                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_FWTTY_MAX_TOTAL_PORTS                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_FW_ATTR_CLASS                            policy<{'amd64': '-'}>
