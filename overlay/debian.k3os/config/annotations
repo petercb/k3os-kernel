@@ -4494,6 +4494,8 @@ CONFIG_LIBIPW                                   policy<{'amd64': '-', 'arm64': '
 CONFIG_LIBIPW_DEBUG                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_LIBNVDIMM                                policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_LIDAR_LITE_V2                            policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_LIQUIDIO                                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_LIQUIDIO_VF                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_LIRC                                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_LITEX                                    policy<{'arm64': '-'}>
 CONFIG_LITEX_SOC_CONTROLLER                     policy<{'amd64': '-', 'arm64': 'n'}>
