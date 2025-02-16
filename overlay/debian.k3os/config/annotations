@@ -33,6 +33,15 @@ CONFIG_BPF_UNPRIV_DEFAULT_OFF                   note<'security reason'>
 CONFIG_BT_HS                                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BT_HS                                    note<'https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00435.html'>
 
+CONFIG_CPU_FREQ_GOV_CONSERVATIVE                policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_CPU_FREQ_GOV_CONSERVATIVE                note<'not autoloadable'>
+
+CONFIG_CPU_FREQ_GOV_POWERSAVE                   policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_CPU_FREQ_GOV_POWERSAVE                   note<'not autoloadable'>
+
+CONFIG_CPU_FREQ_STAT                            policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_CPU_FREQ_STAT                            note<'dependancy of boot essential'>
+
 CONFIG_CRYPTO_USER_API_ENABLE_OBSOLETE          policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_CRYPTO_USER_API_ENABLE_OBSOLETE          note<'Obsolete w/ no known userspace dependencies'>
 
@@ -1708,6 +1717,9 @@ CONFIG_COUNTER                                  policy<{'amd64': 'n', 'arm64': '
 CONFIG_CPU5_WDT                                 policy<{'amd64': 'n'}>
 CONFIG_CPU_FREQ_DEFAULT_GOV_ONDEMAND            policy<{'arm64': 'n'}>
 CONFIG_CPU_FREQ_DEFAULT_GOV_SCHEDUTIL           policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_CPU_IDLE_GOV_HALTPOLL                    policy<{'amd64': 'y', 'arm64': '-'}>
+CONFIG_CPU_IDLE_GOV_LADDER                      policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_CPU_IDLE_GOV_TEO                         policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_CPU_IDLE_THERMAL                         policy<{'arm64': '-'}>
 CONFIG_CRAMFS_MTD                               policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_CRC4                                     policy<{'amd64': 'n', 'arm64': 'n'}>
