@@ -4452,6 +4452,7 @@ CONFIG_MAC802154                                policy<{'amd64': 'n', 'arm64': '
 CONFIG_MACB                                     policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_MACB_PCI                                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_MACB_USE_HWSTAMP                         policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_MACHZ_WDT                                policy<{'amd64': 'n'}>
 CONFIG_MACSEC                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MACVLAN                                  policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_MACVTAP                                  policy<{'amd64': 'y', 'arm64': 'y'}>
@@ -5424,6 +5425,8 @@ CONFIG_NF_TABLES_ARP                            policy<{'amd64': 'n', 'arm64': '
 CONFIG_NF_TABLES_BRIDGE                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NF_TPROXY_IPV4                           policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_NF_TPROXY_IPV6                           policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_NI903X_WDT                               policy<{'amd64': 'n'}>
+CONFIG_NIC7018_WDT                              policy<{'amd64': 'n'}>
 CONFIG_NILFS2_FS                                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NI_XGE_MANAGEMENT_ENET                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NLS_MAC_GREEK                            policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -5599,6 +5602,7 @@ CONFIG_PATA_VIA                                 policy<{'amd64': 'n', 'arm64': '
 CONFIG_PATA_WINBOND                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PC104                                    policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_PC300TOO                                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_PC87413_WDT                              policy<{'amd64': 'n'}>
 CONFIG_PCCARD                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PCCARD_NONSTATIC                         policy<{'amd64': '-'}>
 CONFIG_PCENGINES_APU2                           policy<{'amd64': '-'}>
@@ -6178,7 +6182,9 @@ CONFIG_RENESAS_DMA                              policy<{'arm64': '-'}>
 CONFIG_RENESAS_IRQC                             policy<{'arm64': '-'}>
 CONFIG_RENESAS_PHY                              policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_RENESAS_RPCIF                            policy<{'arm64': 'n'}>
+CONFIG_RENESAS_RZAWDT                           policy<{'arm64': 'n'}>
 CONFIG_RENESAS_USB_DMAC                         policy<{'arm64': '-'}>
+CONFIG_RENESAS_WDT                              policy<{'arm64': 'y'}>
 CONFIG_RESET_A10SR                              policy<{'arm64': '-'}>
 CONFIG_RESET_BRCMSTB                            policy<{'arm64': 'y'}>
 CONFIG_RESET_CONTROLLER                         policy<{'amd64': 'n', 'arm64': 'y'}>
@@ -6488,6 +6494,7 @@ CONFIG_SATA_VIA                                 policy<{'amd64': 'n', 'arm64': '
 CONFIG_SATA_VITESSE                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SATA_ZPODD                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SBP_TARGET                               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SC1200_WDT                               policy<{'amd64': 'n'}>
 CONFIG_SCA3000                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SCA3300                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SCD30_CORE                               policy<{'amd64': '-', 'arm64': 'n'}>
@@ -6752,8 +6759,10 @@ CONFIG_SLIM_QCOM_NGD_CTRL                       policy<{'arm64': '-'}>
 CONFIG_SLOB                                     policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SMARTJOYPLUS_FF                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SMBFS_COMMON                             policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_SMSC37B787_WDT                           policy<{'amd64': 'n'}>
 CONFIG_SMSC9420                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SMSC_PHY                                 policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_SMSC_SCH311X_WDT                         policy<{'amd64': 'n'}>
 CONFIG_SMS_SDIO_DRV                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SMS_SIANO_DEBUGFS                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SMS_SIANO_MDTV                           policy<{'amd64': '-', 'arm64': '-'}>
@@ -7906,6 +7915,7 @@ CONFIG_TOUCHSCREEN_ZINITIX                      policy<{'amd64': 'n', 'arm64': '
 CONFIG_TPL0102                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_TPS65010                                 policy<{'amd64': '-', 'arm64': 'm'}>
 CONFIG_TPS68470_PMIC_OPREGION                   policy<{'amd64': '-'}>
+CONFIG_TQMX86_WDT                               policy<{'amd64': 'n'}>
 CONFIG_TRACE_EVENT_INJECT                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TRACING_MAP                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TRIM_UNUSED_KSYMS                        policy<{'amd64': '-', 'arm64': 'n'}>
@@ -8830,6 +8840,10 @@ CONFIG_W1_SLAVE_DS28E04                         policy<{'amd64': '-', 'arm64': '
 CONFIG_W1_SLAVE_DS28E17                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_W1_SLAVE_SMEM                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_W1_SLAVE_THERM                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_W83627HF_WDT                             policy<{'amd64': 'n'}>
+CONFIG_W83877F_WDT                              policy<{'amd64': 'n'}>
+CONFIG_W83977F_WDT                              policy<{'amd64': 'n'}>
+CONFIG_WAFER_WDT                                policy<{'amd64': 'n'}>
 CONFIG_WAN                                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_WANT_COMPAT_NETLINK_MESSAGES             policy<{'amd64': '-'}>
 CONFIG_WANT_DEV_COREDUMP                        policy<{'amd64': '-', 'arm64': '-'}>
