@@ -1721,7 +1721,9 @@ CONFIG_CPU_IDLE_GOV_HALTPOLL                    policy<{'amd64': 'y', 'arm64': '
 CONFIG_CPU_IDLE_GOV_LADDER                      policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_CPU_IDLE_GOV_TEO                         policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_CPU_IDLE_THERMAL                         policy<{'arm64': '-'}>
-CONFIG_CRAMFS_MTD                               policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_CRAMFS                                   policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_CRAMFS_BLOCKDEV                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CRAMFS_MTD                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CRC4                                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CRC64                                    policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CRC7                                     policy<{'amd64': 'n', 'arm64': 'y'}>
