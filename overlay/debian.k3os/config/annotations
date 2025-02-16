@@ -3398,10 +3398,22 @@ CONFIG_HWSPINLOCK_QCOM                          policy<{'arm64': '-'}>
 CONFIG_HWSPINLOCK_SPRD                          policy<{'arm64': '-'}>
 CONFIG_HWSPINLOCK_SUN6I                         policy<{'arm64': '-'}>
 CONFIG_HW_RANDOM_AMD                            policy<{'amd64': 'n'}>
+CONFIG_HW_RANDOM_ARM_SMCCC_TRNG                 policy<{'arm64': 'y'}>
+CONFIG_HW_RANDOM_BA431                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HW_RANDOM_BCM2835                        policy<{'arm64': 'y'}>
+CONFIG_HW_RANDOM_CAVIUM                         policy<{'arm64': 'y'}>
+CONFIG_HW_RANDOM_CCTRNG                         policy<{'arm64': 'n'}>
+CONFIG_HW_RANDOM_HISI                           policy<{'arm64': 'y'}>
 CONFIG_HW_RANDOM_INTEL                          policy<{'amd64': 'n'}>
+CONFIG_HW_RANDOM_IPROC_RNG200                   policy<{'arm64': 'y'}>
+CONFIG_HW_RANDOM_MESON                          policy<{'arm64': 'y'}>
+CONFIG_HW_RANDOM_MTK                            policy<{'arm64': 'y'}>
+CONFIG_HW_RANDOM_OMAP                           policy<{'arm64': 'y'}>
 CONFIG_HW_RANDOM_TIMERIOMEM                     policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HW_RANDOM_VIA                            policy<{'amd64': 'y'}>
 CONFIG_HW_RANDOM_VIRTIO                         policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_HW_RANDOM_XGENE                          policy<{'arm64': 'y'}>
+CONFIG_HW_RANDOM_XIPHERA                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HX711                                    policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_HYPERV                                   policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_HYPERV_BALLOON                           policy<{'amd64': 'n', 'arm64': 'n'}>
