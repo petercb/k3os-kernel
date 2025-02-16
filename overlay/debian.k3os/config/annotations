@@ -2991,9 +2991,17 @@ CONFIG_FXLS8962AF_SPI                           policy<{'amd64': '-', 'arm64': '
 CONFIG_FXOS8700                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_FXOS8700_I2C                             policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_FXOS8700_SPI                             policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_GACT_PROB                                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_GADGET_UAC1                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GADGET_UAC1_LEGACY                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_GAMEPORT                                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_GAMEPORT_EMU10K1                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_GAMEPORT_FM801                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_GAMEPORT_L4                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_GAMEPORT_NS558                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GARP                                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_GART_IOMMU                               policy<{'amd64': 'n'}>
+CONFIG_GDB_SCRIPTS                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_GEMINI_ETHERNET                          policy<{'arm64': 'n'}>
 CONFIG_GENERIC_ADC_BATTERY                      policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_GENERIC_ADC_THERMAL                      policy<{'amd64': '-', 'arm64': 'n'}>
@@ -3002,16 +3010,20 @@ CONFIG_GENERIC_PHY                              policy<{'amd64': 'n', 'arm64': '
 CONFIG_GENERIC_PHY_MIPI_DPHY                    policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_GENERIC_PINCONF                          policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_GENEVE                                   policy<{'amd64': 'y', 'arm64': 'n'}>
+CONFIG_GENWQE                                   policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_GENWQE_PLATFORM_ERROR_RECOVERY           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GFS2_FS                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_GFS2_FS_LOCKING_DLM                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GIANFAR                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_GIGABYTE_WMI                             policy<{'amd64': '-'}>
+CONFIG_GNSS                                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_GNSS_MTK_SERIAL                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GNSS_SERIAL                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GNSS_SIRF_SERIAL                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GNSS_UBX_SERIAL                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GP2AP002                                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_GP2AP020A00F                             policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_GPD_POCKET_FAN                           policy<{'amd64': 'n'}>
 CONFIG_GPIOLIB                                  policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_GPIOLIB_FASTPATH_LIMIT                   policy<{'amd64': '-', 'arm64': '512'}>
 CONFIG_GPIOLIB_IRQCHIP                          policy<{'amd64': '-', 'arm64': 'y'}>
@@ -3158,6 +3170,9 @@ CONFIG_GREYBUS_UART                             policy<{'amd64': '-', 'arm64': '
 CONFIG_GREYBUS_USB                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GREYBUS_VIBRATOR                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GS_FPGABOOT                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_GTP                                      policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_GVE                                      policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HABANA_AI                                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HAMRADIO                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HARDENED_USERCOPY_PAGESPAN               policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_HAVE_BOOTMEM_INFO_NODE                   policy<{'amd64': '-'}>
@@ -3772,6 +3787,8 @@ CONFIG_INV_MPU6050_I2C                          policy<{'amd64': '-', 'arm64': '
 CONFIG_INV_MPU6050_IIO                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INV_MPU6050_SPI                          policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_IOASID                                   policy<{'amd64': 'y', 'arm64': '-'}>
+CONFIG_IOMMU_DEBUG                              policy<{'amd64': '-'}>
+CONFIG_IOMMU_HELPER                             policy<{'amd64': '-'}>
 CONFIG_IOMMU_SVA_LIB                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_IOSCHED_BFQ                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_IO_STRICT_DEVMEM                         policy<{'amd64': '-', 'arm64': '-'}>
