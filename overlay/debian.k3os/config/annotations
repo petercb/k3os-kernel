@@ -4642,6 +4642,8 @@ CONFIG_MD_RAID10                                policy<{'amd64': 'y', 'arm64': '
 CONFIG_MD_RAID456                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MEDIATEK_GE_PHY                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MEDIATEK_MT6360_ADC                      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_MEDIATEK_MT6577_AUXADC                   policy<{'arm64': 'n'}>
+CONFIG_MEDIATEK_WATCHDOG                        policy<{'arm64': 'n'}>
 CONFIG_MEDIA_ALTERA_CI                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MEDIA_ANALOG_TV_SUPPORT                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MEDIA_ATTACH                             policy<{'amd64': '-', 'arm64': '-'}>
@@ -6208,6 +6210,7 @@ CONFIG_PWM_IQS620A                              policy<{'amd64': '-', 'arm64': '
 CONFIG_PWM_KEEMBAY                              policy<{'arm64': '-'}>
 CONFIG_PWM_LP3943                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PWM_LPSS_PCI                             policy<{'amd64': 'n'}>
+CONFIG_PWM_MEDIATEK                             policy<{'arm64': 'n'}>
 CONFIG_PWM_NTXEC                                policy<{'arm64': '-'}>
 CONFIG_PWM_ROCKCHIP                             policy<{'arm64': 'y'}>
 CONFIG_PWM_SL28CPLD                             policy<{'arm64': '-'}>
