@@ -5243,6 +5243,9 @@ CONFIG_MTK_SCP                                  policy<{'arm64': '-'}>
 CONFIG_MTK_SMI                                  policy<{'arm64': '-'}>
 CONFIG_MTK_THERMAL                              policy<{'arm64': 'y'}>
 CONFIG_MTK_UART_APDMA                           policy<{'arm64': '-'}>
+CONFIG_MTRR_SANITIZER                           policy<{'amd64': 'n'}>
+CONFIG_MTRR_SANITIZER_ENABLE_DEFAULT            policy<{'amd64': '-'}>
+CONFIG_MTRR_SANITIZER_SPARE_REG_NR_DEFAULT      policy<{'amd64': '-'}>
 CONFIG_MULTIPLEXER                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MUSB_PIO_ONLY                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MUX_ADG792A                              policy<{'amd64': '-', 'arm64': '-'}>
