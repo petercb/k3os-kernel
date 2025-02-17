@@ -5233,10 +5233,15 @@ CONFIG_MTD_UBI_BLOCK                            policy<{'amd64': '-', 'arm64': '
 CONFIG_MTD_UBI_FASTMAP                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MTD_UBI_GLUEBI                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MTD_UBI_WL_THRESHOLD                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_MTK_CMDQ                                 policy<{'arm64': 'n'}>
+CONFIG_MTK_CMDQ_MBOX                            policy<{'arm64': 'n'}>
 CONFIG_MTK_CQDMA                                policy<{'arm64': '-'}>
+CONFIG_MTK_DEVAPC                               policy<{'arm64': 'n'}>
 CONFIG_MTK_HSDMA                                policy<{'arm64': '-'}>
+CONFIG_MTK_PMIC_WRAP                            policy<{'arm64': 'n'}>
 CONFIG_MTK_SCP                                  policy<{'arm64': '-'}>
 CONFIG_MTK_SMI                                  policy<{'arm64': '-'}>
+CONFIG_MTK_THERMAL                              policy<{'arm64': 'y'}>
 CONFIG_MTK_UART_APDMA                           policy<{'arm64': '-'}>
 CONFIG_MULTIPLEXER                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MUSB_PIO_ONLY                            policy<{'amd64': '-', 'arm64': '-'}>
@@ -6270,6 +6275,7 @@ CONFIG_PWM_LP3943                               policy<{'amd64': '-', 'arm64': '
 CONFIG_PWM_LPSS_PCI                             policy<{'amd64': 'n'}>
 CONFIG_PWM_MEDIATEK                             policy<{'arm64': 'n'}>
 CONFIG_PWM_MESON                                policy<{'arm64': 'y'}>
+CONFIG_PWM_MTK_DISP                             policy<{'arm64': 'n'}>
 CONFIG_PWM_NTXEC                                policy<{'arm64': '-'}>
 CONFIG_PWM_ROCKCHIP                             policy<{'arm64': 'y'}>
 CONFIG_PWM_SL28CPLD                             policy<{'arm64': '-'}>
@@ -6461,6 +6467,7 @@ CONFIG_REGULATOR_MT6323                         policy<{'amd64': '-', 'arm64': '
 CONFIG_REGULATOR_MT6358                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_MT6359                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_MT6360                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_REGULATOR_MT6380                         policy<{'arm64': '-'}>
 CONFIG_REGULATOR_MT6397                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_PALMAS                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_PCAP                           policy<{'amd64': '-', 'arm64': '-'}>
