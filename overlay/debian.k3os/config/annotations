@@ -5115,6 +5115,7 @@ CONFIG_MT7921E                                  policy<{'amd64': '-', 'arm64': '
 CONFIG_MTDRAM_ERASE_SIZE                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MTDRAM_TOTAL_SIZE                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MTD_ABSENT                               policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_MTD_AFS_PARTS                            policy<{'arm64': 'n'}>
 CONFIG_MTD_AMD76XROM                            policy<{'amd64': '-'}>
 CONFIG_MTD_AR7_PARTS                            policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_MTD_BLKDEVS                              policy<{'amd64': '-', 'arm64': 'y'}>
@@ -5188,6 +5189,7 @@ CONFIG_MTD_ONENAND_2X_PROGRAM                   policy<{'amd64': '-', 'arm64': '
 CONFIG_MTD_ONENAND_GENERIC                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MTD_ONENAND_OTP                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MTD_OOPS                                 policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_MTD_PARSER_TRX                           policy<{'arm64': 'n'}>
 CONFIG_MTD_PARTITIONED_MASTER                   policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_MTD_PCI                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MTD_PCMCIA                               policy<{'amd64': '-'}>
