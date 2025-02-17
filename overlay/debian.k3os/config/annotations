@@ -4884,6 +4884,7 @@ CONFIG_MHP_MEMMAP_ON_MEMORY                     policy<{'amd64': '-', 'arm64': '
 CONFIG_MICREL_KS8995MA                          policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_MICREL_PHY                               policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_MICROCHIP_PHY                            policy<{'amd64': 'm', 'arm64': 'y'}>
+CONFIG_MICROCHIP_PIT64B                         policy<{'arm64': 'n'}>
 CONFIG_MICROCHIP_T1_PHY                         policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_MICROCHIP_TCB_CAPTURE                    policy<{'arm64': '-'}>
 CONFIG_MICROSEMI_PHY                            policy<{'amd64': 'n', 'arm64': 'y'}>
@@ -6218,6 +6219,7 @@ CONFIG_PTP_1588_CLOCK_OCP                       policy<{'amd64': '-', 'arm64': '
 CONFIG_PTP_1588_CLOCK_QORIQ                     policy<{'arm64': '-'}>
 CONFIG_PTP_1588_CLOCK_VMW                       policy<{'amd64': 'n'}>
 CONFIG_PWM_ATMEL_HLCDC_PWM                      policy<{'arm64': '-'}>
+CONFIG_PWM_ATMEL_TCB                            policy<{'arm64': 'n'}>
 CONFIG_PWM_BRCMSTB                              policy<{'arm64': 'n'}>
 CONFIG_PWM_CRC                                  policy<{'amd64': '-'}>
 CONFIG_PWM_CROS_EC                              policy<{'amd64': '-', 'arm64': '-'}>
