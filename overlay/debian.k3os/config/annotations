@@ -4911,6 +4911,8 @@ CONFIG_MISDN_NETJET                             policy<{'amd64': '-', 'arm64': '
 CONFIG_MISDN_SPEEDFAX                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MISDN_W6692                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MKISS                                    policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_MLX4_CORE                                policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_MLX4_EN                                  policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_MLX4_INFINIBAND                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MLX5_CORE                                policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_MLX5_EN_IPSEC                            policy<{'amd64': '-', 'arm64': '-'}>
@@ -4928,6 +4930,7 @@ CONFIG_MLX5_VDPA_NET                            policy<{'amd64': '-', 'arm64': '
 CONFIG_MLX90614                                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_MLX90632                                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_MLXBF_BOOTCTL                            policy<{'arm64': '-'}>
+CONFIG_MLXBF_GIGE                               policy<{'arm64': 'n'}>
 CONFIG_MLXBF_PMC                                policy<{'arm64': '-'}>
 CONFIG_MLXBF_TMFIFO                             policy<{'arm64': '-'}>
 CONFIG_MLXFW                                    policy<{'amd64': 'y', 'arm64': 'y'}>
@@ -4937,6 +4940,8 @@ CONFIG_MLXSW_CORE                               policy<{'amd64': 'y', 'arm64': '
 CONFIG_MLXSW_I2C                                policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_MLXSW_MINIMAL                            policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_MLXSW_PCI                                policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_MLXSW_SPECTRUM                           policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_MLX_PLATFORM                             policy<{'amd64': 'n'}>
 CONFIG_MLX_WDT                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MMA7455                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MMA7455_I2C                              policy<{'amd64': '-', 'arm64': 'n'}>
@@ -5705,6 +5710,7 @@ CONFIG_NVME_TARGET_TCP                          policy<{'amd64': '-', 'arm64': '
 CONFIG_NVME_TCP                                 policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_NXP_C45_TJA11XX_PHY                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NXP_TJA11XX_PHY                          policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_OBJAGG                                   policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_OCFS2_DEBUG_FS                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_OCFS2_DEBUG_MASKLOG                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_OCFS2_FS                                 policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -5763,6 +5769,7 @@ CONFIG_PARIDE_PD                                policy<{'amd64': '-'}>
 CONFIG_PARIDE_PF                                policy<{'amd64': '-'}>
 CONFIG_PARIDE_PG                                policy<{'amd64': '-'}>
 CONFIG_PARIDE_PT                                policy<{'amd64': '-'}>
+CONFIG_PARMAN                                   policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_PARPORT                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PARPORT_1284                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PARPORT_AX88796                          policy<{'amd64': '-', 'arm64': '-'}>
