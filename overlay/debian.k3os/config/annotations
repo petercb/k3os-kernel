@@ -201,6 +201,12 @@ CONFIG_NOUVEAU_LEGACY_CTX_SUPPORT               note<'TODO: update note'>
 CONFIG_NR_CPUS                                  policy<{'amd64': '512', 'arm64': '256'}>
 CONFIG_NR_CPUS                                  note<'TODO: update note'>
 
+CONFIG_NUMA_BALANCING_DEFAULT_ENABLED           policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_NUMA_BALANCING_DEFAULT_ENABLED           note<'TODO: update note'>
+
+CONFIG_NUMA_EMU                                 policy<{'amd64': 'n'}>
+CONFIG_NUMA_EMU                                 note<'LP:1864198'>
+
 CONFIG_N_GSM                                    policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_N_GSM                                    note<'LP#1404670'>
 
@@ -5779,6 +5785,7 @@ CONFIG_NTFS_DEBUG                               policy<{'amd64': '-', 'arm64': '
 CONFIG_NTFS_FS                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NTFS_RW                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NULL_TTY                                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_NUMA_BALANCING                           policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_NUMA_KEEP_MEMINFO                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NVDIMM_DAX                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NVDIMM_KEYS                              policy<{'amd64': '-', 'arm64': '-'}>
