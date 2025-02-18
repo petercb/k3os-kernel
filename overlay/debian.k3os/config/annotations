@@ -5882,6 +5882,7 @@ CONFIG_PANEL_PARPORT                            policy<{'amd64': '-', 'arm64': '
 CONFIG_PANEL_PROFILE                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PANIC_ON_OOPS_VALUE                      policy<{'amd64': '1', 'arm64': '1'}>
 CONFIG_PANIC_TIMEOUT                            policy<{'amd64': '30', 'arm64': '30'}>
+CONFIG_PARAVIRT_SPINLOCKS                       policy<{'amd64': 'n'}>
 CONFIG_PARIDE                                   policy<{'amd64': '-'}>
 CONFIG_PARIDE_ATEN                              policy<{'amd64': '-'}>
 CONFIG_PARIDE_BPCK                              policy<{'amd64': '-'}>
@@ -6062,11 +6063,15 @@ CONFIG_PCNET32                                  policy<{'amd64': 'n', 'arm64': '
 CONFIG_PCS_LYNX                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PCS_XPCS                                 policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_PD6729                                   policy<{'amd64': '-'}>
+CONFIG_PDA_POWER                                policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_PDC_ADMA                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PEAQ_WMI                                 policy<{'amd64': '-'}>
 CONFIG_PERF_EVENTS_AMD_UNCORE                   policy<{'amd64': 'y'}>
 CONFIG_PERF_EVENTS_INTEL_CSTATE                 policy<{'amd64': 'y'}>
 CONFIG_PERF_EVENTS_INTEL_RAPL                   policy<{'amd64': 'y'}>
+CONFIG_PERSISTENT_KEYRINGS                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PGTABLE_LEVELS                           policy<{'amd64': '4'}>
+CONFIG_PHANTOM                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PHONET                                   policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_PHYLINK                                  policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_PHY_AM654_SERDES                         policy<{'amd64': '-', 'arm64': 'n'}>
@@ -6280,14 +6285,20 @@ CONFIG_PINCTRL_SX150X                           policy<{'amd64': '-', 'arm64': '
 CONFIG_PINCTRL_TIGERLAKE                        policy<{'amd64': '-'}>
 CONFIG_PINCTRL_TMPV7700                         policy<{'arm64': '-'}>
 CONFIG_PINCTRL_VISCONTI                         policy<{'arm64': '-'}>
+CONFIG_PINCTRL_ZYNQMP                           policy<{'arm64': 'y'}>
 CONFIG_PING                                     policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_PINMUX                                   policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_PKCS7_TEST_KEY                           policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_PKCS8_PRIVATE_KEY_PARSER                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_PL320_MBOX                               policy<{'arm64': 'n'}>
 CONFIG_PL330_DMA                                policy<{'arm64': '-'}>
+CONFIG_PLATFORM_MHU                             policy<{'arm64': 'y'}>
 CONFIG_PLATFORM_SI4713                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PLAYSTATION_FF                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PLIP                                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PLX_DMA                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PLX_HERMES                               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_PM8916_WATCHDOG                          policy<{'arm64': 'n'}>
 CONFIG_PMIC_ADP5520                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PMIC_DA9052                              policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_PMS7003                                  policy<{'amd64': '-', 'arm64': '-'}>
