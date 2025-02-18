@@ -216,6 +216,9 @@ CONFIG_N_GSM                                    note<'LP#1404670'>
 CONFIG_OSNOISE_TRACER                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_OSNOISE_TRACER                           note<'This enables the osnoise tracer for the kernel. LP: #2018591'>
 
+CONFIG_PANIC_ON_OOPS                            policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_PANIC_ON_OOPS                            note<'keep working if at all possible'>
+
 CONFIG_PATA_HPT3X3_DMA                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PATA_HPT3X3_DMA                          note<'TODO: update note'>
 
@@ -5877,6 +5880,7 @@ CONFIG_PANEL                                    policy<{'amd64': '-', 'arm64': '
 CONFIG_PANEL_CHANGE_MESSAGE                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PANEL_PARPORT                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PANEL_PROFILE                            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_PANIC_ON_OOPS_VALUE                      policy<{'amd64': '1', 'arm64': '1'}>
 CONFIG_PANIC_TIMEOUT                            policy<{'amd64': '30', 'arm64': '30'}>
 CONFIG_PARIDE                                   policy<{'amd64': '-'}>
 CONFIG_PARIDE_ATEN                              policy<{'amd64': '-'}>
@@ -6355,6 +6359,9 @@ CONFIG_PTP_1588_CLOCK_KVM                       policy<{'amd64': 'y', 'arm64': '
 CONFIG_PTP_1588_CLOCK_OCP                       policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_PTP_1588_CLOCK_QORIQ                     policy<{'arm64': '-'}>
 CONFIG_PTP_1588_CLOCK_VMW                       policy<{'amd64': 'n'}>
+CONFIG_PVPANIC                                  policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_PVPANIC_MMIO                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_PVPANIC_PCI                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PWM_ATMEL_HLCDC_PWM                      policy<{'arm64': '-'}>
 CONFIG_PWM_ATMEL_TCB                            policy<{'arm64': 'n'}>
 CONFIG_PWM_BRCMSTB                              policy<{'arm64': 'n'}>
