@@ -201,6 +201,9 @@ CONFIG_NOUVEAU_LEGACY_CTX_SUPPORT               note<'TODO: update note'>
 CONFIG_NR_CPUS                                  policy<{'amd64': '512', 'arm64': '256'}>
 CONFIG_NR_CPUS                                  note<'TODO: update note'>
 
+CONFIG_N_GSM                                    policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_N_GSM                                    note<'LP#1404670'>
+
 CONFIG_PATA_HPT3X3_DMA                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PATA_HPT3X3_DMA                          note<'TODO: update note'>
 
@@ -5271,9 +5274,12 @@ CONFIG_MXC6255                                  policy<{'amd64': '-', 'arm64': '
 CONFIG_MXC_CLK_SCU                              policy<{'arm64': '-'}>
 CONFIG_MXM_WMI                                  policy<{'amd64': '-'}>
 CONFIG_MXS_DMA                                  policy<{'arm64': '-'}>
+CONFIG_MYRI10GE                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MYRI10GE_DCA                             policy<{'amd64': '-'}>
 CONFIG_NATIONAL_PHY                             policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_NATSEMI                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NAU7802                                  policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_NCSI_OEM_CMD_GET_MAC                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_ND_BLK                                   policy<{'amd64': '-', 'arm64': 'm'}>
 CONFIG_ND_BTT                                   policy<{'amd64': '-', 'arm64': 'm'}>
 CONFIG_ND_CLAIM                                 policy<{'amd64': '-', 'arm64': 'y'}>
@@ -5689,7 +5695,9 @@ CONFIG_NF_TPROXY_IPV6                           policy<{'amd64': 'y', 'arm64': '
 CONFIG_NI903X_WDT                               policy<{'amd64': 'n'}>
 CONFIG_NIC7018_WDT                              policy<{'amd64': 'n'}>
 CONFIG_NILFS2_FS                                policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_NIU                                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NI_XGE_MANAGEMENT_ENET                   policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_NLMON                                    policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NLS_CODEPAGE_1250                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NLS_CODEPAGE_1251                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NLS_CODEPAGE_737                         policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -5745,9 +5753,11 @@ CONFIG_NOUVEAU_DEBUG_DEFAULT                    policy<{'amd64': '-', 'arm64': '
 CONFIG_NOUVEAU_DEBUG_MMU                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NOUVEAU_DEBUG_PUSH                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NOUVEAU_PLATFORM_DRIVER                  policy<{'arm64': '-'}>
+CONFIG_NOZOMI                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NR_CPUS_DEFAULT                          policy<{'amd64': '64'}>
 CONFIG_NR_CPUS_RANGE_BEGIN                      policy<{'amd64': '2'}>
 CONFIG_NR_CPUS_RANGE_END                        policy<{'amd64': '512'}>
+CONFIG_NS83820                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NTB                                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NTB_AMD                                  policy<{'amd64': '-'}>
 CONFIG_NTB_EPF                                  policy<{'amd64': '-', 'arm64': '-'}>
@@ -5798,6 +5808,7 @@ CONFIG_NVME_TARGET_TCP                          policy<{'amd64': '-', 'arm64': '
 CONFIG_NVME_TCP                                 policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_NXP_C45_TJA11XX_PHY                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NXP_TJA11XX_PHY                          policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_N_HDLC                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_OBJAGG                                   policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_OCFS2_DEBUG_FS                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_OCFS2_DEBUG_MASKLOG                      policy<{'amd64': '-', 'arm64': '-'}>
