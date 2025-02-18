@@ -993,6 +993,7 @@ CONFIG_BACKLIGHT_ARCXCNN                        policy<{'amd64': 'n', 'arm64': '
 CONFIG_BACKLIGHT_AS3711                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BACKLIGHT_BD6107                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BACKLIGHT_CARILLO_RANCH                  policy<{'amd64': '-'}>
+CONFIG_BACKLIGHT_DA903X                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BACKLIGHT_DA9052                         policy<{'amd64': '-', 'arm64': 'm'}>
 CONFIG_BACKLIGHT_GPIO                           policy<{'amd64': '-', 'arm64': 'm'}>
 CONFIG_BACKLIGHT_KTD253                         policy<{'amd64': '-', 'arm64': 'm'}>
@@ -1032,6 +1033,7 @@ CONFIG_BATTERY_BQ27XXX_HDQ                      policy<{'amd64': '-', 'arm64': '
 CONFIG_BATTERY_BQ27XXX_I2C                      policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_BATTERY_CPCAP                            policy<{'arm64': '-'}>
 CONFIG_BATTERY_CW2015                           policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_BATTERY_DA9030                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BATTERY_DA9052                           policy<{'amd64': '-', 'arm64': 'm'}>
 CONFIG_BATTERY_DA9150                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BATTERY_DS2760                           policy<{'amd64': '-', 'arm64': '-'}>
@@ -2131,7 +2133,12 @@ CONFIG_DELL_WMI_PRIVACY                         policy<{'amd64': '-'}>
 CONFIG_DELL_WMI_SYSMAN                          policy<{'amd64': '-'}>
 CONFIG_DETECT_HUNG_TASK                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_DEVFREQ_EVENT_ROCKCHIP_DFI               policy<{'arm64': 'y'}>
-CONFIG_DEVFREQ_THERMAL                          policy<{'amd64': 'y', 'arm64': 'n'}>
+CONFIG_DEVFREQ_GOV_PASSIVE                      policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_DEVFREQ_GOV_PERFORMANCE                  policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_DEVFREQ_GOV_POWERSAVE                    policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_DEVFREQ_GOV_SIMPLE_ONDEMAND              policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_DEVFREQ_GOV_USERSPACE                    policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_DEVFREQ_THERMAL                          policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DEVICE_PRIVATE                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DEVMEM                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_DEV_APPLETALK                            policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -4422,7 +4429,7 @@ CONFIG_LEDS_CLASS_MULTICOLOR                    policy<{'amd64': 'n', 'arm64': '
 CONFIG_LEDS_CLEVO_MAIL                          policy<{'amd64': 'n', 'arm64': '-'}>
 CONFIG_LEDS_CPCAP                               policy<{'arm64': '-'}>
 CONFIG_LEDS_CR0014114                           policy<{'amd64': '-', 'arm64': 'n'}>
-CONFIG_LEDS_DA903X                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_LEDS_DA903X                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_LEDS_DA9052                              policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_LEDS_DAC124S085                          policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_LEDS_EL15203000                          policy<{'amd64': '-', 'arm64': 'n'}>
@@ -6299,13 +6306,23 @@ CONFIG_PLIP                                     policy<{'amd64': '-', 'arm64': '
 CONFIG_PLX_DMA                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PLX_HERMES                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PM8916_WATCHDOG                          policy<{'arm64': 'n'}>
+CONFIG_PMBUS                                    policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PMIC_ADP5520                             policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_PMIC_DA903X                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PMIC_DA9052                              policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_PMIC_OPREGION                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PMS7003                                  policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_PM_ADVANCED_DEBUG                        policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_PM_DEVFREQ                               policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_PM_DEVFREQ_EVENT                         policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_PM_GENERIC_DOMAINS                       policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_PM_GENERIC_DOMAINS_SLEEP                 policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_PM_NOTIFIER_ERROR_INJECT                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_PM_OPP                                   policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_PM_STD_PARTITION                         policy<{'amd64': '-'}>
+CONFIG_PM_WAKELOCKS                             policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_PM_WAKELOCKS_GC                          policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_PM_WAKELOCKS_LIMIT                       policy<{'amd64': '-', 'arm64': '100'}>
 CONFIG_PNFS_BLOCK                               policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_PNFS_FILE_LAYOUT                         policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_PNFS_FLEXFILE_LAYOUT                     policy<{'amd64': 'y', 'arm64': 'y'}>
@@ -6546,6 +6563,7 @@ CONFIG_REGULATOR_BD9571MWV                      policy<{'amd64': '-', 'arm64': '
 CONFIG_REGULATOR_BD957XMUF                      policy<{'arm64': '-'}>
 CONFIG_REGULATOR_CPCAP                          policy<{'arm64': '-'}>
 CONFIG_REGULATOR_CROS_EC                        policy<{'arm64': '-'}>
+CONFIG_REGULATOR_DA903X                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_DA9052                         policy<{'amd64': '-', 'arm64': 'm'}>
 CONFIG_REGULATOR_DA9055                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_DA9062                         policy<{'amd64': '-', 'arm64': '-'}>
@@ -7058,12 +7076,17 @@ CONFIG_SENSORS_AAEON                            policy<{'amd64': '-'}>
 CONFIG_SENSORS_ACPI_POWER                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_AD7314                           policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SENSORS_ADCXX                            policy<{'amd64': '-', 'arm64': 'n'}>
-CONFIG_SENSORS_ADM1266                          policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_SENSORS_ADM1266                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_ADM1275                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_ADS7871                          policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SENSORS_ADT7310                          policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SENSORS_APPLESMC                         policy<{'amd64': 'n', 'arm64': '-'}>
+CONFIG_SENSORS_BEL_PFE                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_BPA_RS600                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_DA9052_ADC                       policy<{'amd64': '-', 'arm64': 'm'}>
 CONFIG_SENSORS_DA9055                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_DPS920AB                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_FSP_3Y                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_GPIO_FAN                         policy<{'arm64': 'n'}>
 CONFIG_SENSORS_GSC                              policy<{'arm64': '-'}>
 CONFIG_SENSORS_HMC5843                          policy<{'amd64': '-', 'arm64': '-'}>
@@ -7071,34 +7094,67 @@ CONFIG_SENSORS_HMC5843_I2C                      policy<{'amd64': '-', 'arm64': '
 CONFIG_SENSORS_HMC5843_SPI                      policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SENSORS_IBMAEM                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_IBMPEX                           policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SENSORS_IBM_CFFPS                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_IIO_HWMON                        policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_SENSORS_INSPUR_IPSPS                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_INTEL_M10_BMC_HWMON              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_IR35221                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_IR36021                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_IR38064                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_IRPS5401                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_ISL29018                         policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SENSORS_ISL29028                         policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_SENSORS_ISL68137                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_LIS3LV02D                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_LIS3_I2C                         policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SENSORS_LM25066                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_LM3533                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_LM70                             policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SENSORS_LOCHNAGAR                        policy<{'arm64': '-'}>
 CONFIG_SENSORS_LTC2947                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_LTC2947_I2C                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_LTC2947_SPI                      policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_SENSORS_LTC2978                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_LTC2978_REGULATOR                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_LTC2992                          policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_SENSORS_LTC3815                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_MAX1111                          policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_SENSORS_MAX15301                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_MAX16064                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_MAX16601                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_MAX20730                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_MAX20751                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_MAX31722                         policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_SENSORS_MAX31785                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_MAX34440                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_MAX8688                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_MC13783_ADC                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_MENF21BMC_HWMON                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_MLXREG_FAN                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_MP2888                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_MP2975                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_OCC_P9_SBE                       policy<{'arm64': '-'}>
+CONFIG_SENSORS_PIM4328                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_PM6764TR                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_PMBUS                            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_PXE1610                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_Q54SJ108A2                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_RM3100                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_RM3100_I2C                       policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SENSORS_RM3100_SPI                       policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SENSORS_SHT15                            policy<{'amd64': '-', 'arm64': 'm'}>
 CONFIG_SENSORS_SL28CPLD                         policy<{'arm64': '-'}>
 CONFIG_SENSORS_SPARX5                           policy<{'arm64': '-'}>
+CONFIG_SENSORS_STPDDC60                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_TPS40422                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_TPS53679                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_TSL2563                          policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_SENSORS_UCD9000                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_UCD9200                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_WM831X                           policy<{'amd64': '-', 'arm64': 'm'}>
 CONFIG_SENSORS_WM8350                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_XDPE122                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_ZL6100                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SERIAL_8250_16550A_VARIANTS              policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_SERIAL_8250_BCM2835AUX                   policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_SERIAL_8250_BCM7271                      policy<{'amd64': '-', 'arm64': 'y'}>
@@ -8289,6 +8345,7 @@ CONFIG_TOUCHSCREEN_CYTTSP4_SPI                  policy<{'amd64': '-', 'arm64': '
 CONFIG_TOUCHSCREEN_CYTTSP_CORE                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TOUCHSCREEN_CYTTSP_I2C                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TOUCHSCREEN_CYTTSP_SPI                   policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_DA9034                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TOUCHSCREEN_DA9052                       policy<{'amd64': '-', 'arm64': 'm'}>
 CONFIG_TOUCHSCREEN_DMI                          policy<{'amd64': '-'}>
 CONFIG_TOUCHSCREEN_DYNAPRO                      policy<{'amd64': 'n', 'arm64': 'n'}>
