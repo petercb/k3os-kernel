@@ -5289,6 +5289,7 @@ CONFIG_NATIONAL_PHY                             policy<{'amd64': 'n', 'arm64': '
 CONFIG_NATSEMI                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NAU7802                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_NCSI_OEM_CMD_GET_MAC                     policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_NDC_DIS_DYNAMIC_CACHING                  policy<{'arm64': '-'}>
 CONFIG_ND_BLK                                   policy<{'amd64': '-', 'arm64': 'm'}>
 CONFIG_ND_BTT                                   policy<{'amd64': '-', 'arm64': 'm'}>
 CONFIG_ND_CLAIM                                 policy<{'amd64': '-', 'arm64': 'y'}>
@@ -5821,6 +5822,7 @@ CONFIG_NVME_TARGET_PASSTHRU                     policy<{'amd64': '-', 'arm64': '
 CONFIG_NVME_TARGET_RDMA                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NVME_TARGET_TCP                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NVME_TCP                                 policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_NV_TCO                                   policy<{'amd64': 'n'}>
 CONFIG_NXP_C45_TJA11XX_PHY                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NXP_TJA11XX_PHY                          policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_N_HDLC                                   policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -5831,6 +5833,10 @@ CONFIG_OCFS2_FS                                 policy<{'amd64': '-', 'arm64': '
 CONFIG_OCFS2_FS_O2CB                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_OCFS2_FS_STATS                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_OCFS2_FS_USERSPACE_CLUSTER               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_OCTEONTX2_AF                             policy<{'arm64': 'n'}>
+CONFIG_OCTEONTX2_MBOX                           policy<{'arm64': '-'}>
+CONFIG_OCTEONTX2_PF                             policy<{'arm64': 'n'}>
+CONFIG_OCTEONTX2_VF                             policy<{'arm64': '-'}>
 CONFIG_OF_FPGA_REGION                           policy<{'arm64': '-'}>
 CONFIG_OF_PMEM                                  policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_OF_RECONFIG_NOTIFIER_ERROR_INJECT        policy<{'arm64': '-'}>
