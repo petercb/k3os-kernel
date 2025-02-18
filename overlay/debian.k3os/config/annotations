@@ -213,6 +213,9 @@ CONFIG_NVRAM                                    note<'LP#1837726'>
 CONFIG_N_GSM                                    policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_N_GSM                                    note<'LP#1404670'>
 
+CONFIG_OSNOISE_TRACER                           policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_OSNOISE_TRACER                           note<'This enables the osnoise tracer for the kernel. LP: #2018591'>
+
 CONFIG_PATA_HPT3X3_DMA                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PATA_HPT3X3_DMA                          note<'TODO: update note'>
 
@@ -5840,6 +5843,8 @@ CONFIG_OCTEONTX2_VF                             policy<{'arm64': '-'}>
 CONFIG_OF_FPGA_REGION                           policy<{'arm64': '-'}>
 CONFIG_OF_PMEM                                  policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_OF_RECONFIG_NOTIFIER_ERROR_INJECT        policy<{'arm64': '-'}>
+CONFIG_OMAP2PLUS_MBOX                           policy<{'arm64': 'n'}>
+CONFIG_OMAP_MBOX_KFIFO_SIZE                     policy<{'arm64': '-'}>
 CONFIG_OMAP_USB2                                policy<{'arm64': 'n'}>
 CONFIG_OMFS_FS                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_OPENVSWITCH                              policy<{'amd64': 'y', 'arm64': 'y'}>
@@ -5852,6 +5857,9 @@ CONFIG_ORINOCO_USB                              policy<{'amd64': '-', 'arm64': '
 CONFIG_OVERLAY_FS                               policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_OVERLAY_FS_XINO_AUTO                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_OWL_DMA                                  policy<{'arm64': '-'}>
+CONFIG_OWL_EMAC                                 policy<{'arm64': 'n'}>
+CONFIG_OWL_PM_DOMAINS                           policy<{'arm64': 'n'}>
+CONFIG_OWL_PM_DOMAINS_HELPER                    policy<{'arm64': '-'}>
 CONFIG_P54_COMMON                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_P54_LEDS                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_P54_PCI                                  policy<{'amd64': '-', 'arm64': '-'}>
@@ -5859,6 +5867,8 @@ CONFIG_P54_SPI                                  policy<{'amd64': '-', 'arm64': '
 CONFIG_P54_SPI_DEFAULT_EEPROM                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_P54_USB                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PA12203001                               policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_PACKET_DIAG                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_PACKING                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PADATA                                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PAGE_IDLE_FLAG                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PALMAS_GPADC                             policy<{'amd64': '-', 'arm64': '-'}>
