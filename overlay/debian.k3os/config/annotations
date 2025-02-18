@@ -5701,9 +5701,11 @@ CONFIG_NF_TPROXY_IPV6                           policy<{'amd64': 'y', 'arm64': '
 CONFIG_NI903X_WDT                               policy<{'amd64': 'n'}>
 CONFIG_NIC7018_WDT                              policy<{'amd64': 'n'}>
 CONFIG_NILFS2_FS                                policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_NITRO_ENCLAVES                           policy<{'amd64': 'y', 'arm64': '-'}>
 CONFIG_NIU                                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NI_XGE_MANAGEMENT_ENET                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NLMON                                    policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_NLS_ASCII                                policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_NLS_CODEPAGE_1250                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NLS_CODEPAGE_1251                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NLS_CODEPAGE_737                         policy<{'amd64': 'n', 'arm64': 'n'}>
