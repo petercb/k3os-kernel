@@ -207,6 +207,9 @@ CONFIG_NUMA_BALANCING_DEFAULT_ENABLED           note<'TODO: update note'>
 CONFIG_NUMA_EMU                                 policy<{'amd64': 'n'}>
 CONFIG_NUMA_EMU                                 note<'LP:1864198'>
 
+CONFIG_NVRAM                                    policy<{'amd64': 'y', 'arm64': '-'}>
+CONFIG_NVRAM                                    note<'LP#1837726'>
+
 CONFIG_N_GSM                                    policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_N_GSM                                    note<'LP#1404670'>
 
@@ -5807,6 +5810,9 @@ CONFIG_NVMEM_SUNXI_SID                          policy<{'amd64': '-', 'arm64': '
 CONFIG_NVMEM_ZYNQMP                             policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_NVME_CORE                                policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_NVME_FABRICS                             policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_NVME_FC                                  policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_NVME_MULTIPATH                           policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_NVME_RDMA                                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NVME_TARGET                              policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_NVME_TARGET_FC                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NVME_TARGET_FCLOOP                       policy<{'amd64': '-', 'arm64': '-'}>
