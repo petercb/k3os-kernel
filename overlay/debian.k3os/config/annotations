@@ -231,6 +231,9 @@ CONFIG_PCI_MESON                                note<'LP: #2007745'>
 CONFIG_PINCTRL_CHERRYVIEW                       policy<{'amd64': '-'}>
 CONFIG_PINCTRL_CHERRYVIEW                       note<'TODO: update note'>
 
+CONFIG_PSI_DEFAULT_DISABLED                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_PSI_DEFAULT_DISABLED                     note<TODO: update note>
+
 CONFIG_REGULATOR_TPS65217                       policy<{'arm64': '-'}>
 CONFIG_REGULATOR_TPS65217                       note<'TODO: update note'>
 
@@ -6376,6 +6379,7 @@ CONFIG_PROC_THERMAL_MMIO_RAPL                   policy<{'amd64': '-'}>
 CONFIG_PROC_VMCORE_DEVICE_DUMP                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PRU_REMOTEPROC                           policy<{'arm64': '-'}>
 CONFIG_PSAMPLE                                  policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_PSI                                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PSTORE                                   policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_PSTORE_842_COMPRESS                      policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_PSTORE_BLK                               policy<{'amd64': '-', 'arm64': 'n'}>
@@ -6404,25 +6408,47 @@ CONFIG_PTP_1588_CLOCK_KVM                       policy<{'amd64': 'y', 'arm64': '
 CONFIG_PTP_1588_CLOCK_OCP                       policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_PTP_1588_CLOCK_QORIQ                     policy<{'arm64': '-'}>
 CONFIG_PTP_1588_CLOCK_VMW                       policy<{'amd64': 'n'}>
+CONFIG_PUNIT_ATOM_DEBUG                         policy<{'amd64': 'n'}>
+CONFIG_PVH                                      policy<{'amd64': 'n'}>
 CONFIG_PVPANIC                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PVPANIC_MMIO                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PVPANIC_PCI                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PWM_ATMEL_HLCDC_PWM                      policy<{'arm64': '-'}>
 CONFIG_PWM_ATMEL_TCB                            policy<{'arm64': 'n'}>
+CONFIG_PWM_BCM2835                              policy<{'arm64': 'y'}>
+CONFIG_PWM_BCM_IPROC                            policy<{'arm64': 'y'}>
+CONFIG_PWM_BERLIN                               policy<{'arm64': 'n'}>
 CONFIG_PWM_BRCMSTB                              policy<{'arm64': 'n'}>
 CONFIG_PWM_CRC                                  policy<{'amd64': '-'}>
 CONFIG_PWM_CROS_EC                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_PWM_DWC                                  policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_PWM_FSL_FTM                              policy<{'arm64': 'n'}>
+CONFIG_PWM_HIBVT                                policy<{'arm64': 'n'}>
+CONFIG_PWM_IMX1                                 policy<{'arm64': 'n'}>
+CONFIG_PWM_IMX27                                policy<{'arm64': 'n'}>
+CONFIG_PWM_IMX_TPM                              policy<{'arm64': 'n'}>
 CONFIG_PWM_IQS620A                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PWM_KEEMBAY                              policy<{'arm64': '-'}>
 CONFIG_PWM_LP3943                               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_PWM_LPSS                                 policy<{'amd64': '-'}>
 CONFIG_PWM_LPSS_PCI                             policy<{'amd64': 'n'}>
+CONFIG_PWM_LPSS_PLATFORM                        policy<{'amd64': 'n'}>
 CONFIG_PWM_MEDIATEK                             policy<{'arm64': 'n'}>
 CONFIG_PWM_MESON                                policy<{'arm64': 'y'}>
 CONFIG_PWM_MTK_DISP                             policy<{'arm64': 'n'}>
 CONFIG_PWM_NTXEC                                policy<{'arm64': '-'}>
+CONFIG_PWM_PCA9685                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_PWM_RASPBERRYPI_POE                      policy<{'arm64': 'y'}>
+CONFIG_PWM_RCAR                                 policy<{'arm64': 'n'}>
+CONFIG_PWM_RENESAS_TPU                          policy<{'arm64': 'n'}>
 CONFIG_PWM_ROCKCHIP                             policy<{'arm64': 'y'}>
 CONFIG_PWM_SL28CPLD                             policy<{'arm64': '-'}>
+CONFIG_PWM_SPRD                                 policy<{'arm64': 'n'}>
 CONFIG_PWM_STMPE                                policy<{'arm64': '-'}>
+CONFIG_PWM_SUN4I                                policy<{'arm64': 'y'}>
+CONFIG_PWM_TEGRA                                policy<{'arm64': 'y'}>
+CONFIG_PWM_TIECAP                               policy<{'arm64': 'n'}>
+CONFIG_PWM_TIEHRPWM                             policy<{'arm64': 'n'}>
 CONFIG_PWM_TWL                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PWM_TWL_LED                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PWM_VISCONTI                             policy<{'arm64': '-'}>
