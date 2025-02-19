@@ -744,6 +744,7 @@ CONFIG_AR5523                                   policy<{'amd64': '-', 'arm64': '
 CONFIG_ARCH_APPLE                               policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_ARCH_BCM4908                             policy<{'arm64': 'n'}>
 CONFIG_ARCH_ENABLE_MEMORY_HOTREMOVE             policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_ARCH_ENABLE_THP_MIGRATION                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ARCH_HAS_CC_PLATFORM                     policy<{'amd64': '-'}>
 CONFIG_ARCH_HAS_EARLY_DEBUG                     policy<{'amd64': '-'}>
 CONFIG_ARCH_HAS_FORCE_DMA_UNENCRYPTED           policy<{'amd64': '-'}>
@@ -2171,6 +2172,7 @@ CONFIG_DEVICE_PRIVATE                           policy<{'amd64': '-', 'arm64': '
 CONFIG_DEVMEM                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_DEV_APPLETALK                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_DEV_COREDUMP                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_DEV_DAX                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DEV_DAX_HMEM                             policy<{'amd64': '-', 'arm64': 'm'}>
 CONFIG_DEV_DAX_HMEM_DEVICES                     policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_DEV_DAX_KMEM                             policy<{'amd64': '-', 'arm64': '-'}>
@@ -6650,6 +6652,7 @@ CONFIG_RDS                                      policy<{'amd64': 'y', 'arm64': '
 CONFIG_RDS_RDMA                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_RDS_TCP                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_RD_LZO                                   policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_READ_ONLY_THP_FOR_FS                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REALTEK_AUTOPM                           policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_REALTEK_PHY                              policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_REBOOT_MODE                              policy<{'arm64': '-'}>
@@ -8764,6 +8767,7 @@ CONFIG_THINKPAD_ACPI_HOTKEY_POLL                policy<{'amd64': '-'}>
 CONFIG_THINKPAD_ACPI_UNSAFE_LEDS                policy<{'amd64': '-'}>
 CONFIG_THINKPAD_ACPI_VIDEO                      policy<{'amd64': '-'}>
 CONFIG_THINKPAD_LMI                             policy<{'amd64': '-'}>
+CONFIG_THP_SWAP                                 policy<{'amd64': '-'}>
 CONFIG_THRUSTMASTER_FF                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_THUNDERX2_PMU                            policy<{'arm64': 'y'}>
 CONFIG_THUNDER_NIC_BGX                          policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -8972,6 +8976,9 @@ CONFIG_TRACER_SNAPSHOT                          policy<{'amd64': 'n', 'arm64': '
 CONFIG_TRACER_SNAPSHOT_PER_CPU_SWAP             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TRACE_EVENT_INJECT                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TRACING_MAP                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TRANSPARENT_HUGEPAGE                     policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TRANSPARENT_HUGEPAGE_ALWAYS              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TRANSPARENT_HUGEPAGE_MADVISE             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TRIM_UNUSED_KSYMS                        policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_TRUSTED_KEYS                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TSL2583                                  policy<{'amd64': '-', 'arm64': 'n'}>
@@ -9999,6 +10006,7 @@ CONFIG_X86_SGX_KVM                              policy<{'amd64': '-'}>
 CONFIG_X86_SPEEDSTEP_LIB                        policy<{'amd64': '-'}>
 CONFIG_X86_VERBOSE_BOOTUP                       policy<{'amd64': 'y'}>
 CONFIG_X86_X32                                  policy<{'amd64': 'n'}>
+CONFIG_XARRAY_MULTI                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_XENFS                                    policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_XEN_BACKEND                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_XEN_BALLOON_MEMORY_HOTPLUG               policy<{'amd64': '-', 'arm64': '-'}>
