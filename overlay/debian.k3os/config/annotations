@@ -8834,6 +8834,7 @@ CONFIG_TI_ST                                    policy<{'amd64': '-', 'arm64': '
 CONFIG_TI_SYSCON_CLK                            policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_TI_TLC4541                               policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_TI_TSC2046                               policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_TLAN                                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TLS                                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TLS_DEVICE                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TLS_TOE                                  policy<{'amd64': '-', 'arm64': '-'}>
