@@ -6601,6 +6601,8 @@ CONFIG_RAVE_SP_CORE                             policy<{'amd64': '-', 'arm64': '
 CONFIG_RAVE_SP_EEPROM                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RAVE_SP_WATCHDOG                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RCAR_DMAC                                policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RCAR_GEN3_THERMAL                        policy<{'arm64': 'n'}>
+CONFIG_RCAR_THERMAL                             policy<{'arm64': 'n'}>
 CONFIG_RC_ATI_REMOTE                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RC_CORE                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_RC_DECODERS                              policy<{'amd64': '-', 'arm64': '-'}>
@@ -8183,6 +8185,7 @@ CONFIG_SPMI_HISI3670                            policy<{'amd64': '-', 'arm64': '
 CONFIG_SPMI_MSM_PMIC_ARB                        policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_SPMI_PMIC_CLKDIV                         policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SPRD_DMA                                 policy<{'arm64': '-'}>
+CONFIG_SPRD_THERMAL                             policy<{'arm64': 'n'}>
 CONFIG_SPS30                                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SPS30_I2C                                policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SPS30_SERIAL                             policy<{'amd64': '-', 'arm64': '-'}>
@@ -8230,6 +8233,7 @@ CONFIG_STX104                                   policy<{'amd64': '-'}>
 CONFIG_ST_UVIS25                                policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_ST_UVIS25_I2C                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ST_UVIS25_SPI                            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SUN8I_THERMAL                            policy<{'arm64': 'y'}>
 CONFIG_SUNRPC                                   policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_SUNRPC_DISABLE_INSECURE_ENCTYPES         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SUNRPC_GSS                               policy<{'amd64': 'y', 'arm64': 'y'}>
@@ -8318,6 +8322,7 @@ CONFIG_TCS3414                                  policy<{'amd64': '-', 'arm64': '
 CONFIG_TCS3472                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_TEGRA20_APB_DMA                          policy<{'arm64': '-'}>
 CONFIG_TEGRA210_ADMA                            policy<{'arm64': '-'}>
+CONFIG_TEGRA_BPMP_THERMAL                       policy<{'arm64': 'y'}>
 CONFIG_TEGRA_HOST1X                             policy<{'arm64': 'y'}>
 CONFIG_TEGRA_VDE                                policy<{'arm64': '-'}>
 CONFIG_TEHUTI                                   policy<{'amd64': 'n', 'arm64': 'n'}>
