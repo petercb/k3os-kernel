@@ -78,7 +78,21 @@ mv "/boot/config-${VERSION}" "${KERNEL_ROOT}/config"
 mv "/boot/vmlinuz-${VERSION}" "${KERNEL_ROOT}/vmlinuz"
 cp "${KERNEL_ROOT}/vmlinuz" "${DIST_DIR}/k3os-vmlinuz-${TARGETARCH}.img"
 mv /lib/modules "${KERNEL_ROOT}/lib"
-cp -a /lib/firmware "${KERNEL_ROOT}/lib"
+
+# Assemble firmware
+mkdir -p "${KERNEL_ROOT}/lib/firmware/intel/ice"
+cp -a /lib/firmware/intel/ice/ddp "${KERNEL_ROOT}/lib/firmware/intel/ice"
+case "${TARGETARCH}" in
+    arm64)
+        cp -a /lib/firmware/rtl_nic "${KERNEL_ROOT}/lib/firmware"
+        mkdir -p "${KERNEL_ROOT}/lib/firmware/nvidia"
+        cp -a /lib/firmware/nvidia/tegra210 "${KERNEL_ROOT}/lib/firmware/nvidia"
+        ;;
+    amd64)
+        cp -a /lib/firmware/bnx2x "${KERNEL_ROOT}/lib/firmware"
+        cp -a /lib/firmware/bnx2 "${KERNEL_ROOT}/lib/firmware"
+        ;;
+esac
 
 pushd "${KERNEL_ROOT}"
 OUTFILE="${DIST_DIR}/k3os-kernel-${TARGETARCH}.squashfs"
