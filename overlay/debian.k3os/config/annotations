@@ -9059,6 +9059,7 @@ CONFIG_UCLAMP_TASK_GROUP                        policy<{'amd64': '-', 'arm64': '
 CONFIG_UCSI_ACPI                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_UCSI_CCG                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_UDF_FS                                   policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_UDMABUF                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_UEFI_CPER                                policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_UEFI_CPER_X86                            policy<{'amd64': '-'}>
 CONFIG_UFS_DEBUG                                policy<{'amd64': '-', 'arm64': '-'}>
