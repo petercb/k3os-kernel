@@ -232,7 +232,7 @@ CONFIG_PINCTRL_CHERRYVIEW                       policy<{'amd64': '-'}>
 CONFIG_PINCTRL_CHERRYVIEW                       note<'TODO: update note'>
 
 CONFIG_PSI_DEFAULT_DISABLED                     policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_PSI_DEFAULT_DISABLED                     note<TODO: update note>
+CONFIG_PSI_DEFAULT_DISABLED                     note<'TODO: update note'>
 
 CONFIG_REGULATOR_TPS65217                       policy<{'arm64': '-'}>
 CONFIG_REGULATOR_TPS65217                       note<'TODO: update note'>
@@ -6452,7 +6452,9 @@ CONFIG_PWM_TIEHRPWM                             policy<{'arm64': 'n'}>
 CONFIG_PWM_TWL                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PWM_TWL_LED                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PWM_VISCONTI                             policy<{'arm64': '-'}>
+CONFIG_PWRSEQ_EMMC                              policy<{'arm64': 'y'}>
 CONFIG_PWRSEQ_SD8787                            policy<{'arm64': '-'}>
+CONFIG_PWRSEQ_SIMPLE                            policy<{'arm64': 'y'}>
 CONFIG_QCA7000_UART                             policy<{'arm64': '-'}>
 CONFIG_QCOM_A53PLL                              policy<{'arm64': 'n'}>
 CONFIG_QCOM_A7PLL                               policy<{'arm64': 'n'}>
