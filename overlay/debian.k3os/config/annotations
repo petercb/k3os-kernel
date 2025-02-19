@@ -8664,6 +8664,7 @@ CONFIG_SYSC_R8A779A0                            policy<{'arm64': '-'}>
 CONFIG_SYSC_RCAR                                policy<{'arm64': '-'}>
 CONFIG_SYSFB_SIMPLEFB                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SYSTEM76_ACPI                            policy<{'amd64': 'n', 'arm64': '-'}>
+CONFIG_SYSTEMPORT                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SYSTEM_BLACKLIST_HASH_LIST               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SYSTEM_BLACKLIST_KEYRING                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SYSTEM_EXTRA_CERTIFICATE                 policy<{'amd64': 'n', 'arm64': 'n'}>
