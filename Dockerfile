@@ -20,6 +20,7 @@ RUN <<-EOF
         bison \
         ccache \
         cpio \
+        dwarfdump \
         dwarves \
         fakeroot \
         flex \
