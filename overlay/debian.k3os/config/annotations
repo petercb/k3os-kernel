@@ -733,6 +733,7 @@ CONFIG_ARCH_INTEL_SOCFPGA                       policy<{'arm64': 'n'}>
 CONFIG_ARCH_KEEMBAY                             policy<{'arm64': 'n'}>
 CONFIG_ARCH_MEMORY_PROBE                        policy<{'amd64': '-'}>
 CONFIG_ARCH_MXC                                 policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_ARCH_PROC_KCORE_TEXT                     policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_ARCH_R8A774A1                            policy<{'arm64': 'n'}>
 CONFIG_ARCH_R8A774B1                            policy<{'arm64': 'n'}>
 CONFIG_ARCH_R8A774C0                            policy<{'arm64': 'n'}>
@@ -6360,6 +6361,7 @@ CONFIG_PPP_MPPE                                 policy<{'amd64': '-', 'arm64': '
 CONFIG_PPP_MULTILINK                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PPP_SYNC_TTY                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PPS_CLIENT_GPIO                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_PPS_CLIENT_LDISC                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PPS_CLIENT_PARPORT                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PPTP                                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PRESTERA                                 policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -6367,8 +6369,11 @@ CONFIG_PRESTERA_PCI                             policy<{'amd64': '-', 'arm64': '
 CONFIG_PRINTER                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PRISM2_USB                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PROCESSOR_SELECT                         policy<{'amd64': '-'}>
+CONFIG_PROC_CHILDREN                            policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_PROC_CPU_RESCTRL                         policy<{'amd64': '-'}>
+CONFIG_PROC_KCORE                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PROC_THERMAL_MMIO_RAPL                   policy<{'amd64': '-'}>
+CONFIG_PROC_VMCORE_DEVICE_DUMP                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PRU_REMOTEPROC                           policy<{'arm64': '-'}>
 CONFIG_PSAMPLE                                  policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_PSTORE                                   policy<{'amd64': 'n', 'arm64': 'y'}>
