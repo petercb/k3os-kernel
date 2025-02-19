@@ -9078,6 +9078,7 @@ CONFIG_UIO_PCI_GENERIC                          policy<{'amd64': '-', 'arm64': '
 CONFIG_UIO_PDRV_GENIRQ                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_UIO_PRUSS                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_UIO_SERCOS3                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_ULI526X                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_ULTRIX_PARTITION                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_UNISYSSPAR                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_UNISYS_VISORHBA                          policy<{'amd64': '-'}>
@@ -9902,6 +9903,8 @@ CONFIG_VSOCKETS_LOOPBACK                        policy<{'amd64': 'y', 'arm64': '
 CONFIG_VT6655                                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_VT6656                                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_VXFS_FS                                  policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_VXGE                                     policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_VXGE_DEBUG_TRACE_ALL                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_VXLAN                                    policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_VZ89X                                    policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_W1                                       policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -9970,6 +9973,7 @@ CONFIG_WILCO_EC_DEBUGFS                         policy<{'amd64': '-'}>
 CONFIG_WILCO_EC_EVENTS                          policy<{'amd64': '-'}>
 CONFIG_WILCO_EC_TELEMETRY                       policy<{'amd64': '-'}>
 CONFIG_WILINK_PLATFORM_DATA                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_WINBOND_840                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_WIREGUARD                                policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_WIRELESS_EXT                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_WIRELESS_HOTKEY                          policy<{'amd64': 'n', 'arm64': '-'}>
@@ -10034,6 +10038,8 @@ CONFIG_X86_SPEEDSTEP_LIB                        policy<{'amd64': '-'}>
 CONFIG_X86_VERBOSE_BOOTUP                       policy<{'amd64': 'y'}>
 CONFIG_X86_X32                                  policy<{'amd64': 'n'}>
 CONFIG_XARRAY_MULTI                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_XDP_SOCKETS                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_XDP_SOCKETS_DIAG                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_XENFS                                    policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_XEN_BACKEND                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_XEN_BALLOON_MEMORY_HOTPLUG               policy<{'amd64': '-', 'arm64': '-'}>
