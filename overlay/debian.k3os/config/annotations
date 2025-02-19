@@ -6851,11 +6851,15 @@ CONFIG_ROMFS_ON_BLOCK                           policy<{'amd64': '-', 'arm64': '
 CONFIG_ROOT_NFS                                 policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_ROSE                                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RPCSEC_GSS_KRB5                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RPMSG                                    policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_RPMSG_CHAR                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_RPMSG_MTK_SCP                            policy<{'arm64': '-'}>
+CONFIG_RPMSG_NS                                 policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_RPMSG_QCOM_GLINK                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RPMSG_QCOM_GLINK_RPM                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_RPMSG_QCOM_GLINK_SMEM                    policy<{'arm64': '-'}>
 CONFIG_RPMSG_QCOM_SMD                           policy<{'arm64': '-'}>
+CONFIG_RPMSG_VIRTIO                             policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_RPR0521                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_RSI_91X                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RSI_COEX                                 policy<{'amd64': '-', 'arm64': '-'}>
@@ -7020,6 +7024,8 @@ CONFIG_RTC_DRV_WM831X                           policy<{'amd64': '-', 'arm64': '
 CONFIG_RTC_DRV_WM8350                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RTC_DRV_X1205                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_RTC_DRV_ZYNQMP                           policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_RTC_HCTOSYS                              policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_RTC_HCTOSYS_DEVICE                       policy<{'amd64': '-', 'arm64': '"rtc0"'}>
 CONFIG_RTL8180                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RTL8187                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RTL8187_LEDS                             policy<{'amd64': '-', 'arm64': '-'}>
