@@ -7126,6 +7126,8 @@ CONFIG_SATA_ULI                                 policy<{'amd64': 'n', 'arm64': '
 CONFIG_SATA_VIA                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SATA_VITESSE                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SATA_ZPODD                               policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SBC_EPX_C3_WATCHDOG                      policy<{'amd64': 'n'}>
+CONFIG_SBC_FITPC2_WATCHDOG                      policy<{'amd64': 'n'}>
 CONFIG_SBP_TARGET                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SC1200_WDT                               policy<{'amd64': 'n'}>
 CONFIG_SC27XX_ADC                               policy<{'arm64': '-'}>
@@ -8163,6 +8165,7 @@ CONFIG_SND_YMFPCI                               policy<{'amd64': '-', 'arm64': '
 CONFIG_SNI_NETSEC                               policy<{'arm64': 'n'}>
 CONFIG_SOCFPGA_FPGA_BRIDGE                      policy<{'arm64': '-'}>
 CONFIG_SOCK_VALIDATE_XMIT                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SOFT_WATCHDOG                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SOFT_WATCHDOG_PRETIMEOUT                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SONYPI_COMPAT                            policy<{'amd64': '-'}>
 CONFIG_SONY_FF                                  policy<{'amd64': '-', 'arm64': '-'}>
@@ -8271,6 +8274,7 @@ CONFIG_SPMI_MSM_PMIC_ARB                        policy<{'amd64': '-', 'arm64': '
 CONFIG_SPMI_PMIC_CLKDIV                         policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SPRD_DMA                                 policy<{'arm64': '-'}>
 CONFIG_SPRD_THERMAL                             policy<{'arm64': 'n'}>
+CONFIG_SPRD_WATCHDOG                            policy<{'arm64': 'n'}>
 CONFIG_SPS30                                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SPS30_I2C                                policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SPS30_SERIAL                             policy<{'amd64': '-', 'arm64': '-'}>
@@ -8325,6 +8329,7 @@ CONFIG_SUNRPC_GSS                               policy<{'amd64': 'y', 'arm64': '
 CONFIG_SUNRPC_SWAP                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SUNRPC_XPRT_RDMA                         policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_SUNXI_RSB                                policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_SUNXI_WATCHDOG                           policy<{'arm64': 'y'}>
 CONFIG_SURFACE3_WMI                             policy<{'amd64': '-'}>
 CONFIG_SURFACE_3_BUTTON                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SURFACE_ACPI_NOTIFY                      policy<{'amd64': '-', 'arm64': '-'}>
@@ -8411,6 +8416,7 @@ CONFIG_TEGRA210_ADMA                            policy<{'arm64': '-'}>
 CONFIG_TEGRA_BPMP_THERMAL                       policy<{'arm64': 'y'}>
 CONFIG_TEGRA_HOST1X                             policy<{'arm64': 'y'}>
 CONFIG_TEGRA_VDE                                policy<{'arm64': '-'}>
+CONFIG_TEGRA_WATCHDOG                           policy<{'arm64': 'y'}>
 CONFIG_TEHUTI                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TERANETICS_PHY                           policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_TEST_BPF                                 policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -9734,6 +9740,7 @@ CONFIG_YENTA_TOSHIBA                            policy<{'amd64': '-', 'arm64': '
 CONFIG_ZD1211RW                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ZD1211RW_DEBUG                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ZEROPLUS_FF                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_ZIIRAVE_WATCHDOG                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_ZONEFS_FS                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ZONE_DEVICE                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ZOPT2201                                 policy<{'amd64': '-', 'arm64': 'n'}>
