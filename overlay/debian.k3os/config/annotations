@@ -6580,7 +6580,20 @@ CONFIG_RAID6_PQ                                 policy<{'amd64': '-', 'arm64': '
 CONFIG_RAID6_PQ_BENCHMARK                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RAID_ATTRS                               policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_RANDOMIZE_MEMORY_PHYSICAL_PADDING        policy<{'amd64': '0x0'}>
+CONFIG_RAPIDIO                                  policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_RAPIDIO_CHMAN                            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RAPIDIO_CPS_GEN2                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RAPIDIO_CPS_XX                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RAPIDIO_DEBUG                            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RAPIDIO_DISC_TIMEOUT                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RAPIDIO_DMA_ENGINE                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RAPIDIO_ENABLE_RX_TX_PORTS               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RAPIDIO_ENUM_BASIC                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RAPIDIO_MPORT_CDEV                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RAPIDIO_RXS_GEN3                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RAPIDIO_TSI568                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RAPIDIO_TSI57X                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RAPIDIO_TSI721                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RAS_CEC                                  policy<{'amd64': '-'}>
 CONFIG_RAS_CEC_DEBUG                            policy<{'amd64': '-'}>
 CONFIG_RAVB                                     policy<{'amd64': '-', 'arm64': 'y'}>
@@ -6724,6 +6737,9 @@ CONFIG_RFKILL                                   policy<{'amd64': 'n', 'arm64': '
 CONFIG_RFKILL_GPIO                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RFKILL_INPUT                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RFKILL_LEDS                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RIONET                                   policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RIONET_RX_SIZE                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RIONET_TX_SIZE                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RMI4_2D_SENSOR                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RMI4_CORE                                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_RMI4_F03                                 policy<{'amd64': '-', 'arm64': '-'}>
