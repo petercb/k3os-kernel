@@ -7270,6 +7270,7 @@ CONFIG_SDM_VIDEOCC_845                          policy<{'arm64': 'n'}>
 CONFIG_SDR_MAX2175                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SDR_PLATFORM_DRIVERS                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SDX_GCC_55                               policy<{'arm64': 'n'}>
+CONFIG_SD_ADC_MODULATOR                         policy<{'arm64': 'n'}>
 CONFIG_SECRETMEM                                policy<{'amd64': 'y', 'arm64': '-'}>
 CONFIG_SECURITY_INFINIBAND                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSIRION_SGP30                          policy<{'amd64': '-', 'arm64': 'n'}>
