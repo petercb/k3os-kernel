@@ -246,6 +246,9 @@ CONFIG_REGULATOR_TWL4030                        note<'TODO: update note'>
 CONFIG_RTC_DRV_TWL4030                          policy<{'arm64': '-'}>
 CONFIG_RTC_DRV_TWL4030                          note<'TODO: update note'>
 
+CONFIG_RT_GROUP_SCHED                           policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_RT_GROUP_SCHED                           note<'LP#1875665'>
+
 CONFIG_SAMPLE_TRACE_PRINTK                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SAMPLE_TRACE_PRINTK                      note<'TODO: update note'>
 
