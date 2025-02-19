@@ -234,6 +234,9 @@ CONFIG_PINCTRL_CHERRYVIEW                       note<'TODO: update note'>
 CONFIG_PSI_DEFAULT_DISABLED                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PSI_DEFAULT_DISABLED                     note<'TODO: update note'>
 
+CONFIG_RCU_CPU_STALL_TIMEOUT                    policy<{'amd64': '21', 'arm64': '21'}>
+CONFIG_RCU_CPU_STALL_TIMEOUT                    note<'LP:1991951'>
+
 CONFIG_REGULATOR_FIXED_VOLTAGE                  policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_REGULATOR_FIXED_VOLTAGE                  note<'boot essential on arm'>
 
