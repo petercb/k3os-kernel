@@ -6539,6 +6539,8 @@ CONFIG_QED_OOO                                  policy<{'amd64': '-', 'arm64': '
 CONFIG_QED_RDMA                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_QED_SRIOV                                policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_QE_TDM                                   policy<{'arm64': '-'}>
+CONFIG_QFMT_V1                                  policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_QFMT_V2                                  policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_QLA3XXX                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_QLCNIC                                   policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_QLCNIC_SRIOV                             policy<{'amd64': '-', 'arm64': 'y'}>
@@ -6554,6 +6556,7 @@ CONFIG_QSEMI_PHY                                policy<{'amd64': 'n', 'arm64': '
 CONFIG_QTNFMAC                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_QTNFMAC_PCIE                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_QUICC_ENGINE                             policy<{'arm64': 'n'}>
+CONFIG_QUOTA_TREE                               policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_R6040                                    policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_R8169                                    policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_R8188EU                                  policy<{'amd64': '-', 'arm64': '-'}>
