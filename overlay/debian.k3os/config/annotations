@@ -3259,6 +3259,7 @@ CONFIG_GPIO_VIRTIO                              policy<{'amd64': '-', 'arm64': '
 CONFIG_GPIO_VISCONTI                            policy<{'arm64': '-'}>
 CONFIG_GPIO_VX855                               policy<{'amd64': '-'}>
 CONFIG_GPIO_WATCHDOG                            policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_GPIO_WCD934X                             policy<{'arm64': '-'}>
 CONFIG_GPIO_WHISKEY_COVE                        policy<{'amd64': '-'}>
 CONFIG_GPIO_WINBOND                             policy<{'amd64': '-'}>
 CONFIG_GPIO_WM831X                              policy<{'amd64': '-', 'arm64': 'm'}>
@@ -4914,6 +4915,7 @@ CONFIG_MFD_TQMX86                               policy<{'amd64': 'n', 'arm64': '
 CONFIG_MFD_TWL4030_AUDIO                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MFD_VIPERBOARD                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MFD_VX855                                policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_MFD_WCD934X                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MFD_WL1273_CORE                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MFD_WM5102                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MFD_WM5110                               policy<{'amd64': '-', 'arm64': '-'}>
@@ -6648,6 +6650,7 @@ CONFIG_REGMAP_AC97                              policy<{'arm64': '-'}>
 CONFIG_REGMAP_I3C                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGMAP_MMIO                              policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_REGMAP_SCCB                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_REGMAP_SLIMBUS                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGMAP_SOUNDWIRE                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGMAP_SOUNDWIRE_MBQ                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGMAP_SPI                               policy<{'amd64': '-', 'arm64': 'y'}>
@@ -7685,12 +7688,15 @@ CONFIG_SL28CPLD_WATCHDOG                        policy<{'arm64': '-'}>
 CONFIG_SLHC                                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SLICOSS                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SLIC_DS26522                             policy<{'arm64': '-'}>
+CONFIG_SLIMBUS                                  policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SLIM_QCOM_CTRL                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SLIM_QCOM_NGD_CTRL                       policy<{'arm64': '-'}>
 CONFIG_SLIP                                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SLIP_COMPRESSED                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SLIP_MODE_SLIP6                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SLIP_SMART                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SLOB                                     policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_SLS                                      policy<{'amd64': 'n'}>
 CONFIG_SMARTJOYPLUS_FF                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SMBFS_COMMON                             policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_SMSC37B787_WDT                           policy<{'amd64': 'n'}>
