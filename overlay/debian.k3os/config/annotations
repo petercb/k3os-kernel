@@ -8844,6 +8844,8 @@ CONFIG_TMP007                                   policy<{'amd64': '-', 'arm64': '
 CONFIG_TMP117                                   policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_TMPFS_INODE64                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TOPSTAR_LAPTOP                           policy<{'amd64': 'n'}>
+CONFIG_TOSHIBA_BT_RFKILL                        policy<{'amd64': 'n'}>
+CONFIG_TOSHIBA_HAPS                             policy<{'amd64': 'n'}>
 CONFIG_TOSHIBA_WMI                              policy<{'amd64': '-'}>
 CONFIG_TOUCHSCREEN                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TOUCHSCREEN_88PM860X                     policy<{'amd64': '-', 'arm64': '-'}>
