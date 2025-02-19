@@ -8739,6 +8739,7 @@ CONFIG_TEGRA_SOCTHERM                           policy<{'arm64': 'y'}>
 CONFIG_TEGRA_VDE                                policy<{'arm64': '-'}>
 CONFIG_TEGRA_WATCHDOG                           policy<{'arm64': 'y'}>
 CONFIG_TEHUTI                                   policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TELCLOCK                                 policy<{'amd64': 'n'}>
 CONFIG_TERANETICS_PHY                           policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_TEST_BPF                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TEST_HMM                                 policy<{'amd64': '-', 'arm64': '-'}>
