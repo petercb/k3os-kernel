@@ -6649,6 +6649,7 @@ CONFIG_RDS_TCP                                  policy<{'amd64': 'n', 'arm64': '
 CONFIG_RD_LZO                                   policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_REALTEK_AUTOPM                           policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_REALTEK_PHY                              policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_REBOOT_MODE                              policy<{'arm64': '-'}>
 CONFIG_REED_SOLOMON                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REED_SOLOMON_DEC16                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REED_SOLOMON_DEC8                        policy<{'amd64': '-', 'arm64': '-'}>
@@ -8646,6 +8647,7 @@ CONFIG_SYNCLINK_CS                              policy<{'amd64': '-'}>
 CONFIG_SYNCLINK_GT                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SYNTH_EVENTS                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SYNTH_EVENT_GEN_TEST                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SYSCON_REBOOT_MODE                       policy<{'arm64': 'n'}>
 CONFIG_SYSC_R8A774A1                            policy<{'arm64': '-'}>
 CONFIG_SYSC_R8A774B1                            policy<{'arm64': '-'}>
 CONFIG_SYSC_R8A774C0                            policy<{'arm64': '-'}>
