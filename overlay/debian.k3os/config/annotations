@@ -7670,6 +7670,7 @@ CONFIG_SI1145                                   policy<{'amd64': '-', 'arm64': '
 CONFIG_SI7005                                   policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SI7020                                   policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SIGNATURE                                policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SIGNED_PE_FILE_VERIFICATION              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SIS190                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SIS900                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SKGE                                     policy<{'amd64': 'n', 'arm64': 'n'}>
