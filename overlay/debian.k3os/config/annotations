@@ -7699,6 +7699,10 @@ CONFIG_SLOB                                     policy<{'amd64': '-', 'arm64': '
 CONFIG_SLS                                      policy<{'amd64': 'n'}>
 CONFIG_SMARTJOYPLUS_FF                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SMBFS_COMMON                             policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_SMB_SERVER                               policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SMB_SERVER_CHECK_CAP_NET_ADMIN           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SMB_SERVER_KERBEROS5                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SMB_SERVER_SMBDIRECT                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SMSC37B787_WDT                           policy<{'amd64': 'n'}>
 CONFIG_SMSC911X                                 policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_SMSC9420                                 policy<{'amd64': 'n', 'arm64': 'n'}>
