@@ -7636,10 +7636,18 @@ CONFIG_SERIAL_UARTLITE                          policy<{'amd64': 'n', 'arm64': '
 CONFIG_SERIAL_UARTLITE_NR_UARTS                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SERIAL_XILINX_PS_UART                    policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_SERIAL_XILINX_PS_UART_CONSOLE            policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_SERIO_ALTERA_PS2                         policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SERIO_AMBAKMI                            policy<{'arm64': 'y'}>
+CONFIG_SERIO_APBPS2                             policy<{'arm64': 'n'}>
+CONFIG_SERIO_ARC_PS2                            policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SERIO_CT82C710                           policy<{'amd64': 'n'}>
 CONFIG_SERIO_GPIO_PS2                           policy<{'amd64': '-', 'arm64': 'm'}>
 CONFIG_SERIO_NVEC_PS2                           policy<{'arm64': '-'}>
 CONFIG_SERIO_PARKBD                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SERIO_PCIPS2                             policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SERIO_PS2MULT                            policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SERIO_RAW                                policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SERIO_SERPORT                            policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_SFC                                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SFC_FALCON                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SFC_FALCON_MTD                           policy<{'amd64': '-', 'arm64': '-'}>
