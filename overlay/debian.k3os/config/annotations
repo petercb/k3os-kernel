@@ -6548,6 +6548,8 @@ CONFIG_QLGE                                     policy<{'amd64': '-', 'arm64': '
 CONFIG_QNX4FS_FS                                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_QNX6FS_DEBUG                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_QNX6FS_FS                                policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_QORIQ_CPUFREQ                            policy<{'arm64': 'y'}>
+CONFIG_QORIQ_THERMAL                            policy<{'arm64': 'n'}>
 CONFIG_QRTR                                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_QRTR_MHI                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_QRTR_SMD                                 policy<{'amd64': '-', 'arm64': '-'}>
