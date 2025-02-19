@@ -8765,6 +8765,7 @@ CONFIG_THINKPAD_ACPI_UNSAFE_LEDS                policy<{'amd64': '-'}>
 CONFIG_THINKPAD_ACPI_VIDEO                      policy<{'amd64': '-'}>
 CONFIG_THINKPAD_LMI                             policy<{'amd64': '-'}>
 CONFIG_THRUSTMASTER_FF                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_THUNDERX2_PMU                            policy<{'arm64': 'y'}>
 CONFIG_THUNDER_NIC_BGX                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_THUNDER_NIC_PF                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_THUNDER_NIC_RGX                          policy<{'amd64': 'n', 'arm64': 'n'}>
