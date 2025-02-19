@@ -7141,6 +7141,10 @@ CONFIG_SCA3300                                  policy<{'amd64': '-', 'arm64': '
 CONFIG_SCD30_CORE                               policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SCD30_I2C                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SCD30_SERIAL                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SCHED_AUTOGROUP                          policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_SCHED_CORE                               policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SCHED_DEBUG                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SCHED_TRACER                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SCR24X                                   policy<{'amd64': '-'}>
 CONFIG_SCSI_3W_9XXX                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SCSI_3W_SAS                              policy<{'amd64': 'n', 'arm64': 'n'}>
