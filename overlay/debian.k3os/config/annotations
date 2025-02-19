@@ -8638,6 +8638,7 @@ CONFIG_SURFACE_PLATFORM_PROFILE                 policy<{'amd64': '-', 'arm64': '
 CONFIG_SURFACE_PRO3_BUTTON                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SUSPEND_SKIP_SYNC                        policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SVC_I3C_MASTER                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SW_SYNC                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SX9310                                   policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SX9500                                   policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SYNCLINK_CS                              policy<{'amd64': '-'}>
