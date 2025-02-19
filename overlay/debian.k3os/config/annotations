@@ -234,6 +234,9 @@ CONFIG_PINCTRL_CHERRYVIEW                       note<'TODO: update note'>
 CONFIG_PSI_DEFAULT_DISABLED                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PSI_DEFAULT_DISABLED                     note<'TODO: update note'>
 
+CONFIG_REGULATOR_FIXED_VOLTAGE                  policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_REGULATOR_FIXED_VOLTAGE                  note<'boot essential on arm'>
+
 CONFIG_REGULATOR_TPS65217                       policy<{'arm64': '-'}>
 CONFIG_REGULATOR_TPS65217                       note<'TODO: update note'>
 
@@ -4487,7 +4490,7 @@ CONFIG_LEDS_SYSCON                              policy<{'amd64': '-', 'arm64': '
 CONFIG_LEDS_TCA6507                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_LEDS_TI_LMU_COMMON                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_LEDS_TLC591XX                            policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_LEDS_TPS6105X                            policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_LEDS_TPS6105X                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_LEDS_TRIGGER_ACTIVITY                    policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_LEDS_TRIGGER_AUDIO                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_LEDS_TRIGGER_BACKLIGHT                   policy<{'amd64': 'n', 'arm64': 'y'}>
@@ -6632,12 +6635,17 @@ CONFIG_REGMAP_SPI                               policy<{'amd64': '-', 'arm64': '
 CONFIG_REGMAP_SPI_AVMM                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGMAP_SPMI                              policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_REGMAP_W1                                policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_REGULATOR_88PG86X                        policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_REGULATOR_88PM800                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_88PM8607                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_AAT2870                        policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_REGULATOR_ACT8865                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_REGULATOR_ACT8945A                       policy<{'arm64': '-'}>
+CONFIG_REGULATOR_AD5398                         policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_REGULATOR_ANATOP                         policy<{'arm64': 'n'}>
 CONFIG_REGULATOR_ARIZONA_LDO1                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_ARIZONA_MICSUPP                policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_REGULATOR_ARM_SCMI                       policy<{'arm64': 'n'}>
 CONFIG_REGULATOR_AS3711                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_AS3722                         policy<{'arm64': '-'}>
 CONFIG_REGULATOR_ATC260X                        policy<{'amd64': '-', 'arm64': '-'}>
@@ -6655,27 +6663,55 @@ CONFIG_REGULATOR_DA9052                         policy<{'amd64': '-', 'arm64': '
 CONFIG_REGULATOR_DA9055                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_DA9062                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_DA9063                         policy<{'arm64': '-'}>
+CONFIG_REGULATOR_DA9121                         policy<{'arm64': 'n'}>
+CONFIG_REGULATOR_DA9210                         policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_REGULATOR_DA9211                         policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_REGULATOR_FAN53555                       policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_REGULATOR_FAN53880                       policy<{'arm64': 'y'}>
 CONFIG_REGULATOR_GPIO                           policy<{'amd64': '-', 'arm64': 'm'}>
 CONFIG_REGULATOR_HI6421                         policy<{'arm64': '-'}>
 CONFIG_REGULATOR_HI6421V530                     policy<{'arm64': '-'}>
 CONFIG_REGULATOR_HI6421V600                     policy<{'arm64': '-'}>
+CONFIG_REGULATOR_HI655X                         policy<{'arm64': 'y'}>
+CONFIG_REGULATOR_ISL6271A                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_REGULATOR_ISL9305                        policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_REGULATOR_LM363X                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_LOCHNAGAR                      policy<{'arm64': '-'}>
+CONFIG_REGULATOR_LP3971                         policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_REGULATOR_LP3972                         policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_REGULATOR_LP872X                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_REGULATOR_LP873X                         policy<{'arm64': '-'}>
+CONFIG_REGULATOR_LP8755                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_REGULATOR_LP87565                        policy<{'arm64': '-'}>
 CONFIG_REGULATOR_LP8788                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_REGULATOR_LTC3589                        policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_REGULATOR_LTC3676                        policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_REGULATOR_MAX14577                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_REGULATOR_MAX1586                        policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_REGULATOR_MAX77620                       policy<{'arm64': 'y'}>
 CONFIG_REGULATOR_MAX77650                       policy<{'arm64': '-'}>
 CONFIG_REGULATOR_MAX77686                       policy<{'arm64': '-'}>
 CONFIG_REGULATOR_MAX77693                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_MAX77802                       policy<{'arm64': '-'}>
+CONFIG_REGULATOR_MAX77826                       policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_REGULATOR_MAX8649                        policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_REGULATOR_MAX8660                        policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_REGULATOR_MAX8893                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_REGULATOR_MAX8907                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_MAX8925                        policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_REGULATOR_MAX8952                        policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_REGULATOR_MAX8973                        policy<{'arm64': 'n'}>
 CONFIG_REGULATOR_MAX8997                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_MAX8998                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_MC13783                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_MC13892                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_MC13XXX_CORE                   policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_REGULATOR_MCP16502                       policy<{'arm64': 'y'}>
+CONFIG_REGULATOR_MP5416                         policy<{'arm64': 'y'}>
+CONFIG_REGULATOR_MP8859                         policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_REGULATOR_MP886X                         policy<{'arm64': 'y'}>
+CONFIG_REGULATOR_MPQ7920                        policy<{'arm64': 'y'}>
+CONFIG_REGULATOR_MT6311                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_REGULATOR_MT6315                         policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_REGULATOR_MT6323                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_MT6358                         policy<{'amd64': '-', 'arm64': '-'}>
@@ -6684,22 +6720,49 @@ CONFIG_REGULATOR_MT6360                         policy<{'amd64': '-', 'arm64': '
 CONFIG_REGULATOR_MT6380                         policy<{'arm64': '-'}>
 CONFIG_REGULATOR_MT6397                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_PALMAS                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_REGULATOR_PCA9450                        policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_REGULATOR_PCAP                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_PCF50633                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_REGULATOR_PF8X00                         policy<{'arm64': 'n'}>
+CONFIG_REGULATOR_PFUZE100                       policy<{'arm64': 'n'}>
+CONFIG_REGULATOR_PV88060                        policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_REGULATOR_PV88080                        policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_REGULATOR_PV88090                        policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_REGULATOR_PWM                            policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_REGULATOR_QCOM_LABIBB                    policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_REGULATOR_QCOM_RPM                       policy<{'arm64': '-'}>
 CONFIG_REGULATOR_QCOM_RPMH                      policy<{'arm64': '-'}>
 CONFIG_REGULATOR_QCOM_SMD_RPM                   policy<{'arm64': '-'}>
 CONFIG_REGULATOR_QCOM_SPMI                      policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_REGULATOR_QCOM_USB_VBUS                  policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_REGULATOR_RASPBERRYPI_TOUCHSCREEN_ATTINY policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_REGULATOR_RC5T583                        policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_REGULATOR_RK808                          policy<{'arm64': 'y'}>
 CONFIG_REGULATOR_RN5T618                        policy<{'arm64': '-'}>
 CONFIG_REGULATOR_ROHM                           policy<{'arm64': '-'}>
+CONFIG_REGULATOR_RT4801                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_REGULATOR_RT4831                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_RT5033                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_REGULATOR_RT6160                         policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_REGULATOR_RT6245                         policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_REGULATOR_RTMV20                         policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_REGULATOR_RTQ2134                        policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_REGULATOR_RTQ6752                        policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_REGULATOR_S2MPA01                        policy<{'arm64': 'n'}>
+CONFIG_REGULATOR_S2MPS11                        policy<{'arm64': 'y'}>
+CONFIG_REGULATOR_S5M8767                        policy<{'arm64': 'n'}>
 CONFIG_REGULATOR_SC2731                         policy<{'arm64': '-'}>
 CONFIG_REGULATOR_SKY81452                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_REGULATOR_SLG51000                       policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_REGULATOR_STPMIC1                        policy<{'arm64': '-'}>
+CONFIG_REGULATOR_SY8106A                        policy<{'arm64': 'y'}>
+CONFIG_REGULATOR_SY8824X                        policy<{'arm64': 'y'}>
+CONFIG_REGULATOR_SY8827N                        policy<{'arm64': 'y'}>
+CONFIG_REGULATOR_TPS51632                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_REGULATOR_TPS6105X                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_REGULATOR_TPS62360                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_REGULATOR_TPS65023                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_REGULATOR_TPS6507X                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_REGULATOR_TPS65086                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_TPS65090                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_TPS65132                       policy<{'amd64': '-', 'arm64': 'm'}>
@@ -6709,6 +6772,10 @@ CONFIG_REGULATOR_TPS6586X                       policy<{'amd64': '-', 'arm64': '
 CONFIG_REGULATOR_TPS65910                       policy<{'amd64': '-', 'arm64': 'm'}>
 CONFIG_REGULATOR_TPS65912                       policy<{'amd64': '-', 'arm64': 'm'}>
 CONFIG_REGULATOR_TPS80031                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_REGULATOR_USERSPACE_CONSUMER             policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_REGULATOR_VCTRL                          policy<{'arm64': 'y'}>
+CONFIG_REGULATOR_VIRTUAL_CONSUMER               policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_REGULATOR_VQMMC_IPQ4019                  policy<{'arm64': 'y'}>
 CONFIG_REGULATOR_WM831X                         policy<{'amd64': '-', 'arm64': 'm'}>
 CONFIG_REGULATOR_WM8350                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_WM8400                         policy<{'amd64': '-', 'arm64': '-'}>
@@ -8548,7 +8615,9 @@ CONFIG_TOUCHSCREEN_ZFORCE                       policy<{'amd64': '-', 'arm64': '
 CONFIG_TOUCHSCREEN_ZINITIX                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TPL0102                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_TPM_KEY_PARSER                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TPS6105X                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TPS65010                                 policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_TPS6507X                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TPS68470_PMIC_OPREGION                   policy<{'amd64': '-'}>
 CONFIG_TQMX86_WDT                               policy<{'amd64': 'n'}>
 CONFIG_TRACE_EVENT_INJECT                       policy<{'amd64': 'n', 'arm64': 'n'}>
