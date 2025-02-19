@@ -83,7 +83,7 @@ cp -a /lib/firmware "${KERNEL_ROOT}/lib"
 pushd "${KERNEL_ROOT}"
 OUTFILE="${DIST_DIR}/k3os-kernel-${TARGETARCH}.squashfs"
 rm -f "${OUTFILE}"
-mksquashfs . "${OUTFILE}" -no-progress
+mksquashfs -comp zstd . "${OUTFILE}" -no-progress
 popd
 
 # Cleanup

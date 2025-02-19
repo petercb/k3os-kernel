@@ -8548,7 +8548,12 @@ CONFIG_SPRD_WATCHDOG                            policy<{'arm64': 'n'}>
 CONFIG_SPS30                                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SPS30_I2C                                policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SPS30_SERIAL                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SQUASHFS_DECOMP_MULTI                    policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_SQUASHFS_DECOMP_SINGLE                   policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SQUASHFS_LZ4                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SQUASHFS_LZO                             policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SQUASHFS_XZ                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SQUASHFS_ZLIB                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SRF04                                    policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SRF08                                    policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SSB                                      policy<{'amd64': 'n', 'arm64': 'n'}>
