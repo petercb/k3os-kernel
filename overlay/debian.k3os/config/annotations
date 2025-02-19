@@ -3539,6 +3539,7 @@ CONFIG_HW_RANDOM_IPROC_RNG200                   policy<{'arm64': 'y'}>
 CONFIG_HW_RANDOM_MESON                          policy<{'arm64': 'y'}>
 CONFIG_HW_RANDOM_MTK                            policy<{'arm64': 'y'}>
 CONFIG_HW_RANDOM_OMAP                           policy<{'arm64': 'y'}>
+CONFIG_HW_RANDOM_OPTEE                          policy<{'arm64': '-'}>
 CONFIG_HW_RANDOM_TIMERIOMEM                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HW_RANDOM_VIA                            policy<{'amd64': 'y'}>
 CONFIG_HW_RANDOM_VIRTIO                         policy<{'amd64': 'y', 'arm64': 'y'}>
@@ -5897,6 +5898,8 @@ CONFIG_OPENVSWITCH_GENEVE                       policy<{'amd64': 'y', 'arm64': '
 CONFIG_OPENVSWITCH_GRE                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_OPENVSWITCH_VXLAN                        policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_OPT3001                                  policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_OPTEE                                    policy<{'arm64': '-'}>
+CONFIG_OPTEE_SHM_NUM_PRIV_PAGES                 policy<{'arm64': '-'}>
 CONFIG_ORANGEFS_FS                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_ORINOCO_USB                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_OVERLAY_FS                               policy<{'amd64': 'y', 'arm64': 'y'}>
@@ -8687,12 +8690,18 @@ CONFIG_TAHVO_USB                                policy<{'amd64': '-', 'arm64': '
 CONFIG_TAHVO_USB_HOST_BY_DEFAULT                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TAP                                      policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_TARGET_CORE                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TCG_ATMEL                                policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TCG_FTPM_TEE                             policy<{'arm64': '-'}>
+CONFIG_TCG_INFINEON                             policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TCG_NSC                                  policy<{'amd64': 'n'}>
 CONFIG_TCG_TIS_I2C_CR50                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TCG_TIS_SPI                              policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_TCG_TIS_SPI_CR50                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TCG_TIS_ST33ZP24                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TCG_TIS_ST33ZP24_I2C                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TCG_TIS_ST33ZP24_SPI                     policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_TCG_TIS_SYNQUACER                        policy<{'arm64': 'n'}>
+CONFIG_TCG_VTPM_PROXY                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TCG_XEN                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TCM_FC                                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TCM_FILEIO                               policy<{'amd64': '-', 'arm64': '-'}>
@@ -8717,6 +8726,8 @@ CONFIG_TCP_CONG_WESTWOOD                        policy<{'amd64': 'n', 'arm64': '
 CONFIG_TCP_CONG_YEAH                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TCS3414                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_TCS3472                                  policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_TEE                                      policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TEE_BNXT_FW                              policy<{'arm64': '-'}>
 CONFIG_TEGRA20_APB_DMA                          policy<{'arm64': '-'}>
 CONFIG_TEGRA210_ADMA                            policy<{'arm64': '-'}>
 CONFIG_TEGRA_BPMP_THERMAL                       policy<{'arm64': 'y'}>
