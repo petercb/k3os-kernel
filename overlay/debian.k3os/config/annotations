@@ -7242,6 +7242,7 @@ CONFIG_SCSI_UFS_MEDIATEK                        policy<{'arm64': '-'}>
 CONFIG_SCSI_UFS_QCOM                            policy<{'arm64': '-'}>
 CONFIG_SCSI_UFS_TI_J721E                        policy<{'arm64': 'n'}>
 CONFIG_SCSI_WD719X                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SCTP_COOKIE_HMAC_SHA1                    policy<{'amd64': 'y', 'arm64': 'n'}>
 CONFIG_SCTP_DEFAULT_COOKIE_HMAC_MD5             policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_SCTP_DEFAULT_COOKIE_HMAC_SHA1            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SC_CAMCC_7180                            policy<{'arm64': 'n'}>
@@ -7255,10 +7256,20 @@ CONFIG_SC_LPASS_CORECC_7180                     policy<{'arm64': 'n'}>
 CONFIG_SC_MSS_7180                              policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SC_VIDEOCC_7180                          policy<{'arm64': 'n'}>
 CONFIG_SC_VIDEOCC_7280                          policy<{'arm64': 'n'}>
+CONFIG_SDIO_UART                                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SDMA_VERBOSITY                           policy<{'amd64': '-'}>
+CONFIG_SDM_CAMCC_845                            policy<{'arm64': 'n'}>
+CONFIG_SDM_DISPCC_845                           policy<{'arm64': 'n'}>
+CONFIG_SDM_GCC_660                              policy<{'arm64': 'n'}>
+CONFIG_SDM_GCC_845                              policy<{'arm64': 'n'}>
+CONFIG_SDM_GPUCC_660                            policy<{'arm64': 'n'}>
+CONFIG_SDM_GPUCC_845                            policy<{'arm64': 'n'}>
+CONFIG_SDM_LPASSCC_845                          policy<{'arm64': 'n'}>
+CONFIG_SDM_MMCC_660                             policy<{'arm64': 'n'}>
 CONFIG_SDM_VIDEOCC_845                          policy<{'arm64': 'n'}>
 CONFIG_SDR_MAX2175                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SDR_PLATFORM_DRIVERS                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SDX_GCC_55                               policy<{'arm64': 'n'}>
 CONFIG_SECRETMEM                                policy<{'amd64': 'y', 'arm64': '-'}>
 CONFIG_SECURITY_INFINIBAND                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSIRION_SGP30                          policy<{'amd64': '-', 'arm64': 'n'}>
