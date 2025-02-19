@@ -9080,6 +9080,8 @@ CONFIG_UIO_PRUSS                                policy<{'amd64': '-', 'arm64': '
 CONFIG_UIO_SERCOS3                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ULI526X                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_ULTRIX_PARTITION                         policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_UNICODE                                  policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_UNICODE_NORMALIZATION_SELFTEST           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_UNISYSSPAR                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_UNISYS_VISORHBA                          policy<{'amd64': '-'}>
 CONFIG_UNISYS_VISORINPUT                        policy<{'amd64': '-'}>
