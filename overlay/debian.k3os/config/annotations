@@ -8554,6 +8554,7 @@ CONFIG_SQUASHFS_LZ4                             policy<{'amd64': 'n', 'arm64': '
 CONFIG_SQUASHFS_LZO                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SQUASHFS_XZ                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SQUASHFS_ZLIB                            policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SRAM                                     policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_SRF04                                    policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SRF08                                    policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SSB                                      policy<{'amd64': 'n', 'arm64': 'n'}>
