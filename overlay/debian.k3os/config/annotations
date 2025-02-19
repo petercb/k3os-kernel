@@ -6610,6 +6610,9 @@ CONFIG_RC_DEVICES                               policy<{'amd64': '-', 'arm64': '
 CONFIG_RC_LOOPBACK                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RC_MAP                                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RC_XBOX_DVD                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RDMA_RXE                                 policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_RDMA_SIW                                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_RDS_RDMA                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_RD_LZO                                   policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_REALTEK_AUTOPM                           policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_REALTEK_PHY                              policy<{'amd64': 'y', 'arm64': 'y'}>
@@ -8238,6 +8241,7 @@ CONFIG_SUNRPC                                   policy<{'amd64': 'y', 'arm64': '
 CONFIG_SUNRPC_DISABLE_INSECURE_ENCTYPES         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SUNRPC_GSS                               policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_SUNRPC_SWAP                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SUNRPC_XPRT_RDMA                         policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_SUNXI_RSB                                policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_SURFACE3_WMI                             policy<{'amd64': '-'}>
 CONFIG_SURFACE_3_BUTTON                         policy<{'amd64': '-', 'arm64': '-'}>
