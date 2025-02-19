@@ -8621,6 +8621,7 @@ CONFIG_SUNXI_RSB                                policy<{'amd64': '-', 'arm64': '
 CONFIG_SUNXI_WATCHDOG                           policy<{'arm64': 'y'}>
 CONFIG_SURFACE3_WMI                             policy<{'amd64': '-'}>
 CONFIG_SURFACE_3_BUTTON                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SURFACE_3_POWER_OPREGION                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SURFACE_ACPI_NOTIFY                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SURFACE_AGGREGATOR                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SURFACE_AGGREGATOR_BUS                   policy<{'amd64': '-', 'arm64': '-'}>
@@ -8634,6 +8635,7 @@ CONFIG_SURFACE_HID_CORE                         policy<{'amd64': '-', 'arm64': '
 CONFIG_SURFACE_HOTPLUG                          policy<{'amd64': '-', 'arm64': 'm'}>
 CONFIG_SURFACE_KBD                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SURFACE_PLATFORM_PROFILE                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SURFACE_PRO3_BUTTON                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SUSPEND_SKIP_SYNC                        policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SVC_I3C_MASTER                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SX9310                                   policy<{'amd64': '-', 'arm64': 'n'}>
