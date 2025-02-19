@@ -7675,6 +7675,7 @@ CONFIG_SIOX                                     policy<{'amd64': 'n', 'arm64': '
 CONFIG_SIOX_BUS_GPIO                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SIS190                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SIS900                                   policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SKFP                                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SKGE                                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SKGE_DEBUG                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SKGE_GENESIS                             policy<{'amd64': '-', 'arm64': '-'}>
