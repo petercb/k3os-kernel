@@ -8730,8 +8730,12 @@ CONFIG_TEE                                      policy<{'amd64': 'n', 'arm64': '
 CONFIG_TEE_BNXT_FW                              policy<{'arm64': '-'}>
 CONFIG_TEGRA20_APB_DMA                          policy<{'arm64': '-'}>
 CONFIG_TEGRA210_ADMA                            policy<{'arm64': '-'}>
+CONFIG_TEGRA210_EMC                             policy<{'arm64': 'y'}>
+CONFIG_TEGRA_ACONNECT                           policy<{'arm64': 'y'}>
 CONFIG_TEGRA_BPMP_THERMAL                       policy<{'arm64': 'y'}>
+CONFIG_TEGRA_GMI                                policy<{'arm64': 'y'}>
 CONFIG_TEGRA_HOST1X                             policy<{'arm64': 'y'}>
+CONFIG_TEGRA_SOCTHERM                           policy<{'arm64': 'y'}>
 CONFIG_TEGRA_VDE                                policy<{'arm64': '-'}>
 CONFIG_TEGRA_WATCHDOG                           policy<{'arm64': 'y'}>
 CONFIG_TEHUTI                                   policy<{'amd64': 'n', 'arm64': 'n'}>
