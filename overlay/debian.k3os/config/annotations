@@ -6796,13 +6796,17 @@ CONFIG_RENESAS_RZAWDT                           policy<{'arm64': 'n'}>
 CONFIG_RENESAS_USB_DMAC                         policy<{'arm64': '-'}>
 CONFIG_RENESAS_WDT                              policy<{'arm64': 'y'}>
 CONFIG_RESET_A10SR                              policy<{'arm64': '-'}>
+CONFIG_RESET_ATTACK_MITIGATION                  policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_RESET_BRCMSTB                            policy<{'arm64': 'y'}>
 CONFIG_RESET_CONTROLLER                         policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_RESET_MCHP_SPARX5                        policy<{'arm64': '-'}>
 CONFIG_RESET_MESON_AUDIO_ARB                    policy<{'arm64': 'n'}>
 CONFIG_RESET_QCOM_AOSS                          policy<{'arm64': 'n'}>
 CONFIG_RESET_QCOM_PDC                           policy<{'arm64': 'n'}>
+CONFIG_RESET_RASPBERRYPI                        policy<{'arm64': 'y'}>
 CONFIG_RESET_RZG2L_USBPHY_CTRL                  policy<{'arm64': '-'}>
+CONFIG_RESET_SCMI                               policy<{'arm64': 'y'}>
+CONFIG_RESET_TI_SCI                             policy<{'arm64': 'n'}>
 CONFIG_RESET_TI_SYSCON                          policy<{'amd64': '-', 'arm64': 'm'}>
 CONFIG_RETU_WATCHDOG                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RFD77402                                 policy<{'amd64': '-', 'arm64': 'n'}>
