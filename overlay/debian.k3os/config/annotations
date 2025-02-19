@@ -7657,6 +7657,7 @@ CONFIG_SFC_MTD                                  policy<{'amd64': '-', 'arm64': '
 CONFIG_SFC_SRIOV                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SFP                                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SF_PDMA                                  policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SGETMASK_SYSCALL                         policy<{'amd64': 'y', 'arm64': 'n'}>
 CONFIG_SGI_GRU                                  policy<{'amd64': '-'}>
 CONFIG_SGI_GRU_DEBUG                            policy<{'amd64': '-'}>
 CONFIG_SGI_XP                                   policy<{'amd64': '-'}>
