@@ -417,6 +417,9 @@ CONFIG_TIMERLAT_TRACER                          note<'This enables the osnoise t
 CONFIG_TOUCHSCREEN_ELAN                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TOUCHSCREEN_ELAN                         note<'LP #1630238'>
 
+CONFIG_UBSAN                                    policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_UBSAN                                    note<'LP#1942215'>
+
 CONFIG_USB_EHCI_HCD_PLATFORM                    policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_USB_EHCI_HCD_PLATFORM                    note<'TODO: update note'>
 
@@ -1404,6 +1407,7 @@ CONFIG_CB710_DEBUG                              policy<{'amd64': '-', 'arm64': '
 CONFIG_CB710_DEBUG_ASSUMPTIONS                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CC10001_ADC                              policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_CCS811                                   policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_CC_HAS_UBSAN_BOUNDS                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CDNS_I3C_MASTER                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CDROM_PKTCDVD                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CDROM_PKTCDVD_BUFFERS                    policy<{'amd64': '-', 'arm64': '-'}>
@@ -8752,6 +8756,7 @@ CONFIG_TEST_BPF                                 policy<{'amd64': 'n', 'arm64': '
 CONFIG_TEST_HMM                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TEST_LIVEPATCH                           policy<{'amd64': '-'}>
 CONFIG_TEST_POWER                               policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TEST_UBSAN                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TEXTSEARCH_BM                            policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_TEXTSEARCH_FSM                           policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_TEXTSEARCH_KMP                           policy<{'amd64': 'y', 'arm64': 'y'}>
@@ -9032,6 +9037,16 @@ CONFIG_UBIFS_FS_SECURITY                        policy<{'amd64': '-', 'arm64': '
 CONFIG_UBIFS_FS_XATTR                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_UBIFS_FS_ZLIB                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_UBIFS_FS_ZSTD                            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_UBSAN_ALIGNMENT                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_UBSAN_BOOL                               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_UBSAN_BOUNDS                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_UBSAN_DIV_ZERO                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_UBSAN_ENUM                               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_UBSAN_ONLY_BOUNDS                        policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_UBSAN_SANITIZE_ALL                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_UBSAN_SHIFT                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_UBSAN_TRAP                               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_UBSAN_UNREACHABLE                        policy<{'arm64': '-'}>
 CONFIG_UBUNTU_HOST                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_UBUNTU_ODM_DRIVERS                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_UCB1400_CORE                             policy<{'amd64': '-', 'arm64': '-'}>
