@@ -267,6 +267,12 @@ CONFIG_SCSI_IPR_TRACE                           note<'TODO: update note'>
 CONFIG_SCSI_VIRTIO                              policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_SCSI_VIRTIO                              note<'tech preview of new feature'>
 
+CONFIG_SECURITY_SAFESETID                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SECURITY_SAFESETID                       note<'LP:#1845391'>
+
+CONFIG_SECURITY_SELINUX_DISABLE                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SECURITY_SELINUX_DISABLE                 note<TODO: update note>
+
 CONFIG_SERIAL_DEV_BUS                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SERIAL_DEV_BUS                           note<'LP:1739939'>
 
@@ -1301,6 +1307,7 @@ CONFIG_BT_RTL                                   policy<{'amd64': '-', 'arm64': '
 CONFIG_BT_SELFTEST                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BT_VIRTIO                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BUG_ON_DATA_CORRUPTION                   policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_BUILD_BIN2C                              policy<{'amd64': 'y', 'arm64': '-'}>
 CONFIG_BXT_WC_PMIC_OPREGION                     policy<{'amd64': '-'}>
 CONFIG_BYTCRC_PMIC_OPREGION                     policy<{'amd64': '-'}>
 CONFIG_C2PORT                                   policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -2127,8 +2134,11 @@ CONFIG_DEFAULT_FQ_CODEL                         policy<{'amd64': 'n', 'arm64': '
 CONFIG_DEFAULT_HUNG_TASK_TIMEOUT                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DEFAULT_NET_SCH                          policy<{'amd64': '"pfifo_fast"', 'arm64': '"pfifo_fast"'}>
 CONFIG_DEFAULT_PFIFO_FAST                       policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_DEFAULT_SECURITY_APPARMOR                policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_DEFAULT_SECURITY_APPARMOR                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DEFAULT_SECURITY_DAC                     policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_DEFAULT_SECURITY_SELINUX                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_DEFAULT_SECURITY_SMACK                   policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_DEFAULT_SECURITY_TOMOYO                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DEFAULT_SFQ                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_DEFXX                                    policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_DELL_LAPTOP                              policy<{'amd64': '-'}>
@@ -3746,6 +3756,7 @@ CONFIG_IMA_DEFAULT_HASH_SHA1                    policy<{'amd64': 'n', 'arm64': '
 CONFIG_IMA_DEFAULT_HASH_SHA512                  policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_IMA_DEFAULT_HASH_SM3                     policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_IMA_LOAD_X509                            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_IMA_LSM_RULES                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_IMG_ASCII_LCD                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_IMX2_WDT                                 policy<{'arm64': 'n'}>
 CONFIG_IMX7D_ADC                                policy<{'arm64': 'n'}>
@@ -4568,6 +4579,7 @@ CONFIG_LP_CONSOLE                               policy<{'amd64': '-', 'arm64': '
 CONFIG_LRU_CACHE                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_LSI_ET1011C_PHY                          policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_LSM                                      policy<{'amd64': '"yama,loadpin,safesetid,integrity"', 'arm64': '"yama,loadpin,safesetid,integrity"'}>
+CONFIG_LSM_MMAP_MIN_ADDR                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_LTC1660                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_LTC2471                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_LTC2485                                  policy<{'amd64': '-', 'arm64': 'n'}>
@@ -7271,8 +7283,33 @@ CONFIG_SDR_MAX2175                              policy<{'amd64': '-', 'arm64': '
 CONFIG_SDR_PLATFORM_DRIVERS                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SDX_GCC_55                               policy<{'arm64': 'n'}>
 CONFIG_SD_ADC_MODULATOR                         policy<{'arm64': 'n'}>
+CONFIG_SECONDARY_TRUSTED_KEYRING                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SECRETMEM                                policy<{'amd64': 'y', 'arm64': '-'}>
+CONFIG_SECURITY_APPARMOR                        policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SECURITY_APPARMOR_DEBUG                  policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SECURITY_APPARMOR_HASH                   policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SECURITY_APPARMOR_HASH_DEFAULT           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SECURITY_INFINIBAND                      policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SECURITY_LANDLOCK                        policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SECURITY_PATH                            policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SECURITY_SELINUX                         policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SECURITY_SELINUX_AVC_STATS               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SECURITY_SELINUX_BOOTPARAM               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SECURITY_SELINUX_CHECKREQPROT_VALUE      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SECURITY_SELINUX_DEVELOP                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SECURITY_SELINUX_SID2STR_CACHE_SIZE      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SECURITY_SELINUX_SIDTAB_HASH_BITS        policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SECURITY_SMACK                           policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SECURITY_SMACK_APPEND_SIGNALS            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SECURITY_SMACK_BRINGUP                   policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SECURITY_SMACK_NETFILTER                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SECURITY_TOMOYO                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SECURITY_TOMOYO_ACTIVATION_TRIGGER       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SECURITY_TOMOYO_INSECURE_BUILTIN_SETTING policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SECURITY_TOMOYO_MAX_ACCEPT_ENTRY         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SECURITY_TOMOYO_MAX_AUDIT_LOG            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SECURITY_TOMOYO_OMIT_USERSPACE_LOADER    policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SECURITY_TOMOYO_POLICY_LOADER            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSIRION_SGP30                          policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SENSIRION_SGP40                          policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SENSORS_AAEON                            policy<{'amd64': '-'}>
