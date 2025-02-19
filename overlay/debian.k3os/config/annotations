@@ -9022,6 +9022,7 @@ CONFIG_TYPEC_TPS6598X                           policy<{'amd64': '-', 'arm64': '
 CONFIG_TYPEC_UCSI                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TYPEC_WCOVE                              policy<{'amd64': '-'}>
 CONFIG_TYPHOON                                  policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_UACCE                                    policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_UBIFS_ATIME_SUPPORT                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_UBIFS_FS                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_UBIFS_FS_ADVANCED_COMPR                  policy<{'amd64': '-', 'arm64': '-'}>
