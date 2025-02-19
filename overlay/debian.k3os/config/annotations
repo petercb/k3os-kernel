@@ -1545,6 +1545,7 @@ CONFIG_CLK_RENESAS_DIV6                         policy<{'arm64': '-'}>
 CONFIG_CLK_RK3568                               policy<{'arm64': 'y'}>
 CONFIG_CLK_RZG2L                                policy<{'arm64': '-'}>
 CONFIG_CLK_SP810                                policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_CLK_TWL6040                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CLS_U32_MARK                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CM32181                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_CM3232                                   policy<{'amd64': '-', 'arm64': 'n'}>
@@ -3259,7 +3260,7 @@ CONFIG_GPIO_TPS65910                            policy<{'amd64': '-', 'arm64': '
 CONFIG_GPIO_TPS65912                            policy<{'amd64': '-', 'arm64': 'm'}>
 CONFIG_GPIO_TPS68470                            policy<{'amd64': '-'}>
 CONFIG_GPIO_TQMX86                              policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_GPIO_TWL6040                             policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_GPIO_TWL6040                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GPIO_UCB1400                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GPIO_VIPERBOARD                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GPIO_VIRTIO                              policy<{'amd64': '-', 'arm64': 'n'}>
@@ -3918,6 +3919,7 @@ CONFIG_INPUT_TABLET                             policy<{'amd64': 'n', 'arm64': '
 CONFIG_INPUT_TPS65218_PWRBUTTON                 policy<{'arm64': '-'}>
 CONFIG_INPUT_TWL4030_PWRBUTTON                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INPUT_TWL4030_VIBRA                      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_INPUT_TWL6040_VIBRA                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INPUT_WM831X_ON                          policy<{'amd64': '-', 'arm64': 'm'}>
 CONFIG_INPUT_XEN_KBDDEV_FRONTEND                policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_INPUT_YEALINK                            policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -4822,6 +4824,7 @@ CONFIG_MFD_AXP20X_I2C                           policy<{'amd64': 'n', 'arm64': '
 CONFIG_MFD_AXP20X_RSB                           policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_MFD_BCM590XX                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MFD_BD9571MWV                            policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_MFD_CORE                                 policy<{'amd64': 'm', 'arm64': 'y'}>
 CONFIG_MFD_CPCAP                                policy<{'arm64': 'n'}>
 CONFIG_MFD_CROS_EC_DEV                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MFD_CS47L15                              policy<{'amd64': '-', 'arm64': '-'}>
@@ -6662,6 +6665,7 @@ CONFIG_REED_SOLOMON_DEC8                        policy<{'amd64': '-', 'arm64': '
 CONFIG_REED_SOLOMON_ENC8                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGMAP_AC97                              policy<{'arm64': '-'}>
 CONFIG_REGMAP_I3C                               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_REGMAP_IRQ                               policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_REGMAP_MMIO                              policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_REGMAP_SCCB                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGMAP_SLIMBUS                           policy<{'amd64': '-', 'arm64': '-'}>
@@ -8999,6 +9003,7 @@ CONFIG_TWL4030_CORE                             policy<{'amd64': 'n', 'arm64': '
 CONFIG_TWL4030_MADC                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TWL4030_WATCHDOG                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TWL6030_GPADC                            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TWL6040_CORE                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TYPEC                                    policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TYPEC_DP_ALTMODE                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TYPEC_FUSB302                            policy<{'amd64': '-', 'arm64': '-'}>
