@@ -8438,6 +8438,7 @@ CONFIG_SOUNDWIRE_GENERIC_ALLOCATION             policy<{'amd64': '-', 'arm64': '
 CONFIG_SOUNDWIRE_INTEL                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SOUNDWIRE_QCOM                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SOUND_OSS_CORE                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SP5100_TCO                               policy<{'amd64': 'n'}>
 CONFIG_SPARX5_SWITCH                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SPEAKUP_SYNTH_ACNTSA                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SPEAKUP_SYNTH_APOLLO                     policy<{'amd64': '-', 'arm64': '-'}>
