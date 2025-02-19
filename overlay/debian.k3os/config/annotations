@@ -8536,7 +8536,13 @@ CONFIG_SPMI                                     policy<{'amd64': 'n', 'arm64': '
 CONFIG_SPMI_HISI3670                            policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SPMI_MSM_PMIC_ARB                        policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_SPMI_PMIC_CLKDIV                         policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_SPRD_COMMON_CLK                          policy<{'arm64': 'y'}>
 CONFIG_SPRD_DMA                                 policy<{'arm64': '-'}>
+CONFIG_SPRD_EFUSE                               policy<{'arm64': 'n'}>
+CONFIG_SPRD_IOMMU                               policy<{'arm64': 'n'}>
+CONFIG_SPRD_MBOX                                policy<{'arm64': 'n'}>
+CONFIG_SPRD_SC9860_CLK                          policy<{'arm64': 'y'}>
+CONFIG_SPRD_SC9863A_CLK                         policy<{'arm64': 'y'}>
 CONFIG_SPRD_THERMAL                             policy<{'arm64': 'n'}>
 CONFIG_SPRD_WATCHDOG                            policy<{'arm64': 'n'}>
 CONFIG_SPS30                                    policy<{'amd64': '-', 'arm64': '-'}>
