@@ -8426,6 +8426,7 @@ CONFIG_SND_YMFPCI                               policy<{'amd64': '-', 'arm64': '
 CONFIG_SNI_NETSEC                               policy<{'arm64': 'n'}>
 CONFIG_SOCFPGA_FPGA_BRIDGE                      policy<{'arm64': '-'}>
 CONFIG_SOCK_VALIDATE_XMIT                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SOC_TI                                   policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_SOFTLOCKUP_DETECTOR                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SOFT_WATCHDOG                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SOFT_WATCHDOG_PRETIMEOUT                 policy<{'amd64': '-', 'arm64': '-'}>
