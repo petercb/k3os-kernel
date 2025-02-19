@@ -3324,6 +3324,8 @@ CONFIG_HAPPYMEAL                                policy<{'amd64': 'n', 'arm64': '
 CONFIG_HARDENED_USERCOPY_PAGESPAN               policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_HARDLOCKUP_DETECTOR                      policy<{'amd64': 'n'}>
 CONFIG_HARDLOCKUP_DETECTOR_PERF                 policy<{'amd64': '-'}>
+CONFIG_HAVE_ARCH_USERFAULTFD_MINOR              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_HAVE_ARCH_USERFAULTFD_WP                 policy<{'amd64': '-'}>
 CONFIG_HAVE_BOOTMEM_INFO_NODE                   policy<{'amd64': '-'}>
 CONFIG_HBMC_AM654                               policy<{'arm64': '-'}>
 CONFIG_HD44780                                  policy<{'amd64': '-', 'arm64': '-'}>
@@ -9537,6 +9539,8 @@ CONFIG_USB_YUREX                                policy<{'amd64': 'n', 'arm64': '
 CONFIG_USB_ZD1201                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_USB_ZERO                                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_USB_ZR364XX                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_USERFAULTFD                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_USERIO                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_USERMODE_DRIVER                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_UV_MMTIMER                               policy<{'amd64': '-'}>
 CONFIG_UV_SYSFS                                 policy<{'amd64': '-'}>
