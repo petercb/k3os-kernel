@@ -7261,6 +7261,7 @@ CONFIG_SCTP_DEFAULT_COOKIE_HMAC_SHA1            policy<{'amd64': 'n', 'arm64': '
 CONFIG_SC_CAMCC_7180                            policy<{'arm64': 'n'}>
 CONFIG_SC_DISPCC_7180                           policy<{'arm64': 'n'}>
 CONFIG_SC_DISPCC_7280                           policy<{'arm64': 'n'}>
+CONFIG_SC_GCC_7180                              policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SC_GCC_7280                              policy<{'arm64': 'n'}>
 CONFIG_SC_GCC_8180X                             policy<{'arm64': 'n'}>
 CONFIG_SC_GPUCC_7180                            policy<{'arm64': 'n'}>
