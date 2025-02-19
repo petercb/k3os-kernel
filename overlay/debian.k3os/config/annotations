@@ -8967,6 +8967,9 @@ CONFIG_TPS65010                                 policy<{'amd64': '-', 'arm64': '
 CONFIG_TPS6507X                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TPS68470_PMIC_OPREGION                   policy<{'amd64': '-'}>
 CONFIG_TQMX86_WDT                               policy<{'amd64': 'n'}>
+CONFIG_TRACER_MAX_TRACE                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TRACER_SNAPSHOT                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TRACER_SNAPSHOT_PER_CPU_SWAP             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TRACE_EVENT_INJECT                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TRACING_MAP                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TRIM_UNUSED_KSYMS                        policy<{'amd64': '-', 'arm64': 'n'}>
