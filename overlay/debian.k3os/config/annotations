@@ -5652,6 +5652,7 @@ CONFIG_NFSD_V4                                  policy<{'amd64': '-', 'arm64': '
 CONFIG_NFSD_V4_2_INTER_SSC                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NFSD_V4_SECURITY_LABEL                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NFS_ACL_SUPPORT                          policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_NFS_DEBUG                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NFS_FS                                   policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_NFS_FSCACHE                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NFS_SWAP                                 policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -8579,6 +8580,7 @@ CONFIG_STAGING                                  policy<{'amd64': 'n', 'arm64': '
 CONFIG_STAGING_BOARD                            policy<{'arm64': '-'}>
 CONFIG_STAGING_MEDIA                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_STANDALONE                               policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_STE10XP                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_STK3310                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_STK8312                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_STK8BA50                                 policy<{'amd64': '-', 'arm64': 'n'}>
@@ -8603,8 +8605,14 @@ CONFIG_STX104                                   policy<{'amd64': '-'}>
 CONFIG_ST_UVIS25                                policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_ST_UVIS25_I2C                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ST_UVIS25_SPI                            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SUN4I_EMAC                               policy<{'arm64': 'y'}>
 CONFIG_SUN8I_THERMAL                            policy<{'arm64': 'y'}>
+CONFIG_SUNDANCE                                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SUNDANCE_MMIO                            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SUNGEM                                   policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SUNGEM_PHY                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SUNRPC                                   policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_SUNRPC_DEBUG                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SUNRPC_DISABLE_INSECURE_ENCTYPES         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SUNRPC_GSS                               policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_SUNRPC_SWAP                              policy<{'amd64': '-', 'arm64': '-'}>
