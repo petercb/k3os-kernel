@@ -8641,6 +8641,7 @@ CONFIG_SVC_I3C_MASTER                           policy<{'amd64': '-', 'arm64': '
 CONFIG_SW_SYNC                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SX9310                                   policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SX9500                                   policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_SXGBE_ETH                                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SYNCLINK_CS                              policy<{'amd64': '-'}>
 CONFIG_SYSC_R8A774A1                            policy<{'arm64': '-'}>
 CONFIG_SYSC_R8A774B1                            policy<{'arm64': '-'}>
