@@ -8770,6 +8770,8 @@ CONFIG_THUNDER_NIC_BGX                          policy<{'amd64': 'n', 'arm64': '
 CONFIG_THUNDER_NIC_PF                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_THUNDER_NIC_RGX                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_THUNDER_NIC_VF                           policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TIFM_7XX1                                policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TIFM_CORE                                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TIGON3                                   policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_TIMER_ACPI                               policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_TIMER_IMX_SYS_CTR                        policy<{'amd64': '-', 'arm64': 'y'}>
