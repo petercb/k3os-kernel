@@ -6612,7 +6612,9 @@ CONFIG_RC_MAP                                   policy<{'amd64': '-', 'arm64': '
 CONFIG_RC_XBOX_DVD                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RDMA_RXE                                 policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_RDMA_SIW                                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_RDS                                      policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_RDS_RDMA                                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_RDS_TCP                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_RD_LZO                                   policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_REALTEK_AUTOPM                           policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_REALTEK_PHY                              policy<{'amd64': 'y', 'arm64': 'y'}>
