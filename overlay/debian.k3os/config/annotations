@@ -3234,7 +3234,7 @@ CONFIG_GPIO_SAMA5D2_PIOBU                       policy<{'amd64': '-', 'arm64': '
 CONFIG_GPIO_SCH                                 policy<{'amd64': '-'}>
 CONFIG_GPIO_SCH311X                             policy<{'amd64': '-'}>
 CONFIG_GPIO_SIFIVE                              policy<{'amd64': '-', 'arm64': 'n'}>
-CONFIG_GPIO_SIOX                                policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_GPIO_SIOX                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GPIO_SL28CPLD                            policy<{'arm64': '-'}>
 CONFIG_GPIO_SPRD                                policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_GPIO_STMPE                               policy<{'arm64': '-'}>
@@ -7671,6 +7671,8 @@ CONFIG_SI7005                                   policy<{'amd64': '-', 'arm64': '
 CONFIG_SI7020                                   policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SIGNATURE                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SIGNED_PE_FILE_VERIFICATION              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SIOX                                     policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SIOX_BUS_GPIO                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SIS190                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SIS900                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SKGE                                     policy<{'amd64': 'n', 'arm64': 'n'}>
