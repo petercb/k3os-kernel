@@ -1194,6 +1194,8 @@ CONFIG_BOOTPARAM_HARDLOCKUP_PANIC               policy<{'amd64': '-'}>
 CONFIG_BOOTPARAM_HARDLOCKUP_PANIC_VALUE         policy<{'amd64': '-'}>
 CONFIG_BOOTPARAM_HUNG_TASK_PANIC                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BOOTPARAM_HUNG_TASK_PANIC_VALUE          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_BOOTPARAM_SOFTLOCKUP_PANIC               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_BOOTPARAM_SOFTLOCKUP_PANIC_VALUE         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BOOTTIME_TRACING                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BOOT_CONFIG                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BOOT_PRINTK_DELAY                        policy<{'amd64': 'n', 'arm64': 'y'}>
@@ -4571,6 +4573,7 @@ CONFIG_LMK04832                                 policy<{'amd64': '-', 'arm64': '
 CONFIG_LMP91000                                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_LOAD_UEFI_KEYS                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_LOCKD                                    policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_LOCKUP_DETECTOR                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_LOGIG940_FF                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_LOGIRUMBLEPAD2_FF                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_LOOPBACK_TARGET                          policy<{'amd64': '-', 'arm64': '-'}>
@@ -8423,6 +8426,7 @@ CONFIG_SND_YMFPCI                               policy<{'amd64': '-', 'arm64': '
 CONFIG_SNI_NETSEC                               policy<{'arm64': 'n'}>
 CONFIG_SOCFPGA_FPGA_BRIDGE                      policy<{'arm64': '-'}>
 CONFIG_SOCK_VALIDATE_XMIT                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SOFTLOCKUP_DETECTOR                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SOFT_WATCHDOG                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SOFT_WATCHDOG_PRETIMEOUT                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SONYPI_COMPAT                            policy<{'amd64': '-'}>
