@@ -468,8 +468,11 @@ CONFIG_VIRTIO_BLK                               note<'KVM paravirt support -- no
 CONFIG_VIRTIO_NET                               policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_VIRTIO_NET                               note<'KVM paravirt support -- not autoloadable'>
 
-CONFIG_VMWARE_VMCI_VSOCKETS                     policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_VMWARE_VMCI_VSOCKETS                     note<'LP: #1978145'>
+CONFIG_VMWARE_VMCI                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_VMWARE_VMCI                              note<'LP: #1978145'>
+
+CONFIG_VMWARE_VMCI_VSOCKETS                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_VMWARE_VMCI_VSOCKETS                     note<TODO: update note>
 
 CONFIG_X86_PCC_CPUFREQ                          policy<{'amd64': 'n'}>
 CONFIG_X86_PCC_CPUFREQ                          note<'not autoloadable'>
@@ -9568,6 +9571,7 @@ CONFIG_VDPA_SIM_NET                             policy<{'amd64': '-', 'arm64': '
 CONFIG_VDPA_USER                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_VEML6030                                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_VEML6070                                 policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_VETH                                     policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_VFIO_FSL_MC                              policy<{'arm64': '-'}>
 CONFIG_VFIO_IOMMU_TYPE1                         policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_VFIO_MDEV                                policy<{'amd64': '-', 'arm64': 'm'}>
@@ -9908,7 +9912,8 @@ CONFIG_VLAN_8021Q_GVRP                          policy<{'amd64': 'n', 'arm64': '
 CONFIG_VLAN_8021Q_MVRP                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_VME_USER                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_VMLINUX_MAP                              policy<{'amd64': '-', 'arm64': 'y'}>
-CONFIG_VMWARE_PVSCSI                            policy<{'amd64': 'y'}>
+CONFIG_VMWARE_BALLOON                           policy<{'amd64': '-'}>
+CONFIG_VMWARE_PVSCSI                            policy<{'amd64': 'n'}>
 CONFIG_VMXNET3                                  policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_VORTEX                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_VP_VDPA                                  policy<{'amd64': '-', 'arm64': '-'}>
