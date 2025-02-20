@@ -472,7 +472,7 @@ CONFIG_VMWARE_VMCI                              policy<{'amd64': 'n', 'arm64': '
 CONFIG_VMWARE_VMCI                              note<'LP: #1978145'>
 
 CONFIG_VMWARE_VMCI_VSOCKETS                     policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_VMWARE_VMCI_VSOCKETS                     note<TODO: update note>
+CONFIG_VMWARE_VMCI_VSOCKETS                     note<'TODO: update note'>
 
 CONFIG_X86_PCC_CPUFREQ                          policy<{'amd64': 'n'}>
 CONFIG_X86_PCC_CPUFREQ                          note<'not autoloadable'>
@@ -1557,6 +1557,7 @@ CONFIG_CLK_RK3568                               policy<{'arm64': 'y'}>
 CONFIG_CLK_RZG2L                                policy<{'arm64': '-'}>
 CONFIG_CLK_SP810                                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CLK_TWL6040                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CLK_VEXPRESS_OSC                         policy<{'arm64': '-'}>
 CONFIG_CLS_U32_MARK                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CM32181                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_CM3232                                   policy<{'amd64': '-', 'arm64': 'n'}>
@@ -4939,6 +4940,7 @@ CONFIG_MFD_TPS65912_SPI                         policy<{'amd64': '-', 'arm64': '
 CONFIG_MFD_TPS80031                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MFD_TQMX86                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MFD_TWL4030_AUDIO                        policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_MFD_VEXPRESS_SYSREG                      policy<{'arm64': '-'}>
 CONFIG_MFD_VIPERBOARD                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MFD_VX855                                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MFD_WCD934X                              policy<{'amd64': '-', 'arm64': '-'}>
@@ -6403,6 +6405,7 @@ CONFIG_POWER_RESET_RESTART                      policy<{'amd64': '-', 'arm64': '
 CONFIG_POWER_RESET_SC27XX                       policy<{'arm64': '-'}>
 CONFIG_POWER_RESET_SYSCON_POWEROFF              policy<{'arm64': 'n'}>
 CONFIG_POWER_RESET_TPS65086                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_POWER_RESET_VEXPRESS                     policy<{'arm64': '-'}>
 CONFIG_POWER_RESET_XGENE                        policy<{'arm64': 'y'}>
 CONFIG_PPDEV                                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PPP                                      policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -6828,6 +6831,7 @@ CONFIG_REGULATOR_TPS65912                       policy<{'amd64': '-', 'arm64': '
 CONFIG_REGULATOR_TPS80031                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_USERSPACE_CONSUMER             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_REGULATOR_VCTRL                          policy<{'arm64': 'y'}>
+CONFIG_REGULATOR_VEXPRESS                       policy<{'arm64': '-'}>
 CONFIG_REGULATOR_VIRTUAL_CONSUMER               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_REGULATOR_VQMMC_IPQ4019                  policy<{'arm64': 'y'}>
 CONFIG_REGULATOR_WM831X                         policy<{'amd64': '-', 'arm64': 'm'}>
@@ -7570,6 +7574,7 @@ CONFIG_SENSORS_TSL2550                          policy<{'amd64': 'n', 'arm64': '
 CONFIG_SENSORS_TSL2563                          policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SENSORS_UCD9000                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_UCD9200                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_VEXPRESS                         policy<{'arm64': '-'}>
 CONFIG_SENSORS_VIA686A                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_VIA_CPUTEMP                      policy<{'amd64': 'n'}>
 CONFIG_SENSORS_VT1211                           policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -8886,6 +8891,7 @@ CONFIG_TOUCHSCREEN_BU21013                      policy<{'amd64': 'n', 'arm64': '
 CONFIG_TOUCHSCREEN_BU21029                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TOUCHSCREEN_CHIPONE_ICN8318              policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_TOUCHSCREEN_CHIPONE_ICN8505              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_COLIBRI_VF50                 policy<{'arm64': '-'}>
 CONFIG_TOUCHSCREEN_CY8CTMA140                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TOUCHSCREEN_CY8CTMG110                   policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_TOUCHSCREEN_CYTTSP4_CORE                 policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -9572,6 +9578,10 @@ CONFIG_VDPA_USER                                policy<{'amd64': '-', 'arm64': '
 CONFIG_VEML6030                                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_VEML6070                                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_VETH                                     policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_VEXPRESS_CONFIG                          policy<{'arm64': 'n'}>
+CONFIG_VF610_ADC                                policy<{'arm64': 'n'}>
+CONFIG_VF610_DAC                                policy<{'arm64': 'n'}>
+CONFIG_VFIO_AMBA                                policy<{'arm64': '-'}>
 CONFIG_VFIO_FSL_MC                              policy<{'arm64': '-'}>
 CONFIG_VFIO_IOMMU_TYPE1                         policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_VFIO_MDEV                                policy<{'amd64': '-', 'arm64': 'm'}>
@@ -9581,6 +9591,10 @@ CONFIG_VFIO_PCI_IGD                             policy<{'amd64': '-'}>
 CONFIG_VFIO_PCI_INTX                            policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_VFIO_PCI_MMAP                            policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_VFIO_PCI_VGA                             policy<{'amd64': '-'}>
+CONFIG_VFIO_PLATFORM                            policy<{'arm64': 'n'}>
+CONFIG_VFIO_PLATFORM_AMDXGBE_RESET              policy<{'arm64': '-'}>
+CONFIG_VFIO_PLATFORM_BCMFLEXRM_RESET            policy<{'arm64': '-'}>
+CONFIG_VFIO_PLATFORM_CALXEDAXGMAC_RESET         policy<{'arm64': '-'}>
 CONFIG_VFIO_VIRQFD                              policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_VGASTATE                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_VGA_SWITCHEROO                           policy<{'amd64': 'n'}>
@@ -9905,6 +9919,7 @@ CONFIG_VIRTIO_VSOCKETS                          policy<{'amd64': 'y', 'arm64': '
 CONFIG_VIRTIO_VSOCKETS_COMMON                   policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_VIRT_WIFI                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_VISCONTI_WATCHDOG                        policy<{'arm64': '-'}>
+CONFIG_VITESSE_PHY                              policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_VL53L0X_I2C                              policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_VL6180                                   policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_VLAN_8021Q                               policy<{'amd64': 'y', 'arm64': 'y'}>
