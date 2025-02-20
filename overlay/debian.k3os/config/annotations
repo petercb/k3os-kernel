@@ -10126,6 +10126,7 @@ CONFIG_XFRM_STATISTICS                          policy<{'amd64': 'n', 'arm64': '
 CONFIG_XFRM_USER                                policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_XFRM_USER_COMPAT                         policy<{'amd64': 'n', 'arm64': '-'}>
 CONFIG_XFS_FS                                   policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_XFS_RT                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_XGENE_DMA                                policy<{'arm64': '-'}>
 CONFIG_XIAOMI_WMI                               policy<{'amd64': '-'}>
 CONFIG_XILINX_AXI_EMAC                          policy<{'amd64': 'n', 'arm64': 'n'}>
