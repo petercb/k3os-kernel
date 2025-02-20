@@ -10152,6 +10152,7 @@ CONFIG_XILLYUSB                                 policy<{'amd64': 'n', 'arm64': '
 CONFIG_XIL_AXIS_FIFO                            policy<{'arm64': '-'}>
 CONFIG_XOR_BLOCKS                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_XPOWER_PMIC_OPREGION                     policy<{'amd64': '-'}>
+CONFIG_XZ_DEC_TEST                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_YAM                                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_YAMAHA_YAS530                            policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_YELLOWFIN                                policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -10161,6 +10162,8 @@ CONFIG_YENTA_O2                                 policy<{'amd64': '-', 'arm64': '
 CONFIG_YENTA_RICOH                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_YENTA_TI                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_YENTA_TOSHIBA                            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_Z3FOLD                                   policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_ZBUD                                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ZD1211RW                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ZD1211RW_DEBUG                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ZEROPLUS_FF                              policy<{'amd64': '-', 'arm64': '-'}>
@@ -10171,10 +10174,19 @@ CONFIG_ZOPT2201                                 policy<{'amd64': '-', 'arm64': '
 CONFIG_ZPA2326                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_ZPA2326_I2C                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ZPA2326_SPI                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_ZPOOL                                    policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_ZRAM                                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_ZRAM_DEF_COMP                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ZRAM_DEF_COMP_842                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ZRAM_DEF_COMP_LZ4                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ZRAM_DEF_COMP_LZ4HC                      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_ZRAM_DEF_COMP_LZO                        policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_ZRAM_DEF_COMP_LZORLE                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ZRAM_DEF_COMP_ZSTD                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_ZRAM_MEMORY_TRACKING                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_ZRAM_WRITEBACK                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_ZSMALLOC                                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_ZSMALLOC_STAT                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ZSTD_COMPRESS                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ZSWAP                                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ZSWAP_COMPRESSOR_DEFAULT                 policy<{'amd64': '-', 'arm64': '-'}>
