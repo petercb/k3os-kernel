@@ -474,6 +474,9 @@ CONFIG_VMWARE_VMCI                              note<'LP: #1978145'>
 CONFIG_VMWARE_VMCI_VSOCKETS                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_VMWARE_VMCI_VSOCKETS                     note<'TODO: update note'>
 
+CONFIG_WWAN                                     policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_WWAN                                     note<'LP: #2033406'>
+
 CONFIG_X86_PCC_CPUFREQ                          policy<{'amd64': 'n'}>
 CONFIG_X86_PCC_CPUFREQ                          note<'not autoloadable'>
 
@@ -4065,6 +4068,7 @@ CONFIG_IOMMU_SVA_LIB                            policy<{'amd64': '-', 'arm64': '
 CONFIG_IONIC                                    policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_IOSCHED_BFQ                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_IOSF_MBI_DEBUG                           policy<{'amd64': 'n'}>
+CONFIG_IOSM                                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_IO_DELAY_0X80                            policy<{'amd64': 'y'}>
 CONFIG_IO_DELAY_0XED                            policy<{'amd64': 'n'}>
 CONFIG_IO_STRICT_DEVMEM                         policy<{'amd64': '-', 'arm64': '-'}>
@@ -6918,6 +6922,7 @@ CONFIG_RPMSG_QCOM_GLINK_RPM                     policy<{'amd64': 'n', 'arm64': '
 CONFIG_RPMSG_QCOM_GLINK_SMEM                    policy<{'arm64': '-'}>
 CONFIG_RPMSG_QCOM_SMD                           policy<{'arm64': '-'}>
 CONFIG_RPMSG_VIRTIO                             policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_RPMSG_WWAN_CTRL                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RPR0521                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_RSI_91X                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RSI_COEX                                 policy<{'amd64': '-', 'arm64': '-'}>
@@ -9926,7 +9931,12 @@ CONFIG_VLAN_8021Q                               policy<{'amd64': 'y', 'arm64': '
 CONFIG_VLAN_8021Q_GVRP                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_VLAN_8021Q_MVRP                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_VMD                                      policy<{'amd64': 'y'}>
+CONFIG_VME_BUS                                  policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_VME_CA91CX42                             policy<{'amd64': '-'}>
+CONFIG_VME_FAKE                                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_VME_TSI148                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_VME_USER                                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_VMIVME_7805                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_VMLINUX_MAP                              policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_VMWARE_BALLOON                           policy<{'amd64': '-'}>
 CONFIG_VMWARE_PVSCSI                            policy<{'amd64': 'n'}>
@@ -9936,6 +9946,7 @@ CONFIG_VP_VDPA                                  policy<{'amd64': '-', 'arm64': '
 CONFIG_VSOCKETS                                 policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_VSOCKETS_DIAG                            policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_VSOCKETS_LOOPBACK                        policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_VSOCKMON                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_VT6655                                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_VT6656                                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_VXFS_FS                                  policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -10052,6 +10063,7 @@ CONFIG_WM8350_POWER                             policy<{'amd64': '-', 'arm64': '
 CONFIG_WM8350_WATCHDOG                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_WMI_BMOF                                 policy<{'amd64': '-'}>
 CONFIG_WQ_POWER_EFFICIENT_DEFAULT               policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_WWAN_HWSIM                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_X86_5LEVEL                               policy<{'amd64': 'n'}>
 CONFIG_X86_AMD_FREQ_SENSITIVITY                 policy<{'amd64': 'n'}>
 CONFIG_X86_AMD_PLATFORM_DEVICE                  policy<{'amd64': 'n'}>
