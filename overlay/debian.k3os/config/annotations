@@ -9555,6 +9555,8 @@ CONFIG_V4L_MEM2MEM_DRIVERS                      policy<{'amd64': '-', 'arm64': '
 CONFIG_V4L_PLATFORM_DRIVERS                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_V4L_TEST_DRIVERS                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_VALIDATE_FS_PARSER                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_VBOXGUEST                                policy<{'amd64': 'y'}>
+CONFIG_VBOXSF_FS                                policy<{'amd64': 'n'}>
 CONFIG_VCHIQ_CDEV                               policy<{'arm64': '-'}>
 CONFIG_VCNL3020                                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_VCNL4000                                 policy<{'amd64': '-', 'arm64': 'n'}>
