@@ -2830,26 +2830,27 @@ CONFIG_EXFAT_DEFAULT_IOCHARSET                  policy<{'amd64': '-', 'arm64': '
 CONFIG_EXFAT_FS                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_EXPERT                                   policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_EXPORTFS_BLOCK_OPS                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_EXTCON                                   policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_EXTCON_ADC_JACK                          policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_EXTCON_AXP288                            policy<{'amd64': '-'}>
-CONFIG_EXTCON_FSA9480                           policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_EXTCON_GPIO                              policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_EXTCON_FSA9480                           policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_EXTCON_GPIO                              policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_EXTCON_INTEL_CHT_WC                      policy<{'amd64': '-'}>
 CONFIG_EXTCON_INTEL_INT3496                     policy<{'amd64': '-'}>
 CONFIG_EXTCON_INTEL_MRFLD                       policy<{'amd64': '-'}>
 CONFIG_EXTCON_MAX14577                          policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_EXTCON_MAX3355                           policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_EXTCON_MAX3355                           policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_EXTCON_MAX77693                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_EXTCON_MAX77843                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_EXTCON_MAX8997                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_EXTCON_PALMAS                            policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_EXTCON_PTN5150                           policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_EXTCON_PTN5150                           policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_EXTCON_QCOM_SPMI_MISC                    policy<{'arm64': 'n'}>
-CONFIG_EXTCON_RT8973A                           policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_EXTCON_SM5502                            policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_EXTCON_RT8973A                           policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_EXTCON_SM5502                            policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_EXTCON_USBC_CROS_EC                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_EXTCON_USBC_TUSB320                      policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_EXTCON_USB_GPIO                          policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_EXTCON_USB_GPIO                          policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_EZCHIP_NPS_MANAGEMENT_ENET               policy<{'arm64': 'n'}>
 CONFIG_EZX_PCAP                                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_F2FS_CHECK_FS                            policy<{'amd64': '-', 'arm64': '-'}>
