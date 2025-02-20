@@ -3274,7 +3274,7 @@ CONFIG_GPIO_TPS65086                            policy<{'amd64': '-', 'arm64': '
 CONFIG_GPIO_TPS65218                            policy<{'arm64': '-'}>
 CONFIG_GPIO_TPS6586X                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GPIO_TPS65910                            policy<{'amd64': '-', 'arm64': 'y'}>
-CONFIG_GPIO_TPS65912                            policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_GPIO_TPS65912                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GPIO_TPS68470                            policy<{'amd64': '-'}>
 CONFIG_GPIO_TQMX86                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GPIO_TWL6040                             policy<{'amd64': '-', 'arm64': '-'}>
@@ -4939,9 +4939,9 @@ CONFIG_MFD_TPS65090                             policy<{'amd64': 'n', 'arm64': '
 CONFIG_MFD_TPS65218                             policy<{'arm64': 'n'}>
 CONFIG_MFD_TPS6586X                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MFD_TPS65910                             policy<{'amd64': '-', 'arm64': 'y'}>
-CONFIG_MFD_TPS65912                             policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_MFD_TPS65912                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MFD_TPS65912_I2C                         policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_MFD_TPS65912_SPI                         policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_MFD_TPS65912_SPI                         policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_MFD_TPS80031                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MFD_TQMX86                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MFD_TWL4030_AUDIO                        policy<{'amd64': '-', 'arm64': '-'}>
@@ -6832,7 +6832,7 @@ CONFIG_REGULATOR_TPS65218                       policy<{'arm64': '-'}>
 CONFIG_REGULATOR_TPS6524X                       policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_REGULATOR_TPS6586X                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_TPS65910                       policy<{'amd64': '-', 'arm64': 'm'}>
-CONFIG_REGULATOR_TPS65912                       policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_REGULATOR_TPS65912                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_TPS80031                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_USERSPACE_CONSUMER             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_REGULATOR_VCTRL                          policy<{'arm64': 'y'}>
