@@ -4812,7 +4812,7 @@ CONFIG_MEMTEST                                  policy<{'amd64': 'n', 'arm64': '
 CONFIG_MEM_SOFT_DIRTY                           policy<{'amd64': '-'}>
 CONFIG_MENF21BMC_WATCHDOG                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MENZ069_WATCHDOG                         policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_MEN_A21_WDT                              policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_MEN_A21_WDT                              policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_MEN_Z188_ADC                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MERAKI_MX100                             policy<{'amd64': '-'}>
 CONFIG_MESON_CANVAS                             policy<{'arm64': 'y'}>
