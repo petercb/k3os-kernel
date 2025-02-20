@@ -1050,7 +1050,7 @@ CONFIG_BACKLIGHT_RT4831                         policy<{'amd64': '-', 'arm64': '
 CONFIG_BACKLIGHT_SAHARA                         policy<{'amd64': 'n', 'arm64': '-'}>
 CONFIG_BACKLIGHT_SKY81452                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BACKLIGHT_TPS65217                       policy<{'arm64': '-'}>
-CONFIG_BACKLIGHT_WM831X                         policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_BACKLIGHT_WM831X                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BAREUDP                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BATMAN_ADV                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BATMAN_ADV_BATMAN_V                      policy<{'amd64': '-', 'arm64': '-'}>
@@ -1836,7 +1836,7 @@ CONFIG_COMMON_CLK_SI5351                        policy<{'amd64': 'n', 'arm64': '
 CONFIG_COMMON_CLK_SI544                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_COMMON_CLK_SI570                         policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_COMMON_CLK_VC5                           policy<{'amd64': '-', 'arm64': 'n'}>
-CONFIG_COMMON_CLK_WM831X                        policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_COMMON_CLK_WM831X                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_COMMON_CLK_XGENE                         policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_COMMON_CLK_XLNX_CLKWZRD                  policy<{'arm64': '-'}>
 CONFIG_COMMON_CLK_ZYNQMP                        policy<{'amd64': '-', 'arm64': 'n'}>
@@ -3287,7 +3287,7 @@ CONFIG_GPIO_WATCHDOG                            policy<{'amd64': '-', 'arm64': '
 CONFIG_GPIO_WCD934X                             policy<{'arm64': '-'}>
 CONFIG_GPIO_WHISKEY_COVE                        policy<{'amd64': '-'}>
 CONFIG_GPIO_WINBOND                             policy<{'amd64': '-'}>
-CONFIG_GPIO_WM831X                              policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_GPIO_WM831X                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GPIO_WM8350                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GPIO_WM8994                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GPIO_WS16C48                             policy<{'amd64': '-'}>
@@ -3939,7 +3939,7 @@ CONFIG_INPUT_TPS65218_PWRBUTTON                 policy<{'arm64': '-'}>
 CONFIG_INPUT_TWL4030_PWRBUTTON                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INPUT_TWL4030_VIBRA                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INPUT_TWL6040_VIBRA                      policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_INPUT_WM831X_ON                          policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_INPUT_WM831X_ON                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INPUT_XEN_KBDDEV_FRONTEND                policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_INPUT_YEALINK                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_INT3406_THERMAL                          policy<{'amd64': '-'}>
@@ -4558,7 +4558,7 @@ CONFIG_LEDS_TRIGGER_TIMER                       policy<{'amd64': 'n', 'arm64': '
 CONFIG_LEDS_TRIGGER_TRANSIENT                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_LEDS_TRIGGER_TTY                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_LEDS_USER                                policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_LEDS_WM831X_STATUS                       policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_LEDS_WM831X_STATUS                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_LEDS_WM8350                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_LED_TRIGGER_PHY                          policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_LEGACY_PTYS                              policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -4952,9 +4952,9 @@ CONFIG_MFD_WCD934X                              policy<{'amd64': '-', 'arm64': '
 CONFIG_MFD_WL1273_CORE                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MFD_WM5102                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MFD_WM5110                               policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_MFD_WM831X                               policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_MFD_WM831X                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MFD_WM831X_I2C                           policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_MFD_WM831X_SPI                           policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_MFD_WM831X_SPI                           policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_MFD_WM8350                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MFD_WM8350_I2C                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MFD_WM8400                               policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -6839,7 +6839,7 @@ CONFIG_REGULATOR_VCTRL                          policy<{'arm64': 'y'}>
 CONFIG_REGULATOR_VEXPRESS                       policy<{'arm64': '-'}>
 CONFIG_REGULATOR_VIRTUAL_CONSUMER               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_REGULATOR_VQMMC_IPQ4019                  policy<{'arm64': 'y'}>
-CONFIG_REGULATOR_WM831X                         policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_REGULATOR_WM831X                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_WM8350                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_WM8400                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_WM8994                         policy<{'amd64': '-', 'arm64': '-'}>
@@ -7084,7 +7084,7 @@ CONFIG_RTC_DRV_TPS65910                         policy<{'amd64': '-', 'arm64': '
 CONFIG_RTC_DRV_TPS80031                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RTC_DRV_V3020                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_RTC_DRV_WILCO_EC                         policy<{'amd64': '-'}>
-CONFIG_RTC_DRV_WM831X                           policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_RTC_DRV_WM831X                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RTC_DRV_WM8350                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RTC_DRV_X1205                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_RTC_DRV_ZYNQMP                           policy<{'amd64': '-', 'arm64': 'n'}>
@@ -7596,7 +7596,7 @@ CONFIG_SENSORS_W83795                           policy<{'amd64': 'n', 'arm64': '
 CONFIG_SENSORS_W83795_FANCTRL                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_W83L785TS                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_W83L786NG                        policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_SENSORS_WM831X                           policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_SENSORS_WM831X                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_WM8350                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_XDPE122                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_XGENE                            policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -8987,7 +8987,7 @@ CONFIG_TOUCHSCREEN_USB_ZYTRONIC                 policy<{'amd64': '-', 'arm64': '
 CONFIG_TOUCHSCREEN_WACOM_I2C                    policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TOUCHSCREEN_WACOM_W8001                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TOUCHSCREEN_WDT87XX_I2C                  policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_TOUCHSCREEN_WM831X                       policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_TOUCHSCREEN_WM831X                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TOUCHSCREEN_WM9705                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TOUCHSCREEN_WM9712                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TOUCHSCREEN_WM9713                       policy<{'amd64': '-', 'arm64': '-'}>
@@ -10057,9 +10057,9 @@ CONFIG_WLAN_VENDOR_ZYDAS                        policy<{'amd64': '-', 'arm64': '
 CONFIG_WLCORE                                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_WLCORE_SDIO                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_WLCORE_SPI                               policy<{'arm64': '-'}>
-CONFIG_WM831X_BACKUP                            policy<{'amd64': '-', 'arm64': 'm'}>
-CONFIG_WM831X_POWER                             policy<{'amd64': '-', 'arm64': 'm'}>
-CONFIG_WM831X_WATCHDOG                          policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_WM831X_BACKUP                            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_WM831X_POWER                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_WM831X_WATCHDOG                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_WM8350_POWER                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_WM8350_WATCHDOG                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_WMI_BMOF                                 policy<{'amd64': '-'}>
