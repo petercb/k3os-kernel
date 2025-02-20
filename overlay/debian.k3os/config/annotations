@@ -2189,8 +2189,8 @@ CONFIG_DEVMEM                                   policy<{'amd64': 'n', 'arm64': '
 CONFIG_DEV_APPLETALK                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_DEV_COREDUMP                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DEV_DAX                                  policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_DEV_DAX_HMEM                             policy<{'amd64': '-', 'arm64': 'm'}>
-CONFIG_DEV_DAX_HMEM_DEVICES                     policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_DEV_DAX_HMEM                             policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_DEV_DAX_HMEM_DEVICES                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DEV_DAX_KMEM                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DEV_DAX_PMEM                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DEV_DAX_PMEM_COMPAT                      policy<{'amd64': '-', 'arm64': '-'}>
