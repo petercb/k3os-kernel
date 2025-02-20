@@ -9925,6 +9925,7 @@ CONFIG_VL6180                                   policy<{'amd64': '-', 'arm64': '
 CONFIG_VLAN_8021Q                               policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_VLAN_8021Q_GVRP                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_VLAN_8021Q_MVRP                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_VMD                                      policy<{'amd64': 'y'}>
 CONFIG_VME_USER                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_VMLINUX_MAP                              policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_VMWARE_BALLOON                           policy<{'amd64': '-'}>
