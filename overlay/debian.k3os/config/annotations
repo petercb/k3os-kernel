@@ -1030,7 +1030,7 @@ CONFIG_BACKLIGHT_AS3711                         policy<{'amd64': '-', 'arm64': '
 CONFIG_BACKLIGHT_BD6107                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BACKLIGHT_CARILLO_RANCH                  policy<{'amd64': '-'}>
 CONFIG_BACKLIGHT_DA903X                         policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_BACKLIGHT_DA9052                         policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_BACKLIGHT_DA9052                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BACKLIGHT_GPIO                           policy<{'amd64': '-', 'arm64': 'm'}>
 CONFIG_BACKLIGHT_KTD253                         policy<{'amd64': '-', 'arm64': 'm'}>
 CONFIG_BACKLIGHT_LED                            policy<{'arm64': 'n'}>
@@ -1070,7 +1070,7 @@ CONFIG_BATTERY_BQ27XXX_I2C                      policy<{'amd64': '-', 'arm64': '
 CONFIG_BATTERY_CPCAP                            policy<{'arm64': '-'}>
 CONFIG_BATTERY_CW2015                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BATTERY_DA9030                           policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_BATTERY_DA9052                           policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_BATTERY_DA9052                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BATTERY_DA9150                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BATTERY_DS2760                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BATTERY_DS2780                           policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -2122,7 +2122,7 @@ CONFIG_CX_ECAT                                  policy<{'amd64': 'n'}>
 CONFIG_CYPRESS_FIRMWARE                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DA280                                    policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DA311                                    policy<{'amd64': '-', 'arm64': 'n'}>
-CONFIG_DA9052_WATCHDOG                          policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_DA9052_WATCHDOG                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DA9055_WATCHDOG                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DA9062_THERMAL                           policy<{'arm64': '-'}>
 CONFIG_DA9062_WATCHDOG                          policy<{'amd64': '-', 'arm64': '-'}>
@@ -3193,7 +3193,7 @@ CONFIG_GPIO_BT8XX                               policy<{'amd64': '-', 'arm64': '
 CONFIG_GPIO_CADENCE                             policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_GPIO_CDEV                                policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_GPIO_CRYSTAL_COVE                        policy<{'amd64': '-'}>
-CONFIG_GPIO_DA9052                              policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_GPIO_DA9052                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GPIO_DA9055                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GPIO_DAVINCI                             policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_GPIO_DLN2                                policy<{'amd64': '-', 'arm64': '-'}>
@@ -3886,7 +3886,7 @@ CONFIG_INPUT_CMA3000                            policy<{'amd64': 'n', 'arm64': '
 CONFIG_INPUT_CMA3000_I2C                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INPUT_CPCAP_PWRBUTTON                    policy<{'arm64': '-'}>
 CONFIG_INPUT_DA7280_HAPTICS                     policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_INPUT_DA9052_ONKEY                       policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_INPUT_DA9052_ONKEY                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INPUT_DA9055_ONKEY                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INPUT_DA9063_ONKEY                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INPUT_DRV260X_HAPTICS                    policy<{'amd64': '-', 'arm64': 'n'}>
@@ -4485,7 +4485,7 @@ CONFIG_LEDS_CLEVO_MAIL                          policy<{'amd64': 'n', 'arm64': '
 CONFIG_LEDS_CPCAP                               policy<{'arm64': '-'}>
 CONFIG_LEDS_CR0014114                           policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_LEDS_DA903X                              policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_LEDS_DA9052                              policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_LEDS_DA9052                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_LEDS_DAC124S085                          policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_LEDS_EL15203000                          policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_LEDS_GPIO                                policy<{'amd64': '-', 'arm64': 'y'}>
@@ -4853,7 +4853,7 @@ CONFIG_MFD_CS47L85                              policy<{'amd64': '-', 'arm64': '
 CONFIG_MFD_CS47L90                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MFD_CS47L92                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MFD_DA9052_I2C                           policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_MFD_DA9052_SPI                           policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_MFD_DA9052_SPI                           policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_MFD_DA9055                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MFD_DA9062                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MFD_DA9063                               policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -6372,7 +6372,7 @@ CONFIG_PM8916_WATCHDOG                          policy<{'arm64': 'n'}>
 CONFIG_PMBUS                                    policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PMIC_ADP5520                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PMIC_DA903X                              policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_PMIC_DA9052                              policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_PMIC_DA9052                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PMIC_OPREGION                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PMS7003                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PM_ADVANCED_DEBUG                        policy<{'amd64': 'n', 'arm64': 'y'}>
@@ -6720,7 +6720,7 @@ CONFIG_REGULATOR_BD957XMUF                      policy<{'arm64': '-'}>
 CONFIG_REGULATOR_CPCAP                          policy<{'arm64': '-'}>
 CONFIG_REGULATOR_CROS_EC                        policy<{'arm64': '-'}>
 CONFIG_REGULATOR_DA903X                         policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_REGULATOR_DA9052                         policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_REGULATOR_DA9052                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_DA9055                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_DA9062                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGULATOR_DA9063                         policy<{'arm64': '-'}>
@@ -6973,7 +6973,7 @@ CONFIG_RTC_DRV_BRCMSTB                          policy<{'amd64': '-', 'arm64': '
 CONFIG_RTC_DRV_CADENCE                          policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_RTC_DRV_CPCAP                            policy<{'arm64': '-'}>
 CONFIG_RTC_DRV_CROS_EC                          policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_RTC_DRV_DA9052                           policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_RTC_DRV_DA9052                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RTC_DRV_DA9055                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RTC_DRV_DA9063                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RTC_DRV_DS1286                           policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -7405,7 +7405,7 @@ CONFIG_SENSORS_BPA_RS600                        policy<{'amd64': '-', 'arm64': '
 CONFIG_SENSORS_CORETEMP                         policy<{'amd64': 'n'}>
 CONFIG_SENSORS_CORSAIR_CPRO                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_CORSAIR_PSU                      policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_SENSORS_DA9052_ADC                       policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_SENSORS_DA9052_ADC                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_DA9055                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_DELL_SMM                         policy<{'amd64': 'n'}>
 CONFIG_SENSORS_DME1737                          policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -8906,7 +8906,7 @@ CONFIG_TOUCHSCREEN_CYTTSP_CORE                  policy<{'amd64': 'n', 'arm64': '
 CONFIG_TOUCHSCREEN_CYTTSP_I2C                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TOUCHSCREEN_CYTTSP_SPI                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TOUCHSCREEN_DA9034                       policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_TOUCHSCREEN_DA9052                       policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_TOUCHSCREEN_DA9052                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TOUCHSCREEN_DMI                          policy<{'amd64': '-'}>
 CONFIG_TOUCHSCREEN_DYNAPRO                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TOUCHSCREEN_EDT_FT5X06                   policy<{'amd64': 'n', 'arm64': 'n'}>
