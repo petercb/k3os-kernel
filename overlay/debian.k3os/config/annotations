@@ -2149,7 +2149,7 @@ CONFIG_DEBUG_PINCTRL                            policy<{'amd64': '-', 'arm64': '
 CONFIG_DEBUG_RSEQ                               policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DEBUG_SG                                 policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_DECOMPRESS_LZO                           policy<{'amd64': '-', 'arm64': 'y'}>
-CONFIG_DEFAULT_BBR                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_DEFAULT_BBR                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_DEFAULT_CODEL                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_DEFAULT_FQ                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_DEFAULT_FQ_CODEL                         policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -8751,6 +8751,7 @@ CONFIG_TCM_PSCSI                                policy<{'amd64': '-', 'arm64': '
 CONFIG_TCM_QLA2XXX                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TCM_QLA2XXX_DEBUG                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TCM_USER2                                policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TCP_CONG_BBR                             policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_TCP_CONG_BIC                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TCP_CONG_CDG                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TCP_CONG_DCTCP                           policy<{'amd64': 'n', 'arm64': 'n'}>
