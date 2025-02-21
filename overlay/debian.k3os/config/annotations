@@ -2170,6 +2170,7 @@ CONFIG_DELL_SMBIOS                              policy<{'amd64': '-'}>
 CONFIG_DELL_SMBIOS_SMM                          policy<{'amd64': '-'}>
 CONFIG_DELL_SMBIOS_WMI                          policy<{'amd64': '-'}>
 CONFIG_DELL_SMO8800                             policy<{'amd64': '-'}>
+CONFIG_DELL_UART_BACKLIGHT                      policy<{'amd64': 'n'}>
 CONFIG_DELL_WMI                                 policy<{'amd64': '-'}>
 CONFIG_DELL_WMI_AIO                             policy<{'amd64': '-'}>
 CONFIG_DELL_WMI_DESCRIPTOR                      policy<{'amd64': '-'}>
@@ -3617,6 +3618,7 @@ CONFIG_I2C_IMX_LPI2C                            policy<{'amd64': '-', 'arm64': '
 CONFIG_I2C_ISCH                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_I2C_ISMT                                 policy<{'amd64': 'n', 'arm64': '-'}>
 CONFIG_I2C_KEMPLD                               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_I2C_LJCA                                 policy<{'amd64': '-'}>
 CONFIG_I2C_MESON                                policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_I2C_MLXBF                                policy<{'arm64': '-'}>
 CONFIG_I2C_MLXCPLD                              policy<{'amd64': 'n', 'arm64': '-'}>
@@ -3922,6 +3924,7 @@ CONFIG_INPUT_PCAP                               policy<{'amd64': '-', 'arm64': '
 CONFIG_INPUT_PCF50633_PMU                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INPUT_PCF8574                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_INPUT_PCSPKR                             policy<{'amd64': 'n'}>
+CONFIG_INPUT_PM8941_PWRKEY                      policy<{'arm64': 'y'}>
 CONFIG_INPUT_PM8XXX_VIBRATOR                    policy<{'arm64': 'n'}>
 CONFIG_INPUT_POWERMATE                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_INPUT_PWM_BEEPER                         policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -3970,11 +3973,12 @@ CONFIG_INTEL_IPS                                policy<{'amd64': 'n'}>
 CONFIG_INTEL_ISH_FIRMWARE_DOWNLOADER            policy<{'amd64': '-'}>
 CONFIG_INTEL_ISH_HID                            policy<{'amd64': 'n'}>
 CONFIG_INTEL_LDMA                               policy<{'amd64': '-'}>
-CONFIG_INTEL_MEI                                policy<{'amd64': 'm', 'arm64': '-'}>
+CONFIG_INTEL_MEI                                policy<{'amd64': 'n', 'arm64': '-'}>
 CONFIG_INTEL_MEI_HDCP                           policy<{'amd64': 'n', 'arm64': '-'}>
 CONFIG_INTEL_MEI_ME                             policy<{'amd64': 'n', 'arm64': '-'}>
 CONFIG_INTEL_MEI_TXE                            policy<{'amd64': 'n', 'arm64': '-'}>
 CONFIG_INTEL_MEI_VSC                            policy<{'amd64': '-'}>
+CONFIG_INTEL_MEI_WDT                            policy<{'amd64': '-'}>
 CONFIG_INTEL_MENLOW                             policy<{'amd64': 'n'}>
 CONFIG_INTEL_MRFLD_ADC                          policy<{'amd64': '-'}>
 CONFIG_INTEL_MRFLD_PWRBTN                       policy<{'amd64': '-'}>
@@ -4844,7 +4848,7 @@ CONFIG_MFD_AXP20X_I2C                           policy<{'amd64': 'n', 'arm64': '
 CONFIG_MFD_AXP20X_RSB                           policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_MFD_BCM590XX                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MFD_BD9571MWV                            policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_MFD_CORE                                 policy<{'amd64': 'm', 'arm64': 'y'}>
+CONFIG_MFD_CORE                                 policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_MFD_CPCAP                                policy<{'arm64': 'n'}>
 CONFIG_MFD_CROS_EC_DEV                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MFD_CS47L15                              policy<{'amd64': '-', 'arm64': '-'}>
@@ -4875,6 +4879,7 @@ CONFIG_MFD_IQS62X                               policy<{'amd64': 'n', 'arm64': '
 CONFIG_MFD_JANZ_CMODIO                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MFD_KEMPLD                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MFD_KHADAS_MCU                           policy<{'arm64': 'n'}>
+CONFIG_MFD_LJCA                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MFD_LM3533                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MFD_LOCHNAGAR                            policy<{'arm64': 'n'}>
 CONFIG_MFD_LP3943                               policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -9991,7 +9996,6 @@ CONFIG_WAN                                      policy<{'amd64': 'n', 'arm64': '
 CONFIG_WANT_COMPAT_NETLINK_MESSAGES             policy<{'amd64': '-'}>
 CONFIG_WANT_DEV_COREDUMP                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_WANXL                                    policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_WATCHDOG_CORE                            policy<{'amd64': 'm', 'arm64': 'y'}>
 CONFIG_WATCHDOG_PRETIMEOUT_DEFAULT_GOV_NOOP     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_WATCHDOG_PRETIMEOUT_DEFAULT_GOV_PANIC    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_WATCHDOG_PRETIMEOUT_GOV                  policy<{'amd64': 'n', 'arm64': 'n'}>
