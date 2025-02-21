@@ -3504,7 +3504,9 @@ CONFIG_HNS3_DCB                                 policy<{'arm64': '-'}>
 CONFIG_HNS3_ENET                                policy<{'arm64': '-'}>
 CONFIG_HNS3_HCLGE                               policy<{'arm64': '-'}>
 CONFIG_HNS3_HCLGEVF                             policy<{'arm64': '-'}>
+CONFIG_HNS_DSAF                                 policy<{'arm64': 'y'}>
 CONFIG_HNS_ENET                                 policy<{'arm64': 'y'}>
+CONFIG_HNS_MDIO                                 policy<{'arm64': 'y'}>
 CONFIG_HOLTEK_FF                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_HOSTAP                                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_HOSTAP_CS                                policy<{'amd64': '-'}>
