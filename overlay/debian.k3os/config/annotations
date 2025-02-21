@@ -7716,6 +7716,8 @@ CONFIG_SGI_GRU                                  policy<{'amd64': '-'}>
 CONFIG_SGI_GRU_DEBUG                            policy<{'amd64': '-'}>
 CONFIG_SGI_XP                                   policy<{'amd64': '-'}>
 CONFIG_SG_SPLIT                                 policy<{'arm64': '-'}>
+CONFIG_SHIFT_FS                                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SHIFT_FS_POSIX_ACL                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SH_ETH                                   policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SH_TIMER_CMT                             policy<{'arm64': '-'}>
 CONFIG_SH_TIMER_TMU                             policy<{'arm64': '-'}>
