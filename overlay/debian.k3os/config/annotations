@@ -8783,6 +8783,7 @@ CONFIG_TEHUTI                                   policy<{'amd64': 'n', 'arm64': '
 CONFIG_TELCLOCK                                 policy<{'amd64': 'n'}>
 CONFIG_TERANETICS_PHY                           policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_TEST_BPF                                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TEST_DIV64                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TEST_HMM                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TEST_LIVEPATCH                           policy<{'amd64': '-'}>
 CONFIG_TEST_POWER                               policy<{'amd64': 'n', 'arm64': 'n'}>
