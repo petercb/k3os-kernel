@@ -49,6 +49,10 @@ if [ "${UPDATECONFIGS:-no}" == "yes" ]; then
         exit 1
     fi
 fi
+
+# Fix to not build modules
+patch -p4 < "${PROJECT_ROOT}/patches/2-binary-arch.mk.patch"
+
 # see https://wiki.ubuntu.com/KernelTeam/KernelMaintenance#Overriding_module_check_failures
 debian/rules binary-${KERNEL_FLAVOUR} \
     skipabi=true \
@@ -59,9 +63,7 @@ popd
 
 pushd "${BUILD_ROOT}"
 dpkg --install --no-triggers --force-depends \
-    "linux-image-unsigned-${VERSION}_${FULL_VERSION}_${TARGETARCH}.deb" \
-    "linux-modules-${VERSION}_${FULL_VERSION}_${TARGETARCH}.deb" \
-    "linux-modules-extra-${VERSION}_${FULL_VERSION}_${TARGETARCH}.deb"
+    "linux-image-unsigned-${VERSION}_${FULL_VERSION}_${TARGETARCH}.deb"
 rm ./*.deb
 popd
 

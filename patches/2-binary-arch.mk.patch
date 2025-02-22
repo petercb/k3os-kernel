@@ -1,0 +1,17 @@
+--- /tmp/build/kernel-work/debian/rules.d/2-binary-arch.mk	2025-02-22 17:02:16.475053309 +0000
++++ /tmp/build/kernel-work/debian/rules.d/2-binary-arch.mk	2025-02-22 17:04:56.196311234 +0000
+@@ -50,12 +50,12 @@
+ build-%: $(stampdir)/stamp-install-%
+ 	@echo Debug: $@
+
+-# Do the actual build, including image and modules
++# Do the actual build
+ $(stampdir)/stamp-build-%: target_flavour = $*
+ $(stampdir)/stamp-build-%: bldimg = $(call custom_override,build_image,$*)
+ $(stampdir)/stamp-build-%: $(stampdir)/stamp-prepare-%
+ 	@echo Debug: $@ build_image $(build_image) bldimg $(bldimg)
+-	$(build_cd) $(kmake) $(build_O) $(conc_level) $(bldimg) modules $(if $(filter true,$(do_dtbs)),dtbs)
++	$(build_cd) $(kmake) $(build_O) $(conc_level) $(bldimg) $(if $(filter true,$(do_dtbs)),dtbs)
+
+ ifneq ($(skipdbg),true)
+ 	# The target scripts_gdb is part of "all", so we need to call it manually
