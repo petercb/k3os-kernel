@@ -97,7 +97,7 @@ esac
 pushd "${KERNEL_ROOT}"
 OUTFILE="${DIST_DIR}/k3os-kernel-${TARGETARCH}.squashfs"
 rm -f "${OUTFILE}"
-mksquashfs . "${OUTFILE}" -no-progress -comp zstd
+mksquashfs . "${OUTFILE}" -no-progress
 popd
 
 # Cleanup
