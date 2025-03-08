@@ -9031,6 +9031,7 @@ CONFIG_TULIP                                    policy<{'amd64': 'n', 'arm64': '
 CONFIG_TULIP_MMIO                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TULIP_MWI                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TULIP_NAPI                               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TUN                                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TURRIS_MOX_RWTM                          policy<{'arm64': 'y'}>
 CONFIG_TWL4030_CORE                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TWL4030_MADC                             policy<{'amd64': '-', 'arm64': '-'}>
