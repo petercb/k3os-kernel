@@ -5609,7 +5609,7 @@ CONFIG_NET_SCH_SFQ                              policy<{'amd64': 'y', 'arm64': '
 CONFIG_NET_SCH_SKBPRIO                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NET_SCH_TAPRIO                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NET_SCH_TBF                              policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_NET_SCH_TEQL                             policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_NET_SCH_TEQL                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NET_TC_SKB_EXT                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NET_TEAM                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NET_TEAM_MODE_ACTIVEBACKUP               policy<{'amd64': '-', 'arm64': '-'}>
