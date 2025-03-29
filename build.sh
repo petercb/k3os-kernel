@@ -89,8 +89,11 @@ case "${TARGETARCH}" in
         cp -a /lib/firmware/nvidia/tegra210 "${KERNEL_ROOT}/lib/firmware/nvidia"
         ;;
     amd64)
-        cp -a /lib/firmware/bnx2x "${KERNEL_ROOT}/lib/firmware"
-        cp -a /lib/firmware/bnx2 "${KERNEL_ROOT}/lib/firmware"
+        cp -a -t "${KERNEL_ROOT}/lib/firmware" \
+            /lib/firmware/bnx2x \
+            /lib/firmware/bnx2 \
+            /lib/firmware/i915 \
+            /lib/firmware/rtl_nic
         ;;
 esac
 
