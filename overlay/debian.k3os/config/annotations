@@ -2497,7 +2497,6 @@ CONFIG_DS1803                                   policy<{'amd64': '-', 'arm64': '
 CONFIG_DS4424                                   policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DTPM                                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DTPM_CPU                                 policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_DUMMY                                    policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_DUMMY_IRQ                                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_DVB_A8293                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DVB_AF9013                               policy<{'amd64': '-', 'arm64': '-'}>
