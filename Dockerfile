@@ -25,6 +25,7 @@ RUN <<-EOF
         fakeroot \
         flex \
         gawk \
+        initramfs-tools \
         kernel-wedge \
         kmod \
         libelf-dev \
