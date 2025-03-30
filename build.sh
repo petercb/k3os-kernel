@@ -69,8 +69,17 @@ pushd "${KERNEL_WORK}"
 debian/rules clean
 popd
 
+# Setup initrd
+echo "Generating initrd"
+mkdir -p "${DIST_DIR}"
+depmod "${VERSION}"
+mkinitramfs \
+    -c gzip \
+    -o "${DIST_DIR}/k3os-initrd-${TARGETARCH}.gz" \
+    "${VERSION}"
+
 # Assemble kernel
-mkdir -p "${KERNEL_ROOT}/lib" "${DIST_DIR}"
+mkdir -p "${KERNEL_ROOT}/lib"
 echo "${VERSION}" > "${KERNEL_ROOT}/version"
 cp "${KERNEL_ROOT}/version" "${DIST_DIR}/k3os-kernel-version-${TARGETARCH}.txt"
 mv "/boot/System.map-${VERSION}" "${KERNEL_ROOT}/System.map"
