@@ -740,7 +740,6 @@ CONFIG_APPLE_AIC                                policy<{'arm64': '-'}>
 CONFIG_APPLE_DART                               policy<{'arm64': '-'}>
 CONFIG_APPLE_GMUX                               policy<{'amd64': 'n'}>
 CONFIG_APPLE_MFI_FASTCHARGE                     policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_APPLE_PROPERTIES                         policy<{'amd64': 'n'}>
 CONFIG_APPLICOM                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_APQ_GCC_8084                             policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_APQ_MMCC_8084                            policy<{'amd64': '-', 'arm64': 'n'}>
@@ -2781,7 +2780,6 @@ CONFIG_EEPROM_MAX6875                           policy<{'amd64': 'n', 'arm64': '
 CONFIG_EFI_ARMSTUB_DTB_LOADER                   policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_EFI_BOOTLOADER_CONTROL                   policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_EFI_CAPSULE_LOADER                       policy<{'amd64': 'n', 'arm64': 'y'}>
-CONFIG_EFI_DEV_PATH_PARSER                      policy<{'amd64': '-'}>
 CONFIG_EFI_EMBEDDED_FIRMWARE                    policy<{'amd64': '-'}>
 CONFIG_EFI_FAKE_MEMMAP                          policy<{'amd64': 'n', 'arm64': '-'}>
 CONFIG_EFI_MIXED                                policy<{'amd64': 'n', 'arm64': '-'}>
