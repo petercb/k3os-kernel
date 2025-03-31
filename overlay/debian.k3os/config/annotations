@@ -4789,7 +4789,7 @@ CONFIG_MEGARAID_LEGACY                          policy<{'amd64': 'n', 'arm64': '
 CONFIG_MEGARAID_MAILBOX                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MEGARAID_MM                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MEGARAID_NEWGEN                          policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_MEGARAID_SAS                             policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_MEGARAID_SAS                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MELLANOX_PLATFORM                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MEMORY                                   policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_MEMORY_FAILURE                           policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -7206,7 +7206,7 @@ CONFIG_SCHED_TRACER                             policy<{'amd64': 'n', 'arm64': '
 CONFIG_SCR24X                                   policy<{'amd64': '-'}>
 CONFIG_SCSI_3W_9XXX                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SCSI_3W_SAS                              policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_SCSI_AACRAID                             policy<{'amd64': 'y', 'arm64': 'n'}>
+CONFIG_SCSI_AACRAID                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SCSI_ACARD                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SCSI_ADVANSYS                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SCSI_AHA1740                             policy<{'amd64': '-'}>
