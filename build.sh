@@ -22,7 +22,11 @@ DIST_DIR="${PROJECT_ROOT}/dist"
 KERNEL_ROOT="${BUILD_ROOT}/kernel"
 
 FULL_VERSION=$(dpkg-query --show --showformat='${Version}' "linux-source-${KERNEL_VERSION}")
-VERSION="${FULL_VERSION%.*}-${KERNEL_FLAVOUR}"
+
+abi_suffix="-${CIRCLE_TAG:-$(git describe --tags 2>/dev/null)}"
+export abi_suffix
+
+VERSION="${FULL_VERSION%.*}${abi_suffix}-${KERNEL_FLAVOUR}"
 
 mkdir -p "${KERNEL_WORK}"
 
