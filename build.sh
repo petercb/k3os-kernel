@@ -75,8 +75,17 @@ mkdir -p "${DIST_DIR}"
 depmod "${VERSION}"
 mkinitramfs \
     -c gzip \
-    -o "${DIST_DIR}/k3os-initrd-${TARGETARCH}.gz" \
+    -o "/tmp/initrd.gz" \
     "${VERSION}"
+zcat /tmp/initrd.gz | cpio -id -D /tmp/initrd.old
+mkdir -p /tmp/initrd.new/lib
+mv /tmp/initrd.old/lib/modules /tmp/initrd.new/lib/
+mv /tmp/initrd.old/lib/firmware /tmp/initrd.new/lib/
+rm -rf /tmp/initrd.gz /tmp/initrd.old
+pushd /tmp/initrd.new
+find . | cpio -H newc -o | gzip -c -1 > "${DIST_DIR}/k3os-initrd-${TARGETARCH}.gz"
+popd
+rm -rf /tmp/initrd.new/lib/modules
 
 # Assemble kernel
 mkdir -p "${KERNEL_ROOT}/lib"
@@ -89,22 +98,8 @@ cp "${KERNEL_ROOT}/vmlinuz" "${DIST_DIR}/k3os-vmlinuz-${TARGETARCH}.img"
 mv /lib/modules "${KERNEL_ROOT}/lib"
 
 # Assemble firmware
-mkdir -p "${KERNEL_ROOT}/lib/firmware/intel/ice"
-cp -a /lib/firmware/intel/ice/ddp "${KERNEL_ROOT}/lib/firmware/intel/ice"
-case "${TARGETARCH}" in
-    arm64)
-        cp -a /lib/firmware/rtl_nic "${KERNEL_ROOT}/lib/firmware"
-        mkdir -p "${KERNEL_ROOT}/lib/firmware/nvidia"
-        cp -a /lib/firmware/nvidia/tegra210 "${KERNEL_ROOT}/lib/firmware/nvidia"
-        ;;
-    amd64)
-        cp -a -t "${KERNEL_ROOT}/lib/firmware" \
-            /lib/firmware/bnx2x \
-            /lib/firmware/bnx2 \
-            /lib/firmware/i915 \
-            /lib/firmware/rtl_nic
-        ;;
-esac
+mv /tmp/initrd.new/lib/firmware "${KERNEL_ROOT}/lib/"
+
 
 pushd "${KERNEL_ROOT}"
 OUTFILE="${DIST_DIR}/k3os-kernel-${TARGETARCH}.squashfs"
