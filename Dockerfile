@@ -3,57 +3,53 @@
 FROM buildpack-deps:jammy
 
 ARG TARGETARCH
-ARG KERNEL_VERSION="5.15.0"
-ARG KERNEL_ORIG="/usr/src/linux-source-${KERNEL_VERSION}"
+ARG KERNEL_VERSION
+ARG UBUNTU_BUILD
+ARG UBUNTU_FLAVOUR
+ARG ABI_VERSION
+ARG IMAGE_VERSION="${KERNEL_VERSION}-${UBUNTU_BUILD}-${UBUNTU_FLAVOUR}"
+ARG FULL_VERSION="${KERNEL_VERSION}-${UBUNTU_BUILD}.${ABI_VERSION}"
 
 ENV TARGETARCH=${TARGETARCH}
-ENV KERNEL_VERSION=${KERNEL_VERSION}
+ENV FULL_VERSION=${FULL_VERSION}
 ENV IN_CONTAINER="true"
-ENV BUILD_ROOT=/tmp/build
-ENV KERNEL_WORK="${BUILD_ROOT}/kernel-work"
+ENV KERNEL_WORK="/usr/src/linux-${KERNEL_VERSION}"
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=Etc/UTC
 
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
+WORKDIR /usr/src
 # hadolint ignore=DL3008
 RUN <<-EOF
+    sed -i 's/^#[[:space:]]\+deb-src[[:space:]]/deb-src /' /etc/apt/sources.list
+    # sed -i 's/^Types:.*$/Types: deb deb-src/' /etc/apt/sources.list.d/ubuntu.sources
     apt-get update
+    apt-get build-dep -y --no-install-recommends \
+        linux \
+        linux-image-unsigned-${IMAGE_VERSION}
     apt-get install -y --no-install-recommends \
-        bc \
-        bison \
-        ccache \
         cpio \
-        dwarfdump \
         dwarves \
-        fakeroot \
-        flex \
-        gawk \
-        initramfs-tools \
-        kernel-wedge \
-        kmod \
-        libelf-dev \
-        libiberty-dev \
-        liblz4-tool \
+        git \
+        initramfs-tools-core \
         libncurses-dev \
-        libpci-dev \
-        libssl-dev \
-        libudev-dev \
-        linux-base \
         linux-firmware \
-        linux-libc-dev \
-        "linux-source-${KERNEL_VERSION}" \
-        locales \
+        llvm \
         rsync \
-        squashfs-tools \
-        zstd
-    mkdir -p "${KERNEL_WORK}"
-    cp -a "${KERNEL_ORIG}"/debian* "${KERNEL_WORK}/"
-    chmod a+x "${KERNEL_WORK}"/debian*/rules
-    chmod a+x "${KERNEL_WORK}"/debian*/scripts/*
-    chmod a+x "${KERNEL_WORK}"/debian*/scripts/misc/*
-    mkdir -p "${KERNEL_WORK}/debian/stamps"
-    tar xf "${KERNEL_ORIG}/linux-source-${KERNEL_VERSION}.tar.bz2" \
-        --strip-components=1 -C "${KERNEL_WORK}"
-    rm -rf "${KERNEL_ORIG}"
+        squashfs-tools
+    [ "${TARGETARCH}" == "arm64" ] && apt-get install -y linux-firmware-raspi
+    apt-get source --no-install-recommends \
+        linux-image-unsigned-${IMAGE_VERSION}
     apt-get clean
     rm -rf /var/lib/apt/lists/*
+EOF
+
+WORKDIR "${KERNEL_WORK}"
+RUN <<-EOF
+    chmod a+x debian/rules
+    chmod a+x debian/scripts/*
+    chmod a+x debian/scripts/misc/*
 EOF
 
 WORKDIR /root/project

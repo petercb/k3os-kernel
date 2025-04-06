@@ -6,6 +6,20 @@ orbs:
   github: circleci/github-cli@2
   go: circleci/go@1
 
+parameters:
+  kernel_version:
+    type: string
+    default: "5.15.0"
+  ubuntu_build:
+    type: string
+    default: "136"
+  ubuntu_flavour:
+    type: string
+    default: "generic"
+  abi_version:
+    type: string
+    default: "147"
+
 executors:
   build:
     parameters:
@@ -16,7 +30,10 @@ executors:
     environment:
       TARGETARCH: << parameters.arch >>
     docker:
-      - image: ghcr.io/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}-builder:${CIRCLE_TAG}-<< parameters.arch >>
+      - image: ghcr.io/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}-builder:<< pipeline.parameters.kernel_version >>-<< pipeline.parameters.ubuntu_build >>-<< pipeline.parameters.ubuntu_flavour >>-<< parameters.arch >>
+        auth:
+          username: ${CIRCLE_PROJECT_USERNAME}
+          password: ${GITHUB_TOKEN}
     resource_class: << parameters.resource_class >>
 
 commands:
@@ -27,9 +44,9 @@ commands:
       - run:
           name: Upload artifacts - $TARGETARCH
           command: >-
-            gh release upload \
-              "$CIRCLE_TAG" \
-              ./dist/* \
+            gh release upload
+              "$CIRCLE_TAG"
+              ./dist/*
               --repo "$(git config --get remote.origin.url)"
 
 jobs:
@@ -46,7 +63,7 @@ jobs:
     resource_class: <<parameters.resource_class>>
     environment:
       IMAGE_FQN: ${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}-builder
-      IMAGE_TAG: ${CIRCLE_TAG}-<<parameters.arch>>
+      IMAGE_TAG: << pipeline.parameters.kernel_version >>-<< pipeline.parameters.ubuntu_build >>-<< pipeline.parameters.ubuntu_flavour >>-<< parameters.arch >>
       REGISTRY: ghcr.io
     steps:
       - setup_remote_docker
@@ -61,7 +78,12 @@ jobs:
           tag: ${IMAGE_TAG}
           use-buildkit: true
           cache_from: ${REGISTRY}/${IMAGE_FQN}:${IMAGE_TAG}
-          extra_build_args: --build-arg BUILDKIT_INLINE_CACHE=1
+          extra_build_args: >-
+            --build-arg BUILDKIT_INLINE_CACHE=1
+            --build-arg KERNEL_VERSION=<< pipeline.parameters.kernel_version >>
+            --build-arg UBUNTU_BUILD=<< pipeline.parameters.ubuntu_build >>
+            --build-arg UBUNTU_FLAVOUR=<< pipeline.parameters.ubuntu_flavour >>
+            --build-arg ABI_VERSION=<< pipeline.parameters.abi_version >>
       - docker/push:
           image: ${IMAGE_FQN}
           registry: ${REGISTRY}
@@ -75,12 +97,10 @@ jobs:
       resource_class:
         type: string
         default: medium
-    docker:
-      - image: ghcr.io/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}-builder:${CIRCLE_TAG}-<<parameters.arch>>
-        auth:
-          username: ${CIRCLE_PROJECT_USERNAME}
-          password: ${GITHUB_TOKEN}
-    resource_class: <<parameters.resource_class>>
+    executor:
+      name: build
+      arch: << parameters.arch >>
+      resource_class: << parameters.resource_class >>
     steps:
       - checkout
       - run: ./build.sh
@@ -106,6 +126,40 @@ jobs:
               --allow-initial-development-versions
 
 workflows:
+  feature:
+    jobs:
+      - builder: &amd64-builder
+          name: AMD64 builder
+          arch: amd64
+          context: github
+          resource_class: medium
+          filters: &filter-feature
+            branches:
+              ignore: master
+            tags:
+              ignore: /.*/
+      - builder: &arm64-builder
+          <<: *amd64-builder
+          name: ARM64 builder
+          arch: arm64
+          resource_class: arm.medium
+      - build: &amd64-build
+          name: AMD64 feature build
+          arch: amd64
+          context: github
+          resource_class: xlarge
+          filters: *filter-feature
+          requires:
+            - "AMD64 builder"
+      - build: &arm64-build
+          <<: *amd64-build
+          name: ARM64 feature build
+          arch: arm64
+          resource_class: arm.xlarge
+          requires:
+            - "ARM64 builder"
+
+
   release:
     jobs:
       - draft-release:
@@ -119,37 +173,26 @@ workflows:
 
   tags:
     jobs:
-      - builder: &tag-builder
-          name: AMD64 builder
-          context: github
-          arch: amd64
-          resource_class: medium
+      - builder:
+          <<: *amd64-builder
           filters: &filter-tags
             branches:
               ignore: /.*/
             tags:
               only: /.*/
       - builder:
-          <<: *tag-builder
-          name: ARM64 builder
-          arch: arm64
-          resource_class: arm.medium
+          <<: *arm64-builder
           filters: *filter-tags
-
-      - build: &tag-build
+      - build:
+          <<: *amd64-build
           name: AMD64 tag release
           context: github
-          arch: amd64
-          resource_class: xlarge
           filters: *filter-tags
-          requires:
-            - "AMD64 builder"
           post-steps:
             - push-artifacts
       - build:
-          <<: *tag-build
+          <<: *arm64-build
           name: ARM64 tag release
-          arch: arm64
-          resource_class: arm.xlarge
-          requires:
-            - "ARM64 builder"
+          filters: *filter-tags
+          post-steps:
+            - push-artifacts

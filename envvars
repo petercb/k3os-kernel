@@ -19,12 +19,11 @@ then
     fi
 fi
 
-GIT_TAG=$(git tag -l --contains HEAD | head -n 1)
-if [ -z "${GIT_TAG}" ]; then
-    GIT_TAG="$(git describe --always --tags --abbrev=0)"
-fi
-
-: "${IMAGE_TAG=${GIT_TAG}-${TARGETARCH}}"
+: "${KERNEL_VERSION=5.15.0}"
+: "${UBUNTU_BUILD=136}"
+: "${UBUNTU_FLAVOUR=generic}"
+: "${ABI_VERSION=147}"
+: "${IMAGE_TAG=${KERNEL_VERSION}-${UBUNTU_BUILD}-${UBUNTU_FLAVOUR}-${TARGETARCH}}"
 : "${REPO=petercb}"
 : "${IMAGE_NAME=k3os-kernel-builder}"
 IMAGE_FQN="${REGISTRY}/${REPO}/${IMAGE_NAME}"
