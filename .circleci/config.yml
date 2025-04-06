@@ -106,6 +106,39 @@ jobs:
               --allow-initial-development-versions
 
 workflows:
+  feature:
+    jobs:
+      - builder: &amd64-builder
+          name: AMD64 builder
+          arch: amd64
+          context: github
+          resource_class: medium
+          filters: &filter-feature
+            branches:
+              ignore: master
+            tags:
+              ignore: /.*/
+      - builder: &arm64-builder
+          name: ARM64 builder
+          arch: arm64
+          context: github
+          resource_class: arm.medium
+          filters: *filter-feature
+      - build: &amd64-build
+          name: AMD64 feature build
+          arch: amd64
+          resource_class: xlarge
+          filters: *filter-feature
+          requires:
+            - "AMD64 builder"
+      - build: &arm64-build
+          name: ARM64 feature build
+          arch: arm64
+          resource_class: arm.xlarge
+          requires:
+            - "ARM64 builder"
+
+
   release:
     jobs:
       - draft-release:
@@ -119,37 +152,26 @@ workflows:
 
   tags:
     jobs:
-      - builder: &tag-builder
-          name: AMD64 builder
-          context: github
-          arch: amd64
-          resource_class: medium
+      - builder:
+          <<: *amd64-builder
           filters: &filter-tags
             branches:
               ignore: /.*/
             tags:
               only: /.*/
       - builder:
-          <<: *tag-builder
-          name: ARM64 builder
-          arch: arm64
-          resource_class: arm.medium
+          <<: *arm64-builder
           filters: *filter-tags
-
-      - build: &tag-build
+      - build:
+          <<: *amd64-build
           name: AMD64 tag release
           context: github
-          arch: amd64
-          resource_class: xlarge
           filters: *filter-tags
-          requires:
-            - "AMD64 builder"
           post-steps:
             - push-artifacts
       - build:
-          <<: *tag-build
+          <<: *arm64-build
           name: ARM64 tag release
-          arch: arm64
-          resource_class: arm.xlarge
-          requires:
-            - "ARM64 builder"
+          filters: *filter-tags
+          post-steps:
+            - push-artifacts
