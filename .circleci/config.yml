@@ -80,10 +80,10 @@ jobs:
           cache_from: ${REGISTRY}/${IMAGE_FQN}:${IMAGE_TAG}
           extra_build_args: >-
             --build-arg BUILDKIT_INLINE_CACHE=1 \
-            --build-arg "KERNEL_VERSION=<< pipeline.parameters.kernel_version >>" \
-            --build-arg "UBUNTU_BUILD=<< pipeline.parameters.ubuntu_build >>" \
-            --build-arg "UBUNTU_FLAVOUR=<< pipeline.parameters.ubuntu_flavour >>" \
-            --build-arg "ABI_VERSION=<< pipeline.parameters.abi_version >>"
+            --build-arg KERNEL_VERSION=<< pipeline.parameters.kernel_version >> \
+            --build-arg UBUNTU_BUILD=<< pipeline.parameters.ubuntu_build >> \
+            --build-arg UBUNTU_FLAVOUR=<< pipeline.parameters.ubuntu_flavour >> \
+            --build-arg ABI_VERSION=<< pipeline.parameters.abi_version >>
       - docker/push:
           image: ${IMAGE_FQN}
           registry: ${REGISTRY}
