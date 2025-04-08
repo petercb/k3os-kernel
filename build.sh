@@ -8,8 +8,7 @@ if [ "${IN_CONTAINER:-false}" != "true" ]; then
     exit 1
 fi
 
-: "${KERNEL_VERSION=6.8.0}"
-: "${FULL_VERSION=${KERNEL_VERSION}-57.59}"
+: "${FULL_VERSION=6.1.0-1036.36}"
 : "${BUILD_ROOT=/tmp/build}"
 : "${KERNEL_WORK=${BUILD_ROOT}/kernel-work}"
 KERNEL_FLAVOUR="k3os"

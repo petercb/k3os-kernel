@@ -4682,7 +4682,6 @@ CONFIG_LLC                                      policy<{'amd64': 'y', 'arm64': '
 CONFIG_LLC2                                     policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_LMK04832                                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_LMP91000                                 policy<{'amd64': '-', 'arm64': 'n'}>
-CONFIG_LOCALVERSION                             policy<{'amd64': '"-talos"', 'arm64': '"-talos"'}>
 CONFIG_LOCKD                                    policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_LOCKUP_DETECTOR                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_LOCK_MM_AND_FIND_VMA                     policy<{'amd64': 'y', 'arm64': 'y'}>
