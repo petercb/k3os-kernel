@@ -139,19 +139,20 @@ workflows:
             tags:
               ignore: /.*/
       - builder: &arm64-builder
+          <<: *amd64-builder
           name: ARM64 builder
           arch: arm64
-          context: github
           resource_class: arm.medium
-          filters: *filter-feature
       - build: &amd64-build
           name: AMD64 feature build
           arch: amd64
+          context: github
           resource_class: xlarge
           filters: *filter-feature
           requires:
             - "AMD64 builder"
       - build: &arm64-build
+          <<: *amd64-build
           name: ARM64 feature build
           arch: arm64
           resource_class: arm.xlarge
