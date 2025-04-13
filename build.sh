@@ -56,17 +56,11 @@ debian/rules binary-${KERNEL_FLAVOUR} \
     skipmodule=true \
     skipretpoline=true \
     skipdbg=true
-popd
-
-pushd "${BUILD_ROOT}"
 dpkg --install --no-triggers --force-depends \
-    "linux-image-unsigned-${VERSION}_${FULL_VERSION}_${TARGETARCH}.deb" \
-    "linux-modules-${VERSION}_${FULL_VERSION}_${TARGETARCH}.deb" \
-    "linux-modules-extra-${VERSION}_${FULL_VERSION}_${TARGETARCH}.deb"
-rm ./*.deb
-popd
-
-pushd "${KERNEL_WORK}"
+    "../linux-image-unsigned-${VERSION}_${FULL_VERSION}_${TARGETARCH}.deb" \
+    "../linux-modules-${VERSION}_${FULL_VERSION}_${TARGETARCH}.deb" \
+    "../linux-modules-extra-${VERSION}_${FULL_VERSION}_${TARGETARCH}.deb"
+rm ."./linux-*-${VERSION}_${FULL_VERSION}_${TARGETARCH}.deb"
 debian/rules clean
 popd
 
