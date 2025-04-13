@@ -56,7 +56,7 @@ debian/rules binary-${KERNEL_FLAVOUR} \
     skipmodule=true \
     skipretpoline=true \
     skipdbg=true
-dpkg --install --no-triggers --force-depends \
+dpkg --unpack --no-triggers --force-depends \
     "../linux-image-unsigned-${VERSION}_${FULL_VERSION}_${TARGETARCH}.deb" \
     "../linux-modules-${VERSION}_${FULL_VERSION}_${TARGETARCH}.deb" \
     "../linux-modules-extra-${VERSION}_${FULL_VERSION}_${TARGETARCH}.deb"
