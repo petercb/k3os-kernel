@@ -60,7 +60,7 @@ dpkg --unpack --no-triggers --force-depends \
     "../linux-image-unsigned-${VERSION}_${FULL_VERSION}_${TARGETARCH}.deb" \
     "../linux-modules-${VERSION}_${FULL_VERSION}_${TARGETARCH}.deb" \
     "../linux-modules-extra-${VERSION}_${FULL_VERSION}_${TARGETARCH}.deb"
-rm ."./linux-*-${VERSION}_${FULL_VERSION}_${TARGETARCH}.deb"
+rm ../linux-*.deb
 debian/rules clean
 popd
 
