@@ -8,7 +8,11 @@ if [ "${IN_CONTAINER:-false}" != "true" ]; then
     exit 1
 fi
 
-: "${KERNEL_VERSION=5.15.0}"
+if [ -z "${FULL_VERSION:-}" ]; then
+    echo "FATAL: envvar FULL_VERSION not set!"
+    exit 1
+fi
+
 : "${BUILD_ROOT=/tmp/build}"
 : "${KERNEL_WORK=${BUILD_ROOT}/kernel-work}"
 KERNEL_FLAVOUR="k3os"
@@ -21,8 +25,6 @@ PROJECT_ROOT="$(git rev-parse --show-toplevel)"
 DIST_DIR="${PROJECT_ROOT}/dist"
 KERNEL_ROOT="${BUILD_ROOT}/kernel"
 
-FULL_VERSION=$(dpkg-query --show --showformat='${Version}' "linux-source-${KERNEL_VERSION}")
-
 abi_suffix="-${CIRCLE_TAG:-$(git describe --tags 2>/dev/null)}"
 export abi_suffix
 
@@ -33,7 +35,6 @@ mkdir -p "${KERNEL_WORK}"
 rsync -a "${PROJECT_ROOT}/overlay/" "${KERNEL_WORK}"
 cp -a "${KERNEL_WORK}/debian/changelog" "${KERNEL_WORK}/debian.${KERNEL_FLAVOUR}/"
 cp -a "${KERNEL_WORK}/debian.master/control.stub.in" "${KERNEL_WORK}/debian.${KERNEL_FLAVOUR}/"
-cp -a "${KERNEL_WORK}/debian.master/rules.d/hooks.mk" "${KERNEL_WORK}/debian.${KERNEL_FLAVOUR}/rules.d/"
 cp -a "${KERNEL_WORK}/debian.master/control.d/generic.inclusion-list" "${KERNEL_WORK}/debian.${KERNEL_FLAVOUR}/control.d/k3os.inclusion-list"
 cp -a "${KERNEL_WORK}"/debian.master/control.d/*.stub "${KERNEL_WORK}/debian.${KERNEL_FLAVOUR}/control.d/"
 cp -a "${KERNEL_WORK}"/debian.master/control.stub.in "${KERNEL_WORK}/debian.${KERNEL_FLAVOUR}/"
@@ -59,17 +60,11 @@ debian/rules binary-${KERNEL_FLAVOUR} \
     skipmodule=true \
     skipretpoline=true \
     skipdbg=true
-popd
-
-pushd "${BUILD_ROOT}"
-dpkg --install --no-triggers --force-depends \
-    "linux-image-unsigned-${VERSION}_${FULL_VERSION}_${TARGETARCH}.deb" \
-    "linux-modules-${VERSION}_${FULL_VERSION}_${TARGETARCH}.deb" \
-    "linux-modules-extra-${VERSION}_${FULL_VERSION}_${TARGETARCH}.deb"
-rm ./*.deb
-popd
-
-pushd "${KERNEL_WORK}"
+dpkg --unpack --no-triggers --force-depends \
+    "../linux-image-unsigned-${VERSION}_${FULL_VERSION}_${TARGETARCH}.deb" \
+    "../linux-modules-${VERSION}_${FULL_VERSION}_${TARGETARCH}.deb" \
+    "../linux-modules-extra-${VERSION}_${FULL_VERSION}_${TARGETARCH}.deb"
+rm ../linux-*.deb
 debian/rules clean
 popd
 
