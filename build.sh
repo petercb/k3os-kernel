@@ -8,7 +8,11 @@ if [ "${IN_CONTAINER:-false}" != "true" ]; then
     exit 1
 fi
 
-: "${FULL_VERSION=6.1.0-1036.36}"
+if [ -z "${FULL_VERSION:-}" ]; then
+    echo "FATAL: envvar FULL_VERSION not set!"
+    exit 1
+fi
+
 : "${BUILD_ROOT=/tmp/build}"
 : "${KERNEL_WORK=${BUILD_ROOT}/kernel-work}"
 KERNEL_FLAVOUR="k3os"
