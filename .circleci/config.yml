@@ -45,9 +45,9 @@ commands:
           name: Upload artifacts - $TARGETARCH
           command: >-
             gh release upload
-              "$CIRCLE_TAG"
-              ./dist/*
-              --repo "$(git config --get remote.origin.url)"
+            "$CIRCLE_TAG"
+            ./dist/*
+            --repo "$(git config --get remote.origin.url)"
 
 jobs:
   builder:
