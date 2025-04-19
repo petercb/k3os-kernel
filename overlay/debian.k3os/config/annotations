@@ -795,6 +795,7 @@ CONFIG_AQUANTIA_PHY                             policy<{'amd64': 'n', 'arm64': '
 CONFIG_AR5523                                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ARCH_APPLE                               policy<{'arm64': 'n'}>
 CONFIG_ARCH_BCM                                 policy<{'arm64': '-'}>
+CONFIG_ARCH_BCM4908                             policy<{'arm64': 'n'}>
 CONFIG_ARCH_BCMBCA                              policy<{'arm64': '-'}>
 CONFIG_ARCH_ENABLE_MEMORY_HOTREMOVE             policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_ARCH_ENABLE_THP_MIGRATION                policy<{'amd64': '-', 'arm64': '-'}>
@@ -1169,7 +1170,7 @@ CONFIG_BCM2835_THERMAL                          policy<{'arm64': 'n'}>
 CONFIG_BCM2835_VCHIQ                            policy<{'arm64': '-'}>
 CONFIG_BCM2835_VCHIQ_MMAL                       policy<{'arm64': '-'}>
 CONFIG_BCM2835_WDT                              policy<{'arm64': 'n'}>
-CONFIG_BCM4908_ENET                             policy<{'arm64': 'n'}>
+CONFIG_BCM4908_ENET                             policy<{'arm64': '-'}>
 CONFIG_BCM54140_PHY                             policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_BCM7038_WDT                              policy<{'arm64': 'n'}>
 CONFIG_BCM7120_L2_IRQ                           policy<{'arm64': '-'}>
@@ -1194,6 +1195,7 @@ CONFIG_BCM_NET_PHYLIB                           policy<{'amd64': '-', 'arm64': '
 CONFIG_BCM_NET_PHYPTP                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BCM_NS_THERMAL                           policy<{'arm64': 'y'}>
 CONFIG_BCM_PDC_MBOX                             policy<{'arm64': 'n'}>
+CONFIG_BCM_PMB                                  policy<{'arm64': '-'}>
 CONFIG_BCM_SBA_RAID                             policy<{'arm64': '-'}>
 CONFIG_BCM_SR_THERMAL                           policy<{'arm64': 'y'}>
 CONFIG_BCM_VIDEOCORE                            policy<{'arm64': '-'}>
@@ -5613,6 +5615,8 @@ CONFIG_MTD_NAND_ROCKCHIP                        policy<{'arm64': '-'}>
 CONFIG_MTD_NAND_SUNXI                           policy<{'arm64': '-'}>
 CONFIG_MTD_NAND_TEGRA                           policy<{'arm64': '-'}>
 CONFIG_MTD_NETtel                               policy<{'amd64': '-'}>
+CONFIG_MTD_OF_PARTS_BCM4908                     policy<{'arm64': '-'}>
+CONFIG_MTD_OF_PARTS_LINKSYS_NS                  policy<{'arm64': '-'}>
 CONFIG_MTD_ONENAND                              policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_MTD_ONENAND_2X_PROGRAM                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MTD_ONENAND_GENERIC                      policy<{'amd64': '-', 'arm64': '-'}>
