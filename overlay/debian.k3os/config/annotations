@@ -1597,6 +1597,7 @@ CONFIG_CHARLCD_BL_FLASH                         policy<{'amd64': '-', 'arm64': '
 CONFIG_CHARLCD_BL_OFF                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CHARLCD_BL_ON                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CHECKPOINT_RESTORE                       policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_CHECK_SIGNATURE                          policy<{'amd64': 'y', 'arm64': '-'}>
 CONFIG_CHELSIO_INLINE_CRYPTO                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CHELSIO_IPSEC_INLINE                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CHELSIO_LIB                              policy<{'amd64': '-', 'arm64': '-'}>
@@ -7782,7 +7783,7 @@ CONFIG_SCSI_FDOMAIN_PCI                         policy<{'amd64': 'n', 'arm64': '
 CONFIG_SCSI_FLASHPOINT                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SCSI_HISI_SAS                            policy<{'arm64': 'y'}>
 CONFIG_SCSI_HISI_SAS_PCI                        policy<{'arm64': 'n'}>
-CONFIG_SCSI_HPSA                                policy<{'amd64': 'm', 'arm64': 'y'}>
+CONFIG_SCSI_HPSA                                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SCSI_HPTIOP                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SCSI_IMM                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SCSI_INIA100                             policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -7799,7 +7800,9 @@ CONFIG_SCSI_LPFC                                policy<{'amd64': '-', 'arm64': '
 CONFIG_SCSI_LPFC_DEBUG_FS                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SCSI_MPI3MR                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SCSI_MPT2SAS                             policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_SCSI_MPT3SAS                             policy<{'amd64': 'm', 'arm64': 'y'}>
+CONFIG_SCSI_MPT2SAS_MAX_SGE                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SCSI_MPT3SAS                             policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SCSI_MPT3SAS_MAX_SGE                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SCSI_MVSAS                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SCSI_MVSAS_DEBUG                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SCSI_MVSAS_TASKLET                       policy<{'amd64': '-', 'arm64': '-'}>
