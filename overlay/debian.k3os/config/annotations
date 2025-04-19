@@ -790,7 +790,7 @@ CONFIG_APPLE_WATCHDOG                           policy<{'arm64': '-'}>
 CONFIG_APPLICOM                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_APQ_GCC_8084                             policy<{'arm64': '-'}>
 CONFIG_APQ_MMCC_8084                            policy<{'arm64': '-'}>
-CONFIG_AQTION                                   policy<{'amd64': 'm', 'arm64': 'y'}>
+CONFIG_AQTION                                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_AQUANTIA_PHY                             policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_AR5523                                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ARCH_APPLE                               policy<{'arm64': 'n'}>
@@ -5982,6 +5982,7 @@ CONFIG_NET_TEAM_MODE_ROUNDROBIN                 policy<{'amd64': '-', 'arm64': '
 CONFIG_NET_UDP_TUNNEL                           policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_NET_VENDOR_ADI                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NET_VENDOR_ALLWINNER                     policy<{'arm64': '-'}>
+CONFIG_NET_VENDOR_AQUANTIA                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NET_VENDOR_CIRRUS                        policy<{'amd64': '-'}>
 CONFIG_NET_VENDOR_FUJITSU                       policy<{'amd64': '-'}>
 CONFIG_NET_VENDOR_MELLANOX                      policy<{'amd64': 'n', 'arm64': 'n'}>
