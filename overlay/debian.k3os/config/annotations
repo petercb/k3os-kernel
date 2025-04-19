@@ -3845,7 +3845,7 @@ CONFIG_I2C_IMX_LPI2C                            policy<{'arm64': '-'}>
 CONFIG_I2C_ISCH                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_I2C_ISMT                                 policy<{'amd64': 'n'}>
 CONFIG_I2C_KEMPLD                               policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_I2C_LJCA                                 policy<{'amd64': 'n'}>
+CONFIG_I2C_LJCA                                 policy<{'amd64': '-'}>
 CONFIG_I2C_MESON                                policy<{'arm64': '-'}>
 CONFIG_I2C_MLXBF                                policy<{'arm64': '-'}>
 CONFIG_I2C_MLXCPLD                              policy<{'amd64': 'n'}>
@@ -5143,7 +5143,7 @@ CONFIG_MFD_AXP20X_I2C                           policy<{'amd64': 'n', 'arm64': '
 CONFIG_MFD_AXP20X_RSB                           policy<{'arm64': '-'}>
 CONFIG_MFD_BCM590XX                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MFD_BD9571MWV                            policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_MFD_CORE                                 policy<{'amd64': 'm', 'arm64': 'y'}>
+CONFIG_MFD_CORE                                 policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_MFD_CPCAP                                policy<{'arm64': 'n'}>
 CONFIG_MFD_CROS_EC_DEV                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MFD_CS47L15                              policy<{'amd64': '-', 'arm64': '-'}>
@@ -5174,6 +5174,7 @@ CONFIG_MFD_IQS62X                               policy<{'amd64': 'n', 'arm64': '
 CONFIG_MFD_JANZ_CMODIO                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MFD_KEMPLD                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MFD_KHADAS_MCU                           policy<{'arm64': 'n'}>
+CONFIG_MFD_LJCA                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MFD_LM3533                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MFD_LOCHNAGAR                            policy<{'arm64': 'n'}>
 CONFIG_MFD_LP3943                               policy<{'amd64': 'n', 'arm64': 'n'}>
