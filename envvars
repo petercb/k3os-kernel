@@ -20,9 +20,9 @@ then
 fi
 
 : "${KERNEL_VERSION=5.15.0}"
-: "${UBUNTU_BUILD=136}"
+: "${UBUNTU_BUILD=157}"
 : "${UBUNTU_FLAVOUR=generic}"
-: "${ABI_VERSION=147}"
+: "${ABI_VERSION=167}"
 : "${IMAGE_TAG=${KERNEL_VERSION}-${UBUNTU_BUILD}-${UBUNTU_FLAVOUR}-${TARGETARCH}}"
 : "${REPO=petercb}"
 : "${IMAGE_NAME=k3os-kernel-builder}"

@@ -139,7 +139,7 @@ CONFIG_IPDDP                                    policy<{'amd64': '-', 'arm64': '
 CONFIG_IPDDP                                    note<'TODO: update note'>
 
 CONFIG_IPMMU_VMSA                               policy<{'arm64': '-'}>
-CONFIG_IPMMU_VMSA                               note<TODO: update note>
+CONFIG_IPMMU_VMSA                               note<'TODO: update note'>
 
 CONFIG_IP_PNP                                   policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_IP_PNP                                   note<'TODO: update note'>
@@ -304,13 +304,13 @@ CONFIG_SERIAL_MULTI_INSTANTIATE                 policy<{'amd64': '-'}>
 CONFIG_SERIAL_MULTI_INSTANTIATE                 note<'LP:#1965496'>
 
 CONFIG_SERIAL_SH_SCI                            policy<{'arm64': '-'}>
-CONFIG_SERIAL_SH_SCI                            note<TODO: update note>
+CONFIG_SERIAL_SH_SCI                            note<'TODO: update note'>
 
 CONFIG_SERIAL_SH_SCI_CONSOLE                    policy<{'arm64': '-'}>
-CONFIG_SERIAL_SH_SCI_CONSOLE                    note<TODO: update note>
+CONFIG_SERIAL_SH_SCI_CONSOLE                    note<'TODO: update note'>
 
 CONFIG_SERIAL_SH_SCI_EARLYCON                   policy<{'arm64': '-'}>
-CONFIG_SERIAL_SH_SCI_EARLYCON                   note<TODO: update note>
+CONFIG_SERIAL_SH_SCI_EARLYCON                   note<'TODO: update note'>
 
 CONFIG_SMC                                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SMC                                      note<'TODO: update note'>
@@ -3076,7 +3076,7 @@ CONFIG_EFI_VARS_PSTORE                          policy<{'amd64': '-', 'arm64': '
 CONFIG_EFI_VARS_PSTORE_DEFAULT_DISABLE          policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_EFS_FS                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_EINT_MTK                                 policy<{'arm64': '-'}>
-CONFIG_EISA                                     policy<{'amd64': 'n'}>
+CONFIG_EISA                                     policy<{'amd64': '-'}>
 CONFIG_EISA_NAMES                               policy<{'amd64': '-'}>
 CONFIG_EISA_PCI_EISA                            policy<{'amd64': '-'}>
 CONFIG_EISA_VIRTUAL_ROOT                        policy<{'amd64': '-'}>
@@ -6099,7 +6099,6 @@ CONFIG_NET_VENDOR_ACTIONS                       policy<{'arm64': '-'}>
 CONFIG_NET_VENDOR_ADI                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NET_VENDOR_ALLWINNER                     policy<{'arm64': '-'}>
 CONFIG_NET_VENDOR_AQUANTIA                      policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_NET_VENDOR_CIRRUS                        policy<{'amd64': '-'}>
 CONFIG_NET_VENDOR_FREESCALE                     policy<{'arm64': '-'}>
 CONFIG_NET_VENDOR_FUJITSU                       policy<{'amd64': '-'}>
 CONFIG_NET_VENDOR_MEDIATEK                      policy<{'arm64': '-'}>
