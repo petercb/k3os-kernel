@@ -1,6 +1,7 @@
 if [ -z "${TARGETARCH:-}" ]
 then
-    case "$(uname -m)" in
+    TARGETARCH="$(uname -m)"
+    case "${TARGETARCH}" in
         x86_64)
             TARGETARCH="amd64"
             ;;
@@ -19,10 +20,10 @@ then
     fi
 fi
 
-: "${KERNEL_VERSION=5.15.0}"
-: "${UBUNTU_BUILD=157}"
-: "${UBUNTU_FLAVOUR=generic}"
-: "${ABI_VERSION=167}"
+: "${KERNEL_VERSION=$(yq '.parameters.kernel_version.default' .circleci/config.yml)}"
+: "${UBUNTU_BUILD=$(yq '.parameters.ubuntu_build.default' .circleci/config.yml)}"
+: "${UBUNTU_FLAVOUR=$(yq '.parameters.ubuntu_flavour.default' .circleci/config.yml)}"
+: "${ABI_VERSION=$(yq '.parameters.abi_version.default' .circleci/config.yml)}"
 : "${IMAGE_TAG=${KERNEL_VERSION}-${UBUNTU_BUILD}-${UBUNTU_FLAVOUR}-${TARGETARCH}}"
 : "${REPO=petercb}"
 : "${IMAGE_NAME=k3os-kernel-builder}"
