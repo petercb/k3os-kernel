@@ -12,13 +12,13 @@ parameters:
     default: "5.15.0"
   ubuntu_build:
     type: string
-    default: "157"
+    default: "164"
   ubuntu_flavour:
     type: string
     default: "generic"
   abi_version:
     type: string
-    default: "167"
+    default: "174"
 
 executors:
   build:

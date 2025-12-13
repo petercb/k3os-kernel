@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM ubuntu:jammy-20250415.1
+FROM buildpack-deps:jammy
 
 ARG TARGETARCH
 ARG KERNEL_VERSION
@@ -40,7 +40,7 @@ RUN <<-EOF
         squashfs-tools
     [ "${TARGETARCH}" == "arm64" ] && apt-get install -y linux-firmware-raspi
     apt-get source --no-install-recommends \
-        linux-image-unsigned-${IMAGE_VERSION}
+        linux=${FULL_VERSION}
     apt-get clean
     rm -rf /var/lib/apt/lists/*
 EOF
