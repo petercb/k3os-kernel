@@ -285,6 +285,9 @@ CONFIG_SCSI_IPR_DUMP                            note<'TODO: update note'>
 CONFIG_SCSI_IPR_TRACE                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SCSI_IPR_TRACE                           note<'TODO: update note'>
 
+CONFIG_SCSI_SYM53C8XX_2                         policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SCSI_SYM53C8XX_2                         note<'{LP: #2118499}'>
+
 CONFIG_SCSI_VIRTIO                              policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_SCSI_VIRTIO                              note<'TODO: update note'>
 
@@ -413,9 +416,6 @@ CONFIG_SPI_INTEL_SPI_PCI                        note<'TODO: update note'>
 
 CONFIG_SPI_INTEL_SPI_PLATFORM                   policy<{'amd64': '-'}>
 CONFIG_SPI_INTEL_SPI_PLATFORM                   note<'TODO: update note'>
-
-CONFIG_SQUASHFS_DECOMP_MULTI_PERCPU             policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_SQUASHFS_DECOMP_MULTI_PERCPU             note<'TODO: update note'>
 
 CONFIG_TCG_TIS_I2C_ATMEL                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TCG_TIS_I2C_ATMEL                        note<'TODO: update note'>
@@ -7531,8 +7531,8 @@ CONFIG_RENESAS_WDT                              policy<{'arm64': '-'}>
 CONFIG_RESET_A10SR                              policy<{'arm64': '-'}>
 CONFIG_RESET_ATTACK_MITIGATION                  policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_RESET_BERLIN                             policy<{'arm64': '-'}>
-CONFIG_RESET_BRCMSTB                            policy<{'arm64': '-'}>
-CONFIG_RESET_BRCMSTB_RESCAL                     policy<{'arm64': '-'}>
+CONFIG_RESET_BRCMSTB                            policy<{'arm64': 'n'}>
+CONFIG_RESET_BRCMSTB_RESCAL                     policy<{'arm64': 'n'}>
 CONFIG_RESET_CONTROLLER                         policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_RESET_HISI                               policy<{'arm64': '-'}>
 CONFIG_RESET_IMX7                               policy<{'arm64': '-'}>
@@ -7989,7 +7989,6 @@ CONFIG_SCSI_SNIC_DEBUG_FS                       policy<{'amd64': '-', 'arm64': '
 CONFIG_SCSI_SPI_ATTRS                           policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_SCSI_SRP_ATTRS                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SCSI_STEX                                policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_SCSI_SYM53C8XX_2                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SCSI_SYM53C8XX_DEFAULT_TAGS              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SCSI_SYM53C8XX_DMA_ADDRESSING_MODE       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SCSI_SYM53C8XX_MAX_TAGS                  policy<{'amd64': '-', 'arm64': '-'}>

@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM buildpack-deps:jammy
+FROM ubuntu:jammy-20250415.1
 
 ARG TARGETARCH
 ARG KERNEL_VERSION

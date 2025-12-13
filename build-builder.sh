@@ -2,7 +2,7 @@
 
 set -eux pipefail
 
-source envvars
+source "$(dirname "$0")/envvars"
 
 CI_ARGS=""
 if [ "${CI:-}" = "true" ]; then

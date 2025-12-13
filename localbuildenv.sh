@@ -2,7 +2,7 @@
 
 set -eu pipefail
 
-source envvars
+source "$(dirname "$0")/envvars"
 
 IMAGE_ID=$(docker image ls -q "${IMAGE_FQN}:${IMAGE_TAG}")
 if [ "${IMAGE_ID}" == "" ]
