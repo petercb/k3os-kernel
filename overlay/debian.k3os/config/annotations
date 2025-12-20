@@ -931,42 +931,43 @@ CONFIG_ATL1E                                    policy<{'amd64': 'n', 'arm64': '
 CONFIG_ATL2                                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_ATLAS_EZO_SENSOR                         policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_ATLAS_PH_SENSOR                          policy<{'amd64': '-', 'arm64': 'n'}>
-CONFIG_ATM                                      policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_ATM                                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_ATMEL                                    policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_ATM_AMBASSADOR                           policy<{'amd64': 'n'}>
+CONFIG_ATM_AMBASSADOR                           policy<{'amd64': '-'}>
 CONFIG_ATM_AMBASSADOR_DEBUG                     policy<{'amd64': '-'}>
-CONFIG_ATM_BR2684                               policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_ATM_BR2684                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ATM_BR2684_IPFILTER                      policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_ATM_CLIP                                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_ATM_CLIP                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ATM_CLIP_NO_ICMP                         policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_ATM_DUMMY                                policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_ATM_ENI                                  policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_ATM_DRIVERS                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_ATM_DUMMY                                policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_ATM_ENI                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ATM_ENI_DEBUG                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ATM_ENI_TUNE_BURST                       policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_ATM_FIRESTREAM                           policy<{'amd64': 'n', 'arm64': '-'}>
-CONFIG_ATM_FORE200E                             policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_ATM_FIRESTREAM                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_ATM_FORE200E                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ATM_FORE200E_DEBUG                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ATM_FORE200E_TX_RETRY                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ATM_FORE200E_USE_TASKLET                 policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_ATM_HE                                   policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_ATM_HE                                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ATM_HE_USE_SUNI                          policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_ATM_HORIZON                              policy<{'amd64': 'n'}>
+CONFIG_ATM_HORIZON                              policy<{'amd64': '-'}>
 CONFIG_ATM_HORIZON_DEBUG                        policy<{'amd64': '-'}>
-CONFIG_ATM_IA                                   policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_ATM_IA                                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ATM_IA_DEBUG                             policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_ATM_IDT77252                             policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_ATM_IDT77252                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ATM_IDT77252_DEBUG                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ATM_IDT77252_RCV_ALL                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ATM_IDT77252_USE_SUNI                    policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_ATM_LANAI                                policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_ATM_LANE                                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_ATM_LANAI                                policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_ATM_LANE                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ATM_MPOA                                 policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_ATM_NICSTAR                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_ATM_NICSTAR                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ATM_NICSTAR_USE_IDT77105                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ATM_NICSTAR_USE_SUNI                     policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_ATM_SOLOS                                policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_ATM_TCP                                  policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_ATM_ZATM                                 policy<{'amd64': 'n'}>
+CONFIG_ATM_SOLOS                                policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_ATM_TCP                                  policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_ATM_ZATM                                 policy<{'amd64': '-'}>
 CONFIG_ATM_ZATM_DEBUG                           policy<{'amd64': '-'}>
 CONFIG_ATP                                      policy<{'amd64': '-'}>
 CONFIG_AUTOFS4_FS                               policy<{'amd64': 'y', 'arm64': 'y'}>
@@ -9222,7 +9223,7 @@ CONFIG_USB_AN2720                               policy<{'amd64': '-', 'arm64': '
 CONFIG_USB_ANNOUNCE_NEW_DEVICES                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_USB_APPLEDISPLAY                         policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_USB_ARMLINUX                             policy<{'amd64': '-', 'arm64': 'y'}>
-CONFIG_USB_ATM                                  policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_USB_ATM                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_USB_AUDIO                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_USB_BDC_UDC                              policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_USB_BELKIN                               policy<{'amd64': '-', 'arm64': 'y'}>
