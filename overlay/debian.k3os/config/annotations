@@ -746,7 +746,7 @@ CONFIG_APPLE_MFI_FASTCHARGE                     policy<{'amd64': 'n', 'arm64': '
 CONFIG_APPLICOM                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_APQ_GCC_8084                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_APQ_MMCC_8084                            policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_AQTION                                   policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_AQTION                                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_AQUANTIA_PHY                             policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_AR5523                                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ARCH_APPLE                               policy<{'amd64': '-', 'arm64': 'n'}>
@@ -5646,6 +5646,7 @@ CONFIG_NET_TEAM_MODE_RANDOM                     policy<{'amd64': '-', 'arm64': '
 CONFIG_NET_TEAM_MODE_ROUNDROBIN                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NET_UDP_TUNNEL                           policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_NET_VENDOR_ALLWINNER                     policy<{'arm64': '-'}>
+CONFIG_NET_VENDOR_AQUANTIA                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NET_VENDOR_FUJITSU                       policy<{'amd64': '-'}>
 CONFIG_NET_VENDOR_MICROSEMI                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NET_VENDOR_XIRCOM                        policy<{'amd64': '-'}>
