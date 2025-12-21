@@ -793,6 +793,7 @@ CONFIG_ARCH_R8A77995                            policy<{'arm64': 'n'}>
 CONFIG_ARCH_R8A779A0                            policy<{'arm64': 'n'}>
 CONFIG_ARCH_R9A07G044                           policy<{'arm64': 'n'}>
 CONFIG_ARCH_RCAR_GEN3                           policy<{'arm64': '-'}>
+CONFIG_ARCH_REALTEK                             policy<{'arm64': 'n'}>
 CONFIG_ARCH_S32                                 policy<{'arm64': 'n'}>
 CONFIG_ARCH_SPARX5                              policy<{'arm64': 'n'}>
 CONFIG_ARCH_SPRD                                policy<{'arm64': 'n'}>
@@ -7208,6 +7209,7 @@ CONFIG_RTC_DRV_RK808                            policy<{'amd64': '-', 'arm64': '
 CONFIG_RTC_DRV_RP5C01                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_RTC_DRV_RS5C348                          policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_RTC_DRV_RS5C372                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_RTC_DRV_RTD119X                          policy<{'arm64': '-'}>
 CONFIG_RTC_DRV_RV3028                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_RTC_DRV_RV3029C2                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_RTC_DRV_RV3029_HWMON                     policy<{'amd64': '-', 'arm64': '-'}>
@@ -7238,6 +7240,7 @@ CONFIG_RTC_DRV_X1205                            policy<{'amd64': 'n', 'arm64': '
 CONFIG_RTC_DRV_ZYNQMP                           policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_RTC_HCTOSYS                              policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_RTC_HCTOSYS_DEVICE                       policy<{'amd64': '-', 'arm64': '"rtc0"'}>
+CONFIG_RTD119X_WATCHDOG                         policy<{'arm64': '-'}>
 CONFIG_RTL8180                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RTL8187                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RTL8187_LEDS                             policy<{'amd64': '-', 'arm64': '-'}>
