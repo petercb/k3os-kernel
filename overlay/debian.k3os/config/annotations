@@ -749,6 +749,7 @@ CONFIG_APQ_MMCC_8084                            policy<{'amd64': '-', 'arm64': '
 CONFIG_AQTION                                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_AQUANTIA_PHY                             policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_AR5523                                   policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_ARCH_ACTIONS                             policy<{'arm64': 'n'}>
 CONFIG_ARCH_APPLE                               policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_ARCH_BCM4908                             policy<{'arm64': 'n'}>
 CONFIG_ARCH_ENABLE_MEMORY_HOTREMOVE             policy<{'amd64': '-', 'arm64': 'y'}>
@@ -1528,6 +1529,7 @@ CONFIG_CIFS_SWN_UPCALL                          policy<{'amd64': 'n', 'arm64': '
 CONFIG_CIO2_BRIDGE                              policy<{'amd64': '-'}>
 CONFIG_CIO_DAC                                  policy<{'amd64': '-'}>
 CONFIG_CLEANCACHE                               policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_CLK_ACTIONS                              policy<{'arm64': '-'}>
 CONFIG_CLK_BCM2711_DVP                          policy<{'arm64': 'y'}>
 CONFIG_CLK_GFM_LPASS_SM8250                     policy<{'arm64': '-'}>
 CONFIG_CLK_IMX8MM                               policy<{'arm64': '-'}>
@@ -1538,6 +1540,9 @@ CONFIG_CLK_IMX8QXP                              policy<{'arm64': '-'}>
 CONFIG_CLK_INTEL_SOCFPGA                        policy<{'arm64': '-'}>
 CONFIG_CLK_INTEL_SOCFPGA64                      policy<{'arm64': '-'}>
 CONFIG_CLK_LS1028A_PLLDIG                       policy<{'arm64': 'y'}>
+CONFIG_CLK_OWL_S500                             policy<{'arm64': '-'}>
+CONFIG_CLK_OWL_S700                             policy<{'arm64': '-'}>
+CONFIG_CLK_OWL_S900                             policy<{'arm64': '-'}>
 CONFIG_CLK_R8A774A1                             policy<{'arm64': '-'}>
 CONFIG_CLK_R8A774B1                             policy<{'arm64': '-'}>
 CONFIG_CLK_R8A774C0                             policy<{'arm64': '-'}>
@@ -3654,7 +3659,7 @@ CONFIG_I2C_NOMADIK                              policy<{'amd64': '-', 'arm64': '
 CONFIG_I2C_NVIDIA_GPU                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_I2C_OCORES                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_I2C_OMAP                                 policy<{'amd64': '-', 'arm64': 'n'}>
-CONFIG_I2C_OWL                                  policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_I2C_OWL                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_I2C_PARPORT                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_I2C_PCA_PLATFORM                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_I2C_PIIX4                                policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -5088,7 +5093,7 @@ CONFIG_MMC_MESON_GX                             policy<{'amd64': '-', 'arm64': '
 CONFIG_MMC_MESON_MX_SDIO                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MMC_MTK                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MMC_MXC                                  policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_MMC_OWL                                  policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_MMC_OWL                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MMC_QCOM_DML                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MMC_REALTEK_PCI                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MMC_REALTEK_USB                          policy<{'amd64': '-', 'arm64': '-'}>
@@ -5645,6 +5650,7 @@ CONFIG_NET_TEAM_MODE_LOADBALANCE                policy<{'amd64': '-', 'arm64': '
 CONFIG_NET_TEAM_MODE_RANDOM                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NET_TEAM_MODE_ROUNDROBIN                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NET_UDP_TUNNEL                           policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_NET_VENDOR_ACTIONS                       policy<{'arm64': '-'}>
 CONFIG_NET_VENDOR_ALLWINNER                     policy<{'arm64': '-'}>
 CONFIG_NET_VENDOR_AQUANTIA                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NET_VENDOR_FUJITSU                       policy<{'amd64': '-'}>
@@ -5962,9 +5968,10 @@ CONFIG_ORINOCO_USB                              policy<{'amd64': '-', 'arm64': '
 CONFIG_OVERLAY_FS                               policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_OVERLAY_FS_XINO_AUTO                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_OWL_DMA                                  policy<{'arm64': '-'}>
-CONFIG_OWL_EMAC                                 policy<{'arm64': 'n'}>
-CONFIG_OWL_PM_DOMAINS                           policy<{'arm64': 'n'}>
+CONFIG_OWL_EMAC                                 policy<{'arm64': '-'}>
+CONFIG_OWL_PM_DOMAINS                           policy<{'arm64': '-'}>
 CONFIG_OWL_PM_DOMAINS_HELPER                    policy<{'arm64': '-'}>
+CONFIG_OWL_TIMER                                policy<{'arm64': '-'}>
 CONFIG_P54_COMMON                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_P54_LEDS                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_P54_PCI                                  policy<{'amd64': '-', 'arm64': '-'}>
@@ -6341,7 +6348,7 @@ CONFIG_PINCTRL_MT6397                           policy<{'arm64': '-'}>
 CONFIG_PINCTRL_MT6779                           policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_PINCTRL_MT8195                           policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_PINCTRL_OCELOT                           policy<{'amd64': '-', 'arm64': 'n'}>
-CONFIG_PINCTRL_OWL                              policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_PINCTRL_OWL                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PINCTRL_PALMAS                           policy<{'arm64': '-'}>
 CONFIG_PINCTRL_PFC_R8A774A1                     policy<{'arm64': '-'}>
 CONFIG_PINCTRL_PFC_R8A774B1                     policy<{'arm64': '-'}>
@@ -7719,7 +7726,7 @@ CONFIG_SERIAL_MSM_CONSOLE                       policy<{'amd64': '-', 'arm64': '
 CONFIG_SERIAL_MVEBU_CONSOLE                     policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_SERIAL_MVEBU_UART                        policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_SERIAL_OF_PLATFORM                       policy<{'amd64': '-', 'arm64': 'y'}>
-CONFIG_SERIAL_OWL                               policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_SERIAL_OWL                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SERIAL_OWL_CONSOLE                       policy<{'arm64': '-'}>
 CONFIG_SERIAL_QCOM_GENI                         policy<{'arm64': '-'}>
 CONFIG_SERIAL_QCOM_GENI_CONSOLE                 policy<{'arm64': '-'}>
