@@ -769,6 +769,7 @@ CONFIG_ARCH_INTEL_SOCFPGA                       policy<{'arm64': 'n'}>
 CONFIG_ARCH_K3                                  policy<{'arm64': 'n'}>
 CONFIG_ARCH_KEEMBAY                             policy<{'arm64': 'n'}>
 CONFIG_ARCH_LAYERSCAPE                          policy<{'arm64': 'n'}>
+CONFIG_ARCH_LG1K                                policy<{'arm64': 'n'}>
 CONFIG_ARCH_MEMORY_PROBE                        policy<{'amd64': '-'}>
 CONFIG_ARCH_MESON                               policy<{'arm64': 'n'}>
 CONFIG_ARCH_MXC                                 policy<{'arm64': 'n'}>
