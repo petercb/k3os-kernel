@@ -766,6 +766,7 @@ CONFIG_ARCH_HAS_ZONE_DMA_SET                    policy<{'amd64': '-', 'arm64': '
 CONFIG_ARCH_HIBERNATION_HEADER                  policy<{'amd64': '-'}>
 CONFIG_ARCH_HISI                                policy<{'arm64': 'n'}>
 CONFIG_ARCH_INTEL_SOCFPGA                       policy<{'arm64': 'n'}>
+CONFIG_ARCH_K3                                  policy<{'arm64': 'n'}>
 CONFIG_ARCH_KEEMBAY                             policy<{'arm64': 'n'}>
 CONFIG_ARCH_MEMORY_PROBE                        policy<{'amd64': '-'}>
 CONFIG_ARCH_MESON                               policy<{'arm64': 'n'}>
@@ -2032,7 +2033,7 @@ CONFIG_CRYPTO_DEV_QCE_SKCIPHER                  policy<{'arm64': '-'}>
 CONFIG_CRYPTO_DEV_QCE_SW_MAX_LEN                policy<{'arm64': '-'}>
 CONFIG_CRYPTO_DEV_QCOM_RNG                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CRYPTO_DEV_ROCKCHIP                      policy<{'amd64': '-', 'arm64': 'y'}>
-CONFIG_CRYPTO_DEV_SA2UL                         policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_CRYPTO_DEV_SA2UL                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CRYPTO_DEV_SAFEXCEL                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CRYPTO_DEV_SAHARA                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CRYPTO_DEV_SP_CCP                        policy<{'amd64': '-', 'arm64': '-'}>
@@ -3228,7 +3229,7 @@ CONFIG_GPIO_CDEV                                policy<{'amd64': '-', 'arm64': '
 CONFIG_GPIO_CRYSTAL_COVE                        policy<{'amd64': '-'}>
 CONFIG_GPIO_DA9052                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GPIO_DA9055                              policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_GPIO_DAVINCI                             policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_GPIO_DAVINCI                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GPIO_DLN2                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GPIO_DWAPB                               policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_GPIO_EIC_SPRD                            policy<{'amd64': '-', 'arm64': '-'}>
@@ -3674,7 +3675,7 @@ CONFIG_I2C_NFORCE2_S4985                        policy<{'amd64': '-'}>
 CONFIG_I2C_NOMADIK                              policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_I2C_NVIDIA_GPU                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_I2C_OCORES                               policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_I2C_OMAP                                 policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_I2C_OMAP                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_I2C_OWL                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_I2C_PARPORT                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_I2C_PCA_PLATFORM                         policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -4392,8 +4393,8 @@ CONFIG_JOYSTICK_XPAD_LEDS                       policy<{'amd64': '-', 'arm64': '
 CONFIG_JOYSTICK_ZHENHUA                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_JSA1212                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_K3_DMA                                   policy<{'arm64': '-'}>
-CONFIG_K3_RTI_WATCHDOG                          policy<{'arm64': 'n'}>
-CONFIG_K3_THERMAL                               policy<{'arm64': 'n'}>
+CONFIG_K3_RTI_WATCHDOG                          policy<{'arm64': '-'}>
+CONFIG_K3_THERMAL                               policy<{'arm64': '-'}>
 CONFIG_KALLSYMS_ALL                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_KDB_CONTINUE_CATASTROPHIC                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_KDB_DEFAULT_ENABLE                       policy<{'amd64': '-', 'arm64': '-'}>
@@ -4980,7 +4981,7 @@ CONFIG_MFD_SUN4I_GPADC                          policy<{'arm64': '-'}>
 CONFIG_MFD_SUN6I_PRCM                           policy<{'arm64': '-'}>
 CONFIG_MFD_SYSCON                               policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_MFD_TC3589X                              policy<{'amd64': '-', 'arm64': 'n'}>
-CONFIG_MFD_TI_AM335X_TSCADC                     policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_MFD_TI_AM335X_TSCADC                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MFD_TI_LMU                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MFD_TI_LP873X                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MFD_TI_LP87565                           policy<{'arm64': 'n'}>
@@ -5114,7 +5115,7 @@ CONFIG_MMC_QCOM_DML                             policy<{'amd64': '-', 'arm64': '
 CONFIG_MMC_REALTEK_PCI                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MMC_REALTEK_USB                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MMC_SDHCI_ACPI                           policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_MMC_SDHCI_AM654                          policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_MMC_SDHCI_AM654                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MMC_SDHCI_BRCMSTB                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MMC_SDHCI_CADENCE                        policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_MMC_SDHCI_ESDHC_IMX                      policy<{'amd64': '-', 'arm64': '-'}>
@@ -5968,9 +5969,9 @@ CONFIG_OCTEONTX2_VF                             policy<{'arm64': '-'}>
 CONFIG_OF_FPGA_REGION                           policy<{'arm64': '-'}>
 CONFIG_OF_PMEM                                  policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_OF_RECONFIG_NOTIFIER_ERROR_INJECT        policy<{'arm64': '-'}>
-CONFIG_OMAP2PLUS_MBOX                           policy<{'arm64': 'n'}>
+CONFIG_OMAP2PLUS_MBOX                           policy<{'arm64': '-'}>
 CONFIG_OMAP_MBOX_KFIFO_SIZE                     policy<{'arm64': '-'}>
-CONFIG_OMAP_USB2                                policy<{'arm64': 'n'}>
+CONFIG_OMAP_USB2                                policy<{'arm64': '-'}>
 CONFIG_OMFS_FS                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_OPENVSWITCH                              policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_OPENVSWITCH_GENEVE                       policy<{'amd64': 'y', 'arm64': '-'}>
@@ -6158,8 +6159,8 @@ CONFIG_PCI_J721E                                policy<{'arm64': '-'}>
 CONFIG_PCI_J721E_EP                             policy<{'arm64': 'n'}>
 CONFIG_PCI_J721E_HOST                           policy<{'arm64': 'n'}>
 CONFIG_PCI_KEYSTONE                             policy<{'arm64': '-'}>
-CONFIG_PCI_KEYSTONE_EP                          policy<{'arm64': 'n'}>
-CONFIG_PCI_KEYSTONE_HOST                        policy<{'arm64': 'n'}>
+CONFIG_PCI_KEYSTONE_EP                          policy<{'arm64': '-'}>
+CONFIG_PCI_KEYSTONE_HOST                        policy<{'arm64': '-'}>
 CONFIG_PCI_LAYERSCAPE_EP                        policy<{'arm64': 'n'}>
 CONFIG_PCI_P2PDMA                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PCI_PF_STUB                              policy<{'amd64': '-', 'arm64': 'n'}>
@@ -6201,7 +6202,7 @@ CONFIG_PGTABLE_LEVELS                           policy<{'amd64': '4'}>
 CONFIG_PHANTOM                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PHONET                                   policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_PHYLINK                                  policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_PHY_AM654_SERDES                         policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_PHY_AM654_SERDES                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PHY_BCM_NS_USB2                          policy<{'arm64': '-'}>
 CONFIG_PHY_BCM_NS_USB3                          policy<{'arm64': '-'}>
 CONFIG_PHY_BCM_SR_PCIE                          policy<{'arm64': '-'}>
@@ -6225,7 +6226,7 @@ CONFIG_PHY_HISTB_COMBPHY                        policy<{'arm64': '-'}>
 CONFIG_PHY_INTEL_KEEMBAY_EMMC                   policy<{'arm64': '-'}>
 CONFIG_PHY_INTEL_KEEMBAY_USB                    policy<{'arm64': '-'}>
 CONFIG_PHY_INTEL_LGM_EMMC                       policy<{'amd64': 'n'}>
-CONFIG_PHY_J721E_WIZ                            policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_PHY_J721E_WIZ                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PHY_MAPPHONE_MDM6600                     policy<{'arm64': 'n'}>
 CONFIG_PHY_MESON8B_USB2                         policy<{'arm64': '-'}>
 CONFIG_PHY_MESON_AXG_MIPI_DPHY                  policy<{'arm64': '-'}>
@@ -6591,8 +6592,8 @@ CONFIG_PWM_SPRD                                 policy<{'arm64': '-'}>
 CONFIG_PWM_STMPE                                policy<{'arm64': '-'}>
 CONFIG_PWM_SUN4I                                policy<{'arm64': '-'}>
 CONFIG_PWM_TEGRA                                policy<{'arm64': 'y'}>
-CONFIG_PWM_TIECAP                               policy<{'arm64': 'n'}>
-CONFIG_PWM_TIEHRPWM                             policy<{'arm64': 'n'}>
+CONFIG_PWM_TIECAP                               policy<{'arm64': '-'}>
+CONFIG_PWM_TIEHRPWM                             policy<{'arm64': '-'}>
 CONFIG_PWM_TWL                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PWM_TWL_LED                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PWM_VISCONTI                             policy<{'arm64': '-'}>
@@ -6962,7 +6963,7 @@ CONFIG_RESET_RASPBERRYPI                        policy<{'arm64': 'y'}>
 CONFIG_RESET_RZG2L_USBPHY_CTRL                  policy<{'arm64': '-'}>
 CONFIG_RESET_SCMI                               policy<{'arm64': 'y'}>
 CONFIG_RESET_SUNXI                              policy<{'arm64': '-'}>
-CONFIG_RESET_TI_SCI                             policy<{'arm64': 'n'}>
+CONFIG_RESET_TI_SCI                             policy<{'arm64': '-'}>
 CONFIG_RESET_TI_SYSCON                          policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_RETU_WATCHDOG                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RFD77402                                 policy<{'amd64': '-', 'arm64': 'n'}>
@@ -7391,7 +7392,7 @@ CONFIG_SCSI_UFS_HISI                            policy<{'arm64': '-'}>
 CONFIG_SCSI_UFS_HPB                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SCSI_UFS_MEDIATEK                        policy<{'arm64': '-'}>
 CONFIG_SCSI_UFS_QCOM                            policy<{'arm64': '-'}>
-CONFIG_SCSI_UFS_TI_J721E                        policy<{'arm64': 'n'}>
+CONFIG_SCSI_UFS_TI_J721E                        policy<{'arm64': '-'}>
 CONFIG_SCSI_WD719X                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SCTP_COOKIE_HMAC_SHA1                    policy<{'amd64': 'y', 'arm64': 'n'}>
 CONFIG_SCTP_DEFAULT_COOKIE_HMAC_MD5             policy<{'amd64': 'y', 'arm64': 'y'}>
@@ -7710,7 +7711,7 @@ CONFIG_SERIAL_8250_MEN_MCB                      policy<{'amd64': '-', 'arm64': '
 CONFIG_SERIAL_8250_MID                          policy<{'amd64': 'y', 'arm64': '-'}>
 CONFIG_SERIAL_8250_MT6577                       policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_SERIAL_8250_NR_UARTS                     policy<{'amd64': '32', 'arm64': '32'}>
-CONFIG_SERIAL_8250_OMAP                         policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_SERIAL_8250_OMAP                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SERIAL_8250_OMAP_TTYO_FIXUP              policy<{'arm64': '-'}>
 CONFIG_SERIAL_8250_RT288X                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SERIAL_8250_RUNTIME_UARTS                policy<{'amd64': '4', 'arm64': '4'}>
@@ -8634,7 +8635,7 @@ CONFIG_SPI_MUX                                  policy<{'amd64': '-', 'arm64': '
 CONFIG_SPI_MXIC                                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SPI_NXP_FLEXSPI                          policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SPI_OC_TINY                              policy<{'amd64': '-', 'arm64': 'n'}>
-CONFIG_SPI_OMAP24XX                             policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_SPI_OMAP24XX                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SPI_ORION                                policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_SPI_PL022                                policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_SPI_PXA2XX                               policy<{'amd64': '-', 'arm64': 'n'}>
@@ -8965,29 +8966,29 @@ CONFIG_TI_DAC082S085                            policy<{'amd64': '-', 'arm64': '
 CONFIG_TI_DAC5571                               policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_TI_DAC7311                               policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_TI_DAC7612                               policy<{'amd64': '-', 'arm64': 'n'}>
-CONFIG_TI_DAVINCI_MDIO                          policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_TI_DAVINCI_MDIO                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TI_K3_AM65_CPSW_NUSS                     policy<{'arm64': '-'}>
 CONFIG_TI_K3_AM65_CPSW_SWITCHDEV                policy<{'arm64': '-'}>
-CONFIG_TI_K3_AM65_CPTS                          policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_TI_K3_AM65_CPTS                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TI_K3_DSP_REMOTEPROC                     policy<{'arm64': '-'}>
 CONFIG_TI_K3_PSIL                               policy<{'arm64': '-'}>
 CONFIG_TI_K3_R5_REMOTEPROC                      policy<{'arm64': '-'}>
-CONFIG_TI_K3_RINGACC                            policy<{'amd64': '-', 'arm64': 'n'}>
-CONFIG_TI_K3_SOCINFO                            policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_TI_K3_RINGACC                            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TI_K3_SOCINFO                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TI_K3_UDMA                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TI_K3_UDMA_GLUE_LAYER                    policy<{'arm64': '-'}>
-CONFIG_TI_MESSAGE_MANAGER                       policy<{'amd64': '-', 'arm64': 'y'}>
-CONFIG_TI_PRUSS                                 policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_TI_MESSAGE_MANAGER                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TI_PRUSS                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TI_PRUSS_INTC                            policy<{'arm64': '-'}>
-CONFIG_TI_SCI_CLK                               policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_TI_SCI_CLK                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TI_SCI_CLK_PROBE_FROM_FW                 policy<{'arm64': '-'}>
-CONFIG_TI_SCI_INTA_IRQCHIP                      policy<{'amd64': '-', 'arm64': 'y'}>
-CONFIG_TI_SCI_INTA_MSI_DOMAIN                   policy<{'amd64': '-', 'arm64': 'y'}>
-CONFIG_TI_SCI_INTR_IRQCHIP                      policy<{'amd64': '-', 'arm64': 'y'}>
-CONFIG_TI_SCI_PM_DOMAINS                        policy<{'amd64': '-', 'arm64': 'n'}>
-CONFIG_TI_SCI_PROTOCOL                          policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_TI_SCI_INTA_IRQCHIP                      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TI_SCI_INTA_MSI_DOMAIN                   policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TI_SCI_INTR_IRQCHIP                      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TI_SCI_PM_DOMAINS                        policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TI_SCI_PROTOCOL                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TI_ST                                    policy<{'amd64': '-', 'arm64': 'n'}>
-CONFIG_TI_SYSCON_CLK                            policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_TI_SYSCON_CLK                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TI_TLC4541                               policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_TI_TSC2046                               policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_TLAN                                     policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -9326,7 +9327,7 @@ CONFIG_USB_DWC3_GADGET                          policy<{'amd64': '-', 'arm64': '
 CONFIG_USB_DWC3_HAPS                            policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_USB_DWC3_HOST                            policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_USB_DWC3_IMX8MP                          policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_USB_DWC3_KEYSTONE                        policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_USB_DWC3_KEYSTONE                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_USB_DWC3_MESON_G12A                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_USB_DWC3_OF_SIMPLE                       policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_USB_DWC3_PCI                             policy<{'amd64': '-', 'arm64': 'y'}>
