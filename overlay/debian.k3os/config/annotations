@@ -754,6 +754,7 @@ CONFIG_ARCH_APPLE                               policy<{'amd64': '-', 'arm64': '
 CONFIG_ARCH_BCM4908                             policy<{'arm64': 'n'}>
 CONFIG_ARCH_BCM_IPROC                           policy<{'arm64': 'n'}>
 CONFIG_ARCH_BERLIN                              policy<{'arm64': 'n'}>
+CONFIG_ARCH_BITMAIN                             policy<{'arm64': 'n'}>
 CONFIG_ARCH_ENABLE_MEMORY_HOTREMOVE             policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_ARCH_ENABLE_THP_MIGRATION                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ARCH_HAS_CC_PLATFORM                     policy<{'amd64': '-'}>
@@ -1733,7 +1734,7 @@ CONFIG_COMMON_CLK_AXG                           policy<{'amd64': '-', 'arm64': '
 CONFIG_COMMON_CLK_AXG_AUDIO                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_COMMON_CLK_AXI_CLKGEN                    policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_COMMON_CLK_BD718XX                       policy<{'arm64': '-'}>
-CONFIG_COMMON_CLK_BM1880                        policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_COMMON_CLK_BM1880                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_COMMON_CLK_CDCE706                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_COMMON_CLK_CDCE925                       policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_COMMON_CLK_CS2000_CP                     policy<{'amd64': 'n', 'arm64': 'y'}>
@@ -6292,6 +6293,7 @@ CONFIG_PINCTRL_AXP209                           policy<{'amd64': '-', 'arm64': '
 CONFIG_PINCTRL_BAYTRAIL                         policy<{'amd64': '-'}>
 CONFIG_PINCTRL_BERLIN                           policy<{'arm64': '-'}>
 CONFIG_PINCTRL_BERLIN_BG4CT                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_PINCTRL_BM1880                           policy<{'arm64': '-'}>
 CONFIG_PINCTRL_BROXTON                          policy<{'amd64': '-'}>
 CONFIG_PINCTRL_CANNONLAKE                       policy<{'amd64': '-'}>
 CONFIG_PINCTRL_CEDARFORK                        policy<{'amd64': '-'}>
