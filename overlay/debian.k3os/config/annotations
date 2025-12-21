@@ -753,6 +753,7 @@ CONFIG_ARCH_ACTIONS                             policy<{'arm64': 'n'}>
 CONFIG_ARCH_APPLE                               policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_ARCH_BCM4908                             policy<{'arm64': 'n'}>
 CONFIG_ARCH_BCM_IPROC                           policy<{'arm64': 'n'}>
+CONFIG_ARCH_BERLIN                              policy<{'arm64': 'n'}>
 CONFIG_ARCH_ENABLE_MEMORY_HOTREMOVE             policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_ARCH_ENABLE_THP_MIGRATION                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ARCH_HAS_CC_PLATFORM                     policy<{'amd64': '-'}>
@@ -1143,7 +1144,7 @@ CONFIG_BE2NET_LANCER                            policy<{'amd64': 'y', 'arm64': '
 CONFIG_BE2NET_SKYHAWK                           policy<{'amd64': 'y', 'arm64': '-'}>
 CONFIG_BEFS_DEBUG                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BEFS_FS                                  policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_BERLIN2_ADC                              policy<{'arm64': 'n'}>
+CONFIG_BERLIN2_ADC                              policy<{'arm64': '-'}>
 CONFIG_BFQ_CGROUP_DEBUG                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BFQ_GROUP_IOSCHED                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BFS_FS                                   policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -2740,6 +2741,9 @@ CONFIG_DWMAC_SOCFPGA                            policy<{'arm64': '-'}>
 CONFIG_DWMAC_SUN8I                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DWMAC_SUNXI                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DWMAC_VISCONTI                           policy<{'arm64': '-'}>
+CONFIG_DW_APB_ICTL                              policy<{'arm64': '-'}>
+CONFIG_DW_APB_TIMER                             policy<{'arm64': '-'}>
+CONFIG_DW_APB_TIMER_OF                          policy<{'arm64': '-'}>
 CONFIG_DW_AXI_DMAC                              policy<{'arm64': '-'}>
 CONFIG_DW_DMAC                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DW_DMAC_CORE                             policy<{'amd64': '-', 'arm64': '-'}>
@@ -6195,8 +6199,8 @@ CONFIG_PHY_BCM_NS_USB2                          policy<{'arm64': '-'}>
 CONFIG_PHY_BCM_NS_USB3                          policy<{'arm64': '-'}>
 CONFIG_PHY_BCM_SR_PCIE                          policy<{'arm64': '-'}>
 CONFIG_PHY_BCM_SR_USB                           policy<{'arm64': '-'}>
-CONFIG_PHY_BERLIN_SATA                          policy<{'arm64': 'y'}>
-CONFIG_PHY_BERLIN_USB                           policy<{'arm64': 'y'}>
+CONFIG_PHY_BERLIN_SATA                          policy<{'arm64': '-'}>
+CONFIG_PHY_BERLIN_USB                           policy<{'arm64': '-'}>
 CONFIG_PHY_BRCM_USB                             policy<{'arm64': 'y'}>
 CONFIG_PHY_CADENCE_DPHY                         policy<{'arm64': 'y'}>
 CONFIG_PHY_CADENCE_SALVO                        policy<{'arm64': 'y'}>
@@ -6282,12 +6286,12 @@ CONFIG_PINCTRL_ALDERLAKE                        policy<{'amd64': '-'}>
 CONFIG_PINCTRL_AMD                              policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_PINCTRL_APQ8064                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PINCTRL_APQ8084                          policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_PINCTRL_AS370                            policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_PINCTRL_AS370                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PINCTRL_AS3722                           policy<{'arm64': '-'}>
 CONFIG_PINCTRL_AXP209                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PINCTRL_BAYTRAIL                         policy<{'amd64': '-'}>
 CONFIG_PINCTRL_BERLIN                           policy<{'arm64': '-'}>
-CONFIG_PINCTRL_BERLIN_BG4CT                     policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_PINCTRL_BERLIN_BG4CT                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PINCTRL_BROXTON                          policy<{'amd64': '-'}>
 CONFIG_PINCTRL_CANNONLAKE                       policy<{'amd64': '-'}>
 CONFIG_PINCTRL_CEDARFORK                        policy<{'amd64': '-'}>
@@ -6548,7 +6552,7 @@ CONFIG_PWM_ATMEL_HLCDC_PWM                      policy<{'arm64': '-'}>
 CONFIG_PWM_ATMEL_TCB                            policy<{'arm64': 'n'}>
 CONFIG_PWM_BCM2835                              policy<{'arm64': 'y'}>
 CONFIG_PWM_BCM_IPROC                            policy<{'arm64': '-'}>
-CONFIG_PWM_BERLIN                               policy<{'arm64': 'n'}>
+CONFIG_PWM_BERLIN                               policy<{'arm64': '-'}>
 CONFIG_PWM_BRCMSTB                              policy<{'arm64': 'n'}>
 CONFIG_PWM_CRC                                  policy<{'amd64': '-'}>
 CONFIG_PWM_CROS_EC                              policy<{'amd64': '-', 'arm64': '-'}>
@@ -6586,7 +6590,7 @@ CONFIG_PWM_VISCONTI                             policy<{'arm64': '-'}>
 CONFIG_PWRSEQ_EMMC                              policy<{'arm64': 'y'}>
 CONFIG_PWRSEQ_SD8787                            policy<{'arm64': '-'}>
 CONFIG_PWRSEQ_SIMPLE                            policy<{'arm64': 'y'}>
-CONFIG_PXA168_ETH                               policy<{'arm64': 'n'}>
+CONFIG_PXA168_ETH                               policy<{'arm64': '-'}>
 CONFIG_QCA7000                                  policy<{'arm64': '-'}>
 CONFIG_QCA7000_SPI                              policy<{'arm64': 'n'}>
 CONFIG_QCA7000_UART                             policy<{'arm64': '-'}>
@@ -6935,6 +6939,7 @@ CONFIG_RENESAS_USB_DMAC                         policy<{'arm64': '-'}>
 CONFIG_RENESAS_WDT                              policy<{'arm64': 'y'}>
 CONFIG_RESET_A10SR                              policy<{'arm64': '-'}>
 CONFIG_RESET_ATTACK_MITIGATION                  policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_RESET_BERLIN                             policy<{'arm64': '-'}>
 CONFIG_RESET_BRCMSTB                            policy<{'arm64': 'y'}>
 CONFIG_RESET_CONTROLLER                         policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_RESET_IMX7                               policy<{'arm64': '-'}>
