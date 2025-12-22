@@ -811,6 +811,7 @@ CONFIG_ARCH_THUNDER                             policy<{'arm64': 'n'}>
 CONFIG_ARCH_THUNDER2                            policy<{'arm64': 'n'}>
 CONFIG_ARCH_VISCONTI                            policy<{'arm64': 'n'}>
 CONFIG_ARCH_WANT_FRAME_POINTERS                 policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_ARCH_XGENE                               policy<{'arm64': 'n'}>
 CONFIG_ARCNET                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_ARCNET_1051                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ARCNET_1201                              policy<{'amd64': '-', 'arm64': '-'}>
@@ -3353,7 +3354,7 @@ CONFIG_GPIO_WM8350                              policy<{'amd64': '-', 'arm64': '
 CONFIG_GPIO_WM8994                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GPIO_WS16C48                             policy<{'amd64': '-'}>
 CONFIG_GPIO_XGENE                               policy<{'amd64': '-', 'arm64': 'y'}>
-CONFIG_GPIO_XGENE_SB                            policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_GPIO_XGENE_SB                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GPIO_XILINX                              policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_GPIO_XLP                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GPIO_XRA1403                             policy<{'amd64': '-', 'arm64': 'n'}>
@@ -3630,7 +3631,7 @@ CONFIG_HW_RANDOM_OPTEE                          policy<{'arm64': '-'}>
 CONFIG_HW_RANDOM_TIMERIOMEM                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HW_RANDOM_VIA                            policy<{'amd64': 'y'}>
 CONFIG_HW_RANDOM_VIRTIO                         policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_HW_RANDOM_XGENE                          policy<{'arm64': 'y'}>
+CONFIG_HW_RANDOM_XGENE                          policy<{'arm64': '-'}>
 CONFIG_HW_RANDOM_XIPHERA                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HX711                                    policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_HYPERV                                   policy<{'amd64': 'y', 'arm64': 'y'}>
@@ -3741,7 +3742,7 @@ CONFIG_I2C_VIA                                  policy<{'amd64': 'n', 'arm64': '
 CONFIG_I2C_VIAPRO                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_I2C_VIPERBOARD                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_I2C_VIRTIO                               policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_I2C_XGENE_SLIMPRO                        policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_I2C_XGENE_SLIMPRO                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_I2C_XILINX                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_I2C_XLP9XX                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_I3C                                      policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -4784,7 +4785,7 @@ CONFIG_MDIO_MVUSB                               policy<{'amd64': 'n', 'arm64': '
 CONFIG_MDIO_OCTEON                              policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_MDIO_SUN4I                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MDIO_THUNDER                             policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_MDIO_XGENE                               policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_MDIO_XGENE                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MDM_GCC_9607                             policy<{'arm64': '-'}>
 CONFIG_MDM_GCC_9615                             policy<{'arm64': '-'}>
 CONFIG_MDM_LCC_9615                             policy<{'arm64': '-'}>
@@ -5720,8 +5721,8 @@ CONFIG_NET_VENDOR_MEDIATEK                      policy<{'arm64': '-'}>
 CONFIG_NET_VENDOR_MICROSEMI                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NET_VENDOR_XIRCOM                        policy<{'amd64': '-'}>
 CONFIG_NET_VRF                                  policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_NET_XGENE                                policy<{'arm64': 'y'}>
-CONFIG_NET_XGENE_V2                             policy<{'arm64': 'n'}>
+CONFIG_NET_XGENE                                policy<{'arm64': '-'}>
+CONFIG_NET_XGENE_V2                             policy<{'arm64': '-'}>
 CONFIG_NFC                                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NFC_DIGITAL                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NFC_FDP                                  policy<{'amd64': '-', 'arm64': '-'}>
@@ -7259,6 +7260,7 @@ CONFIG_RTC_DRV_WILCO_EC                         policy<{'amd64': '-'}>
 CONFIG_RTC_DRV_WM831X                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RTC_DRV_WM8350                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RTC_DRV_X1205                            policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_RTC_DRV_XGENE                            policy<{'arm64': '-'}>
 CONFIG_RTC_DRV_ZYNQMP                           policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_RTC_HCTOSYS                              policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_RTC_HCTOSYS_DEVICE                       policy<{'amd64': '-', 'arm64': '"rtc0"'}>
@@ -10341,8 +10343,8 @@ CONFIG_XFRM_USER_COMPAT                         policy<{'amd64': 'n', 'arm64': '
 CONFIG_XFS_FS                                   policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_XFS_RT                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_XGENE_DMA                                policy<{'arm64': '-'}>
-CONFIG_XGENE_PMU                                policy<{'arm64': 'n'}>
-CONFIG_XGENE_SLIMPRO_MBOX                       policy<{'arm64': 'n'}>
+CONFIG_XGENE_PMU                                policy<{'arm64': '-'}>
+CONFIG_XGENE_SLIMPRO_MBOX                       policy<{'arm64': '-'}>
 CONFIG_XIAOMI_WMI                               policy<{'amd64': '-'}>
 CONFIG_XILINX_AXI_EMAC                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_XILINX_DMA                               policy<{'arm64': '-'}>
