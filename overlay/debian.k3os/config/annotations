@@ -807,6 +807,8 @@ CONFIG_ARCH_TEGRA_186_SOC                       policy<{'arm64': '-'}>
 CONFIG_ARCH_TEGRA_194_SOC                       policy<{'arm64': '-'}>
 CONFIG_ARCH_TEGRA_210_SOC                       policy<{'arm64': '-'}>
 CONFIG_ARCH_TEGRA_234_SOC                       policy<{'arm64': '-'}>
+CONFIG_ARCH_THUNDER                             policy<{'arm64': 'n'}>
+CONFIG_ARCH_THUNDER2                            policy<{'arm64': 'n'}>
 CONFIG_ARCH_VISCONTI                            policy<{'arm64': 'n'}>
 CONFIG_ARCH_WANT_FRAME_POINTERS                 policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_ARCNET                                   policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -1444,7 +1446,7 @@ CONFIG_CARL9170_LEDS                            policy<{'amd64': '-', 'arm64': '
 CONFIG_CARL9170_WPC                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CARMINE_DRAM_CUSTOM                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CASSINI                                  policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_CAVIUM_CPT                               policy<{'arm64': 'n'}>
+CONFIG_CAVIUM_CPT                               policy<{'arm64': '-'}>
 CONFIG_CAVIUM_PTP                               policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_CB710_CORE                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CB710_DEBUG                              policy<{'amd64': '-', 'arm64': '-'}>
@@ -2031,8 +2033,8 @@ CONFIG_CRYPTO_DEV_MARVELL_CESA                  policy<{'amd64': '-', 'arm64': '
 CONFIG_CRYPTO_DEV_MXS_DCP                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CRYPTO_DEV_NITROX                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CRYPTO_DEV_NITROX_CNN55XX                policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_CRYPTO_DEV_OCTEONTX2_CPT                 policy<{'amd64': '-', 'arm64': 'n'}>
-CONFIG_CRYPTO_DEV_OCTEONTX_CPT                  policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_CRYPTO_DEV_OCTEONTX2_CPT                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CRYPTO_DEV_OCTEONTX_CPT                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CRYPTO_DEV_PADLOCK                       policy<{'amd64': 'n'}>
 CONFIG_CRYPTO_DEV_PADLOCK_AES                   policy<{'amd64': '-'}>
 CONFIG_CRYPTO_DEV_PADLOCK_SHA                   policy<{'amd64': '-'}>
@@ -3082,6 +3084,7 @@ CONFIG_FONT_SUN12x22                            policy<{'amd64': '-', 'arm64': '
 CONFIG_FONT_SUN8x16                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_FONT_TER16x32                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_FORCEDETH                                policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_FORCE_MAX_ZONEORDER                      policy<{'arm64': '11'}>
 CONFIG_FPGA                                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_FPGA_BRIDGE                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_FPGA_DFL                                 policy<{'amd64': '-', 'arm64': '-'}>
@@ -3326,7 +3329,7 @@ CONFIG_GPIO_SYSFS                               policy<{'amd64': '-', 'arm64': '
 CONFIG_GPIO_TC3589X                             policy<{'arm64': '-'}>
 CONFIG_GPIO_TEGRA                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GPIO_TEGRA186                            policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_GPIO_THUNDERX                            policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_GPIO_THUNDERX                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GPIO_TPIC2810                            policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_GPIO_TPS65086                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GPIO_TPS65218                            policy<{'arm64': '-'}>
@@ -3352,7 +3355,7 @@ CONFIG_GPIO_WS16C48                             policy<{'amd64': '-'}>
 CONFIG_GPIO_XGENE                               policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_GPIO_XGENE_SB                            policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_GPIO_XILINX                              policy<{'amd64': '-', 'arm64': 'n'}>
-CONFIG_GPIO_XLP                                 policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_GPIO_XLP                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GPIO_XRA1403                             policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_GPIO_ZYNQ                                policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_GRACE_PERIOD                             policy<{'amd64': 'y', 'arm64': 'y'}>
@@ -3615,7 +3618,7 @@ CONFIG_HW_RANDOM_AMD                            policy<{'amd64': 'n'}>
 CONFIG_HW_RANDOM_ARM_SMCCC_TRNG                 policy<{'arm64': 'y'}>
 CONFIG_HW_RANDOM_BA431                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HW_RANDOM_BCM2835                        policy<{'arm64': 'y'}>
-CONFIG_HW_RANDOM_CAVIUM                         policy<{'arm64': 'y'}>
+CONFIG_HW_RANDOM_CAVIUM                         policy<{'arm64': '-'}>
 CONFIG_HW_RANDOM_CCTRNG                         policy<{'arm64': 'n'}>
 CONFIG_HW_RANDOM_HISI                           policy<{'arm64': '-'}>
 CONFIG_HW_RANDOM_INTEL                          policy<{'amd64': 'n'}>
@@ -3740,7 +3743,7 @@ CONFIG_I2C_VIPERBOARD                           policy<{'amd64': '-', 'arm64': '
 CONFIG_I2C_VIRTIO                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_I2C_XGENE_SLIMPRO                        policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_I2C_XILINX                               policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_I2C_XLP9XX                               policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_I2C_XLP9XX                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_I3C                                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_I40E                                     policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_I40EVF                                   policy<{'amd64': 'y', 'arm64': 'y'}>
@@ -8748,7 +8751,7 @@ CONFIG_SPI_THUNDERX                             policy<{'amd64': '-', 'arm64': '
 CONFIG_SPI_TLE62X0                              policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SPI_XCOMM                                policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SPI_XILINX                               policy<{'amd64': '-', 'arm64': 'n'}>
-CONFIG_SPI_XLP                                  policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_SPI_XLP                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SPI_ZYNQMP_GQSPI                         policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SPMI                                     policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_SPMI_HISI3670                            policy<{'amd64': '-', 'arm64': 'n'}>
@@ -9011,7 +9014,7 @@ CONFIG_THINKPAD_ACPI_VIDEO                      policy<{'amd64': '-'}>
 CONFIG_THINKPAD_LMI                             policy<{'amd64': '-'}>
 CONFIG_THP_SWAP                                 policy<{'amd64': '-'}>
 CONFIG_THRUSTMASTER_FF                          policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_THUNDERX2_PMU                            policy<{'arm64': 'y'}>
+CONFIG_THUNDERX2_PMU                            policy<{'arm64': '-'}>
 CONFIG_THUNDER_NIC_BGX                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_THUNDER_NIC_PF                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_THUNDER_NIC_RGX                          policy<{'amd64': 'n', 'arm64': 'n'}>
