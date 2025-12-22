@@ -795,6 +795,7 @@ CONFIG_ARCH_R9A07G044                           policy<{'arm64': 'n'}>
 CONFIG_ARCH_RCAR_GEN3                           policy<{'arm64': '-'}>
 CONFIG_ARCH_REALTEK                             policy<{'arm64': 'n'}>
 CONFIG_ARCH_S32                                 policy<{'arm64': 'n'}>
+CONFIG_ARCH_SEATTLE                             policy<{'arm64': 'n'}>
 CONFIG_ARCH_SPARX5                              policy<{'arm64': 'n'}>
 CONFIG_ARCH_SPRD                                policy<{'arm64': 'n'}>
 CONFIG_ARCH_SUNXI                               policy<{'arm64': 'n'}>
@@ -7318,7 +7319,7 @@ CONFIG_SAMSUNG_LAPTOP                           policy<{'amd64': 'n'}>
 CONFIG_SAMSUNG_Q10                              policy<{'amd64': 'n'}>
 CONFIG_SATA_ACARD_AHCI                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SATA_AHCI                                policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_SATA_AHCI_SEATTLE                        policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_SATA_AHCI_SEATTLE                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SATA_DWC                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SATA_DWC_DEBUG                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SATA_DWC_OLD_DMA                         policy<{'amd64': '-', 'arm64': '-'}>
