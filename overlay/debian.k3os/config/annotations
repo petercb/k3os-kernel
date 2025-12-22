@@ -800,6 +800,7 @@ CONFIG_ARCH_SPARX5                              policy<{'arm64': 'n'}>
 CONFIG_ARCH_SPRD                                policy<{'arm64': 'n'}>
 CONFIG_ARCH_SUNXI                               policy<{'arm64': 'n'}>
 CONFIG_ARCH_SUPPORTS_KMAP_LOCAL_FORCE_MAP       policy<{'amd64': 'y'}>
+CONFIG_ARCH_SYNQUACER                           policy<{'arm64': 'n'}>
 CONFIG_ARCH_VISCONTI                            policy<{'arm64': 'n'}>
 CONFIG_ARCH_WANT_FRAME_POINTERS                 policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_ARCNET                                   policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -3717,7 +3718,7 @@ CONFIG_I2C_SLAVE_TESTUNIT                       policy<{'amd64': '-', 'arm64': '
 CONFIG_I2C_SMBUS                                policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_I2C_SPRD                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_I2C_STUB                                 policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_I2C_SYNQUACER                            policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_I2C_SYNQUACER                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_I2C_TAOS_EVM                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_I2C_TEGRA                                policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_I2C_TEGRA_BPMP                           policy<{'amd64': '-', 'arm64': 'y'}>
@@ -4268,6 +4269,7 @@ CONFIG_IP_VS_WRR                                policy<{'amd64': 'y', 'arm64': '
 CONFIG_IQS620AT_TEMP                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_IQS621_ALS                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_IQS624_POS                               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_IRQ_FASTEOI_HIERARCHY_HANDLERS           policy<{'arm64': '-'}>
 CONFIG_IRQ_REMAP                                policy<{'amd64': 'n'}>
 CONFIG_IR_ENE                                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_IR_FINTEK                                policy<{'amd64': '-', 'arm64': '-'}>
@@ -8617,7 +8619,7 @@ CONFIG_SND_VX_LIB                               policy<{'amd64': '-', 'arm64': '
 CONFIG_SND_X86                                  policy<{'amd64': '-'}>
 CONFIG_SND_XEN_FRONTEND                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SND_YMFPCI                               policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SNI_NETSEC                               policy<{'arm64': 'n'}>
+CONFIG_SNI_NETSEC                               policy<{'arm64': '-'}>
 CONFIG_SOCFPGA_FPGA_BRIDGE                      policy<{'arm64': '-'}>
 CONFIG_SOCK_VALIDATE_XMIT                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SOC_IMX8M                                policy<{'arm64': '-'}>
@@ -8717,7 +8719,7 @@ CONFIG_SPI_SPRD                                 policy<{'amd64': '-', 'arm64': '
 CONFIG_SPI_SPRD_ADI                             policy<{'arm64': '-'}>
 CONFIG_SPI_SUN4I                                policy<{'arm64': '-'}>
 CONFIG_SPI_SUN6I                                policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SPI_SYNQUACER                            policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_SPI_SYNQUACER                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SPI_TEGRA114                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SPI_TEGRA20_SFLASH                       policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SPI_TEGRA20_SLINK                        policy<{'amd64': '-', 'arm64': '-'}>
@@ -8910,7 +8912,7 @@ CONFIG_TCG_TIS_SPI_CR50                         policy<{'amd64': '-', 'arm64': '
 CONFIG_TCG_TIS_ST33ZP24                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TCG_TIS_ST33ZP24_I2C                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TCG_TIS_ST33ZP24_SPI                     policy<{'amd64': '-', 'arm64': 'n'}>
-CONFIG_TCG_TIS_SYNQUACER                        policy<{'arm64': 'n'}>
+CONFIG_TCG_TIS_SYNQUACER                        policy<{'arm64': '-'}>
 CONFIG_TCG_VTPM_PROXY                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TCG_XEN                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TCM_FC                                   policy<{'amd64': '-', 'arm64': '-'}>
