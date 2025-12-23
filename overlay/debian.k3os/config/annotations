@@ -6764,8 +6764,8 @@ CONFIG_QCOM_WDT                                 policy<{'arm64': '-'}>
 CONFIG_QCS_GCC_404                              policy<{'arm64': '-'}>
 CONFIG_QCS_Q6SSTOP_404                          policy<{'arm64': '-'}>
 CONFIG_QCS_TURING_404                           policy<{'arm64': '-'}>
-CONFIG_QED                                      policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_QEDE                                     policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_QED                                      policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_QEDE                                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_QEDF                                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_QEDI                                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_QED_FCOE                                 policy<{'amd64': '-', 'arm64': '-'}>
@@ -6773,7 +6773,7 @@ CONFIG_QED_ISCSI                                policy<{'amd64': '-', 'arm64': '
 CONFIG_QED_LL2                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_QED_OOO                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_QED_RDMA                                 policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_QED_SRIOV                                policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_QED_SRIOV                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_QE_TDM                                   policy<{'arm64': '-'}>
 CONFIG_QFMT_V1                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_QFMT_V2                                  policy<{'amd64': 'y', 'arm64': 'y'}>
