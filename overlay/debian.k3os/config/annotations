@@ -298,7 +298,7 @@ CONFIG_SERIAL_SH_SCI_EARLYCON                   policy<{'amd64': '-', 'arm64': '
 CONFIG_SERIAL_SH_SCI_EARLYCON                   note<'LP: #2022361'>
 
 CONFIG_SMC                                      policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SMC                                      note<TODO: update note>
+CONFIG_SMC                                      note<'TODO: update note'>
 
 CONFIG_SMC_DIAG                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SMC_DIAG                                 note<'TODO: update note'>
@@ -1536,6 +1536,7 @@ CONFIG_CHARLCD_BL_FLASH                         policy<{'amd64': '-', 'arm64': '
 CONFIG_CHARLCD_BL_OFF                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CHARLCD_BL_ON                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CHECKPOINT_RESTORE                       policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_CHECK_SIGNATURE                          policy<{'amd64': 'y', 'arm64': '-'}>
 CONFIG_CHELSIO_INLINE_CRYPTO                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CHELSIO_IPSEC_INLINE                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CHELSIO_LIB                              policy<{'amd64': '-', 'arm64': '-'}>
@@ -7421,7 +7422,7 @@ CONFIG_SCSI_FDOMAIN_PCI                         policy<{'amd64': 'n', 'arm64': '
 CONFIG_SCSI_FLASHPOINT                          policy<{'amd64': '-'}>
 CONFIG_SCSI_HISI_SAS                            policy<{'arm64': 'y'}>
 CONFIG_SCSI_HISI_SAS_PCI                        policy<{'arm64': 'n'}>
-CONFIG_SCSI_HPSA                                policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_SCSI_HPSA                                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SCSI_HPTIOP                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SCSI_IMM                                 policy<{'amd64': '-'}>
 CONFIG_SCSI_INIA100                             policy<{'amd64': 'n', 'arm64': 'n'}>
