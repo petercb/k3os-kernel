@@ -5568,7 +5568,7 @@ CONFIG_NETFS_STATS                              policy<{'amd64': 'n', 'arm64': '
 CONFIG_NETFS_SUPPORT                            policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_NETLINK_DIAG                             policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_NETROM                                   policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_NETXEN_NIC                               policy<{'amd64': 'y', 'arm64': 'n'}>
+CONFIG_NETXEN_NIC                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NET_9P_DEBUG                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NET_9P_RDMA                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NET_9P_VIRTIO                            policy<{'amd64': '-', 'arm64': '-'}>
@@ -6778,8 +6778,10 @@ CONFIG_QE_TDM                                   policy<{'arm64': '-'}>
 CONFIG_QFMT_V1                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_QFMT_V2                                  policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_QLA3XXX                                  policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_QLCNIC                                   policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_QLCNIC_SRIOV                             policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_QLCNIC                                   policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_QLCNIC_DCB                               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_QLCNIC_HWMON                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_QLCNIC_SRIOV                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_QLGE                                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_QNX4FS_FS                                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_QNX6FS_DEBUG                             policy<{'amd64': '-', 'arm64': '-'}>
