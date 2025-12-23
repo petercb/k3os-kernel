@@ -9561,7 +9561,7 @@ CONFIG_USB_HUB_USB251XB                         policy<{'amd64': 'n', 'arm64': '
 CONFIG_USB_IDMOUSE                              policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_USB_IOWARRIOR                            policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_USB_IPHETH                               policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_USB_ISIGHTFW                             policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_USB_ISIGHTFW                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_USB_ISP116X_HCD                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_USB_ISP1301                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_USB_ISP1760                              policy<{'amd64': 'n', 'arm64': 'y'}>
