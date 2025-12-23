@@ -7439,7 +7439,9 @@ CONFIG_SCSI_LPFC                                policy<{'amd64': '-', 'arm64': '
 CONFIG_SCSI_LPFC_DEBUG_FS                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SCSI_MPI3MR                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SCSI_MPT2SAS                             policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_SCSI_MPT3SAS                             policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_SCSI_MPT2SAS_MAX_SGE                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SCSI_MPT3SAS                             policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SCSI_MPT3SAS_MAX_SGE                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SCSI_MVSAS                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SCSI_MVSAS_DEBUG                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SCSI_MVSAS_TASKLET                       policy<{'amd64': '-', 'arm64': '-'}>
