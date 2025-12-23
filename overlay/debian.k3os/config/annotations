@@ -297,8 +297,8 @@ CONFIG_SERIAL_SH_SCI_CONSOLE                    note<'LP: #2022361'>
 CONFIG_SERIAL_SH_SCI_EARLYCON                   policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_SERIAL_SH_SCI_EARLYCON                   note<'LP: #2022361'>
 
-CONFIG_SMC                                      policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_SMC                                      note<'LP:1789934'>
+CONFIG_SMC                                      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SMC                                      note<TODO: update note>
 
 CONFIG_SMC_DIAG                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SMC_DIAG                                 note<'TODO: update note'>
@@ -1205,6 +1205,7 @@ CONFIG_BLK_DEV_RSXX                             policy<{'amd64': 'n', 'arm64': '
 CONFIG_BLK_DEV_ZONED                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BLK_INLINE_ENCRYPTION                    policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BLK_INLINE_ENCRYPTION_FALLBACK           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_BLK_MQ_RDMA                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BLK_RQ_ALLOC_TIME                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BLK_SED_OPAL                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BLK_WBT                                  policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -1560,6 +1561,7 @@ CONFIG_CIFS                                     policy<{'amd64': 'y', 'arm64': '
 CONFIG_CIFS_FSCACHE                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CIFS_POSIX                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CIFS_ROOT                                policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_CIFS_SMB_DIRECT                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CIFS_SWN_UPCALL                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CIO2_BRIDGE                              policy<{'amd64': '-'}>
 CONFIG_CIO_DAC                                  policy<{'amd64': '-'}>
@@ -3898,41 +3900,43 @@ CONFIG_INET_TCP_DIAG                            policy<{'amd64': 'y', 'arm64': '
 CONFIG_INET_TUNNEL                              policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_INET_UDP_DIAG                            policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_INET_XFRM_TUNNEL                         policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_INFINIBAND                               policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_INFINIBAND_ADDR_TRANS_CONFIGFS           policy<{'amd64': '-', 'arm64': 'y'}>
-CONFIG_INFINIBAND_BNXT_RE                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_INFINIBAND                               policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_INFINIBAND_ADDR_TRANS                    policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_INFINIBAND_ADDR_TRANS_CONFIGFS           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_INFINIBAND_BNXT_RE                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INFINIBAND_CXGB4                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INFINIBAND_EFA                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INFINIBAND_HFI1                          policy<{'amd64': '-'}>
-CONFIG_INFINIBAND_HNS                           policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_INFINIBAND_HNS                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INFINIBAND_HNS_HIP06                     policy<{'arm64': '-'}>
 CONFIG_INFINIBAND_HNS_HIP08                     policy<{'arm64': '-'}>
-CONFIG_INFINIBAND_IPOIB                         policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_INFINIBAND_IPOIB_CM                      policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_INFINIBAND_IPOIB_DEBUG                   policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_INFINIBAND_IPOIB_DEBUG_DATA              policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_INFINIBAND_IRDMA                         policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_INFINIBAND_ISER                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_INFINIBAND_IPOIB                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_INFINIBAND_IPOIB_CM                      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_INFINIBAND_IPOIB_DEBUG                   policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_INFINIBAND_IPOIB_DEBUG_DATA              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_INFINIBAND_IRDMA                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_INFINIBAND_ISER                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INFINIBAND_ISERT                         policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_INFINIBAND_MTHCA                         policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_INFINIBAND_MTHCA                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INFINIBAND_MTHCA_DEBUG                   policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_INFINIBAND_OCRDMA                        policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_INFINIBAND_OCRDMA                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INFINIBAND_ON_DEMAND_PAGING              policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_INFINIBAND_OPA_VNIC                      policy<{'amd64': 'n', 'arm64': '-'}>
-CONFIG_INFINIBAND_QEDR                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_INFINIBAND_OPA_VNIC                      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_INFINIBAND_QEDR                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INFINIBAND_QIB                           policy<{'amd64': '-'}>
 CONFIG_INFINIBAND_QIB_DCA                       policy<{'amd64': '-'}>
-CONFIG_INFINIBAND_RDMAVT                        policy<{'amd64': 'n'}>
+CONFIG_INFINIBAND_RDMAVT                        policy<{'amd64': '-'}>
 CONFIG_INFINIBAND_RTRS                          policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_INFINIBAND_RTRS_CLIENT                   policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_INFINIBAND_RTRS_SERVER                   policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_INFINIBAND_SRP                           policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_INFINIBAND_RTRS_CLIENT                   policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_INFINIBAND_RTRS_SERVER                   policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_INFINIBAND_SRP                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INFINIBAND_SRPT                          policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_INFINIBAND_USER_ACCESS                   policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_INFINIBAND_USER_MAD                      policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_INFINIBAND_USER_ACCESS                   policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_INFINIBAND_USER_MAD                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INFINIBAND_USER_MEM                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INFINIBAND_USNIC                         policy<{'amd64': '-'}>
-CONFIG_INFINIBAND_VMWARE_PVRDMA                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_INFINIBAND_VIRT_DMA                      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_INFINIBAND_VMWARE_PVRDMA                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INFTL                                    policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_INPUT_88PM80X_ONKEY                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INPUT_88PM860X_ONKEY                     policy<{'amd64': '-', 'arm64': '-'}>
@@ -5084,13 +5088,13 @@ CONFIG_MISDN_W6692                              policy<{'amd64': '-', 'arm64': '
 CONFIG_MKISS                                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MLX4_CORE                                policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_MLX4_EN                                  policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_MLX4_INFINIBAND                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_MLX4_INFINIBAND                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MLX5_CORE                                policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_MLX5_EN_IPSEC                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MLX5_EN_TLS                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MLX5_FPGA_IPSEC                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MLX5_FPGA_TLS                            policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_MLX5_INFINIBAND                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_MLX5_INFINIBAND                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MLX5_IPSEC                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MLX5_SF                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MLX5_SF_MANAGER                          policy<{'amd64': '-', 'arm64': '-'}>
@@ -5990,7 +5994,7 @@ CONFIG_NVME_CORE                                policy<{'amd64': 'y', 'arm64': '
 CONFIG_NVME_FABRICS                             policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_NVME_FC                                  policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_NVME_MULTIPATH                           policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_NVME_RDMA                                policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_NVME_RDMA                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NVME_TARGET                              policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_NVME_TARGET_FC                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NVME_TARGET_FCLOOP                       policy<{'amd64': '-', 'arm64': '-'}>
@@ -6838,10 +6842,10 @@ CONFIG_RC_DEVICES                               policy<{'amd64': '-', 'arm64': '
 CONFIG_RC_LOOPBACK                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RC_MAP                                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RC_XBOX_DVD                              policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_RDMA_RXE                                 policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_RDMA_SIW                                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_RDMA_RXE                                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RDMA_SIW                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RDS                                      policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_RDS_RDMA                                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_RDS_RDMA                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RDS_TCP                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_RD_LZO                                   policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_READ_ONLY_THP_FOR_FS                     policy<{'amd64': '-', 'arm64': '-'}>
@@ -7512,7 +7516,7 @@ CONFIG_SECURITY_APPARMOR                        policy<{'amd64': 'n', 'arm64': '
 CONFIG_SECURITY_APPARMOR_DEBUG                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SECURITY_APPARMOR_HASH                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SECURITY_APPARMOR_HASH_DEFAULT           policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SECURITY_INFINIBAND                      policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SECURITY_INFINIBAND                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SECURITY_LANDLOCK                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SECURITY_PATH                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SECURITY_SELINUX                         policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -8856,7 +8860,7 @@ CONFIG_SUNRPC_DEBUG                             policy<{'amd64': 'n', 'arm64': '
 CONFIG_SUNRPC_DISABLE_INSECURE_ENCTYPES         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SUNRPC_GSS                               policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_SUNRPC_SWAP                              policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_SUNRPC_XPRT_RDMA                         policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_SUNRPC_XPRT_RDMA                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SUNXI_CCU                                policy<{'arm64': '-'}>
 CONFIG_SUNXI_MBUS                               policy<{'arm64': '-'}>
 CONFIG_SUNXI_RSB                                policy<{'amd64': '-', 'arm64': '-'}>
