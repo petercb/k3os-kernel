@@ -5112,11 +5112,14 @@ CONFIG_MLXBF_TMFIFO                             policy<{'arm64': '-'}>
 CONFIG_MLXFW                                    policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_MLXREG_HOTPLUG                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MLXREG_IO                                policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_MLXSW_CORE                               policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_MLXSW_I2C                                policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_MLXSW_MINIMAL                            policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_MLXSW_PCI                                policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_MLXSW_SPECTRUM                           policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_MLXSW_CORE                               policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_MLXSW_CORE_HWMON                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_MLXSW_CORE_THERMAL                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_MLXSW_I2C                                policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_MLXSW_MINIMAL                            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_MLXSW_PCI                                policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_MLXSW_SPECTRUM                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_MLXSW_SPECTRUM_DCB                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MLX_PLATFORM                             policy<{'amd64': 'n'}>
 CONFIG_MLX_WDT                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MMA7455                                  policy<{'amd64': '-', 'arm64': '-'}>
@@ -6008,7 +6011,7 @@ CONFIG_NV_TCO                                   policy<{'amd64': 'n'}>
 CONFIG_NXP_C45_TJA11XX_PHY                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NXP_TJA11XX_PHY                          policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_N_HDLC                                   policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_OBJAGG                                   policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_OBJAGG                                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_OCFS2_DEBUG_FS                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_OCFS2_DEBUG_MASKLOG                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_OCFS2_FS                                 policy<{'amd64': '-', 'arm64': 'n'}>
@@ -6083,7 +6086,7 @@ CONFIG_PARIDE_PD                                policy<{'amd64': '-'}>
 CONFIG_PARIDE_PF                                policy<{'amd64': '-'}>
 CONFIG_PARIDE_PG                                policy<{'amd64': '-'}>
 CONFIG_PARIDE_PT                                policy<{'amd64': '-'}>
-CONFIG_PARMAN                                   policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_PARMAN                                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PARPORT                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PARPORT_1284                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PARPORT_AX88796                          policy<{'amd64': '-', 'arm64': '-'}>
@@ -9002,6 +9005,8 @@ CONFIG_TEST_BPF                                 policy<{'amd64': 'n', 'arm64': '
 CONFIG_TEST_DIV64                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TEST_HMM                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TEST_LIVEPATCH                           policy<{'amd64': '-'}>
+CONFIG_TEST_OBJAGG                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TEST_PARMAN                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TEST_POWER                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TEST_UBSAN                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TEXTSEARCH_BM                            policy<{'amd64': 'y', 'arm64': 'y'}>
