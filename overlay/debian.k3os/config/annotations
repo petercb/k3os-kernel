@@ -812,6 +812,7 @@ CONFIG_ARCH_THUNDER2                            policy<{'arm64': 'n'}>
 CONFIG_ARCH_VISCONTI                            policy<{'arm64': 'n'}>
 CONFIG_ARCH_WANT_FRAME_POINTERS                 policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_ARCH_XGENE                               policy<{'arm64': 'n'}>
+CONFIG_ARCH_ZYNQMP                              policy<{'arm64': 'n'}>
 CONFIG_ARCNET                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_ARCNET_1051                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ARCNET_1201                              policy<{'amd64': '-', 'arm64': '-'}>
@@ -1889,7 +1890,7 @@ CONFIG_COMMON_CLK_VC5                           policy<{'amd64': '-', 'arm64': '
 CONFIG_COMMON_CLK_WM831X                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_COMMON_CLK_XGENE                         policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_COMMON_CLK_XLNX_CLKWZRD                  policy<{'arm64': '-'}>
-CONFIG_COMMON_CLK_ZYNQMP                        policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_COMMON_CLK_ZYNQMP                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_COMMON_RESET_HI3660                      policy<{'arm64': '-'}>
 CONFIG_COMMON_RESET_HI6220                      policy<{'arm64': '-'}>
 CONFIG_COMPAL_LAPTOP                            policy<{'amd64': '-'}>
@@ -2076,7 +2077,7 @@ CONFIG_CRYPTO_DEV_SUN8I_SS_DEBUG                policy<{'arm64': '-'}>
 CONFIG_CRYPTO_DEV_SUN8I_SS_HASH                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CRYPTO_DEV_SUN8I_SS_PRNG                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CRYPTO_DEV_VIRTIO                        policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_CRYPTO_DEV_ZYNQMP_AES                    policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_CRYPTO_DEV_ZYNQMP_AES                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CRYPTO_DH                                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CRYPTO_DRBG_CTR                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CRYPTO_DRBG_HASH                         policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -2826,7 +2827,7 @@ CONFIG_EDAC_PND2                                policy<{'amd64': 'n'}>
 CONFIG_EDAC_QCOM                                policy<{'arm64': '-'}>
 CONFIG_EDAC_SBRIDGE                             policy<{'amd64': 'n'}>
 CONFIG_EDAC_SKX                                 policy<{'amd64': 'n'}>
-CONFIG_EDAC_SYNOPSYS                            policy<{'arm64': 'n'}>
+CONFIG_EDAC_SYNOPSYS                            policy<{'arm64': '-'}>
 CONFIG_EDAC_THUNDERX                            policy<{'arm64': 'n'}>
 CONFIG_EDAC_X38                                 policy<{'amd64': 'n'}>
 CONFIG_EDAC_XGENE                               policy<{'arm64': 'n'}>
@@ -3057,7 +3058,7 @@ CONFIG_FB_VIA_DIRECT_PROCFS                     policy<{'amd64': '-'}>
 CONFIG_FB_VIA_X_COMPATIBILITY                   policy<{'amd64': '-'}>
 CONFIG_FB_VOODOO1                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_FB_VT8623                                policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_FB_XILINX                                policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_FB_XILINX                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_FCOE                                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_FCOE_FNIC                                policy<{'amd64': '-'}>
 CONFIG_FEALNX                                   policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -3358,7 +3359,7 @@ CONFIG_GPIO_XGENE_SB                            policy<{'amd64': '-', 'arm64': '
 CONFIG_GPIO_XILINX                              policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_GPIO_XLP                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GPIO_XRA1403                             policy<{'amd64': '-', 'arm64': 'n'}>
-CONFIG_GPIO_ZYNQ                                policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_GPIO_ZYNQ                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GRACE_PERIOD                             policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_GREENASIA_FF                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GREYBUS                                  policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -5984,7 +5985,7 @@ CONFIG_NVMEM_RMEM                               policy<{'amd64': 'n', 'arm64': '
 CONFIG_NVMEM_SNVS_LPGPR                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NVMEM_SPMI_SDAM                          policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_NVMEM_SUNXI_SID                          policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_NVMEM_ZYNQMP                             policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_NVMEM_ZYNQMP                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NVME_CORE                                policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_NVME_FABRICS                             policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_NVME_FC                                  policy<{'amd64': 'y', 'arm64': 'y'}>
@@ -6177,6 +6178,7 @@ CONFIG_PCIE_LAYERSCAPE_GEN4                     policy<{'arm64': '-'}>
 CONFIG_PCIE_MEDIATEK                            policy<{'arm64': '-'}>
 CONFIG_PCIE_MEDIATEK_GEN3                       policy<{'arm64': '-'}>
 CONFIG_PCIE_MICROCHIP_HOST                      policy<{'arm64': 'n'}>
+CONFIG_PCIE_MOBIVEIL_PLAT                       policy<{'arm64': '-'}>
 CONFIG_PCIE_PTM                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PCIE_QCOM                                policy<{'arm64': '-'}>
 CONFIG_PCIE_RCAR_EP                             policy<{'arm64': 'n'}>
@@ -6187,8 +6189,8 @@ CONFIG_PCIE_TEGRA194_EP                         policy<{'arm64': '-'}>
 CONFIG_PCIE_TEGRA194_HOST                       policy<{'arm64': '-'}>
 CONFIG_PCIE_VISCONTI_HOST                       policy<{'arm64': '-'}>
 CONFIG_PCIE_XILINX                              policy<{'arm64': 'n'}>
-CONFIG_PCIE_XILINX_CPM                          policy<{'arm64': 'n'}>
-CONFIG_PCIE_XILINX_NWL                          policy<{'arm64': 'n'}>
+CONFIG_PCIE_XILINX_CPM                          policy<{'arm64': '-'}>
+CONFIG_PCIE_XILINX_NWL                          policy<{'arm64': '-'}>
 CONFIG_PCIPCWATCHDOG                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PCI_AARDVARK                             policy<{'arm64': '-'}>
 CONFIG_PCI_ATMEL                                policy<{'amd64': '-', 'arm64': '-'}>
@@ -6340,7 +6342,7 @@ CONFIG_PHY_TEGRA194_P2U                         policy<{'arm64': '-'}>
 CONFIG_PHY_TEGRA_XUSB                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PHY_TI_GMII_SEL                          policy<{'arm64': '-'}>
 CONFIG_PHY_TUSB1210                             policy<{'amd64': '-', 'arm64': 'n'}>
-CONFIG_PHY_XILINX_ZYNQMP                        policy<{'arm64': 'n'}>
+CONFIG_PHY_XILINX_ZYNQMP                        policy<{'arm64': '-'}>
 CONFIG_PI433                                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PINCONF                                  policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_PINCTRL                                  policy<{'amd64': 'n', 'arm64': 'y'}>
@@ -6515,7 +6517,7 @@ CONFIG_PINCTRL_TEGRA_XUSB                       policy<{'arm64': '-'}>
 CONFIG_PINCTRL_TIGERLAKE                        policy<{'amd64': '-'}>
 CONFIG_PINCTRL_TMPV7700                         policy<{'arm64': '-'}>
 CONFIG_PINCTRL_VISCONTI                         policy<{'arm64': '-'}>
-CONFIG_PINCTRL_ZYNQMP                           policy<{'arm64': 'y'}>
+CONFIG_PINCTRL_ZYNQMP                           policy<{'arm64': '-'}>
 CONFIG_PING                                     policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_PINMUX                                   policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_PKCS7_TEST_KEY                           policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -9427,7 +9429,7 @@ CONFIG_USB_DWC3_OF_SIMPLE                       policy<{'amd64': '-', 'arm64': '
 CONFIG_USB_DWC3_PCI                             policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_USB_DWC3_QCOM                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_USB_DWC3_ULPI                            policy<{'amd64': '-', 'arm64': 'y'}>
-CONFIG_USB_DWC3_XILINX                          policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_USB_DWC3_XILINX                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_USB_DYNAMIC_MINORS                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_USB_EG20T                                policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_USB_EHCI_BRCMSTB                         policy<{'arm64': '-'}>
@@ -10350,7 +10352,7 @@ CONFIG_XILINX_AXI_EMAC                          policy<{'amd64': 'n', 'arm64': '
 CONFIG_XILINX_DMA                               policy<{'arm64': '-'}>
 CONFIG_XILINX_EMACLITE                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_XILINX_GMII2RGMII                        policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_XILINX_INTC                              policy<{'arm64': 'n'}>
+CONFIG_XILINX_INTC                              policy<{'arm64': '-'}>
 CONFIG_XILINX_LL_TEMAC                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_XILINX_PR_DECOUPLER                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_XILINX_SDFEC                             policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -10416,3 +10418,8 @@ CONFIG_ZSWAP_ZPOOL_DEFAULT                      policy<{'amd64': '-', 'arm64': '
 CONFIG_ZSWAP_ZPOOL_DEFAULT_Z3FOLD               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ZSWAP_ZPOOL_DEFAULT_ZBUD                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ZSWAP_ZPOOL_DEFAULT_ZSMALLOC             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_ZYNQMP_FIRMWARE                          policy<{'arm64': '-'}>
+CONFIG_ZYNQMP_FIRMWARE_DEBUG                    policy<{'arm64': '-'}>
+CONFIG_ZYNQMP_IPI_MBOX                          policy<{'arm64': '-'}>
+CONFIG_ZYNQMP_PM_DOMAINS                        policy<{'arm64': '-'}>
+CONFIG_ZYNQMP_POWER                             policy<{'arm64': '-'}>
