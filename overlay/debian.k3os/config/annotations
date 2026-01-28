@@ -510,10 +510,10 @@ CONFIG_USB_UHCI_HCD                             note<'ensures USB 2.0/1.1 probe 
 CONFIG_USB_XHCI_DBGCAP                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_USB_XHCI_DBGCAP                          note<'LP:1730832'>
 
-CONFIG_VFIO                                     policy<{'amd64': 'm', 'arm64': 'm'}>
+CONFIG_VFIO                                     policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_VFIO                                     note<'TODO: update note'>
 
-CONFIG_VFIO_PCI                                 policy<{'amd64': 'm', 'arm64': 'm'}>
+CONFIG_VFIO_PCI                                 policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_VFIO_PCI                                 note<'TODO: update note'>
 
 CONFIG_VIDEO_VIMC                               policy<{'amd64': '-', 'arm64': '-'}>
@@ -10576,18 +10576,18 @@ CONFIG_UFS_DEBUG                                policy<{'amd64': '-', 'arm64': '
 CONFIG_UFS_FS                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_UFS_FS_WRITE                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_UHID                                     policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_UIO                                      policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_UIO_AEC                                  policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_UIO_CIF                                  policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_UIO                                      policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_UIO_AEC                                  policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_UIO_CIF                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_UIO_DFL                                  policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_UIO_DMEM_GENIRQ                          policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_UIO_HV_GENERIC                           policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_UIO_MF624                                policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_UIO_NETX                                 policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_UIO_PCI_GENERIC                          policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_UIO_PDRV_GENIRQ                          policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_UIO_PRUSS                                policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_UIO_SERCOS3                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_UIO_DMEM_GENIRQ                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_UIO_HV_GENERIC                           policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_UIO_MF624                                policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_UIO_NETX                                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_UIO_PCI_GENERIC                          policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_UIO_PDRV_GENIRQ                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_UIO_PRUSS                                policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_UIO_SERCOS3                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_ULI526X                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_ULTRIX_PARTITION                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_UNICODE                                  policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -11097,8 +11097,10 @@ CONFIG_VF610_DAC                                policy<{'amd64': '-', 'arm64': '
 CONFIG_VFIO_AMBA                                policy<{'arm64': 'n'}>
 CONFIG_VFIO_DEVICE_CDEV                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_VFIO_FSL_MC                              policy<{'arm64': '-'}>
+CONFIG_VFIO_IOMMU_TYPE1                         policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_VFIO_MDEV                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_VFIO_NOIOMMU                             policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_VFIO_PCI_CORE                            policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_VFIO_PLATFORM                            policy<{'arm64': 'n'}>
 CONFIG_VFIO_PLATFORM_AMDXGBE_RESET              policy<{'arm64': '-'}>
 CONFIG_VFIO_PLATFORM_BASE                       policy<{'arm64': '-'}>
