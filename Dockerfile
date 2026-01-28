@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM buildpack-deps:jammy
+FROM buildpack-deps:noble
 
 ARG TARGETARCH
 ARG KERNEL_VERSION
@@ -22,8 +22,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 WORKDIR /usr/src
 # hadolint ignore=DL3008
 RUN <<-EOF
-    sed -i 's/^#[[:space:]]\+deb-src[[:space:]]/deb-src /' /etc/apt/sources.list
-    # sed -i 's/^Types:.*$/Types: deb deb-src/' /etc/apt/sources.list.d/ubuntu.sources
+    sed -i 's/^Types:.*$/Types: deb deb-src/' /etc/apt/sources.list.d/ubuntu.sources
     apt-get update
     apt-get build-dep -y --no-install-recommends \
         linux \

@@ -9,16 +9,16 @@ orbs:
 parameters:
   kernel_version:
     type: string
-    default: "5.15.0"
+    default: "6.8.0"
   ubuntu_build:
     type: string
-    default: "164"
+    default: "90"
   ubuntu_flavour:
     type: string
     default: "generic"
   abi_version:
     type: string
-    default: "174"
+    default: "91"
 
 executors:
   build:

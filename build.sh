@@ -25,10 +25,7 @@ PROJECT_ROOT="$(git rev-parse --show-toplevel)"
 DIST_DIR="${PROJECT_ROOT}/dist"
 KERNEL_ROOT="${BUILD_ROOT}/kernel"
 
-abi_suffix="-${CIRCLE_TAG:-$(git describe --tags 2>/dev/null)}"
-export abi_suffix
-
-VERSION="${FULL_VERSION%.*}${abi_suffix}-${KERNEL_FLAVOUR}"
+VERSION="${FULL_VERSION%.*}-${KERNEL_FLAVOUR}"
 
 mkdir -p "${KERNEL_WORK}"
 
@@ -44,8 +41,8 @@ pushd "${KERNEL_WORK}"
 debian/rules clean
 
 if [ "${UPDATECONFIGS:-no}" == "yes" ]; then
-    apt-get update -qq
-    apt-get --assume-yes -qq install --no-install-recommends \
+    apt-get update -q
+    apt-get --assume-yes -q install --no-install-recommends \
         gcc-aarch64-linux-gnu gcc-x86-64-linux-gnu
     if ! debian/rules updateconfigs
     then
@@ -72,15 +69,16 @@ popd
 echo "Generating initrd"
 mkdir -p "${DIST_DIR}"
 depmod "${VERSION}"
+echo "RESUME=none" > /etc/initramfs-tools/conf.d/resume
 mkinitramfs \
     -c gzip \
-    -o "/tmp/initrd.gz" \
+    -o "/tmp/initrd" \
     "${VERSION}"
-zcat /tmp/initrd.gz | cpio -id -D /tmp/initrd.old
+cpio -id -D /tmp/initrd.old < /tmp/initrd
 mkdir -p /tmp/initrd.new/lib
-mv /tmp/initrd.old/lib/modules /tmp/initrd.new/lib/
-mv /tmp/initrd.old/lib/firmware /tmp/initrd.new/lib/
-rm -rf /tmp/initrd.gz /tmp/initrd.old
+mv /tmp/initrd.old/usr/lib/modules /tmp/initrd.new/lib/
+mv /tmp/initrd.old/usr/lib/firmware /tmp/initrd.new/lib/
+rm -rf /tmp/initrd /tmp/initrd.old
 pushd /tmp/initrd.new
 find . | cpio -H newc -o | gzip -c -1 > "${DIST_DIR}/k3os-initrd-${TARGETARCH}.gz"
 popd
