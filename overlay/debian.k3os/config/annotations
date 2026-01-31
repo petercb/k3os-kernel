@@ -582,6 +582,7 @@ CONFIG_9P_FSCACHE                               policy<{'amd64': '-', 'arm64': '
 CONFIG_9P_FS_POSIX_ACL                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_9P_FS_SECURITY                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_A11Y_BRAILLE_CONSOLE                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_A64FX_DIAG                               policy<{'arm64': 'n'}>
 CONFIG_AAEON_IWMI_WDT                           policy<{'amd64': '-'}>
 CONFIG_ABP060MG                                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_AC97_BUS                                 policy<{'amd64': '-', 'arm64': '-'}>
