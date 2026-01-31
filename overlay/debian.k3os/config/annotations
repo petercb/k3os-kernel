@@ -1843,6 +1843,7 @@ CONFIG_CM3232                                   policy<{'amd64': '-', 'arm64': '
 CONFIG_CM3323                                   policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_CM3605                                   policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_CM36651                                  policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_CMA_SYSFS                                policy<{'arm64': 'n'}>
 CONFIG_CMDLINE_PARTITION                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CNIC                                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CODA_FS                                  policy<{'amd64': 'n', 'arm64': 'n'}>
