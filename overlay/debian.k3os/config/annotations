@@ -592,6 +592,7 @@ CONFIG_ACERHDF                                  policy<{'amd64': 'n'}>
 CONFIG_ACER_WIRELESS                            policy<{'amd64': 'n'}>
 CONFIG_ACER_WMI                                 policy<{'amd64': 'n'}>
 CONFIG_ACPI_ADXL                                policy<{'amd64': '-'}>
+CONFIG_ACPI_AGDI                                policy<{'arm64': 'n'}>
 CONFIG_ACPI_ALS                                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_ACPI_APEI                                policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_ACPI_APEI_EINJ                           policy<{'amd64': '-', 'arm64': 'y'}>
@@ -609,10 +610,15 @@ CONFIG_ACPI_DEBUGGER_USER                       policy<{'amd64': '-'}>
 CONFIG_ACPI_DPTF                                policy<{'amd64': 'n'}>
 CONFIG_ACPI_EC_DEBUGFS                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_ACPI_EXTLOG                              policy<{'amd64': 'n'}>
+CONFIG_ACPI_FFH                                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_ACPI_FPDT                                policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_ACPI_HED                                 policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_ACPI_HMAT                                policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_ACPI_HOTPLUG_MEMORY                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ACPI_IPMI                                policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_ACPI_NFIT                                policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_ACPI_PCI_SLOT                            policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_ACPI_PFRUT                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_ACPI_PLATFORM_PROFILE                    policy<{'amd64': 'm', 'arm64': '-'}>
 CONFIG_ACPI_PROCESSOR_AGGREGATOR                policy<{'amd64': 'n'}>
 CONFIG_ACPI_REDUCED_HARDWARE_ONLY               policy<{'amd64': '-', 'arm64': 'y'}>
@@ -2535,7 +2541,7 @@ CONFIG_DEVMEM                                   policy<{'amd64': 'n', 'arm64': '
 CONFIG_DEV_APPLETALK                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DEV_DAX                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DEV_DAX_CXL                              policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_DEV_DAX_HMEM                             policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_DEV_DAX_HMEM                             policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DEV_DAX_HMEM_DEVICES                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DEV_DAX_KMEM                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DEV_DAX_PMEM                             policy<{'amd64': '-', 'arm64': '-'}>
@@ -3201,6 +3207,7 @@ CONFIG_EFI_EMBEDDED_FIRMWARE                    policy<{'amd64': '-'}>
 CONFIG_EFI_FAKE_MEMMAP                          policy<{'amd64': 'n', 'arm64': '-'}>
 CONFIG_EFI_MIXED                                policy<{'amd64': 'n', 'arm64': '-'}>
 CONFIG_EFI_RCI2_TABLE                           policy<{'amd64': 'n', 'arm64': '-'}>
+CONFIG_EFI_SOFT_RESERVE                         policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_EFI_TEST                                 policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_EFI_VARS_PSTORE                          policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_EFI_VARS_PSTORE_DEFAULT_DISABLE          policy<{'amd64': '-', 'arm64': 'n'}>
@@ -3965,6 +3972,7 @@ CONFIG_HIST_TRIGGERS_DEBUG                      policy<{'amd64': '-', 'arm64': '
 CONFIG_HIX5HD2_GMAC                             policy<{'arm64': 'n'}>
 CONFIG_HMC425                                   policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_HMC6352                                  policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HMEM_REPORTING                           policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_HMM_MIRROR                               policy<{'amd64': 'y', 'arm64': '-'}>
 CONFIG_HMS_ANYBUSS_BUS                          policy<{'arm64': '-'}>
 CONFIG_HMS_PROFINET                             policy<{'arm64': '-'}>
@@ -5421,6 +5429,7 @@ CONFIG_MEMORY_HOTPLUG_SPARSE                    policy<{'amd64': '-', 'arm64': '
 CONFIG_MEMORY_HOTREMOVE                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MEMORY_ISOLATION                         policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_MEMORY_NOTIFIER_ERROR_INJECT             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_MEMREGION                                policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_MEMSTICK                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MEMSTICK_DEBUG                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MEMSTICK_JMICRON_38X                     policy<{'amd64': '-', 'arm64': '-'}>

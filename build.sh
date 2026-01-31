@@ -46,6 +46,7 @@ if [ "${UPDATECONFIGS:-no}" == "yes" ]; then
         gcc-aarch64-linux-gnu gcc-x86-64-linux-gnu
     if ! debian/rules updateconfigs
     then
+        sed -i "/^CONFIG_CC_CAN_LINK/d" debian.k3os/config/annotations
         cp debian.k3os/config/annotations \
             "${PROJECT_ROOT}/overlay/debian.k3os/config/annotations"
         exit 1
