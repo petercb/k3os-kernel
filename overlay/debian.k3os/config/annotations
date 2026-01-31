@@ -804,6 +804,7 @@ CONFIG_AK8975                                   policy<{'amd64': '-', 'arm64': '
 CONFIG_AL3010                                   policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_AL3320A                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_ALIBABA_ENI_VDPA                         policy<{'amd64': '-'}>
+CONFIG_ALIBABA_UNCORE_DRW_PMU                   policy<{'arm64': 'n'}>
 CONFIG_ALIENWARE_WMI                            policy<{'amd64': '-'}>
 CONFIG_ALIM1535_WDT                             policy<{'amd64': 'n'}>
 CONFIG_ALIM7101_WDT                             policy<{'amd64': 'n', 'arm64': 'n'}>
