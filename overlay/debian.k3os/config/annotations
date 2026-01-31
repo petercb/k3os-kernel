@@ -1208,6 +1208,7 @@ CONFIG_BACKLIGHT_DA903X                         policy<{'amd64': '-', 'arm64': '
 CONFIG_BACKLIGHT_DA9052                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BACKLIGHT_GPIO                           policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_BACKLIGHT_KTD253                         policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_BACKLIGHT_KTZ8866                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BACKLIGHT_LED                            policy<{'arm64': 'n'}>
 CONFIG_BACKLIGHT_LM3533                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BACKLIGHT_LM3630A                        policy<{'amd64': 'n', 'arm64': 'n'}>
