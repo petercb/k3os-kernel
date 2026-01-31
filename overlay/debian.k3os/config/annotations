@@ -836,6 +836,7 @@ CONFIG_AMD_XGBE_DCB                             policy<{'amd64': '-', 'arm64': '
 CONFIG_AMD_XGBE_HAVE_ECC                        policy<{'amd64': '-'}>
 CONFIG_AMILO_RFKILL                             policy<{'amd64': '-'}>
 CONFIG_AMLOGIC_THERMAL                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_AMT                                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_ANDROID                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ANDROID_BINDERFS                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ANDROID_BINDER_DEVICES                   policy<{'amd64': '-', 'arm64': '-'}>
