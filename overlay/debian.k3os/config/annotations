@@ -739,6 +739,7 @@ CONFIG_ADT7316                                  policy<{'amd64': '-', 'arm64': '
 CONFIG_ADT7316_I2C                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ADT7316_SPI                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ADUX1020                                 policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_ADVANTECH_EC_WDT                         policy<{'amd64': 'n'}>
 CONFIG_ADVANTECH_WDT                            policy<{'amd64': 'n'}>
 CONFIG_ADV_SWBUTTON                             policy<{'amd64': 'n'}>
 CONFIG_ADXL313                                  policy<{'amd64': '-', 'arm64': '-'}>
@@ -4817,6 +4818,7 @@ CONFIG_IR_TTUSBIR                               policy<{'amd64': '-', 'arm64': '
 CONFIG_IR_WINBOND_CIR                           policy<{'amd64': '-'}>
 CONFIG_IR_XMP_DECODER                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ISA_BUS                                  policy<{'amd64': '-'}>
+CONFIG_ISA_BUS_API                              policy<{'amd64': '-'}>
 CONFIG_ISCSI_BOOT_SYSFS                         policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_ISCSI_IBFT                               policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_ISCSI_IBFT_FIND                          policy<{'amd64': '-'}>
