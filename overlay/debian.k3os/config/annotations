@@ -1652,6 +1652,8 @@ CONFIG_CC_HAS_UBSAN_BOUNDS_STRICT               policy<{'amd64': '-', 'arm64': '
 CONFIG_CDNS_I3C_MASTER                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CDROM_PKTCDVD_BUFFERS                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CDROM_PKTCDVD_WCACHE                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CDX_BUS                                  policy<{'arm64': 'n'}>
+CONFIG_CDX_CONTROLLER                           policy<{'arm64': '-'}>
 CONFIG_CEC_CH7322                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CEC_CORE                                 policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_CEC_CROS_EC                              policy<{'amd64': '-', 'arm64': '-'}>
@@ -11148,6 +11150,7 @@ CONFIG_VEXPRESS_CONFIG                          policy<{'arm64': 'n'}>
 CONFIG_VF610_ADC                                policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_VF610_DAC                                policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_VFIO_AMBA                                policy<{'arm64': 'n'}>
+CONFIG_VFIO_CDX                                 policy<{'arm64': '-'}>
 CONFIG_VFIO_DEVICE_CDEV                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_VFIO_FSL_MC                              policy<{'arm64': '-'}>
 CONFIG_VFIO_IOMMU_TYPE1                         policy<{'amd64': 'y', 'arm64': 'y'}>
