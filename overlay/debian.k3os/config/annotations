@@ -1346,6 +1346,8 @@ CONFIG_BLK_DEV_CRYPTOLOOP                       policy<{'amd64': '-', 'arm64': '
 CONFIG_BLK_DEV_DRBD                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BLK_DEV_FD                               policy<{'amd64': 'n'}>
 CONFIG_BLK_DEV_FD_RAWCMD                        policy<{'amd64': '-'}>
+CONFIG_BLK_DEV_INTEGRITY                        policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_BLK_DEV_INTEGRITY_T10                    policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_BLK_DEV_NBD                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BLK_DEV_NULL_BLK                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BLK_DEV_PCIESSD_MTIP32XX                 policy<{'amd64': 'n', 'arm64': 'n'}>
