@@ -821,6 +821,7 @@ CONFIG_AM2315                                   policy<{'amd64': '-', 'arm64': '
 CONFIG_AMBA_PL08X                               policy<{'arm64': '-'}>
 CONFIG_AMD8111_ETH                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_AMDTEE                                   policy<{'amd64': '-'}>
+CONFIG_AMD_HSMP                                 policy<{'amd64': 'n'}>
 CONFIG_AMD_IOMMU_V2                             policy<{'amd64': '-'}>
 CONFIG_AMD_MEM_ENCRYPT                          policy<{'amd64': 'n'}>
 CONFIG_AMD_MEM_ENCRYPT_ACTIVE_BY_DEFAULT        policy<{'amd64': '-'}>
