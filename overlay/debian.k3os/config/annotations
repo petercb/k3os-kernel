@@ -1263,6 +1263,7 @@ CONFIG_BATTERY_PM8916_BMS_VM                    policy<{'arm64': '-'}>
 CONFIG_BATTERY_QCOM_BATTMGR                     policy<{'arm64': '-'}>
 CONFIG_BATTERY_RT5033                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BATTERY_RX51                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_BATTERY_SAMSUNG_SDI                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BATTERY_SBS                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BATTERY_SURFACE                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BATTERY_TWL4030_MADC                     policy<{'amd64': '-', 'arm64': '-'}>
