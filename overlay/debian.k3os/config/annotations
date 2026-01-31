@@ -1042,7 +1042,7 @@ CONFIG_ASYNC_TX_ENABLE_CHANNEL_SWITCH           policy<{'arm64': '-'}>
 CONFIG_ASYNC_XOR                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_AT76C50X_USB                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_AT803X_PHY                               policy<{'amd64': 'n', 'arm64': 'y'}>
-CONFIG_ATALK                                    policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_ATALK                                    policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_ATARI_PARTITION                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_ATA_GENERIC                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_ATA_OVER_ETH                             policy<{'amd64': 'n', 'arm64': 'n'}>
