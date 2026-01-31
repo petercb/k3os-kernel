@@ -836,6 +836,7 @@ CONFIG_AMD_XGBE_DCB                             policy<{'amd64': '-', 'arm64': '
 CONFIG_AMD_XGBE_HAVE_ECC                        policy<{'amd64': '-'}>
 CONFIG_AMILO_RFKILL                             policy<{'amd64': '-'}>
 CONFIG_AMLOGIC_THERMAL                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_AMPERE_CORESIGHT_PMU_ARCH_SYSTEM_PMU     policy<{'arm64': '-'}>
 CONFIG_AMT                                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_ANDROID                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ANDROID_BINDERFS                         policy<{'amd64': '-', 'arm64': '-'}>
@@ -975,6 +976,7 @@ CONFIG_ARM_CCI5xx_PMU                           policy<{'arm64': '-'}>
 CONFIG_ARM_CCI_PMU                              policy<{'arm64': 'n'}>
 CONFIG_ARM_CCN                                  policy<{'arm64': 'n'}>
 CONFIG_ARM_CMN                                  policy<{'arm64': 'n'}>
+CONFIG_ARM_CORESIGHT_PMU_ARCH_SYSTEM_PMU        policy<{'arm64': 'n'}>
 CONFIG_ARM_DMC620_PMU                           policy<{'arm64': 'n'}>
 CONFIG_ARM_DSU_PMU                              policy<{'arm64': 'n'}>
 CONFIG_ARM_FFA_SMCCC                            policy<{'arm64': '-'}>
@@ -998,8 +1000,13 @@ CONFIG_ARM_RK3399_DMC_DEVFREQ                   policy<{'amd64': '-', 'arm64': '
 CONFIG_ARM_SBSA_WATCHDOG                        policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_ARM_SCMI_CPUFREQ                         policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_ARM_SCMI_HAVE_MSG                        policy<{'arm64': '-'}>
+CONFIG_ARM_SCMI_NEED_DEBUGFS                    policy<{'arm64': '-'}>
 CONFIG_ARM_SCMI_POWERCAP                        policy<{'arm64': '-'}>
+CONFIG_ARM_SCMI_POWER_CONTROL                   policy<{'arm64': 'n'}>
 CONFIG_ARM_SCMI_POWER_DOMAIN                    policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_ARM_SCMI_RAW_MODE_SUPPORT                policy<{'arm64': 'n'}>
+CONFIG_ARM_SCMI_RAW_MODE_SUPPORT_COEX           policy<{'arm64': '-'}>
+CONFIG_ARM_SCMI_TRANSPORT_SMC_ATOMIC_ENABLE     policy<{'arm64': 'n'}>
 CONFIG_ARM_SCMI_TRANSPORT_VIRTIO                policy<{'arm64': 'n'}>
 CONFIG_ARM_SCMI_TRANSPORT_VIRTIO_ATOMIC_ENABLE  policy<{'arm64': '-'}>
 CONFIG_ARM_SCMI_TRANSPORT_VIRTIO_VERSION1_COMPLIANCE policy<{'arm64': '-'}>
@@ -6642,6 +6649,7 @@ CONFIG_NVDIMM_PFN                               policy<{'amd64': '-', 'arm64': '
 CONFIG_NVDIMM_SECURITY_TEST                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NVEC_PAZ00                               policy<{'arm64': '-'}>
 CONFIG_NVEC_POWER                               policy<{'arm64': '-'}>
+CONFIG_NVIDIA_CORESIGHT_PMU_ARCH_SYSTEM_PMU     policy<{'arm64': '-'}>
 CONFIG_NVIDIA_SHIELD_FF                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NVIDIA_WMI_EC_BACKLIGHT                  policy<{'amd64': 'n'}>
 CONFIG_NVMEM_APPLE_EFUSES                       policy<{'arm64': '-'}>
