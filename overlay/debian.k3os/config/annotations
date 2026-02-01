@@ -6378,9 +6378,11 @@ CONFIG_NET_DSA_TAG_HELLCREEK                    policy<{'amd64': 'n', 'arm64': '
 CONFIG_NET_DSA_TAG_KSZ                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NET_DSA_TAG_LAN9303                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NET_DSA_TAG_MTK                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_NET_DSA_TAG_NONE                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NET_DSA_TAG_OCELOT                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NET_DSA_TAG_OCELOT_8021Q                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NET_DSA_TAG_QCA                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_NET_DSA_TAG_RZN1_A5PSW                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NET_DSA_TAG_SJA1105                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NET_DSA_TAG_TRAILER                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NET_DSA_TAG_XRS700X                      policy<{'amd64': 'n', 'arm64': 'n'}>
