@@ -8630,6 +8630,8 @@ CONFIG_SENSORS_AS370                            policy<{'amd64': 'n', 'arm64': '
 CONFIG_SENSORS_ASB100                           policy<{'amd64': 'n'}>
 CONFIG_SENSORS_ASC7621                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_ASPEED                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_ASUS_EC                          policy<{'amd64': 'n'}>
+CONFIG_SENSORS_ASUS_WMI                         policy<{'amd64': 'n'}>
 CONFIG_SENSORS_ATK0110                          policy<{'amd64': 'n'}>
 CONFIG_SENSORS_ATXP1                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_AXI_FAN_CONTROL                  policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -8650,6 +8652,7 @@ CONFIG_SENSORS_DS1621                           policy<{'amd64': 'n', 'arm64': '
 CONFIG_SENSORS_DS620                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_EMC1403                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_EMC2103                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SENSORS_EMC2305                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_EMC6W201                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_F71805F                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_F71882FG                         policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -8669,6 +8672,8 @@ CONFIG_SENSORS_HIH6130                          policy<{'amd64': 'n', 'arm64': '
 CONFIG_SENSORS_HMC5843                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_HMC5843_I2C                      policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SENSORS_HMC5843_SPI                      policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_SENSORS_HP_WMI                           policy<{'amd64': 'n'}>
+CONFIG_SENSORS_HS3001                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_I5500                            policy<{'amd64': 'n'}>
 CONFIG_SENSORS_I5K_AMB                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_IBMAEM                           policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -8676,6 +8681,7 @@ CONFIG_SENSORS_IBMPEX                           policy<{'amd64': 'n', 'arm64': '
 CONFIG_SENSORS_IBM_CFFPS                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_IIO_HWMON                        policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SENSORS_INA209                           policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SENSORS_INA238                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_INA2XX                           policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_SENSORS_INA3221                          policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_SENSORS_INSPUR_IPSPS                     policy<{'amd64': '-', 'arm64': '-'}>
@@ -8745,9 +8751,11 @@ CONFIG_SENSORS_MAX20730                         policy<{'amd64': '-', 'arm64': '
 CONFIG_SENSORS_MAX20751                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_MAX31722                         policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SENSORS_MAX31730                         policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SENSORS_MAX31760                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_MAX31785                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_MAX31790                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_MAX34440                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_MAX6620                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_MAX6621                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_MAX6639                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_MAX6642                          policy<{'amd64': 'n', 'arm64': '-'}>
@@ -8755,6 +8763,7 @@ CONFIG_SENSORS_MAX6650                          policy<{'amd64': 'n', 'arm64': '
 CONFIG_SENSORS_MAX6697                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_MAX8688                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_MC13783_ADC                      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_MC34VR500                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_MCP3021                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_MENF21BMC_HWMON                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_MLXREG_FAN                       policy<{'amd64': '-', 'arm64': '-'}>
@@ -8769,12 +8778,18 @@ CONFIG_SENSORS_MPQ7932_REGULATOR                policy<{'amd64': '-', 'arm64': '
 CONFIG_SENSORS_MR75203                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_NCT6683                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_NCT6775                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SENSORS_NCT6775_CORE                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_NCT6775_I2C                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_NCT7802                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_NCT7904                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_NPCM7XX                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_NTC_THERMISTOR                   policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SENSORS_NZXT_KRAKEN2                     policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SENSORS_NZXT_SMART2                      policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SENSORS_OCC                              policy<{'amd64': '-'}>
+CONFIG_SENSORS_OCC_P8_I2C                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_OCC_P9_SBE                       policy<{'arm64': '-'}>
+CONFIG_SENSORS_OXP                              policy<{'amd64': 'n'}>
 CONFIG_SENSORS_PC87360                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_PC87427                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_PCF8591                          policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -8822,6 +8837,7 @@ CONFIG_SENSORS_TMP103                           policy<{'amd64': 'n', 'arm64': '
 CONFIG_SENSORS_TMP108                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_TMP401                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_TMP421                           policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SENSORS_TMP464                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_TMP513                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_TPS23861                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_TPS40422                         policy<{'amd64': '-', 'arm64': '-'}>
