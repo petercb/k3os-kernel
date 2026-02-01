@@ -11854,6 +11854,8 @@ CONFIG_XEN_GNTDEV                               policy<{'amd64': 'y', 'arm64': '
 CONFIG_XEN_GNTDEV_DMABUF                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_XEN_GRANT_DEV_ALLOC                      policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_XEN_GRANT_DMA_ALLOC                      policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_XEN_GRANT_DMA_IOMMU                      policy<{'arm64': '-'}>
+CONFIG_XEN_GRANT_DMA_OPS                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_XEN_MCE_LOG                              policy<{'amd64': '-'}>
 CONFIG_XEN_MEMORY_HOTPLUG_LIMIT                 policy<{'amd64': '-'}>
 CONFIG_XEN_NETDEV_BACKEND                       policy<{'amd64': '-', 'arm64': '-'}>
@@ -11862,6 +11864,7 @@ CONFIG_XEN_PCIDEV_FRONTEND                      policy<{'amd64': 'y'}>
 CONFIG_XEN_PCIDEV_STUB                          policy<{'arm64': '-'}>
 CONFIG_XEN_PCI_STUB                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_XEN_PRIVCMD                              policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_XEN_PRIVCMD_EVENTFD                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_XEN_PVCALLS_BACKEND                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_XEN_PVCALLS_FRONTEND                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_XEN_PVH                                  policy<{'amd64': 'n'}>
@@ -11870,6 +11873,8 @@ CONFIG_XEN_SCSI_BACKEND                         policy<{'amd64': '-', 'arm64': '
 CONFIG_XEN_SCSI_FRONTEND                        policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_XEN_SYMS                                 policy<{'amd64': '-'}>
 CONFIG_XEN_UNPOPULATED_ALLOC                    policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_XEN_VIRTIO                               policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_XEN_VIRTIO_FORCE_GRANT                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_XEN_WDT                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_XFRM_AH                                  policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_XFRM_ALGO                                policy<{'amd64': 'y', 'arm64': 'y'}>
