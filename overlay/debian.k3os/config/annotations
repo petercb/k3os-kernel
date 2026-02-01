@@ -5147,9 +5147,11 @@ CONFIG_LEDS_ADP5520                             policy<{'amd64': '-', 'arm64': '
 CONFIG_LEDS_AN30259A                            policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_LEDS_APU                                 policy<{'amd64': 'n', 'arm64': '-'}>
 CONFIG_LEDS_AS3645A                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_LEDS_AW200XX                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_LEDS_AW2013                              policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_LEDS_BCM6328                             policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_LEDS_BCM6358                             policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_LEDS_BD2606MVV                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_LEDS_BD2802                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_LEDS_BLINKM                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_LEDS_BRIGHTNESS_HW_CHANGED               policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -5208,6 +5210,7 @@ CONFIG_LEDS_PCA9532_GPIO                        policy<{'amd64': '-', 'arm64': '
 CONFIG_LEDS_PCA955X                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_LEDS_PCA955X_GPIO                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_LEDS_PCA963X                             policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_LEDS_PCA995X                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_LEDS_PWM                                 policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_LEDS_PWM_MULTICOLOR                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_LEDS_QCOM_FLASH                          policy<{'arm64': '-'}>
