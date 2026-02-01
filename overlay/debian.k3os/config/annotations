@@ -3914,6 +3914,7 @@ CONFIG_HID_BATTERY_STRENGTH                     policy<{'amd64': 'n', 'arm64': '
 CONFIG_HID_BELKIN                               policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_HID_BETOP_FF                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HID_BIGBEN_FF                            policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_BPF                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HID_CHERRY                               policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_HID_CHICONY                              policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_HID_CMEDIA                               policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -3935,6 +3936,7 @@ CONFIG_HID_GENERIC                              policy<{'amd64': 'y', 'arm64': '
 CONFIG_HID_GFRM                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HID_GLORIOUS                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HID_GOOGLE_HAMMER                        policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_HID_GOOGLE_STADIA_FF                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HID_GREENASIA                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HID_GT683R                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HID_GYRATION                             policy<{'amd64': 'y', 'arm64': 'y'}>
@@ -4498,15 +4500,17 @@ CONFIG_INPUT_GPIO_DECODER                       policy<{'amd64': '-', 'arm64': '
 CONFIG_INPUT_GPIO_ROTARY_ENCODER                policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_INPUT_GPIO_VIBRA                         policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_INPUT_HISI_POWERKEY                      policy<{'arm64': '-'}>
+CONFIG_INPUT_IBM_PANEL                          policy<{'arm64': 'n'}>
 CONFIG_INPUT_IDEAPAD_SLIDEBAR                   policy<{'amd64': 'n'}>
 CONFIG_INPUT_IMS_PCU                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_INPUT_IQS269A                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_INPUT_IQS626A                            policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_INPUT_IQS7222                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_INPUT_JOYDEV                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_INPUT_KEYSPAN_REMOTE                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_INPUT_KXTJ9                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_INPUT_LEDS                               policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_INPUT_MATRIXKMAP                         policy<{'amd64': 'm', 'arm64': 'y'}>
+CONFIG_INPUT_MATRIXKMAP                         policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_INPUT_MAX77650_ONKEY                     policy<{'arm64': '-'}>
 CONFIG_INPUT_MAX77693_HAPTIC                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INPUT_MAX8925_ONKEY                      policy<{'amd64': '-', 'arm64': '-'}>
@@ -4527,6 +4531,7 @@ CONFIG_INPUT_PWM_VIBRA                          policy<{'amd64': 'n', 'arm64': '
 CONFIG_INPUT_RAVE_SP_PWRBUTTON                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INPUT_REGULATOR_HAPTIC                   policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_INPUT_RETU_PWRBUTTON                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_INPUT_RK805_PWRKEY                       policy<{'arm64': 'n'}>
 CONFIG_INPUT_RT5120_PWRKEY                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INPUT_SC27XX_VIBRA                       policy<{'arm64': '-'}>
 CONFIG_INPUT_SOC_BUTTON_ARRAY                   policy<{'amd64': '-', 'arm64': '-'}>
