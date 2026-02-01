@@ -11269,6 +11269,7 @@ CONFIG_VCHIQ_CDEV                               policy<{'arm64': '-'}>
 CONFIG_VCNL3020                                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_VCNL4000                                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_VCNL4035                                 policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_VCPU_STALL_DETECTOR                      policy<{'arm64': 'n'}>
 CONFIG_VDPA                                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_VDPA_SIM                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_VDPA_SIM_BLOCK                           policy<{'amd64': '-', 'arm64': '-'}>
