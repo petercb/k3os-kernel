@@ -6819,6 +6819,7 @@ CONFIG_OPENVSWITCH                              policy<{'amd64': 'y', 'arm64': '
 CONFIG_OPENVSWITCH_GENEVE                       policy<{'amd64': 'y', 'arm64': '-'}>
 CONFIG_OPENVSWITCH_GRE                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_OPENVSWITCH_VXLAN                        policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_OPEN_DICE                                policy<{'arm64': 'n'}>
 CONFIG_OPT3001                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_OPT4001                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_OPTEE                                    policy<{'arm64': '-'}>
