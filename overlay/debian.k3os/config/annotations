@@ -4747,6 +4747,7 @@ CONFIG_IPMB_DEVICE_INTERFACE                    policy<{'arm64': 'n'}>
 CONFIG_IPMI_DEVICE_INTERFACE                    policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_IPMI_DMI_DECODE                          policy<{'amd64': 'y', 'arm64': '-'}>
 CONFIG_IPMI_HANDLER                             policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_IPMI_IPMB                                policy<{'arm64': 'n'}>
 CONFIG_IPMI_KCS_BMC                             policy<{'arm64': '-'}>
 CONFIG_IPMI_KCS_BMC_CDEV_IPMI                   policy<{'arm64': '-'}>
 CONFIG_IPMI_KCS_BMC_SERIO                       policy<{'arm64': '-'}>
