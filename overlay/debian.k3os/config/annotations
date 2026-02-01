@@ -5220,6 +5220,7 @@ CONFIG_LEDS_RT4505                              policy<{'arm64': '-'}>
 CONFIG_LEDS_RT8515                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_LEDS_SC27XX_BLTC                         policy<{'arm64': '-'}>
 CONFIG_LEDS_SGM3140                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_LEDS_SIEMENS_SIMATIC_IPC                 policy<{'amd64': '-'}>
 CONFIG_LEDS_SIEMENS_SIMATIC_IPC_APOLLOLAKE      policy<{'amd64': '-'}>
 CONFIG_LEDS_SIEMENS_SIMATIC_IPC_ELKHARTLAKE     policy<{'amd64': '-'}>
 CONFIG_LEDS_SIEMENS_SIMATIC_IPC_F7188X          policy<{'amd64': '-'}>
@@ -9016,9 +9017,12 @@ CONFIG_SI1133                                   policy<{'amd64': '-', 'arm64': '
 CONFIG_SI1145                                   policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SI7005                                   policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SI7020                                   policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_SIEMENS_SIMATIC_IPC                      policy<{'amd64': 'n'}>
+CONFIG_SIEMENS_SIMATIC_IPC_BATT                 policy<{'amd64': '-'}>
 CONFIG_SIEMENS_SIMATIC_IPC_BATT_APOLLOLAKE      policy<{'amd64': '-'}>
 CONFIG_SIEMENS_SIMATIC_IPC_BATT_ELKHARTLAKE     policy<{'amd64': '-'}>
 CONFIG_SIEMENS_SIMATIC_IPC_BATT_F7188X          policy<{'amd64': '-'}>
+CONFIG_SIEMENS_SIMATIC_IPC_WDT                  policy<{'amd64': '-'}>
 CONFIG_SIGNATURE                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SIGNED_PE_FILE_VERIFICATION              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SILICOM_PLATFORM                         policy<{'amd64': '-'}>
