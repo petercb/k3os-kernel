@@ -5375,6 +5375,7 @@ CONFIG_MAX1363                                  policy<{'amd64': '-', 'arm64': '
 CONFIG_MAX30100                                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_MAX30102                                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_MAX30208                                 policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_MAX31827                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MAX31856                                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_MAX31865                                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_MAX34408                                 policy<{'amd64': '-', 'arm64': 'n'}>
