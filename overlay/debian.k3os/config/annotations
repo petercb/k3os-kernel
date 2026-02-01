@@ -165,6 +165,9 @@ CONFIG_INTEL_ATOMISP                            note<'LP: #2017444'>
 CONFIG_INTEL_ATOMISP2_PM                        policy<{'amd64': 'n'}>
 CONFIG_INTEL_ATOMISP2_PM                        note<'LP: #2017444'>
 
+CONFIG_INTEL_IOMMU_SCALABLE_MODE_DEFAULT_ON     policy<{'amd64': 'n'}>
+CONFIG_INTEL_IOMMU_SCALABLE_MODE_DEFAULT_ON     note<'LP: #1951440'>
+
 CONFIG_IPDDP                                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_IPDDP                                    note<'TODO: update note'>
 
@@ -877,8 +880,10 @@ CONFIG_ARCH_BRCMSTB                             policy<{'arm64': 'y'}>
 CONFIG_ARCH_ENABLE_MEMORY_HOTREMOVE             policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_ARCH_ENABLE_THP_MIGRATION                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ARCH_FORCE_MAX_ORDER                     policy<{'arm64': '10'}>
+CONFIG_ARCH_HAS_CC_PLATFORM                     policy<{'amd64': '-'}>
 CONFIG_ARCH_HAS_CPU_PASID                       policy<{'amd64': '-'}>
 CONFIG_ARCH_HAS_EARLY_DEBUG                     policy<{'amd64': '-'}>
+CONFIG_ARCH_HAS_FORCE_DMA_UNENCRYPTED           policy<{'amd64': '-'}>
 CONFIG_ARCH_HAS_RESTRICTED_VIRTIO_MEMORY_ACCESS policy<{'amd64': '-'}>
 CONFIG_ARCH_HAS_ZONE_DMA_SET                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ARCH_HIBERNATION_HEADER                  policy<{'amd64': '-'}>
@@ -3219,6 +3224,7 @@ CONFIG_DW_WATCHDOG                              policy<{'amd64': 'n', 'arm64': '
 CONFIG_DW_XDATA_PCIE                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_DYNAMIC_DEBUG                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_DYNAMIC_DEBUG_CORE                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_DYNAMIC_PHYSICAL_MASK                    policy<{'amd64': '-'}>
 CONFIG_E100                                     policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_E1000                                    policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_E1000E                                   policy<{'amd64': 'y', 'arm64': 'y'}>
@@ -4569,6 +4575,7 @@ CONFIG_INTEL_IDXD_BUS                           policy<{'amd64': '-'}>
 CONFIG_INTEL_IDXD_COMPAT                        policy<{'amd64': '-'}>
 CONFIG_INTEL_IDXD_PERFMON                       policy<{'amd64': '-'}>
 CONFIG_INTEL_IDXD_SVM                           policy<{'amd64': '-'}>
+CONFIG_INTEL_IFS                                policy<{'amd64': 'n'}>
 CONFIG_INTEL_INT0002_VGPIO                      policy<{'amd64': '-'}>
 CONFIG_INTEL_IOATDMA                            policy<{'amd64': '-'}>
 CONFIG_INTEL_IOMMU_SVM                          policy<{'amd64': 'n'}>
@@ -4594,8 +4601,8 @@ CONFIG_INTEL_OAKTRAIL                           policy<{'amd64': '-'}>
 CONFIG_INTEL_PCH_THERMAL                        policy<{'amd64': 'n'}>
 CONFIG_INTEL_PMC_CORE                           policy<{'amd64': '-'}>
 CONFIG_INTEL_PMT_CLASS                          policy<{'amd64': '-'}>
-CONFIG_INTEL_PMT_CRASHLOG                       policy<{'amd64': 'n'}>
-CONFIG_INTEL_PMT_TELEMETRY                      policy<{'amd64': 'n'}>
+CONFIG_INTEL_PMT_CRASHLOG                       policy<{'amd64': '-'}>
+CONFIG_INTEL_PMT_TELEMETRY                      policy<{'amd64': '-'}>
 CONFIG_INTEL_POWERCLAMP                         policy<{'amd64': 'n'}>
 CONFIG_INTEL_PUNIT_IPC                          policy<{'amd64': 'n'}>
 CONFIG_INTEL_QEP                                policy<{'amd64': '-', 'arm64': '-'}>
@@ -4609,6 +4616,7 @@ CONFIG_INTEL_SCU_IPC                            policy<{'amd64': '-'}>
 CONFIG_INTEL_SCU_IPC_UTIL                       policy<{'amd64': '-'}>
 CONFIG_INTEL_SCU_PCI                            policy<{'amd64': 'n'}>
 CONFIG_INTEL_SCU_PLATFORM                       policy<{'amd64': 'n'}>
+CONFIG_INTEL_SDSI                               policy<{'amd64': '-'}>
 CONFIG_INTEL_SKL_INT3472                        policy<{'amd64': '-'}>
 CONFIG_INTEL_SMARTCONNECT                       policy<{'amd64': 'n'}>
 CONFIG_INTEL_SOC_DTS_IOSF_CORE                  policy<{'amd64': '-'}>
@@ -4623,6 +4631,7 @@ CONFIG_INTEL_SPEED_SELECT_TPMI                  policy<{'amd64': '-'}>
 CONFIG_INTEL_STRATIX10_RSU                      policy<{'arm64': '-'}>
 CONFIG_INTEL_STRATIX10_SERVICE                  policy<{'arm64': '-'}>
 CONFIG_INTEL_TCC_COOLING                        policy<{'amd64': 'n'}>
+CONFIG_INTEL_TDX_GUEST                          policy<{'amd64': 'n'}>
 CONFIG_INTEL_TELEMETRY                          policy<{'amd64': '-'}>
 CONFIG_INTEL_TH                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_INTEL_TH_ACPI                            policy<{'amd64': '-', 'arm64': '-'}>
@@ -4632,6 +4641,7 @@ CONFIG_INTEL_TH_MSU                             policy<{'amd64': '-', 'arm64': '
 CONFIG_INTEL_TH_PCI                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INTEL_TH_PTI                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INTEL_TH_STH                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_INTEL_TPMI                               policy<{'amd64': '-'}>
 CONFIG_INTEL_TURBO_MAX_3                        policy<{'amd64': 'n'}>
 CONFIG_INTEL_TXT                                policy<{'amd64': 'n'}>
 CONFIG_INTEL_UNCORE_FREQ_CONTROL                policy<{'amd64': 'n'}>
@@ -4642,6 +4652,7 @@ CONFIG_INTEL_VSC_ACE                            policy<{'amd64': '-'}>
 CONFIG_INTEL_VSC_ACE_DEBUG                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_INTEL_VSC_CSI                            policy<{'amd64': '-'}>
 CONFIG_INTEL_VSC_PSE                            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_INTEL_VSEC                               policy<{'amd64': 'n'}>
 CONFIG_INTEL_WMI                                policy<{'amd64': '-'}>
 CONFIG_INTEL_WMI_SBL_FW_UPDATE                  policy<{'amd64': 'n'}>
 CONFIG_INTEL_WMI_THUNDERBOLT                    policy<{'amd64': 'n'}>
@@ -10320,6 +10331,7 @@ CONFIG_TCP_CONG_WESTWOOD                        policy<{'amd64': 'n', 'arm64': '
 CONFIG_TCP_CONG_YEAH                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TCS3414                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_TCS3472                                  policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_TDX_GUEST_DRIVER                         policy<{'amd64': '-'}>
 CONFIG_TEE                                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TEE_BNXT_FW                              policy<{'arm64': '-'}>
 CONFIG_TEE_STMM_EFI                             policy<{'arm64': '-'}>
@@ -10610,6 +10622,7 @@ CONFIG_TSL2583                                  policy<{'amd64': '-', 'arm64': '
 CONFIG_TSL2591                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_TSL2772                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_TSL4531                                  policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_TSM_REPORTS                              policy<{'amd64': '-'}>
 CONFIG_TSNEP                                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TSNEP_SELFTESTS                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TSYS01                                   policy<{'amd64': '-', 'arm64': 'n'}>
@@ -10712,6 +10725,7 @@ CONFIG_UIO_PRUSS                                policy<{'amd64': 'n', 'arm64': '
 CONFIG_UIO_SERCOS3                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_ULI526X                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_ULTRIX_PARTITION                         policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_UNACCEPTED_MEMORY                        policy<{'amd64': '-'}>
 CONFIG_UNICODE                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_UNICODE_NORMALIZATION_SELFTEST           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_UNISYSSPAR                               policy<{'amd64': '-', 'arm64': '-'}>
@@ -11756,6 +11770,7 @@ CONFIG_X86_CPU_RESCTRL                          policy<{'amd64': 'n'}>
 CONFIG_X86_INTEL_LPSS                           policy<{'amd64': 'n'}>
 CONFIG_X86_MCELOG_LEGACY                        policy<{'amd64': 'n'}>
 CONFIG_X86_MCE_INJECT                           policy<{'amd64': 'n'}>
+CONFIG_X86_MEM_ENCRYPT                          policy<{'amd64': '-'}>
 CONFIG_X86_MSR                                  policy<{'amd64': 'y'}>
 CONFIG_X86_NUMACHIP                             policy<{'amd64': 'n'}>
 CONFIG_X86_P4_CLOCKMOD                          policy<{'amd64': 'n'}>
