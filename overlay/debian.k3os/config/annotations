@@ -7575,6 +7575,7 @@ CONFIG_PWM_BCM2835                              policy<{'arm64': 'y'}>
 CONFIG_PWM_BCM_IPROC                            policy<{'arm64': 'y'}>
 CONFIG_PWM_BERLIN                               policy<{'arm64': '-'}>
 CONFIG_PWM_BRCMSTB                              policy<{'arm64': 'n'}>
+CONFIG_PWM_CLK                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PWM_CRC                                  policy<{'amd64': '-'}>
 CONFIG_PWM_CROS_EC                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PWM_DWC                                  policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -7613,6 +7614,7 @@ CONFIG_PWM_TIEHRPWM                             policy<{'arm64': '-'}>
 CONFIG_PWM_TWL                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PWM_TWL_LED                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PWM_VISCONTI                             policy<{'arm64': '-'}>
+CONFIG_PWM_XILINX                               policy<{'arm64': 'n'}>
 CONFIG_PWRSEQ_EMMC                              policy<{'arm64': 'y'}>
 CONFIG_PWRSEQ_SD8787                            policy<{'arm64': '-'}>
 CONFIG_PWRSEQ_SIMPLE                            policy<{'arm64': 'y'}>
