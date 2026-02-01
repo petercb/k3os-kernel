@@ -7531,6 +7531,8 @@ CONFIG_PROC_THERMAL_MMIO_RAPL                   policy<{'amd64': '-'}>
 CONFIG_PROC_VMCORE_DEVICE_DUMP                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PRU_REMOTEPROC                           policy<{'arm64': '-'}>
 CONFIG_PSAMPLE                                  policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_PSE_CONTROLLER                           policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_PSE_REGULATOR                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PSI                                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PSTORE                                   policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_PSTORE_842_COMPRESS                      policy<{'amd64': '-', 'arm64': '-'}>
