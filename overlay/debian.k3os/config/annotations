@@ -10549,6 +10549,7 @@ CONFIG_TOUCHSCREEN_CY8CTMG110                   policy<{'amd64': '-', 'arm64': '
 CONFIG_TOUCHSCREEN_CYTTSP4_CORE                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TOUCHSCREEN_CYTTSP4_I2C                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TOUCHSCREEN_CYTTSP4_SPI                  policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TOUCHSCREEN_CYTTSP5                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TOUCHSCREEN_CYTTSP_CORE                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TOUCHSCREEN_CYTTSP_I2C                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TOUCHSCREEN_CYTTSP_SPI                   policy<{'amd64': '-', 'arm64': '-'}>
@@ -10568,13 +10569,17 @@ CONFIG_TOUCHSCREEN_GOODIX                       policy<{'amd64': '-', 'arm64': '
 CONFIG_TOUCHSCREEN_GUNZE                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TOUCHSCREEN_HAMPSHIRE                    policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TOUCHSCREEN_HIDEEP                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_HIMAX_HX83112B               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TOUCHSCREEN_HYCON_HY46XX                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_HYNITRON_CSTXXX              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TOUCHSCREEN_ILI210X                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TOUCHSCREEN_ILITEK                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_IMAGIS                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TOUCHSCREEN_IMX6UL_TSC                   policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_TOUCHSCREEN_INEXIO                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TOUCHSCREEN_IPROC                        policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_TOUCHSCREEN_IQS5XX                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_IQS7211                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TOUCHSCREEN_MAX11801                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TOUCHSCREEN_MC13783                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TOUCHSCREEN_MCS5000                      policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -10583,6 +10588,7 @@ CONFIG_TOUCHSCREEN_MK712                        policy<{'amd64': '-', 'arm64': '
 CONFIG_TOUCHSCREEN_MMS114                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TOUCHSCREEN_MSG2638                      policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_TOUCHSCREEN_MTOUCH                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TOUCHSCREEN_NOVATEK_NVT_TS               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TOUCHSCREEN_PCAP                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TOUCHSCREEN_PENMOUNT                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TOUCHSCREEN_PIXCIR                       policy<{'amd64': 'n', 'arm64': 'n'}>
