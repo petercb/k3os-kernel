@@ -5584,7 +5584,7 @@ CONFIG_MFD_AXP20X_I2C                           policy<{'amd64': 'n', 'arm64': '
 CONFIG_MFD_AXP20X_RSB                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MFD_BCM590XX                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MFD_BD9571MWV                            policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_MFD_CORE                                 policy<{'amd64': 'm', 'arm64': 'y'}>
+CONFIG_MFD_CORE                                 policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_MFD_CPCAP                                policy<{'arm64': 'n'}>
 CONFIG_MFD_CROS_EC_DEV                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MFD_CS42L43                              policy<{'amd64': '-', 'arm64': '-'}>
@@ -5704,8 +5704,8 @@ CONFIG_MFD_TPS65910                             policy<{'amd64': '-', 'arm64': '
 CONFIG_MFD_TPS65912                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MFD_TPS65912_I2C                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MFD_TPS65912_SPI                         policy<{'amd64': '-', 'arm64': 'n'}>
-CONFIG_MFD_TPS6594                              policy<{'amd64': 'm', 'arm64': '-'}>
-CONFIG_MFD_TPS6594_I2C                          policy<{'amd64': 'm', 'arm64': 'n'}>
+CONFIG_MFD_TPS6594                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_MFD_TPS6594_I2C                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MFD_TPS6594_SPI                          policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_MFD_TPS80031                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MFD_TQMX86                               policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -7807,6 +7807,7 @@ CONFIG_REED_SOLOMON_DEC8                        policy<{'amd64': '-', 'arm64': '
 CONFIG_REED_SOLOMON_ENC8                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGMAP_AC97                              policy<{'arm64': '-'}>
 CONFIG_REGMAP_I3C                               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_REGMAP_IRQ                               policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_REGMAP_MMIO                              policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_REGMAP_SCCB                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REGMAP_SLIMBUS                           policy<{'amd64': '-', 'arm64': '-'}>
@@ -8264,7 +8265,7 @@ CONFIG_RTC_DRV_TEGRA                            policy<{'amd64': '-', 'arm64': '
 CONFIG_RTC_DRV_TI_K3                            policy<{'arm64': '-'}>
 CONFIG_RTC_DRV_TPS6586X                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RTC_DRV_TPS65910                         policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_RTC_DRV_TPS6594                          policy<{'amd64': 'm', 'arm64': '-'}>
+CONFIG_RTC_DRV_TPS6594                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RTC_DRV_TPS80031                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RTC_DRV_V3020                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RTC_DRV_WILCO_EC                         policy<{'amd64': '-'}>
@@ -10625,8 +10626,8 @@ CONFIG_TPM_KEY_PARSER                           policy<{'amd64': '-', 'arm64': '
 CONFIG_TPS6105X                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TPS65010                                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_TPS6507X                                 policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_TPS6594_ESM                              policy<{'amd64': 'm', 'arm64': '-'}>
-CONFIG_TPS6594_PFSM                             policy<{'amd64': 'm', 'arm64': '-'}>
+CONFIG_TPS6594_ESM                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TPS6594_PFSM                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TPS68470_PMIC_OPREGION                   policy<{'amd64': '-'}>
 CONFIG_TQMX86_WDT                               policy<{'amd64': 'n'}>
 CONFIG_TRACER_MAX_TRACE                         policy<{'amd64': '-', 'arm64': '-'}>
