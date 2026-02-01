@@ -5947,6 +5947,7 @@ CONFIG_MSCC_OCELOT_SWITCH                       policy<{'arm64': '-'}>
 CONFIG_MSCC_OCELOT_SWITCH_LIB                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MSDOS_FS                                 policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_MSE102X                                  policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_MSI_EC                                   policy<{'amd64': 'n'}>
 CONFIG_MSI_LAPTOP                               policy<{'amd64': '-'}>
 CONFIG_MSI_WMI                                  policy<{'amd64': 'n'}>
 CONFIG_MSM_GCC_8916                             policy<{'arm64': '-'}>
