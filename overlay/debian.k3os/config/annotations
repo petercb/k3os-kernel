@@ -11767,6 +11767,7 @@ CONFIG_WILCO_EC_EVENTS                          policy<{'amd64': '-'}>
 CONFIG_WILCO_EC_TELEMETRY                       policy<{'amd64': '-'}>
 CONFIG_WILINK_PLATFORM_DATA                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_WINBOND_840                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_WINMATE_FM07_KEYS                        policy<{'amd64': 'n'}>
 CONFIG_WIREGUARD                                policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_WIRELESS_EXT                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_WIRELESS_HOTKEY                          policy<{'amd64': 'n', 'arm64': '-'}>
