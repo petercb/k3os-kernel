@@ -10341,6 +10341,7 @@ CONFIG_TCG_ATMEL                                policy<{'amd64': 'n', 'arm64': '
 CONFIG_TCG_FTPM_TEE                             policy<{'arm64': '-'}>
 CONFIG_TCG_INFINEON                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TCG_NSC                                  policy<{'amd64': 'n'}>
+CONFIG_TCG_TIS_I2C                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TCG_TIS_I2C_CR50                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TCG_TIS_SPI                              policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_TCG_TIS_SPI_CR50                         policy<{'amd64': '-', 'arm64': '-'}>
