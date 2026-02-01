@@ -8010,8 +8010,8 @@ CONFIG_REISERFS_FS_POSIX_ACL                    policy<{'amd64': '-', 'arm64': '
 CONFIG_REISERFS_FS_SECURITY                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REISERFS_FS_XATTR                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REISERFS_PROC_INFO                       policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_REMOTEPROC                               policy<{'amd64': 'n', 'arm64': 'y'}>
-CONFIG_REMOTEPROC_CDEV                          policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_REMOTEPROC                               policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_REMOTEPROC_CDEV                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REMOTE_TARGET                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RENESAS_DMA                              policy<{'arm64': '-'}>
 CONFIG_RENESAS_ETHER_SWITCH                     policy<{'arm64': '-'}>
