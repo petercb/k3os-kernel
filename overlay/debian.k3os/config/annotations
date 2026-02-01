@@ -2267,6 +2267,10 @@ CONFIG_CRYPTO_ARC4                              policy<{'amd64': 'y', 'arm64': '
 CONFIG_CRYPTO_ARCH_HAVE_LIB_CHACHA              policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_CRYPTO_ARCH_HAVE_LIB_CURVE25519          policy<{'amd64': 'y'}>
 CONFIG_CRYPTO_ARCH_HAVE_LIB_POLY1305            policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_CRYPTO_ARIA                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_CRYPTO_ARIA_AESNI_AVX2_X86_64            policy<{'amd64': 'n'}>
+CONFIG_CRYPTO_ARIA_AESNI_AVX_X86_64             policy<{'amd64': 'n'}>
+CONFIG_CRYPTO_ARIA_GFNI_AVX512_X86_64           policy<{'amd64': 'n'}>
 CONFIG_CRYPTO_AUTHENC                           policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_CRYPTO_BLAKE2B                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CRYPTO_BLOWFISH                          policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -2293,7 +2297,7 @@ CONFIG_CRYPTO_CRC32C_INTEL                      policy<{'amd64': 'n'}>
 CONFIG_CRYPTO_CRC32_PCLMUL                      policy<{'amd64': 'n'}>
 CONFIG_CRYPTO_CRC64_ROCKSOFT                    policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_CRYPTO_CRCT10DIF_ARM64_CE                policy<{'amd64': '-', 'arm64': 'n'}>
-CONFIG_CRYPTO_CRCT10DIF_PCLMUL                  policy<{'amd64': 'y'}>
+CONFIG_CRYPTO_CRCT10DIF_PCLMUL                  policy<{'amd64': 'n'}>
 CONFIG_CRYPTO_CRYPTD                            policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_CRYPTO_CTS                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CRYPTO_CURVE25519                        policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -2375,6 +2379,7 @@ CONFIG_CRYPTO_DEV_QCE_SKCIPHER                  policy<{'arm64': '-'}>
 CONFIG_CRYPTO_DEV_QCE_SW_MAX_LEN                policy<{'arm64': '-'}>
 CONFIG_CRYPTO_DEV_QCOM_RNG                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CRYPTO_DEV_ROCKCHIP                      policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_CRYPTO_DEV_ROCKCHIP_DEBUG                policy<{'arm64': 'n'}>
 CONFIG_CRYPTO_DEV_SA2UL                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CRYPTO_DEV_SAFEXCEL                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CRYPTO_DEV_SAHARA                        policy<{'amd64': '-', 'arm64': '-'}>
@@ -2410,6 +2415,7 @@ CONFIG_CRYPTO_ESSIV                             policy<{'amd64': 'y', 'arm64': '
 CONFIG_CRYPTO_FCRYPT                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CRYPTO_GHASH_ARM64_CE                    policy<{'arm64': 'y'}>
 CONFIG_CRYPTO_GHASH_CLMUL_NI_INTEL              policy<{'amd64': 'n'}>
+CONFIG_CRYPTO_HCTR2                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CRYPTO_KDF800108_CTR                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CRYPTO_KEYWRAP                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CRYPTO_KHAZAD                            policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -2435,8 +2441,12 @@ CONFIG_CRYPTO_NHPOLY1305_SSE2                   policy<{'amd64': 'y'}>
 CONFIG_CRYPTO_OFB                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CRYPTO_PCBC                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CRYPTO_PCRYPT                            policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_CRYPTO_POLY1305                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CRYPTO_POLY1305_NEON                     policy<{'arm64': 'y'}>
 CONFIG_CRYPTO_POLY1305_X86_64                   policy<{'amd64': 'y'}>
+CONFIG_CRYPTO_POLYVAL                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CRYPTO_POLYVAL_ARM64_CE                  policy<{'arm64': 'n'}>
+CONFIG_CRYPTO_POLYVAL_CLMUL_NI                  policy<{'amd64': 'n'}>
 CONFIG_CRYPTO_RMD160                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CRYPTO_SEED                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CRYPTO_SERPENT                           policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -2460,6 +2470,7 @@ CONFIG_CRYPTO_SM4                               policy<{'amd64': '-', 'arm64': '
 CONFIG_CRYPTO_SM4_AESNI_AVX2_X86_64             policy<{'amd64': 'n'}>
 CONFIG_CRYPTO_SM4_AESNI_AVX_X86_64              policy<{'amd64': 'n'}>
 CONFIG_CRYPTO_SM4_ARM64_CE                      policy<{'arm64': 'y'}>
+CONFIG_CRYPTO_SM4_ARM64_CE_BLK                  policy<{'arm64': 'n'}>
 CONFIG_CRYPTO_SM4_ARM64_CE_CCM                  policy<{'arm64': 'n'}>
 CONFIG_CRYPTO_SM4_ARM64_CE_GCM                  policy<{'arm64': 'n'}>
 CONFIG_CRYPTO_SM4_ARM64_NEON_BLK                policy<{'arm64': 'n'}>
@@ -2483,6 +2494,7 @@ CONFIG_CRYPTO_USER_API_SKCIPHER                 policy<{'amd64': 'y', 'arm64': '
 CONFIG_CRYPTO_VMAC                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CRYPTO_WP512                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CRYPTO_XCBC                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_CRYPTO_XCTR                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CRYPTO_XXHASH                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CRYPTO_ZSTD                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CUSE                                     policy<{'amd64': 'n', 'arm64': 'n'}>
