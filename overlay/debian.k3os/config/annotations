@@ -7078,6 +7078,8 @@ CONFIG_PDS_CORE                                 policy<{'amd64': 'n', 'arm64': '
 CONFIG_PDS_VDPA                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PDS_VFIO_PCI                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PEAQ_WMI                                 policy<{'amd64': '-'}>
+CONFIG_PECI                                     policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_PECI_CPU                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PECI_NPCM                                policy<{'arm64': '-'}>
 CONFIG_PERF_EVENTS_AMD_UNCORE                   policy<{'amd64': 'y'}>
 CONFIG_PERF_EVENTS_INTEL_CSTATE                 policy<{'amd64': 'y'}>
@@ -8799,6 +8801,9 @@ CONFIG_SENSORS_OXP                              policy<{'amd64': 'n'}>
 CONFIG_SENSORS_PC87360                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_PC87427                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SENSORS_PCF8591                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SENSORS_PECI                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_PECI_CPUTEMP                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SENSORS_PECI_DIMMTEMP                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_PIM4328                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_PLI1209BC                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SENSORS_PLI1209BC_REGULATOR              policy<{'amd64': '-', 'arm64': '-'}>
