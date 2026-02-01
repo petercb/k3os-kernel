@@ -2674,6 +2674,9 @@ CONFIG_DPTF_PCH_FIVR                            policy<{'amd64': '-'}>
 CONFIG_DPTF_POWER                               policy<{'amd64': '-'}>
 CONFIG_DRAGONRISE_FF                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DRBD_FAULT_INJECTION                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_DRM_ACCEL                                policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_DRM_ACCEL_HABANALABS                     policy<{'amd64': '-'}>
+CONFIG_DRM_ACCEL_IVPU                           policy<{'amd64': '-'}>
 CONFIG_DRM_ACCEL_QAIC                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DRM_AMDGPU                               policy<{'amd64': 'y', 'arm64': 'n'}>
 CONFIG_DRM_AMDGPU_SI                            policy<{'amd64': 'y', 'arm64': '-'}>
@@ -2707,6 +2710,7 @@ CONFIG_DRM_DEBUG_DP_MST_TOPOLOGY_REFS           policy<{'amd64': '-', 'arm64': '
 CONFIG_DRM_DEBUG_MODESET_LOCK                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DRM_DISPLAY_CONNECTOR                    policy<{'arm64': 'y'}>
 CONFIG_DRM_DISPLAY_HELPER                       policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_DRM_DP_AUX_BUS                           policy<{'arm64': '-'}>
 CONFIG_DRM_DP_AUX_CHARDEV                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_DRM_DP_CEC                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_DRM_DW_HDMI                              policy<{'arm64': 'y'}>
@@ -2761,13 +2765,16 @@ CONFIG_DRM_IMX_DCSS                             policy<{'amd64': '-', 'arm64': '
 CONFIG_DRM_IMX_LCDC                             policy<{'arm64': '-'}>
 CONFIG_DRM_IMX_LCDIF                            policy<{'arm64': '-'}>
 CONFIG_DRM_IMX_LDB_HELPER                       policy<{'arm64': '-'}>
+CONFIG_DRM_ITE_IT6505                           policy<{'arm64': 'n'}>
 CONFIG_DRM_ITE_IT66121                          policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_KMB_DISPLAY                          policy<{'arm64': '-'}>
 CONFIG_DRM_KMS_CMA_HELPER                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DRM_KOMEDA                               policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_LIMA                                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_LOAD_EDID_FIRMWARE                   policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_DRM_LOGICVC                              policy<{'arm64': 'n'}>
 CONFIG_DRM_LONTIUM_LT8912B                      policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_DRM_LONTIUM_LT9211                       policy<{'arm64': 'n'}>
 CONFIG_DRM_LONTIUM_LT9611                       policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_LONTIUM_LT9611UXC                    policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_LVDS_CODEC                           policy<{'amd64': '-', 'arm64': 'n'}>
@@ -2779,7 +2786,7 @@ CONFIG_DRM_MEGACHIPS_STDPXXXX_GE_B850V3_FW      policy<{'amd64': '-', 'arm64': '
 CONFIG_DRM_MESON                                policy<{'arm64': '-'}>
 CONFIG_DRM_MESON_DW_HDMI                        policy<{'arm64': '-'}>
 CONFIG_DRM_MESON_DW_MIPI_DSI                    policy<{'arm64': '-'}>
-CONFIG_DRM_MIPI_DBI                             policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_DRM_MIPI_DBI                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DRM_MSM                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DRM_MSM_DP                               policy<{'arm64': '-'}>
 CONFIG_DRM_MSM_DPU                              policy<{'arm64': '-'}>
@@ -2810,19 +2817,24 @@ CONFIG_DRM_PANEL_ABT_Y030XX067A                 policy<{'amd64': '-', 'arm64': '
 CONFIG_DRM_PANEL_ARM_VERSATILE                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_ASUS_Z00T_TM5P5_NT35596        policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_AUO_A030JTN01                  policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_DRM_PANEL_BOE_BF060Y8M_AJ0               policy<{'arm64': 'n'}>
 CONFIG_DRM_PANEL_BOE_HIMAX8279D                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_BOE_TV101WUM_NL6               policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_DSI_CM                         policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_DRM_PANEL_EBBG_FT8719                    policy<{'arm64': 'n'}>
 CONFIG_DRM_PANEL_EDP                            policy<{'arm64': 'n'}>
 CONFIG_DRM_PANEL_ELIDA_KD35T133                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_FEIXIN_K101_IM2BA02            policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_FEIYANG_FY07024DI26A30D        policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_DRM_PANEL_HIMAX_HX8394                   policy<{'arm64': 'n'}>
 CONFIG_DRM_PANEL_ILITEK_IL9322                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_ILITEK_ILI9341                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_ILITEK_ILI9881C                policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_INNOLUX_EJ030NA                policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_INNOLUX_P079ZCA                policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_DRM_PANEL_JADARD_JD9365DA_H3             policy<{'arm64': 'n'}>
 CONFIG_DRM_PANEL_JDI_LT070ME05000               policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_DRM_PANEL_JDI_R63452                     policy<{'arm64': 'n'}>
 CONFIG_DRM_PANEL_KHADAS_TS050                   policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_KINGDISPLAY_KD097D04           policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_LEADTEK_LTK050H3146W           policy<{'amd64': '-', 'arm64': 'n'}>
@@ -2830,14 +2842,20 @@ CONFIG_DRM_PANEL_LEADTEK_LTK500HD1829           policy<{'amd64': '-', 'arm64': '
 CONFIG_DRM_PANEL_LG_LB035Q02                    policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_LG_LG4573                      policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_LVDS                           policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_DRM_PANEL_MAGNACHIP_D53E6EA8966          policy<{'arm64': 'n'}>
 CONFIG_DRM_PANEL_MANTIX_MLAF057WE51             policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_MIPI_DBI                       policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_NEC_NL8048HL11                 policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_DRM_PANEL_NEWVISION_NV3051D              policy<{'arm64': 'n'}>
+CONFIG_DRM_PANEL_NEWVISION_NV3052C              policy<{'arm64': 'n'}>
 CONFIG_DRM_PANEL_NOVATEK_NT35510                policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_DRM_PANEL_NOVATEK_NT35560                policy<{'arm64': 'n'}>
+CONFIG_DRM_PANEL_NOVATEK_NT35950                policy<{'arm64': 'n'}>
+CONFIG_DRM_PANEL_NOVATEK_NT36523                policy<{'arm64': 'n'}>
 CONFIG_DRM_PANEL_NOVATEK_NT36672A               policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_NOVATEK_NT39016                policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_OLIMEX_LCD_OLINUXINO           policy<{'amd64': '-', 'arm64': 'n'}>
-CONFIG_DRM_PANEL_ORISETECH_OTA5601A             policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_DRM_PANEL_ORISETECH_OTA5601A             policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_ORISETECH_OTM8009A             policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_OSD_OSD101T2587_53TS           policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_PANASONIC_VVX10F034N00         policy<{'amd64': '-', 'arm64': 'n'}>
@@ -2849,6 +2867,8 @@ CONFIG_DRM_PANEL_SAMSUNG_ATNA33XC20             policy<{'amd64': '-', 'arm64': '
 CONFIG_DRM_PANEL_SAMSUNG_DB7430                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_SAMSUNG_LD9040                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_SAMSUNG_S6D16D0                policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_DRM_PANEL_SAMSUNG_S6D27A1                policy<{'arm64': 'n'}>
+CONFIG_DRM_PANEL_SAMSUNG_S6D7AA0                policy<{'arm64': 'n'}>
 CONFIG_DRM_PANEL_SAMSUNG_S6E3HA2                policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_SAMSUNG_S6E63J0X03             policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_SAMSUNG_S6E63M0                policy<{'amd64': '-', 'arm64': 'n'}>
@@ -2861,18 +2881,24 @@ CONFIG_DRM_PANEL_SEIKO_43WVF1G                  policy<{'amd64': '-', 'arm64': '
 CONFIG_DRM_PANEL_SHARP_LQ101R1SX01              policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_SHARP_LS037V7DW01              policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_SHARP_LS043T1LE01              policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_DRM_PANEL_SHARP_LS060T1SX01              policy<{'arm64': 'n'}>
 CONFIG_DRM_PANEL_SIMPLE                         policy<{'arm64': 'y'}>
 CONFIG_DRM_PANEL_SITRONIX_ST7701                policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_SITRONIX_ST7703                policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_SITRONIX_ST7789V               policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_SONY_ACX424AKP                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DRM_PANEL_SONY_ACX565AKM                 policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_DRM_PANEL_SONY_TD4353_JDI                policy<{'arm64': 'n'}>
+CONFIG_DRM_PANEL_SONY_TULIP_TRULY_NT35521       policy<{'arm64': 'n'}>
+CONFIG_DRM_PANEL_STARTEK_KD070FHFID015          policy<{'arm64': 'n'}>
 CONFIG_DRM_PANEL_TDO_TL070WSH30                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_TPO_TD028TTEC1                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_TPO_TD043MTEA1                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_TPO_TPG110                     policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_TRULY_NT35597_WQXGA            policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_DRM_PANEL_VISIONOX_R66451                policy<{'arm64': 'n'}>
 CONFIG_DRM_PANEL_VISIONOX_RM69299               policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_DRM_PANEL_VISIONOX_VTDR6130              policy<{'arm64': 'n'}>
 CONFIG_DRM_PANEL_WIDECHIPS_WS2401               policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANEL_XINPENG_XPP055C272             policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_PANFROST                             policy<{'amd64': '-', 'arm64': 'n'}>
@@ -2895,6 +2921,7 @@ CONFIG_DRM_RCAR_VSP                             policy<{'arm64': '-'}>
 CONFIG_DRM_RCAR_WRITEBACK                       policy<{'arm64': '-'}>
 CONFIG_DRM_ROCKCHIP                             policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_DRM_RZG2L_MIPI_DSI                       policy<{'arm64': '-'}>
+CONFIG_DRM_SAMSUNG_DSIM                         policy<{'arm64': 'n'}>
 CONFIG_DRM_SCHED                                policy<{'amd64': 'y', 'arm64': 'm'}>
 CONFIG_DRM_SHMOBILE                             policy<{'arm64': '-'}>
 CONFIG_DRM_SII902X                              policy<{'amd64': '-', 'arm64': 'n'}>
@@ -2902,7 +2929,9 @@ CONFIG_DRM_SII9234                              policy<{'amd64': '-', 'arm64': '
 CONFIG_DRM_SIL_SII8620                          policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_SIMPLE_BRIDGE                        policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_SPRD                                 policy<{'arm64': '-'}>
-CONFIG_DRM_SSD130X_SPI                          policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_DRM_SSD130X                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_DRM_SSD130X_I2C                          policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_DRM_SSD130X_SPI                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DRM_STM                                  policy<{'arm64': '-'}>
 CONFIG_DRM_STM_DSI                              policy<{'arm64': '-'}>
 CONFIG_DRM_SUBALLOC_HELPER                      policy<{'amd64': 'y', 'arm64': 'm'}>
@@ -2919,6 +2948,7 @@ CONFIG_DRM_TEGRA_DEBUG                          policy<{'amd64': '-', 'arm64': '
 CONFIG_DRM_TEGRA_STAGING                        policy<{'arm64': '-'}>
 CONFIG_DRM_THINE_THC63LVD1024                   policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_TIDSS                                policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_DRM_TI_DLPC3433                          policy<{'arm64': 'n'}>
 CONFIG_DRM_TI_SN65DSI83                         policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_TI_SN65DSI86                         policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_TI_TFP410                            policy<{'amd64': '-', 'arm64': 'n'}>
