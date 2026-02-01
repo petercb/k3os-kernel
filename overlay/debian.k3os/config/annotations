@@ -4997,6 +4997,7 @@ CONFIG_JOYSTICK_PSXPAD_SPI                      policy<{'amd64': '-', 'arm64': '
 CONFIG_JOYSTICK_PSXPAD_SPI_FF                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_JOYSTICK_PXRC                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_JOYSTICK_QWIIC                           policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_JOYSTICK_SENSEHAT                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_JOYSTICK_SIDEWINDER                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_JOYSTICK_SPACEBALL                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_JOYSTICK_SPACEORB                        policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -5670,6 +5671,7 @@ CONFIG_MFD_RT5033                               policy<{'amd64': 'n', 'arm64': '
 CONFIG_MFD_RT5120                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MFD_SC27XX_PMIC                          policy<{'arm64': '-'}>
 CONFIG_MFD_SI476X_CORE                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_MFD_SIMPLE_MFD_I2C                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MFD_SKY81452                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MFD_SL28CPLD                             policy<{'arm64': '-'}>
 CONFIG_MFD_SM501_GPIO                           policy<{'amd64': '-', 'arm64': '-'}>
