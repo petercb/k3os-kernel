@@ -8100,12 +8100,14 @@ CONFIG_RPCSEC_GSS_KRB5_ENCTYPES_AES_SHA2        policy<{'amd64': '-', 'arm64': '
 CONFIG_RPCSEC_GSS_KRB5_ENCTYPES_CAMELLIA        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RPMSG                                    policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_RPMSG_CHAR                               policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_RPMSG_CTRL                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_RPMSG_MTK_SCP                            policy<{'arm64': '-'}>
 CONFIG_RPMSG_NS                                 policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_RPMSG_QCOM_GLINK                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RPMSG_QCOM_GLINK_RPM                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_RPMSG_QCOM_GLINK_SMEM                    policy<{'arm64': '-'}>
 CONFIG_RPMSG_QCOM_SMD                           policy<{'arm64': '-'}>
+CONFIG_RPMSG_TTY                                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_RPMSG_VIRTIO                             policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_RPMSG_WWAN_CTRL                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RPR0521                                  policy<{'amd64': '-', 'arm64': 'n'}>
