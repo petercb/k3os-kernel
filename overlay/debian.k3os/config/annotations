@@ -11096,6 +11096,7 @@ CONFIG_USB_NET_SR9800                           policy<{'amd64': '-', 'arm64': '
 CONFIG_USB_NET_ZAURUS                           policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_USB_OHCI_HCD_PCI                         policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_USB_OHCI_HCD_PLATFORM                    policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_USB_ONBOARD_HUB                          policy<{'arm64': 'n'}>
 CONFIG_USB_OTG_DISABLE_EXTERNAL_HUB             policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_USB_OTG_FSM                              policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_USB_OXU210HP_HCD                         policy<{'amd64': 'n', 'arm64': 'n'}>
