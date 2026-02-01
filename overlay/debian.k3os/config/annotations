@@ -1278,10 +1278,19 @@ CONFIG_BATTERY_UG3105                           policy<{'amd64': 'n', 'arm64': '
 CONFIG_BAYCOM_PAR                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BAYCOM_SER_FDX                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BAYCOM_SER_HDX                           policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_BCACHE                                   policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_BCACHE_ASYNC_REGISTRATION                policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_BCACHE                                   policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_BCACHEFS_DEBUG                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_BCACHEFS_ERASURE_CODING                  policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_BCACHEFS_FS                              policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_BCACHEFS_LOCK_TIME_STATS                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_BCACHEFS_NO_LATENCY_ACCT                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_BCACHEFS_POSIX_ACL                       policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_BCACHEFS_QUOTA                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_BCACHEFS_SIX_OPTIMISTIC_SPIN             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_BCACHEFS_TESTS                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_BCACHE_ASYNC_REGISTRATION                policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_BCACHE_CLOSURES_DEBUG                    policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_BCACHE_DEBUG                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_BCACHE_DEBUG                             policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_BCH                                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BCM2711_THERMAL                          policy<{'arm64': 'y'}>
 CONFIG_BCM2835_MBOX                             policy<{'arm64': 'y'}>
@@ -1837,6 +1846,7 @@ CONFIG_CLK_TWL                                  policy<{'amd64': '-', 'arm64': '
 CONFIG_CLK_TWL6040                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CLK_VEXPRESS_OSC                         policy<{'arm64': '-'}>
 CONFIG_CLK_X1E80100_GCC                         policy<{'arm64': '-'}>
+CONFIG_CLOSURES                                 policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_CLS_U32_MARK                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CM32181                                  policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_CM3232                                   policy<{'amd64': '-', 'arm64': 'n'}>
@@ -2212,6 +2222,8 @@ CONFIG_CRAMFS                                   policy<{'amd64': 'n', 'arm64': '
 CONFIG_CRAMFS_BLOCKDEV                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CRAMFS_MTD                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CRC4                                     policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_CRC64                                    policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_CRC64_ROCKSOFT                           policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_CRC7                                     policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_CRC8                                     policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_CRC_ITU_T                                policy<{'amd64': 'y', 'arm64': 'y'}>
@@ -2279,6 +2291,7 @@ CONFIG_CRYPTO_CMAC                              policy<{'amd64': 'y', 'arm64': '
 CONFIG_CRYPTO_CRC32                             policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_CRYPTO_CRC32C_INTEL                      policy<{'amd64': 'n'}>
 CONFIG_CRYPTO_CRC32_PCLMUL                      policy<{'amd64': 'n'}>
+CONFIG_CRYPTO_CRC64_ROCKSOFT                    policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_CRYPTO_CRCT10DIF_ARM64_CE                policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_CRYPTO_CRCT10DIF_PCLMUL                  policy<{'amd64': 'y'}>
 CONFIG_CRYPTO_CRYPTD                            policy<{'amd64': 'y', 'arm64': 'y'}>
@@ -2506,6 +2519,7 @@ CONFIG_DE2104X                                  policy<{'amd64': 'n', 'arm64': '
 CONFIG_DE2104X_DSL                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DE4X5                                    policy<{'amd64': '-'}>
 CONFIG_DEBUG_BOOT_PARAMS                        policy<{'amd64': 'y'}>
+CONFIG_DEBUG_CLOSURES                           policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DEBUG_CREDENTIALS                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DEBUG_DEVRES                             policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_DEBUG_FORCE_FUNCTION_ALIGN_64B           policy<{'amd64': '-', 'arm64': '-'}>
@@ -5249,6 +5263,8 @@ CONFIG_LTR501                                   policy<{'amd64': '-', 'arm64': '
 CONFIG_LTRF216A                                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_LV0104CS                                 policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_LXT_PHY                                  policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_LZ4HC_COMPRESS                           policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_LZ4_COMPRESS                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_M62332                                   policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_MAC80211                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MAC80211_DEBUGFS                         policy<{'amd64': '-', 'arm64': '-'}>
@@ -7673,6 +7689,8 @@ CONFIG_RADIO_TEA5764                            policy<{'amd64': '-', 'arm64': '
 CONFIG_RADIO_TEF6862                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RADIO_WL1273                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RADIO_WL128X                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RAID6_PQ                                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RAID6_PQ_BENCHMARK                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RAID_ATTRS                               policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_RANDOMIZE_MEMORY_PHYSICAL_PADDING        policy<{'amd64': '0x0'}>
 CONFIG_RAPIDIO                                  policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -11774,6 +11792,7 @@ CONFIG_XILLYUSB                                 policy<{'amd64': 'n', 'arm64': '
 CONFIG_XIL_AXIS_FIFO                            policy<{'arm64': '-'}>
 CONFIG_XLNX_EVENT_MANAGER                       policy<{'arm64': '-'}>
 CONFIG_XLNX_R5_REMOTEPROC                       policy<{'arm64': '-'}>
+CONFIG_XOR_BLOCKS                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_XPOWER_PMIC_OPREGION                     policy<{'amd64': '-'}>
 CONFIG_XZ_DEC_TEST                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_YAM                                      policy<{'amd64': '-', 'arm64': '-'}>
@@ -11814,7 +11833,7 @@ CONFIG_ZRAM_WRITEBACK                           policy<{'amd64': '-', 'arm64': '
 CONFIG_ZSMALLOC                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ZSMALLOC_CHAIN_SIZE                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ZSMALLOC_STAT                            policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_ZSTD_COMPRESS                            policy<{'amd64': 'm', 'arm64': 'm'}>
+CONFIG_ZSTD_COMPRESS                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ZSWAP                                    policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_ZSWAP_COMPRESSOR_DEFAULT                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ZSWAP_COMPRESSOR_DEFAULT_842             policy<{'amd64': '-', 'arm64': '-'}>
