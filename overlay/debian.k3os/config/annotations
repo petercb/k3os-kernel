@@ -11897,6 +11897,7 @@ CONFIG_XILINX_PR_DECOUPLER                      policy<{'amd64': '-', 'arm64': '
 CONFIG_XILINX_SDFEC                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_XILINX_VCU                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_XILINX_WATCHDOG                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_XILINX_WINDOW_WATCHDOG                   policy<{'arm64': 'n'}>
 CONFIG_XILINX_XADC                              policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_XILINX_XDMA                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_XILINX_ZYNQMP_DMA                        policy<{'arm64': '-'}>
