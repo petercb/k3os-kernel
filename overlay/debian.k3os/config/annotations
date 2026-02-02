@@ -246,6 +246,12 @@ CONFIG_NOP_USB_XCEIV                            note<'boot essential on omap/hig
 CONFIG_NOUVEAU_LEGACY_CTX_SUPPORT               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NOUVEAU_LEGACY_CTX_SUPPORT               note<'TODO: update note'>
 
+CONFIG_NO_HZ_FULL                               policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_NO_HZ_FULL                               note<'LP: #2051342'>
+
+CONFIG_NO_HZ_IDLE                               policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_NO_HZ_IDLE                               note<'LP: #2051342'>
+
 CONFIG_NR_CPUS                                  policy<{'amd64': '512', 'arm64': '256'}>
 CONFIG_NR_CPUS                                  note<'TODO: update note'>
 
@@ -287,6 +293,18 @@ CONFIG_PSI_DEFAULT_DISABLED                     note<'TODO: update note'>
 
 CONFIG_RCU_CPU_STALL_TIMEOUT                    policy<{'amd64': '21', 'arm64': '21'}>
 CONFIG_RCU_CPU_STALL_TIMEOUT                    note<'LP:1991951'>
+
+CONFIG_RCU_LAZY                                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RCU_LAZY                                 note<TODO: update note>
+
+CONFIG_RCU_LAZY_DEFAULT_OFF                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RCU_LAZY_DEFAULT_OFF                     note<TODO: update note>
+
+CONFIG_RCU_NOCB_CPU                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RCU_NOCB_CPU                             note<TODO: update note>
+
+CONFIG_RCU_NOCB_CPU_DEFAULT_ALL                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_RCU_NOCB_CPU_DEFAULT_ALL                 note<TODO: update note>
 
 CONFIG_REGULATOR_FIXED_VOLTAGE                  policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_REGULATOR_FIXED_VOLTAGE                  note<'boot essential on arm'>
@@ -2239,6 +2257,8 @@ CONFIG_COMPAL_LAPTOP                            policy<{'amd64': '-'}>
 CONFIG_COMPAT_32BIT_TIME                        policy<{'amd64': 'y', 'arm64': 'n'}>
 CONFIG_COMPAT_NETLINK_MESSAGES                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CONSOLE_POLL                             policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CONTEXT_TRACKING_USER                    policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_CONTEXT_TRACKING_USER_FORCE              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CONTIG_ALLOC                             policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_CORDIC                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CORTINA_PHY                              policy<{'amd64': 'n', 'arm64': 'y'}>
@@ -10506,6 +10526,7 @@ CONFIG_THUNDER_NIC_BGX                          policy<{'amd64': 'n', 'arm64': '
 CONFIG_THUNDER_NIC_PF                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_THUNDER_NIC_RGX                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_THUNDER_NIC_VF                           policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TICK_CPU_ACCOUNTING                      policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_TIFM_7XX1                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TIFM_CORE                                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TIGON3                                   policy<{'amd64': 'y', 'arm64': 'y'}>
@@ -11736,6 +11757,8 @@ CONFIG_VIRTIO_VDPA                              policy<{'amd64': '-', 'arm64': '
 CONFIG_VIRTIO_VFIO_PCI                          policy<{'amd64': 'n'}>
 CONFIG_VIRTIO_VSOCKETS                          policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_VIRTIO_VSOCKETS_COMMON                   policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_VIRT_CPU_ACCOUNTING                      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_VIRT_CPU_ACCOUNTING_GEN                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_VIRT_WIFI                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_VISCONTI_WATCHDOG                        policy<{'arm64': '-'}>
 CONFIG_VISL_DEBUGFS                             policy<{'amd64': '-', 'arm64': '-'}>
