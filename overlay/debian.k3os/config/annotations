@@ -189,6 +189,9 @@ CONFIG_KGDB_SERIAL_CONSOLE                      note<'TODO: update note'>
 CONFIG_KVM                                      policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_KVM                                      note<'LP:1532886'>
 
+CONFIG_LATENCYTOP                               policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_LATENCYTOP                               note<'LP: #2051342'>
+
 CONFIG_MEMORY_HOTPLUG_DEFAULT_ONLINE            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MEMORY_HOTPLUG_DEFAULT_ONLINE            note<'TODO: update note'>
 
