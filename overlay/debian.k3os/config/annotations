@@ -127,7 +127,7 @@ CONFIG_HZ_1000                                  policy<{'amd64': 'n', 'arm64': '
 CONFIG_HZ_1000                                  note<'LP: #2051342'>
 
 CONFIG_HZ_250                                   policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_HZ_250                                   note<TODO: update note>
+CONFIG_HZ_250                                   note<'TODO: update note'>
 
 CONFIG_I2C_CHARDEV                              policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_I2C_CHARDEV                              note<'LP:1417032'>
@@ -4162,6 +4162,7 @@ CONFIG_HSR                                      policy<{'amd64': 'y', 'arm64': '
 CONFIG_HT16K33                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_HTC_I2CPLD                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_HTC_PASIC3                               policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_HTE                                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HTE_TEGRA194                             policy<{'arm64': '-'}>
 CONFIG_HTE_TEGRA194_TEST                        policy<{'arm64': '-'}>
 CONFIG_HTS221                                   policy<{'amd64': '-', 'arm64': 'n'}>
