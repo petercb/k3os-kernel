@@ -295,16 +295,16 @@ CONFIG_RCU_CPU_STALL_TIMEOUT                    policy<{'amd64': '21', 'arm64': 
 CONFIG_RCU_CPU_STALL_TIMEOUT                    note<'LP:1991951'>
 
 CONFIG_RCU_LAZY                                 policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_RCU_LAZY                                 note<TODO: update note>
+CONFIG_RCU_LAZY                                 note<'TODO: update note'>
 
 CONFIG_RCU_LAZY_DEFAULT_OFF                     policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_RCU_LAZY_DEFAULT_OFF                     note<TODO: update note>
+CONFIG_RCU_LAZY_DEFAULT_OFF                     note<'TODO: update note'>
 
 CONFIG_RCU_NOCB_CPU                             policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_RCU_NOCB_CPU                             note<TODO: update note>
+CONFIG_RCU_NOCB_CPU                             note<'TODO: update note'>
 
 CONFIG_RCU_NOCB_CPU_DEFAULT_ALL                 policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_RCU_NOCB_CPU_DEFAULT_ALL                 note<TODO: update note>
+CONFIG_RCU_NOCB_CPU_DEFAULT_ALL                 note<'TODO: update note'>
 
 CONFIG_REGULATOR_FIXED_VOLTAGE                  policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_REGULATOR_FIXED_VOLTAGE                  note<'boot essential on arm'>
@@ -7052,10 +7052,12 @@ CONFIG_PCIE_CADENCE_PLAT                        policy<{'arm64': '-'}>
 CONFIG_PCIE_CADENCE_PLAT_EP                     policy<{'arm64': '-'}>
 CONFIG_PCIE_CADENCE_PLAT_HOST                   policy<{'arm64': 'n'}>
 CONFIG_PCIE_DPC                                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_PCIE_DW                                  policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_PCIE_DW_EP                               policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_PCIE_DW_PLAT                             policy<{'amd64': 'y', 'arm64': '-'}>
+CONFIG_PCIE_DW_HOST                             policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_PCIE_DW_PLAT                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PCIE_DW_PLAT_EP                          policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_PCIE_DW_PLAT_HOST                        policy<{'amd64': 'y', 'arm64': 'n'}>
+CONFIG_PCIE_DW_PLAT_HOST                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PCIE_HISI_ERR                            policy<{'arm64': 'n'}>
 CONFIG_PCIE_HISI_STB                            policy<{'arm64': '-'}>
 CONFIG_PCIE_IPROC                               policy<{'arm64': 'y'}>
