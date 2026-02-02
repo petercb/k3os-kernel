@@ -5213,6 +5213,7 @@ CONFIG_LCD_OTM3225A                             policy<{'amd64': '-', 'arm64': '
 CONFIG_LCD_PLATFORM                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_LCD_TDO24M                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_LCD_VGG2432A4                            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_LDISC_AUTOLOAD                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_LDM_DEBUG                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_LDM_PARTITION                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_LEDS_88PM860X                            policy<{'amd64': '-', 'arm64': '-'}>
