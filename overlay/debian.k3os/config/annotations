@@ -5093,6 +5093,7 @@ CONFIG_JSA1212                                  policy<{'amd64': '-', 'arm64': '
 CONFIG_K3_DMA                                   policy<{'arm64': '-'}>
 CONFIG_K3_RTI_WATCHDOG                          policy<{'arm64': '-'}>
 CONFIG_K3_THERMAL                               policy<{'arm64': '-'}>
+CONFIG_KALLSYMS_ALL                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_KCSAN                                    policy<{'amd64': 'n', 'arm64': '-'}>
 CONFIG_KDB_CONTINUE_CATASTROPHIC                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_KDB_DEFAULT_ENABLE                       policy<{'amd64': '-', 'arm64': '-'}>
@@ -5369,7 +5370,7 @@ CONFIG_LIST_HARDENED                            policy<{'amd64': 'y', 'arm64': '
 CONFIG_LITEX                                    policy<{'arm64': '-'}>
 CONFIG_LITEX_LITEETH                            policy<{'arm64': 'n'}>
 CONFIG_LITEX_SOC_CONTROLLER                     policy<{'amd64': '-', 'arm64': 'n'}>
-CONFIG_LIVEPATCH                                policy<{'amd64': 'n'}>
+CONFIG_LIVEPATCH                                policy<{'amd64': '-'}>
 CONFIG_LLC                                      policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_LLC2                                     policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_LMK04832                                 policy<{'amd64': '-', 'arm64': 'n'}>
