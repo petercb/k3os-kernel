@@ -4368,7 +4368,7 @@ CONFIG_IIO_BUFFER                               policy<{'amd64': '-', 'arm64': '
 CONFIG_IIO_BUFFER_CB                            policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_IIO_BUFFER_DMA                           policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_IIO_BUFFER_DMAENGINE                     policy<{'amd64': '-', 'arm64': 'n'}>
-CONFIG_IIO_BUFFER_HW_CONSUMER                   policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_IIO_BUFFER_HW_CONSUMER                   policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_IIO_CONFIGFS                             policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_IIO_CONSUMERS_PER_TRIGGER                policy<{'amd64': '-', 'arm64': '2'}>
 CONFIG_IIO_CROS_EC_ACCEL_LEGACY                 policy<{'amd64': '-', 'arm64': '-'}>
