@@ -4108,7 +4108,9 @@ CONFIG_HISI_ACC_VFIO_PCI                        policy<{'arm64': '-'}>
 CONFIG_HISI_DMA                                 policy<{'arm64': '-'}>
 CONFIG_HISI_FEMAC                               policy<{'arm64': 'n'}>
 CONFIG_HISI_HIKEY_USB                           policy<{'arm64': 'n'}>
+CONFIG_HISI_PCIE_PMU                            policy<{'arm64': 'n'}>
 CONFIG_HISI_PMU                                 policy<{'arm64': 'n'}>
+CONFIG_HISI_PTT                                 policy<{'arm64': 'n'}>
 CONFIG_HISI_THERMAL                             policy<{'arm64': '-'}>
 CONFIG_HIST_TRIGGERS                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HIST_TRIGGERS_DEBUG                      policy<{'amd64': '-', 'arm64': '-'}>
@@ -4125,6 +4127,7 @@ CONFIG_HNS3_DCB                                 policy<{'arm64': '-'}>
 CONFIG_HNS3_ENET                                policy<{'arm64': '-'}>
 CONFIG_HNS3_HCLGE                               policy<{'arm64': '-'}>
 CONFIG_HNS3_HCLGEVF                             policy<{'arm64': '-'}>
+CONFIG_HNS3_PMU                                 policy<{'arm64': 'n'}>
 CONFIG_HNS_DSAF                                 policy<{'arm64': 'y'}>
 CONFIG_HNS_ENET                                 policy<{'arm64': 'y'}>
 CONFIG_HNS_MDIO                                 policy<{'arm64': 'y'}>
