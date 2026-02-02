@@ -1621,7 +1621,7 @@ CONFIG_BXT_WC_PMIC_OPREGION                     policy<{'amd64': '-'}>
 CONFIG_BYTCRC_PMIC_OPREGION                     policy<{'amd64': '-'}>
 CONFIG_C2PORT                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_C2PORT_DURAMAR_2150                      policy<{'amd64': '-'}>
-CONFIG_CACHEFILES                               policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_CACHEFILES                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CACHEFILES_DEBUG                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CACHEFILES_ERROR_INJECTION               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CACHEFILES_ONDEMAND                      policy<{'amd64': '-', 'arm64': '-'}>
@@ -1738,6 +1738,7 @@ CONFIG_CEC_SECO_RC                              policy<{'amd64': '-'}>
 CONFIG_CEC_STM32                                policy<{'arm64': '-'}>
 CONFIG_CEC_TEGRA                                policy<{'arm64': '-'}>
 CONFIG_CEPH_FS                                  policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_CEPH_FSCACHE                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CEPH_FS_SECURITY_LABEL                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CEPH_LIB                                 policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_CEPH_LIB_USE_DNS_RESOLVER                policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -1837,6 +1838,7 @@ CONFIG_CHT_DC_TI_PMIC_OPREGION                  policy<{'amd64': '-'}>
 CONFIG_CHT_WC_PMIC_OPREGION                     policy<{'amd64': '-'}>
 CONFIG_CICADA_PHY                               policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_CIFS                                     policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_CIFS_FSCACHE                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CIFS_POSIX                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CIFS_ROOT                                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CIFS_SMB_DIRECT                          policy<{'amd64': '-', 'arm64': '-'}>
@@ -3621,7 +3623,9 @@ CONFIG_FRAMER_PEF2256                           policy<{'arm64': '-'}>
 CONFIG_FRAME_POINTER                            policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_FRAME_WARN                               policy<{'amd64': '2048', 'arm64': '2048'}>
 CONFIG_FRONTSWAP                                policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_FSCACHE_STATS                            policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_FSCACHE                                  policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_FSCACHE_DEBUG                            policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_FSCACHE_STATS                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_FSI                                      policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_FSI_MASTER_ASPEED                        policy<{'arm64': '-'}>
 CONFIG_FSI_MASTER_GPIO                          policy<{'arm64': '-'}>
@@ -6628,6 +6632,7 @@ CONFIG_NFSD_V4_SECURITY_LABEL                   policy<{'amd64': '-', 'arm64': '
 CONFIG_NFS_ACL_SUPPORT                          policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_NFS_DEBUG                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NFS_FS                                   policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_NFS_FSCACHE                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NFS_SWAP                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_NFS_V2                                   policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_NFS_V3                                   policy<{'amd64': 'y', 'arm64': 'y'}>
