@@ -4226,11 +4226,11 @@ CONFIG_I2C_CHT_WC                               policy<{'amd64': '-'}>
 CONFIG_I2C_CP2615                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_I2C_CROS_EC_TUNNEL                       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_I2C_DEMUX_PINCTRL                        policy<{'arm64': '-'}>
-CONFIG_I2C_DESIGNWARE_BAYTRAIL                  policy<{'amd64': 'n'}>
-CONFIG_I2C_DESIGNWARE_CORE                      policy<{'amd64': 'm', 'arm64': 'y'}>
+CONFIG_I2C_DESIGNWARE_BAYTRAIL                  policy<{'amd64': '-'}>
+CONFIG_I2C_DESIGNWARE_CORE                      policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_I2C_DESIGNWARE_PCI                       policy<{'amd64': 'n', 'arm64': 'y'}>
-CONFIG_I2C_DESIGNWARE_PLATFORM                  policy<{'amd64': 'm', 'arm64': 'y'}>
-CONFIG_I2C_DESIGNWARE_SLAVE                     policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_I2C_DESIGNWARE_PLATFORM                  policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_I2C_DESIGNWARE_SLAVE                     policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_I2C_DIOLAN_U2C                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_I2C_DLN2                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_I2C_FSI                                  policy<{'arm64': '-'}>
