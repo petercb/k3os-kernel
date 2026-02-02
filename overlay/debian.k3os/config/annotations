@@ -123,6 +123,12 @@ CONFIG_HSA_AMD_P2P                              note<'TODO: update note'>
 CONFIG_HSU_DMA                                  policy<{'amd64': '-'}>
 CONFIG_HSU_DMA                                  note<'required by CONFIG_SERIAL_8250_MID (LP: #2009283)'>
 
+CONFIG_HZ_1000                                  policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HZ_1000                                  note<'LP: #2051342'>
+
+CONFIG_HZ_250                                   policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_HZ_250                                   note<TODO: update note>
+
 CONFIG_I2C_CHARDEV                              policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_I2C_CHARDEV                              note<'LP:1417032'>
 
@@ -4202,6 +4208,7 @@ CONFIG_HYPERV_NET                               policy<{'amd64': 'y', 'arm64': '
 CONFIG_HYPERV_STORAGE                           policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_HYPERV_UTILS                             policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_HYPERV_VSOCKETS                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HZ                                       policy<{'amd64': '250', 'arm64': '250'}>
 CONFIG_I2CR_SCOM                                policy<{'arm64': '-'}>
 CONFIG_I2C_ALGOBIT                              policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_I2C_ALGOPCA                              policy<{'amd64': '-', 'arm64': '-'}>
