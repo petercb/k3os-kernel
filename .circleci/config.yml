@@ -12,13 +12,13 @@ parameters:
     default: "6.8.0"
   ubuntu_build:
     type: string
-    default: "101"
+    default: "106"
   ubuntu_flavour:
     type: string
     default: "generic"
   abi_version:
     type: string
-    default: "101"
+    default: "106"
 
 executors:
   build:

@@ -9077,6 +9077,7 @@ CONFIG_SERIAL_SH_SCI_NR_UARTS                   policy<{'arm64': '-'}>
 CONFIG_SERIAL_SIFIVE                            policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_SERIAL_SPRD                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SERIAL_STM32                             policy<{'arm64': '-'}>
+CONFIG_SERIAL_STM32_CONSOLE                     policy<{'arm64': '-'}>
 CONFIG_SERIAL_TEGRA                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SERIAL_TEGRA_TCU                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SERIAL_TEGRA_TCU_CONSOLE                 policy<{'amd64': '-', 'arm64': '-'}>
