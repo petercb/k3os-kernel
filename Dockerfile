@@ -25,8 +25,7 @@ RUN <<-EOF
     sed -i 's/^Types:.*$/Types: deb deb-src/' /etc/apt/sources.list.d/ubuntu.sources
     apt-get update
     apt-get build-dep -y --no-install-recommends \
-        linux \
-        linux-image-unsigned-${IMAGE_VERSION}
+        linux=${FULL_VERSION}
     apt-get install -y --no-install-recommends \
         cpio \
         dwarves \

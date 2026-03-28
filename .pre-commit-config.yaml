@@ -35,6 +35,6 @@ repos:
           - pre-commit
       - id: check-annotations
         name: Check for forbidden configs in annotations
-        entry: CONFIG_CC_CAN_LINK|CONFIG_CC_CAN_LINK_STATIC
+        entry: CONFIG_CC_CAN_LINK|CONFIG_CC_CAN_LINK_STATIC|CONFIG_CC_VERSION_TEXT
         language: pygrep
         files: overlay/debian.k3os/config/annotations

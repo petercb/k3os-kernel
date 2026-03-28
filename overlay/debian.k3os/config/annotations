@@ -4093,6 +4093,7 @@ CONFIG_HID_TWINHAN                              policy<{'amd64': 'n', 'arm64': '
 CONFIG_HID_U2FZERO                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HID_UCLOGIC                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HID_UDRAW_PS3                            policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_HID_UNIVERSAL_PIDFF                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_HID_VIEWSONIC                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HID_VIVALDI                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HID_VIVALDI_COMMON                       policy<{'amd64': '-', 'arm64': '-'}>
@@ -10626,9 +10627,8 @@ CONFIG_TI_TLC4541                               policy<{'amd64': '-', 'arm64': '
 CONFIG_TI_TMAG5273                              policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_TI_TSC2046                               policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_TLAN                                     policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_TLS                                      policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_TLS_DEVICE                               policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_TLS_TOE                                  policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_TLS                                      policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_TLS_DEVICE                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TMD_HERMES                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TMP006                                   policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_TMP007                                   policy<{'amd64': '-', 'arm64': 'n'}>
