@@ -40,11 +40,11 @@ cp -a "${KERNEL_WORK}"/debian.master/reconstruct "${KERNEL_WORK}/debian.${KERNEL
 pushd "${KERNEL_WORK}"
 debian/rules clean
 
-if [ "${UPDATECONFIGS:-no}" == "yes" ]; then
+if [ "${CONFIGMODE:-no}" != "no" ]; then
     apt-get update -q
     apt-get --assume-yes -q install --no-install-recommends \
         gcc-aarch64-linux-gnu gcc-x86-64-linux-gnu
-    if ! debian/rules updateconfigs
+    if ! debian/rules ${CONFIGMODE}configs
     then
         sed -i -e "/^CONFIG_CC_CAN_LINK/d" -e "/^CONFIG_CC_VERSION_TEXT/d" debian.k3os/config/annotations
         cp debian.k3os/config/annotations \
