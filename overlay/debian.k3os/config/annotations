@@ -947,15 +947,17 @@ CONFIG_ARCH_INLINE_WRITE_UNLOCK_IRQRESTORE      policy<{'arm64': 'y'}>
 CONFIG_ARCH_INTEL_SOCFPGA                       policy<{'arm64': 'n'}>
 CONFIG_ARCH_K3                                  policy<{'arm64': 'n'}>
 CONFIG_ARCH_KEEMBAY                             policy<{'arm64': 'n'}>
-CONFIG_ARCH_LAYERSCAPE                          policy<{'arm64': 'n'}>
+CONFIG_ARCH_LAYERSCAPE                          policy<{'arm64': '-'}>
 CONFIG_ARCH_LG1K                                policy<{'arm64': 'n'}>
 CONFIG_ARCH_MA35                                policy<{'arm64': 'n'}>
 CONFIG_ARCH_MEDIATEK                            policy<{'arm64': 'n'}>
 CONFIG_ARCH_MEMORY_PROBE                        policy<{'amd64': '-'}>
 CONFIG_ARCH_MESON                               policy<{'arm64': 'n'}>
 CONFIG_ARCH_MVEBU                               policy<{'arm64': 'n'}>
-CONFIG_ARCH_MXC                                 policy<{'arm64': 'n'}>
+CONFIG_ARCH_MXC                                 policy<{'arm64': '-'}>
 CONFIG_ARCH_NPCM                                policy<{'arm64': 'n'}>
+CONFIG_ARCH_NXP                                 policy<{'arm64': 'n'}>
+CONFIG_ARCH_PENSANDO                            policy<{'arm64': 'n'}>
 CONFIG_ARCH_PROC_KCORE_TEXT                     policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_ARCH_QCOM                                policy<{'arm64': 'n'}>
 CONFIG_ARCH_R8A774A1                            policy<{'arm64': '-'}>
@@ -983,7 +985,7 @@ CONFIG_ARCH_RCAR_GEN3                           policy<{'arm64': '-'}>
 CONFIG_ARCH_REALTEK                             policy<{'arm64': 'n'}>
 CONFIG_ARCH_RENESAS                             policy<{'arm64': 'n'}>
 CONFIG_ARCH_RZG2L                               policy<{'arm64': '-'}>
-CONFIG_ARCH_S32                                 policy<{'arm64': 'n'}>
+CONFIG_ARCH_S32                                 policy<{'arm64': '-'}>
 CONFIG_ARCH_SEATTLE                             policy<{'arm64': 'n'}>
 CONFIG_ARCH_SPARX5                              policy<{'arm64': 'n'}>
 CONFIG_ARCH_SPRD                                policy<{'arm64': 'n'}>
