@@ -23,6 +23,7 @@ fi
 : "${KERNEL_VERSION=$(yq '.parameters.kernel_version.default' .circleci/config.yml)}"
 : "${UBUNTU_BUILD=$(yq '.parameters.ubuntu_build.default' .circleci/config.yml)}"
 : "${UBUNTU_FLAVOUR=$(yq '.parameters.ubuntu_flavour.default' .circleci/config.yml)}"
+: "${UBUNTU_NAME=$(yq '.parameters.ubuntu_name.default' .circleci/config.yml)}"
 : "${ABI_VERSION=$(yq '.parameters.abi_version.default' .circleci/config.yml)}"
 : "${IMAGE_TAG=${KERNEL_VERSION}-${UBUNTU_BUILD}-${UBUNTU_FLAVOUR}-${TARGETARCH}}"
 : "${REPO=petercb}"

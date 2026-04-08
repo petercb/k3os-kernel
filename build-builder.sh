@@ -20,5 +20,6 @@ docker build \
     --build-arg "KERNEL_VERSION=${KERNEL_VERSION}" \
     --build-arg "UBUNTU_BUILD=${UBUNTU_BUILD}" \
     --build-arg "UBUNTU_FLAVOUR=${UBUNTU_FLAVOUR}" \
+    --build-arg "UBUNTU_NAME=${UBUNTU_NAME}" \
     --build-arg "ABI_VERSION=${ABI_VERSION}" \
     .

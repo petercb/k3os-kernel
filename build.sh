@@ -30,7 +30,7 @@ VERSION="${FULL_VERSION%.*}-${KERNEL_FLAVOUR}"
 mkdir -p "${KERNEL_WORK}"
 
 rsync -a "${PROJECT_ROOT}/overlay/" "${KERNEL_WORK}"
-cp -a "${KERNEL_WORK}/debian/changelog" "${KERNEL_WORK}/debian.${KERNEL_FLAVOUR}/"
+cp -a "${KERNEL_WORK}/debian.master/changelog" "${KERNEL_WORK}/debian.${KERNEL_FLAVOUR}/"
 cp -a "${KERNEL_WORK}/debian.master/control.stub.in" "${KERNEL_WORK}/debian.${KERNEL_FLAVOUR}/"
 cp -a "${KERNEL_WORK}/debian.master/control.d/generic.inclusion-list" "${KERNEL_WORK}/debian.${KERNEL_FLAVOUR}/control.d/k3os.inclusion-list"
 cp -a "${KERNEL_WORK}"/debian.master/control.d/*.stub "${KERNEL_WORK}/debian.${KERNEL_FLAVOUR}/control.d/"

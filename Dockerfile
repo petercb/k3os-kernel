@@ -1,11 +1,14 @@
 # syntax=docker/dockerfile:1
 
-FROM buildpack-deps:noble
+ARG UBUNTU_NAME
+
+FROM buildpack-deps:${UBUNTU_NAME}
 
 ARG TARGETARCH
 ARG KERNEL_VERSION
 ARG UBUNTU_BUILD
 ARG UBUNTU_FLAVOUR
+ARG UBUNTU_NAME
 ARG ABI_VERSION
 ARG IMAGE_VERSION="${KERNEL_VERSION}-${UBUNTU_BUILD}-${UBUNTU_FLAVOUR}"
 ARG FULL_VERSION="${KERNEL_VERSION}-${UBUNTU_BUILD}.${ABI_VERSION}"
@@ -24,8 +27,7 @@ WORKDIR /usr/src
 RUN <<-EOF
     sed -i 's/^Types:.*$/Types: deb deb-src/' /etc/apt/sources.list.d/ubuntu.sources
     apt-get update
-    apt-get build-dep -y --no-install-recommends \
-        linux=${FULL_VERSION}
+    apt-get build-dep -y --no-install-recommends linux
     apt-get install -y --no-install-recommends \
         cpio \
         dwarves \
@@ -37,14 +39,14 @@ RUN <<-EOF
         rsync \
         squashfs-tools
     [ "${TARGETARCH}" == "arm64" ] && apt-get install -y linux-firmware-raspi
-    apt-get source --no-install-recommends \
-        linux=${FULL_VERSION}
     apt-get clean
     rm -rf /var/lib/apt/lists/*
 EOF
 
 WORKDIR "${KERNEL_WORK}"
 RUN <<-EOF
+    git clone --depth 1 --branch "Ubuntu-${FULL_VERSION}" \
+        "https://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/+git/${UBUNTU_NAME}" .
     chmod a+x debian/rules
     chmod a+x debian/scripts/*
     chmod a+x debian/scripts/misc/*

@@ -12,13 +12,16 @@ parameters:
     default: "6.8.0"
   ubuntu_build:
     type: string
-    default: "106"
+    default: "107"
   ubuntu_flavour:
     type: string
     default: "generic"
+  ubuntu_name:
+    type: string
+    default: "noble"
   abi_version:
     type: string
-    default: "106"
+    default: "107"
 
 executors:
   build:
@@ -72,13 +75,6 @@ jobs:
           docker-password: GITHUB_TOKEN
           docker-username: CIRCLE_PROJECT_USERNAME
           registry: ${REGISTRY}
-      - run:
-          name: Check if image exists
-          command: |
-            if DOCKER_CLI_EXPERIMENTAL=enabled docker manifest inspect ${REGISTRY}/${IMAGE_FQN}:${IMAGE_TAG} > /dev/null 2>&1; then
-              echo "Image ${REGISTRY}/${IMAGE_FQN}:${IMAGE_TAG} already exists. Skipping build."
-              circleci-agent step halt
-            fi
       - docker/build:
           image: ${IMAGE_FQN}
           registry: ${REGISTRY}
