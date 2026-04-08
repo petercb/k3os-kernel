@@ -250,7 +250,7 @@ CONFIG_NET_DROP_MONITOR                         policy<{'amd64': 'n', 'arm64': '
 CONFIG_NET_DROP_MONITOR                         note<'LP #1660634'>
 
 CONFIG_NET_VENDOR_EMULEX                        policy<{'amd64': 'y', 'arm64': 'n'}>
-CONFIG_NET_VENDOR_EMULEX                        note<TODO: update note>
+CONFIG_NET_VENDOR_EMULEX                        note<'TODO: update note'>
 
 CONFIG_NOP_USB_XCEIV                            policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_NOP_USB_XCEIV                            note<'boot essential on omap/highbank'>
@@ -11405,7 +11405,7 @@ CONFIG_USB_TEST                                 policy<{'amd64': 'n', 'arm64': '
 CONFIG_USB_TMC                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_USB_TRANCEVIBRATOR                       policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_USB_U132_HCD                             policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_USB_UAS                                  policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_USB_UAS                                  policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_USB_UEAGLEATM                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_USB_ULPI                                 policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_USB_ULPI_BUS                             policy<{'amd64': 'n', 'arm64': 'y'}>
