@@ -10991,13 +10991,13 @@ CONFIG_USBIP_VHCI_NR_HCS                        policy<{'amd64': '-', 'arm64': '
 CONFIG_USBIP_VUDC                               policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_USBPCWATCHDOG                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_USB_ACM                                  policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_USB_ADUTUX                               policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_USB_ADUTUX                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_USB_AIRSPY                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_USB_ALI_M5632                            policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_USB_AMD5536UDC                           policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_USB_AN2720                               policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_USB_ANNOUNCE_NEW_DEVICES                 policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_USB_APPLEDISPLAY                         policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_USB_APPLEDISPLAY                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_USB_ARMLINUX                             policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_USB_ATM                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_USB_AUDIO                                policy<{'amd64': '-', 'arm64': '-'}>
@@ -11089,8 +11089,8 @@ CONFIG_USB_EHCI_HCD_ORION                       policy<{'amd64': '-', 'arm64': '
 CONFIG_USB_EHCI_ROOT_HUB_TT                     policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_USB_EHCI_TEGRA                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_USB_EHSET_TEST_FIXTURE                   policy<{'amd64': 'n', 'arm64': 'y'}>
-CONFIG_USB_EMI26                                policy<{'amd64': 'n', 'arm64': 'y'}>
-CONFIG_USB_EMI62                                policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_USB_EMI26                                policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_USB_EMI62                                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_USB_EMXX                                 policy<{'arm64': '-'}>
 CONFIG_USB_EPSON2888                            policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_USB_ETH                                  policy<{'amd64': '-', 'arm64': 'n'}>
@@ -11224,7 +11224,7 @@ CONFIG_USB_LCD                                  policy<{'amd64': 'n', 'arm64': '
 CONFIG_USB_LD                                   policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_USB_LEDS_TRIGGER_USBPORT                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_USB_LED_TRIG                             policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_USB_LEGOTOWER                            policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_USB_LEGOTOWER                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_USB_LGM_PHY                              policy<{'amd64': 'n'}>
 CONFIG_USB_LIBCOMPOSITE                         policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_USB_LINK_LAYER_TEST                      policy<{'amd64': 'n', 'arm64': 'y'}>
@@ -11234,7 +11234,7 @@ CONFIG_USB_MA901                                policy<{'amd64': '-', 'arm64': '
 CONFIG_USB_MASS_STORAGE                         policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_USB_MAX3420_UDC                          policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_USB_MAX3421_HCD                          policy<{'amd64': '-', 'arm64': 'n'}>
-CONFIG_USB_MDC800                               policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_USB_MDC800                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_USB_MICROTEK                             policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_USB_MIDI_GADGET                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_USB_MON                                  policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -11403,7 +11403,7 @@ CONFIG_USB_TEGRA_PHY                            policy<{'arm64': '-'}>
 CONFIG_USB_TEGRA_XUDC                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_USB_TEST                                 policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_USB_TMC                                  policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_USB_TRANCEVIBRATOR                       policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_USB_TRANCEVIBRATOR                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_USB_U132_HCD                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_USB_UAS                                  policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_USB_UEAGLEATM                            policy<{'amd64': '-', 'arm64': '-'}>
