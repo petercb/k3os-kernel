@@ -86,6 +86,7 @@ jobs:
             --build-arg KERNEL_VERSION=<< pipeline.parameters.kernel_version >>
             --build-arg UBUNTU_BUILD=<< pipeline.parameters.ubuntu_build >>
             --build-arg UBUNTU_FLAVOUR=<< pipeline.parameters.ubuntu_flavour >>
+            --build-arg UBUNTU_NAME=<< pipeline.parameters.ubuntu_name >>
             --build-arg ABI_VERSION=<< pipeline.parameters.abi_version >>
       - docker/push:
           image: ${IMAGE_FQN}
