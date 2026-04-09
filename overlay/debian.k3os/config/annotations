@@ -5266,7 +5266,7 @@ CONFIG_LAN743X                                  policy<{'amd64': 'n', 'arm64': '
 CONFIG_LAN966X_DCB                              policy<{'arm64': '-'}>
 CONFIG_LAN966X_SWITCH                           policy<{'arm64': '-'}>
 CONFIG_LANMEDIA                                 policy<{'amd64': '-'}>
-CONFIG_LAPB                                     policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_LAPB                                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_LAPBETHER                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_LATTICE_ECP3_CONFIG                      policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_LCD2S                                    policy<{'amd64': '-', 'arm64': '-'}>
