@@ -19,10 +19,10 @@ CONFIG_ARCH_MMAP_RND_BITS                       policy<{'amd64': '28', 'arm64': 
 CONFIG_ARCH_MMAP_RND_BITS                       note<'TODO: update note'>
 
 CONFIG_ARCH_MMAP_RND_COMPAT_BITS                policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_ARCH_MMAP_RND_COMPAT_BITS                note<TODO: update note>
+CONFIG_ARCH_MMAP_RND_COMPAT_BITS                note<'TODO: update note'>
 
 CONFIG_ARMV8_DEPRECATED                         policy<{'arm64': '-'}>
-CONFIG_ARMV8_DEPRECATED                         note<TODO: update note>
+CONFIG_ARMV8_DEPRECATED                         note<'TODO: update note'>
 
 CONFIG_ARM_SMMU_DISABLE_BYPASS_BY_DEFAULT       policy<{'arm64': 'y'}>
 CONFIG_ARM_SMMU_DISABLE_BYPASS_BY_DEFAULT       note<'LP:1845820'>
@@ -49,7 +49,7 @@ CONFIG_BT_HS                                    policy<{'amd64': '-', 'arm64': '
 CONFIG_BT_HS                                    note<'https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00435.html'>
 
 CONFIG_CP15_BARRIER_EMULATION                   policy<{'arm64': '-'}>
-CONFIG_CP15_BARRIER_EMULATION                   note<TODO: update note>
+CONFIG_CP15_BARRIER_EMULATION                   note<'TODO: update note'>
 
 CONFIG_CPU_FREQ_GOV_CONSERVATIVE                policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_CPU_FREQ_GOV_CONSERVATIVE                note<'not autoloadable'>
@@ -391,7 +391,7 @@ CONFIG_SERIAL_SH_SCI_EARLYCON                   policy<{'amd64': '-', 'arm64': '
 CONFIG_SERIAL_SH_SCI_EARLYCON                   note<'TODO: update note'>
 
 CONFIG_SETEND_EMULATION                         policy<{'arm64': '-'}>
-CONFIG_SETEND_EMULATION                         note<TODO: update note>
+CONFIG_SETEND_EMULATION                         note<'TODO: update note'>
 
 CONFIG_SMC                                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SMC                                      note<'TODO: update note'>
@@ -505,7 +505,7 @@ CONFIG_SUN6I_RTC_CCU                            policy<{'arm64': '-'}>
 CONFIG_SUN6I_RTC_CCU                            note<'TODO: update note'>
 
 CONFIG_SWP_EMULATION                            policy<{'arm64': '-'}>
-CONFIG_SWP_EMULATION                            note<TODO: update note>
+CONFIG_SWP_EMULATION                            note<'TODO: update note'>
 
 CONFIG_SYSFB_SIMPLEFB                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SYSFB_SIMPLEFB                           note<'LP: #1965303'>
@@ -923,7 +923,6 @@ CONFIG_ARCH_BERLIN                              policy<{'arm64': 'n'}>
 CONFIG_ARCH_BITMAIN                             policy<{'arm64': 'n'}>
 CONFIG_ARCH_BRCMSTB                             policy<{'arm64': 'y'}>
 CONFIG_ARCH_ENABLE_MEMORY_HOTREMOVE             policy<{'amd64': '-', 'arm64': 'y'}>
-CONFIG_ARCH_ENABLE_THP_MIGRATION                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ARCH_FORCE_MAX_ORDER                     policy<{'arm64': '10'}>
 CONFIG_ARCH_HAS_CC_PLATFORM                     policy<{'amd64': '-'}>
 CONFIG_ARCH_HAS_CPU_PASID                       policy<{'amd64': '-'}>
@@ -1020,7 +1019,6 @@ CONFIG_ARCH_VISCONTI                            policy<{'arm64': 'n'}>
 CONFIG_ARCH_WANT_COMPAT_IPC_PARSE_VERSION       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ARCH_WANT_FRAME_POINTERS                 policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_ARCH_WANT_OLD_COMPAT_IPC                 policy<{'amd64': '-'}>
-CONFIG_ARCH_WANT_PMD_MKWRITE                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ARCH_XGENE                               policy<{'arm64': 'n'}>
 CONFIG_ARCH_ZYNQMP                              policy<{'arm64': 'n'}>
 CONFIG_ARCNET                                   policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -2681,7 +2679,7 @@ CONFIG_DEVICE_MIGRATION                         policy<{'amd64': '-', 'arm64': '
 CONFIG_DEVICE_PRIVATE                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DEVMEM                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_DEV_APPLETALK                            policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_DEV_DAX                                  policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_DEV_DAX                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_DEV_DAX_CXL                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DEV_DAX_HMEM                             policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DEV_DAX_HMEM_DEVICES                     policy<{'amd64': '-', 'arm64': '-'}>
@@ -8042,7 +8040,6 @@ CONFIG_RDS                                      policy<{'amd64': 'y', 'arm64': '
 CONFIG_RDS_RDMA                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RDS_TCP                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_RD_LZO                                   policy<{'amd64': 'n', 'arm64': 'y'}>
-CONFIG_READ_ONLY_THP_FOR_FS                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REALTEK_AUTOPM                           policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_REALTEK_PHY                              policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_REBOOT_MODE                              policy<{'arm64': '-'}>
@@ -10674,7 +10671,6 @@ CONFIG_THINKPAD_ACPI_HOTKEY_POLL                policy<{'amd64': '-'}>
 CONFIG_THINKPAD_ACPI_UNSAFE_LEDS                policy<{'amd64': '-'}>
 CONFIG_THINKPAD_ACPI_VIDEO                      policy<{'amd64': '-'}>
 CONFIG_THINKPAD_LMI                             policy<{'amd64': 'n'}>
-CONFIG_THP_SWAP                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_THRUSTMASTER_FF                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_THUNDERX2_PMU                            policy<{'arm64': '-'}>
 CONFIG_THUNDER_NIC_BGX                          policy<{'amd64': 'n', 'arm64': '-'}>
@@ -10903,10 +10899,6 @@ CONFIG_TRACER_SNAPSHOT                          policy<{'amd64': 'n', 'arm64': '
 CONFIG_TRACER_SNAPSHOT_PER_CPU_SWAP             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TRACE_EVENT_INJECT                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TRACING_MAP                              policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_TRANSPARENT_HUGEPAGE                     policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_TRANSPARENT_HUGEPAGE_ALWAYS              policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_TRANSPARENT_HUGEPAGE_MADVISE             policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_TRANSPARENT_HUGEPAGE_NEVER               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TRIM_UNUSED_KSYMS                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TRUSTED_KEYS                             policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_TRUSTED_KEYS_TPM                         policy<{'amd64': '-', 'arm64': '-'}>
