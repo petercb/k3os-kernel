@@ -18,8 +18,11 @@ CONFIG_ARCH_BCM                                 note<'RPi4 support'>
 CONFIG_ARCH_MMAP_RND_BITS                       policy<{'amd64': '28', 'arm64': '18'}>
 CONFIG_ARCH_MMAP_RND_BITS                       note<'TODO: update note'>
 
-CONFIG_ARCH_MMAP_RND_COMPAT_BITS                policy<{'amd64': '8', 'arm64': '11'}>
-CONFIG_ARCH_MMAP_RND_COMPAT_BITS                note<'TODO: update note'>
+CONFIG_ARCH_MMAP_RND_COMPAT_BITS                policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_ARCH_MMAP_RND_COMPAT_BITS                note<TODO: update note>
+
+CONFIG_ARMV8_DEPRECATED                         policy<{'arm64': '-'}>
+CONFIG_ARMV8_DEPRECATED                         note<TODO: update note>
 
 CONFIG_ARM_SMMU_DISABLE_BYPASS_BY_DEFAULT       policy<{'arm64': 'y'}>
 CONFIG_ARM_SMMU_DISABLE_BYPASS_BY_DEFAULT       note<'LP:1845820'>
@@ -44,6 +47,9 @@ CONFIG_BPF_UNPRIV_DEFAULT_OFF                   note<'security reason'>
 
 CONFIG_BT_HS                                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BT_HS                                    note<'https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00435.html'>
+
+CONFIG_CP15_BARRIER_EMULATION                   policy<{'arm64': '-'}>
+CONFIG_CP15_BARRIER_EMULATION                   note<TODO: update note>
 
 CONFIG_CPU_FREQ_GOV_CONSERVATIVE                policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_CPU_FREQ_GOV_CONSERVATIVE                note<'not autoloadable'>
@@ -384,6 +390,9 @@ CONFIG_SERIAL_SH_SCI_CONSOLE                    note<'TODO: update note'>
 CONFIG_SERIAL_SH_SCI_EARLYCON                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SERIAL_SH_SCI_EARLYCON                   note<'TODO: update note'>
 
+CONFIG_SETEND_EMULATION                         policy<{'arm64': '-'}>
+CONFIG_SETEND_EMULATION                         note<TODO: update note>
+
 CONFIG_SMC                                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SMC                                      note<'TODO: update note'>
 
@@ -494,6 +503,9 @@ CONFIG_STACK_VALIDATION                         note<'TODO: update note'>
 
 CONFIG_SUN6I_RTC_CCU                            policy<{'arm64': '-'}>
 CONFIG_SUN6I_RTC_CCU                            note<'TODO: update note'>
+
+CONFIG_SWP_EMULATION                            policy<{'arm64': '-'}>
+CONFIG_SWP_EMULATION                            note<TODO: update note>
 
 CONFIG_SYSFB_SIMPLEFB                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SYSFB_SIMPLEFB                           note<'LP: #1965303'>
@@ -1005,7 +1017,9 @@ CONFIG_ARCH_TEGRA_234_SOC                       policy<{'arm64': '-'}>
 CONFIG_ARCH_THUNDER                             policy<{'arm64': 'n'}>
 CONFIG_ARCH_THUNDER2                            policy<{'arm64': 'n'}>
 CONFIG_ARCH_VISCONTI                            policy<{'arm64': 'n'}>
+CONFIG_ARCH_WANT_COMPAT_IPC_PARSE_VERSION       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ARCH_WANT_FRAME_POINTERS                 policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_ARCH_WANT_OLD_COMPAT_IPC                 policy<{'amd64': '-'}>
 CONFIG_ARCH_WANT_PMD_MKWRITE                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ARCH_XGENE                               policy<{'arm64': 'n'}>
 CONFIG_ARCH_ZYNQMP                              policy<{'arm64': 'n'}>
@@ -1022,6 +1036,9 @@ CONFIG_ARCNET_RAW                               policy<{'amd64': '-', 'arm64': '
 CONFIG_ARCNET_RIM_I                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_ARCX_ANYBUS_CONTROLLER                   policy<{'arm64': '-'}>
 CONFIG_ARC_EMAC_CORE                            policy<{'arm64': '-'}>
+CONFIG_ARM64_ERRATUM_1418040                    policy<{'arm64': '-'}>
+CONFIG_ARM64_ERRATUM_1742098                    policy<{'arm64': '-'}>
+CONFIG_ARM64_ERRATUM_845719                     policy<{'arm64': '-'}>
 CONFIG_ARMADA_37XX_CLK                          policy<{'arm64': '-'}>
 CONFIG_ARMADA_37XX_RWTM_MBOX                    policy<{'arm64': '-'}>
 CONFIG_ARMADA_37XX_WATCHDOG                     policy<{'arm64': '-'}>
@@ -1215,6 +1232,7 @@ CONFIG_ATM_TCP                                  policy<{'amd64': '-', 'arm64': '
 CONFIG_ATM_ZATM                                 policy<{'amd64': '-'}>
 CONFIG_ATM_ZATM_DEBUG                           policy<{'amd64': '-'}>
 CONFIG_ATP                                      policy<{'amd64': '-'}>
+CONFIG_AUDIT_COMPAT_GENERIC                     policy<{'arm64': '-'}>
 CONFIG_AUTOFS4_FS                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_AUTOFS_FS                                policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_AUXDISPLAY                               policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -2270,8 +2288,15 @@ CONFIG_COMMON_CLK_ZYNQMP                        policy<{'amd64': '-', 'arm64': '
 CONFIG_COMMON_RESET_HI3660                      policy<{'arm64': '-'}>
 CONFIG_COMMON_RESET_HI6220                      policy<{'arm64': '-'}>
 CONFIG_COMPAL_LAPTOP                            policy<{'amd64': '-'}>
+CONFIG_COMPAT                                   policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_COMPAT_32                                policy<{'amd64': '-'}>
 CONFIG_COMPAT_32BIT_TIME                        policy<{'amd64': 'y', 'arm64': 'n'}>
+CONFIG_COMPAT_ALIGNMENT_FIXUPS                  policy<{'arm64': '-'}>
+CONFIG_COMPAT_BINFMT_ELF                        policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_COMPAT_FOR_U64_ALIGNMENT                 policy<{'amd64': '-'}>
 CONFIG_COMPAT_NETLINK_MESSAGES                  policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_COMPAT_OLD_SIGACTION                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_COMPAT_VDSO                              policy<{'amd64': '-'}>
 CONFIG_CONSOLE_POLL                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CONTEXT_TRACKING_USER                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CONTEXT_TRACKING_USER_FORCE              policy<{'amd64': '-', 'arm64': '-'}>
@@ -3943,12 +3968,15 @@ CONFIG_HARDLOCKUP_DETECTOR_BUDDY                policy<{'amd64': '-', 'arm64': '
 CONFIG_HARDLOCKUP_DETECTOR_COUNTS_HRTIMER       policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_HARDLOCKUP_DETECTOR_PERF                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_HARDLOCKUP_DETECTOR_PREFER_BUDDY         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_HAVE_ARCH_COMPAT_MMAP_BASES              policy<{'amd64': '-'}>
 CONFIG_HAVE_ARCH_KCSAN                          policy<{'amd64': 'y', 'arm64': '-'}>
+CONFIG_HAVE_ARCH_MMAP_RND_COMPAT_BITS           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_HAVE_ARCH_NODE_DEV_GROUP                 policy<{'amd64': '-'}>
 CONFIG_HAVE_ARCH_USERFAULTFD_MINOR              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_HAVE_ARCH_USERFAULTFD_WP                 policy<{'amd64': '-'}>
 CONFIG_HAVE_BOOTMEM_INFO_NODE                   policy<{'amd64': '-'}>
 CONFIG_HAVE_KPROBES_ON_FTRACE                   policy<{'amd64': 'y', 'arm64': '-'}>
+CONFIG_HAVE_UID16                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_HBMC_AM654                               policy<{'arm64': '-'}>
 CONFIG_HD44780                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_HD44780_COMMON                           policy<{'amd64': '-', 'arm64': '-'}>
@@ -4347,6 +4375,8 @@ CONFIG_I6300ESB_WDT                             policy<{'amd64': 'n', 'arm64': '
 CONFIG_I82092                                   policy<{'amd64': '-'}>
 CONFIG_I8254                                    policy<{'amd64': '-'}>
 CONFIG_I8K                                      policy<{'amd64': '-'}>
+CONFIG_IA32_EMULATION                           policy<{'amd64': 'n'}>
+CONFIG_IA32_EMULATION_DEFAULT_DISABLED          policy<{'amd64': '-'}>
 CONFIG_IAQCORE                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_IAVF                                     policy<{'amd64': 'y', 'arm64': '-'}>
 CONFIG_IB700_WDT                                policy<{'amd64': 'n'}>
@@ -5211,8 +5241,10 @@ CONFIG_KS8851_MLL                               policy<{'amd64': 'n', 'arm64': '
 CONFIG_KSM                                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_KSZ884X_PCI                              policy<{'amd64': 'n', 'arm64': '-'}>
 CONFIG_KUNPENG_HCCS                             policy<{'arm64': '-'}>
+CONFIG_KUSER_HELPERS                            policy<{'arm64': '-'}>
 CONFIG_KVM_AMD                                  policy<{'amd64': 'y'}>
 CONFIG_KVM_AMD_SEV                              policy<{'amd64': '-'}>
+CONFIG_KVM_COMPAT                               policy<{'amd64': '-'}>
 CONFIG_KVM_EXTERNAL_WRITE_TRACKING              policy<{'amd64': '-'}>
 CONFIG_KVM_GENERIC_MEMORY_ATTRIBUTES            policy<{'amd64': '-'}>
 CONFIG_KVM_GENERIC_PRIVATE_MEM                  policy<{'amd64': '-'}>
@@ -6347,6 +6379,7 @@ CONFIG_NETFILTER_NETLINK_OSF                    policy<{'amd64': 'y', 'arm64': '
 CONFIG_NETFILTER_NETLINK_QUEUE                  policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_NETFILTER_SYNPROXY                       policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_NETFILTER_XTABLES                        policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_NETFILTER_XTABLES_COMPAT                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NETFILTER_XT_CONNMARK                    policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_NETFILTER_XT_MARK                        policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_NETFILTER_XT_MATCH_ADDRTYPE              policy<{'amd64': 'y', 'arm64': 'y'}>
@@ -6997,6 +7030,7 @@ CONFIG_OF_FPGA_REGION                           policy<{'arm64': '-'}>
 CONFIG_OF_GPIO_MM_GPIOCHIP                      policy<{'arm64': '-'}>
 CONFIG_OF_PMEM                                  policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_OF_RECONFIG_NOTIFIER_ERROR_INJECT        policy<{'arm64': '-'}>
+CONFIG_OLD_SIGSUSPEND3                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_OMAP2PLUS_MBOX                           policy<{'arm64': '-'}>
 CONFIG_OMAP_DM_TIMER                            policy<{'arm64': '-'}>
 CONFIG_OMAP_GPMC                                policy<{'arm64': '-'}>
@@ -10528,6 +10562,7 @@ CONFIG_SYSTEM_REVOCATION_KEYS                   policy<{'amd64': '-', 'arm64': '
 CONFIG_SYSTEM_REVOCATION_LIST                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SYSTEM_TRUSTED_KEYS                      policy<{'amd64': '""', 'arm64': '""'}>
 CONFIG_SYSV68_PARTITION                         policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_SYSVIPC_COMPAT                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SYSV_FS                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SYS_SUPPORTS_SH_CMT                      policy<{'arm64': '-'}>
 CONFIG_SYS_SUPPORTS_SH_TMU                      policy<{'arm64': '-'}>
@@ -10968,6 +11003,7 @@ CONFIG_UFS_DEBUG                                policy<{'amd64': '-', 'arm64': '
 CONFIG_UFS_FS                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_UFS_FS_WRITE                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_UHID                                     policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_UID16                                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_UIO                                      policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_UIO_AEC                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_UIO_CIF                                  policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -12099,7 +12135,7 @@ CONFIG_XFRM_INTERFACE                           policy<{'amd64': 'n', 'arm64': '
 CONFIG_XFRM_IPCOMP                              policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_XFRM_STATISTICS                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_XFRM_USER                                policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_XFRM_USER_COMPAT                         policy<{'amd64': 'n', 'arm64': '-'}>
+CONFIG_XFRM_USER_COMPAT                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_XFS_FS                                   policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_XFS_RT                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_XGENE_DMA                                policy<{'arm64': '-'}>
