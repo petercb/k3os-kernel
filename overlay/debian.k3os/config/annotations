@@ -579,8 +579,8 @@ CONFIG_X86_POWERNOW_K8                          note<'not autoloadable'>
 CONFIG_X86_SPEEDSTEP_CENTRINO                   policy<{'amd64': 'n'}>
 CONFIG_X86_SPEEDSTEP_CENTRINO                   note<'not autoloadable'>
 
-CONFIG_X86_UV                                   policy<{'amd64': 'n'}>
-CONFIG_X86_UV                                   note<'LP:1863810'>
+CONFIG_X86_UV                                   policy<{'amd64': '-'}>
+CONFIG_X86_UV                                   note<'TODO: update note'>
 
 CONFIG_XEN_ACPI_PROCESSOR                       policy<{'amd64': '-'}>
 CONFIG_XEN_ACPI_PROCESSOR                       note<'TODO: update note'>
@@ -12033,12 +12033,15 @@ CONFIG_X86_AMD_PLATFORM_DEVICE                  policy<{'amd64': 'n'}>
 CONFIG_X86_ANDROID_TABLETS                      policy<{'amd64': '-'}>
 CONFIG_X86_CPUID                                policy<{'amd64': 'y'}>
 CONFIG_X86_CPU_RESCTRL                          policy<{'amd64': 'n'}>
+CONFIG_X86_EXTENDED_PLATFORM                    policy<{'amd64': 'n'}>
+CONFIG_X86_GOLDFISH                             policy<{'amd64': '-'}>
 CONFIG_X86_INTEL_LPSS                           policy<{'amd64': 'n'}>
+CONFIG_X86_INTEL_MID                            policy<{'amd64': '-'}>
 CONFIG_X86_MCELOG_LEGACY                        policy<{'amd64': 'n'}>
 CONFIG_X86_MCE_INJECT                           policy<{'amd64': 'n'}>
 CONFIG_X86_MEM_ENCRYPT                          policy<{'amd64': '-'}>
 CONFIG_X86_MSR                                  policy<{'amd64': 'y'}>
-CONFIG_X86_NUMACHIP                             policy<{'amd64': 'n'}>
+CONFIG_X86_NUMACHIP                             policy<{'amd64': '-'}>
 CONFIG_X86_P4_CLOCKMOD                          policy<{'amd64': 'n'}>
 CONFIG_X86_PKG_TEMP_THERMAL                     policy<{'amd64': 'y'}>
 CONFIG_X86_PLATFORM_DRIVERS_DELL                policy<{'amd64': 'n'}>
@@ -12049,6 +12052,7 @@ CONFIG_X86_SGX                                  policy<{'amd64': 'n'}>
 CONFIG_X86_SGX_KVM                              policy<{'amd64': '-'}>
 CONFIG_X86_SPEEDSTEP_LIB                        policy<{'amd64': '-'}>
 CONFIG_X86_VERBOSE_BOOTUP                       policy<{'amd64': 'y'}>
+CONFIG_X86_VSMP                                 policy<{'amd64': '-'}>
 CONFIG_X86_X32                                  policy<{'amd64': '-'}>
 CONFIG_X9250                                    policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_XDP_SOCKETS                              policy<{'amd64': 'n', 'arm64': 'n'}>
