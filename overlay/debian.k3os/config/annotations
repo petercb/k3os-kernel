@@ -2629,6 +2629,8 @@ CONFIG_DEBUG_CREDENTIALS                        policy<{'amd64': '-', 'arm64': '
 CONFIG_DEBUG_DEVRES                             policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_DEBUG_FORCE_FUNCTION_ALIGN_64B           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DEBUG_GPIO                               policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_DEBUG_INFO_DWARF4                        policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_DEBUG_INFO_DWARF5                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_DEBUG_KERNEL_DC                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DEBUG_KMAP_LOCAL_FORCE_MAP               policy<{'amd64': 'n'}>
 CONFIG_DEBUG_LIST                               policy<{'amd64': 'y', 'arm64': 'y'}>
