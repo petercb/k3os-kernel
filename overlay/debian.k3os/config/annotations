@@ -882,6 +882,7 @@ CONFIG_AMD_SFH_HID                              policy<{'amd64': 'n'}>
 CONFIG_AMD_XGBE                                 policy<{'amd64': 'n', 'arm64': '-'}>
 CONFIG_AMD_XGBE_DCB                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_AMD_XGBE_HAVE_ECC                        policy<{'amd64': '-'}>
+CONFIG_AMIGA_PARTITION                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_AMILO_RFKILL                             policy<{'amd64': '-'}>
 CONFIG_AMLOGIC_THERMAL                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_AMPERE_CORESIGHT_PMU_ARCH_SYSTEM_PMU     policy<{'arm64': '-'}>
@@ -1566,6 +1567,7 @@ CONFIG_BRIDGE_MRP                               policy<{'amd64': 'n', 'arm64': '
 CONFIG_BRIDGE_NETFILTER                         policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_BRIDGE_NF_EBTABLES                       policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_BROADCOM_PHY                             policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_BSD_DISKLABEL                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BSD_PROCESS_ACCT_V3                      policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_BT                                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BTREE                                    policy<{'amd64': '-', 'arm64': '-'}>
@@ -3375,14 +3377,16 @@ CONFIG_EEPROM_IDT_89HPESX                       policy<{'amd64': 'n', 'arm64': '
 CONFIG_EEPROM_LEGACY                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_EEPROM_MAX6875                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_EFI_ARMSTUB_DTB_LOADER                   policy<{'amd64': '-', 'arm64': 'y'}>
-CONFIG_EFI_BOOTLOADER_CONTROL                   policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_EFI_BOOTLOADER_CONTROL                   policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_EFI_CAPSULE_LOADER                       policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_EFI_COCO_SECRET                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_EFI_EMBEDDED_FIRMWARE                    policy<{'amd64': '-'}>
 CONFIG_EFI_FAKE_MEMMAP                          policy<{'amd64': 'n', 'arm64': '-'}>
 CONFIG_EFI_MIXED                                policy<{'amd64': 'n', 'arm64': '-'}>
 CONFIG_EFI_RCI2_TABLE                           policy<{'amd64': 'n', 'arm64': '-'}>
+CONFIG_EFI_SECRET                               policy<{'amd64': 'n'}>
 CONFIG_EFI_SOFT_RESERVE                         policy<{'amd64': '-', 'arm64': 'y'}>
-CONFIG_EFI_TEST                                 policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_EFI_TEST                                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_EFI_VARS_PSTORE                          policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_EFI_VARS_PSTORE_DEFAULT_DISABLE          policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_EFS_FS                                   policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -5160,6 +5164,7 @@ CONFIG_K3_DMA                                   policy<{'arm64': '-'}>
 CONFIG_K3_RTI_WATCHDOG                          policy<{'arm64': '-'}>
 CONFIG_K3_THERMAL                               policy<{'arm64': '-'}>
 CONFIG_KALLSYMS_ALL                             policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_KARMA_PARTITION                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_KCSAN                                    policy<{'amd64': 'n', 'arm64': '-'}>
 CONFIG_KDB_CONTINUE_CATASTROPHIC                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_KDB_DEFAULT_ENABLE                       policy<{'amd64': '-', 'arm64': '-'}>
@@ -5499,6 +5504,7 @@ CONFIG_MACSEC                                   policy<{'amd64': 'n', 'arm64': '
 CONFIG_MACVLAN                                  policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_MACVTAP                                  policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_MAC_EMUMOUSEBTN                          policy<{'amd64': '-'}>
+CONFIG_MAC_PARTITION                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MADERA_IRQ                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MAG3110                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MAGIC_SYSRQ_DEFAULT_ENABLE               policy<{'amd64': '0x1', 'arm64': '0x1'}>
@@ -5892,6 +5898,7 @@ CONFIG_MICROSEMI_PHY                            policy<{'amd64': 'n', 'arm64': '
 CONFIG_MICROSOFT_MANA                           policy<{'amd64': 'n', 'arm64': '-'}>
 CONFIG_MII                                      policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_MINIX_FS                                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_MINIX_SUBPARTITION                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_MIPI_I3C_HCI                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MIPI_I3C_HCI_PCI                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MISC_ALCOR_PCI                           policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -7050,6 +7057,7 @@ CONFIG_OPTEE_INSECURE_LOAD_IMAGE                policy<{'arm64': '-'}>
 CONFIG_OPTEE_SHM_NUM_PRIV_PAGES                 policy<{'arm64': '-'}>
 CONFIG_ORANGEFS_FS                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_ORINOCO_USB                              policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_OSF_PARTITION                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_OVERLAY_FS                               policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_OVERLAY_FS_XINO_AUTO                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_OWL_DMA                                  policy<{'arm64': '-'}>
@@ -8259,7 +8267,6 @@ CONFIG_RENESAS_RZN1WDT                          policy<{'arm64': '-'}>
 CONFIG_RENESAS_USB_DMAC                         policy<{'arm64': '-'}>
 CONFIG_RENESAS_WDT                              policy<{'arm64': '-'}>
 CONFIG_RESET_A10SR                              policy<{'arm64': '-'}>
-CONFIG_RESET_ATTACK_MITIGATION                  policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_RESET_BERLIN                             policy<{'arm64': '-'}>
 CONFIG_RESET_BRCMSTB                            policy<{'arm64': 'y'}>
 CONFIG_RESET_BRCMSTB_RESCAL                     policy<{'arm64': 'y'}>
@@ -9241,6 +9248,7 @@ CONFIG_SF_PDMA                                  policy<{'amd64': '-', 'arm64': '
 CONFIG_SGETMASK_SYSCALL                         policy<{'amd64': 'y', 'arm64': '-'}>
 CONFIG_SGI_GRU                                  policy<{'amd64': '-'}>
 CONFIG_SGI_GRU_DEBUG                            policy<{'amd64': '-'}>
+CONFIG_SGI_PARTITION                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SGI_XP                                   policy<{'amd64': '-'}>
 CONFIG_SG_SPLIT                                 policy<{'arm64': '-'}>
 CONFIG_SHIFT_FS                                 policy<{'amd64': '-', 'arm64': '-'}>
@@ -10247,6 +10255,7 @@ CONFIG_SOC_TI                                   policy<{'amd64': 'n', 'arm64': '
 CONFIG_SOFTLOCKUP_DETECTOR                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SOFT_WATCHDOG                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SOFT_WATCHDOG_PRETIMEOUT                 policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_SOLARIS_X86_PARTITION                    policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SONYPI_COMPAT                            policy<{'amd64': '-'}>
 CONFIG_SONY_FF                                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SONY_LAPTOP                              policy<{'amd64': '-'}>
@@ -10499,6 +10508,7 @@ CONFIG_SUNXI_NMI_INTC                           policy<{'arm64': '-'}>
 CONFIG_SUNXI_RSB                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SUNXI_SRAM                               policy<{'arm64': '-'}>
 CONFIG_SUNXI_WATCHDOG                           policy<{'arm64': '-'}>
+CONFIG_SUN_PARTITION                            policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_SURFACE3_WMI                             policy<{'amd64': '-'}>
 CONFIG_SURFACE_3_BUTTON                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_SURFACE_3_POWER_OPREGION                 policy<{'amd64': '-', 'arm64': '-'}>
@@ -11021,6 +11031,7 @@ CONFIG_UNISYS_VISORBUS                          policy<{'amd64': '-'}>
 CONFIG_UNISYS_VISORHBA                          policy<{'amd64': '-'}>
 CONFIG_UNISYS_VISORINPUT                        policy<{'amd64': '-'}>
 CONFIG_UNISYS_VISORNIC                          policy<{'amd64': '-'}>
+CONFIG_UNIXWARE_DISKLABEL                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_UNIX_DIAG                                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_UNWINDER_GUESS                           policy<{'amd64': '-'}>
 CONFIG_UNWINDER_ORC                             policy<{'amd64': 'y'}>
