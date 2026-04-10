@@ -7914,6 +7914,7 @@ CONFIG_QCOM_PDC                                 policy<{'arm64': '-'}>
 CONFIG_QCOM_PDR_HELPERS                         policy<{'arm64': '-'}>
 CONFIG_QCOM_PIL_INFO                            policy<{'arm64': '-'}>
 CONFIG_QCOM_PMIC_GLINK                          policy<{'arm64': '-'}>
+CONFIG_QCOM_PMIC_PDCHARGER_ULOG                 policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_QCOM_Q6V5_ADSP                           policy<{'arm64': '-'}>
 CONFIG_QCOM_Q6V5_COMMON                         policy<{'arm64': '-'}>
 CONFIG_QCOM_Q6V5_MSS                            policy<{'arm64': '-'}>
