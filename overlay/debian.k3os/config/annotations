@@ -1235,6 +1235,7 @@ CONFIG_AUDIT_COMPAT_GENERIC                     policy<{'arm64': '-'}>
 CONFIG_AUTOFS4_FS                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_AUTOFS_FS                                policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_AUXDISPLAY                               policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_AUXILIARY_BUS                            policy<{'amd64': 'y', 'arm64': '-'}>
 CONFIG_AX25                                     policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_AX25_DAMA_SLAVE                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_AX88796B_PHY                             policy<{'amd64': 'n', 'arm64': 'y'}>
@@ -1431,8 +1432,8 @@ CONFIG_BERLIN2_ADC                              policy<{'arm64': '-'}>
 CONFIG_BFQ_CGROUP_DEBUG                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BFQ_GROUP_IOSCHED                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BFS_FS                                   policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_BGMAC                                    policy<{'arm64': 'y'}>
-CONFIG_BGMAC_PLATFORM                           policy<{'arm64': 'y'}>
+CONFIG_BGMAC                                    policy<{'arm64': '-'}>
+CONFIG_BGMAC_PLATFORM                           policy<{'arm64': 'n'}>
 CONFIG_BH1750                                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BH1780                                   policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BIG_KEYS                                 policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -1498,10 +1499,14 @@ CONFIG_BMP280                                   policy<{'amd64': '-', 'arm64': '
 CONFIG_BMP280_I2C                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BMP280_SPI                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BNA                                      policy<{'amd64': 'n', 'arm64': '-'}>
-CONFIG_BNX2                                     policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_BNX2X                                    policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_BNXT                                     policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_BNXT_DCB                                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_BNX2                                     policy<{'amd64': 'y', 'arm64': 'n'}>
+CONFIG_BNX2X                                    policy<{'amd64': 'y', 'arm64': 'n'}>
+CONFIG_BNX2X_SRIOV                              policy<{'amd64': 'y', 'arm64': '-'}>
+CONFIG_BNXT                                     policy<{'amd64': 'y', 'arm64': 'n'}>
+CONFIG_BNXT_DCB                                 policy<{'amd64': 'n', 'arm64': '-'}>
+CONFIG_BNXT_FLOWER_OFFLOAD                      policy<{'amd64': 'y', 'arm64': '-'}>
+CONFIG_BNXT_HWMON                               policy<{'amd64': 'y', 'arm64': '-'}>
+CONFIG_BNXT_SRIOV                               policy<{'amd64': 'y', 'arm64': '-'}>
 CONFIG_BOARD_TPCI200                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BONDING                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BOOTPARAM_HARDLOCKUP_PANIC               policy<{'amd64': '-', 'arm64': '-'}>
@@ -5596,7 +5601,7 @@ CONFIG_MCTP_FLOWS                               policy<{'arm64': '-'}>
 CONFIG_MCTP_SERIAL                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_MCTP_TRANSPORT_I2C                       policy<{'arm64': '-'}>
 CONFIG_MCTP_TRANSPORT_I3C                       policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_MDIO                                     policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_MDIO                                     policy<{'amd64': 'y', 'arm64': '-'}>
 CONFIG_MDIO_BCM_IPROC                           policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_MDIO_BCM_UNIMAC                          policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_MDIO_BITBANG                             policy<{'amd64': 'n', 'arm64': 'y'}>
@@ -10716,7 +10721,8 @@ CONFIG_THUNDER_NIC_VF                           policy<{'amd64': 'n', 'arm64': '
 CONFIG_TICK_CPU_ACCOUNTING                      policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_TIFM_7XX1                                policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TIFM_CORE                                policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_TIGON3                                   policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_TIGON3                                   policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_TIGON3_HWMON                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TIMER_ACPI                               policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_TIMER_IMX_SYS_CTR                        policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_TIMER_OF                                 policy<{'amd64': '-', 'arm64': 'y'}>
