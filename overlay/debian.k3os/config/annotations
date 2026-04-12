@@ -8079,7 +8079,7 @@ CONFIG_RDS                                      policy<{'amd64': 'y', 'arm64': '
 CONFIG_RDS_RDMA                                 policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_RDS_TCP                                  policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_RD_LZO                                   policy<{'amd64': 'n', 'arm64': 'y'}>
-CONFIG_REALTEK_AUTOPM                           policy<{'amd64': '-', 'arm64': 'y'}>
+CONFIG_REALTEK_AUTOPM                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_REALTEK_PHY                              policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_REBOOT_MODE                              policy<{'arm64': '-'}>
 CONFIG_REED_SOLOMON                             policy<{'amd64': '-', 'arm64': '-'}>
@@ -11473,19 +11473,19 @@ CONFIG_USB_SNP_UDC_PLAT                         policy<{'arm64': 'y'}>
 CONFIG_USB_SPEEDTOUCH                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_USB_STKWEBCAM                            policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_USB_STORAGE                              policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_USB_STORAGE_ALAUDA                       policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_USB_STORAGE_ALAUDA                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_USB_STORAGE_CYPRESS_ATACB                policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_USB_STORAGE_DATAFAB                      policy<{'amd64': 'n', 'arm64': 'y'}>
-CONFIG_USB_STORAGE_ENE_UB6250                   policy<{'amd64': 'n', 'arm64': 'y'}>
-CONFIG_USB_STORAGE_FREECOM                      policy<{'amd64': 'n', 'arm64': 'y'}>
-CONFIG_USB_STORAGE_ISD200                       policy<{'amd64': 'n', 'arm64': 'y'}>
-CONFIG_USB_STORAGE_JUMPSHOT                     policy<{'amd64': 'n', 'arm64': 'y'}>
-CONFIG_USB_STORAGE_KARMA                        policy<{'amd64': 'n', 'arm64': 'y'}>
-CONFIG_USB_STORAGE_ONETOUCH                     policy<{'amd64': 'n', 'arm64': 'y'}>
-CONFIG_USB_STORAGE_REALTEK                      policy<{'amd64': 'n', 'arm64': 'y'}>
-CONFIG_USB_STORAGE_SDDR09                       policy<{'amd64': 'n', 'arm64': 'y'}>
-CONFIG_USB_STORAGE_SDDR55                       policy<{'amd64': 'n', 'arm64': 'y'}>
-CONFIG_USB_STORAGE_USBAT                        policy<{'amd64': 'n', 'arm64': 'y'}>
+CONFIG_USB_STORAGE_DATAFAB                      policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_USB_STORAGE_ENE_UB6250                   policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_USB_STORAGE_FREECOM                      policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_USB_STORAGE_ISD200                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_USB_STORAGE_JUMPSHOT                     policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_USB_STORAGE_KARMA                        policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_USB_STORAGE_ONETOUCH                     policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_USB_STORAGE_REALTEK                      policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_USB_STORAGE_SDDR09                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_USB_STORAGE_SDDR55                       policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_USB_STORAGE_USBAT                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_USB_STV06XX                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_USB_TEGRA_PHY                            policy<{'arm64': '-'}>
 CONFIG_USB_TEGRA_XUDC                           policy<{'amd64': '-', 'arm64': '-'}>
