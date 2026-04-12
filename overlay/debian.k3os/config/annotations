@@ -306,7 +306,7 @@ CONFIG_PINCTRL_CHERRYVIEW                       note<'TODO: update note'>
 CONFIG_PREEMPT_DYNAMIC                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PREEMPT_DYNAMIC                          note<'LP: #2051342'>
 
-CONFIG_PSI_DEFAULT_DISABLED                     policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_PSI_DEFAULT_DISABLED                     policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PSI_DEFAULT_DISABLED                     note<'TODO: update note'>
 
 CONFIG_RCU_CPU_STALL_TIMEOUT                    policy<{'amd64': '21', 'arm64': '21'}>
@@ -7802,7 +7802,6 @@ CONFIG_PRU_REMOTEPROC                           policy<{'arm64': '-'}>
 CONFIG_PSAMPLE                                  policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_PSE_CONTROLLER                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PSE_REGULATOR                            policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_PSI                                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_PSTORE                                   policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_PSTORE_842_COMPRESS                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_PSTORE_BLK                               policy<{'amd64': '-', 'arm64': 'n'}>
