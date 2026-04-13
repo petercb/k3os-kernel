@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-ARG UBUNTU_NAME
+ARG UBUNTU_NAME=noble
 
 FROM buildpack-deps:${UBUNTU_NAME}
 

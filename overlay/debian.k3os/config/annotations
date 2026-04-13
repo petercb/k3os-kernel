@@ -117,6 +117,9 @@ CONFIG_GPIO_CDEV_V1                             note<'TODO: update note'>
 CONFIG_GPIO_TWL4030                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GPIO_TWL4030                             note<'TODO: update note'>
 
+CONFIG_HFSPLUS_FS                               policy<{'amd64': 'y', 'arm64': 'n'}>
+CONFIG_HFSPLUS_FS                               note<'required on amd64 for ISO boot'>
+
 CONFIG_HIBERNATION                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HIBERNATION                              note<'LP:1867753'>
 
@@ -278,6 +281,9 @@ CONFIG_NUMA_BALANCING_DEFAULT_ENABLED           note<'TODO: update note'>
 
 CONFIG_NUMA_EMU                                 policy<{'amd64': 'n'}>
 CONFIG_NUMA_EMU                                 note<'LP:1864198'>
+
+CONFIG_NVME_TCP                                 policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_NVME_TCP                                 note<'required by Longhorn V2 data engine'>
 
 CONFIG_NVRAM                                    policy<{'amd64': 'y', 'arm64': '-'}>
 CONFIG_NVRAM                                    note<'LP#1837726'>
@@ -531,6 +537,9 @@ CONFIG_TOUCHSCREEN_ELAN                         note<'TODO: update note'>
 CONFIG_UBSAN                                    policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_UBSAN                                    note<'LP#1942215'>
 
+CONFIG_UIO_PCI_GENERIC                          policy<{'amd64': 'y', 'arm64': 'y'}>
+CONFIG_UIO_PCI_GENERIC                          note<'required by Longhorn V2 data engine'>
+
 CONFIG_UNWINDER_FRAME_POINTER                   policy<{'amd64': 'n'}>
 CONFIG_UNWINDER_FRAME_POINTER                   note<'needed for livepatch'>
 
@@ -568,7 +577,7 @@ CONFIG_VFIO                                     policy<{'amd64': 'y', 'arm64': '
 CONFIG_VFIO                                     note<'TODO: update note'>
 
 CONFIG_VFIO_PCI                                 policy<{'amd64': 'y', 'arm64': 'y'}>
-CONFIG_VFIO_PCI                                 note<'TODO: update note'>
+CONFIG_VFIO_PCI                                 note<'required by Longhorn V2 data engine'>
 
 CONFIG_VIDEO_VIMC                               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_VIDEO_VIMC                               note<'TODO: update note'>
@@ -4023,7 +4032,6 @@ CONFIG_HERMES                                   policy<{'amd64': '-', 'arm64': '
 CONFIG_HERMES_CACHE_FW_ON_INIT                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_HERMES_PRISM                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_HFI1_DEBUG_SDMA_ORDER                    policy<{'amd64': '-'}>
-CONFIG_HFSPLUS_FS                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HFS_FS                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HI13X1_GMAC                              policy<{'arm64': '-'}>
 CONFIG_HI3660_MBOX                              policy<{'arm64': '-'}>
@@ -7036,7 +7044,6 @@ CONFIG_NVME_TARGET_PASSTHRU                     policy<{'amd64': '-', 'arm64': '
 CONFIG_NVME_TARGET_RDMA                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NVME_TARGET_TCP                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NVME_TARGET_TCP_TLS                      policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_NVME_TCP                                 policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_NVSW_SN2201                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_NV_TCO                                   policy<{'amd64': 'n'}>
 CONFIG_NXP_C45_TJA11XX_PHY                      policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -11039,7 +11046,6 @@ CONFIG_UIO_DMEM_GENIRQ                          policy<{'amd64': 'n', 'arm64': '
 CONFIG_UIO_HV_GENERIC                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_UIO_MF624                                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_UIO_NETX                                 policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_UIO_PCI_GENERIC                          policy<{'amd64': 'y', 'arm64': 'y'}>
 CONFIG_UIO_PDRV_GENIRQ                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_UIO_PRUSS                                policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_UIO_SERCOS3                              policy<{'amd64': 'n', 'arm64': 'n'}>
