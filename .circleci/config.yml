@@ -108,6 +108,9 @@ jobs:
     steps:
       - checkout
       - run: ./build.sh
+      - run:
+          name: Test Kernel (QEMU boot)
+          command: ./test-kernel.sh << parameters.arch >>
 
   draft-release:
     executor:
