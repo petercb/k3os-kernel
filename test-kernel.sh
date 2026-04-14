@@ -112,6 +112,17 @@ XML_REPORT="$RESULTS_DIR/results.xml"
 
 echo "--- Analyzing Kernel Boot Log ---"
 
+# Define tests: "DisplayName|SearchPattern|FailureMessage"
+TESTS=(
+    "Boot and Init Execution|SUCCESS: Kernel booted and validation completed|Init process did not report completion"
+    "OverlayFS Support|\[PASS\] OverlayFS support detected|OverlayFS not found in /proc/filesystems"
+    "Cgroup v2 Support|\[PASS\] Cgroup v2 support detected|Cgroup v2 controllers not found/mounted"
+    "Namespace Support|\[PASS\] Namespace isolation (UTS) successfully tested|Namespace unshare test failed"
+    "USB Storage Support|\[PASS\] USB Storage support detected|USB storage driver not found in /sys"
+    "Veth Support|\[PASS\] Veth support detected|Veth driver not found in /sys or kallsyms"
+    "Bridge Support|\[PASS\] Bridge support detected|Bridge driver not found in /sys or kallsyms"
+)
+
 # Helper to write JUnit XML testcase
 write_testcase() {
     local name=$1
@@ -128,79 +139,23 @@ write_testcase() {
 }
 
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" > "$XML_REPORT"
-echo "<testsuite name=\"kernel-boot-$TARGETARCH\" tests=\"7\">" >> "$XML_REPORT"
+echo "<testsuite name=\"kernel-boot-$TARGETARCH\" tests=\"${#TESTS[@]}\">" >> "$XML_REPORT"
 
-# 1. Check for basic boot success
-if grep -q "SUCCESS: Kernel booted and validation completed" "$LOG_FILE"; then
-    echo "[PASS] Basic boot and init execution successful."
-    write_testcase "Boot and Init Execution" 0
-else
-    echo "[FAIL] Kernel failed to execute init process correctly."
-    write_testcase "Boot and Init Execution" 1 "Init process did not report completion"
-    FINAL_RC=1
-fi
+FINAL_RC=0
+for test_def in "${TESTS[@]}"; do
+    IFS="|" read -r name pattern fail_msg <<< "$test_def"
 
-# 2. Check for OverlayFS
-if grep -q "\[PASS\] OverlayFS support detected" "$LOG_FILE"; then
-    echo "[PASS] OverlayFS verified by init."
-    write_testcase "OverlayFS Support" 0
-else
-    echo "[FAIL] OverlayFS verification failed."
-    write_testcase "OverlayFS Support" 1 "OverlayFS not found in /proc/filesystems"
-    FINAL_RC=1
-fi
-
-# 3. Check for Cgroup v2
-if grep -q "\[PASS\] Cgroup v2 support detected" "$LOG_FILE"; then
-    echo "[PASS] Cgroup v2 verified by init."
-    write_testcase "Cgroup v2 Support" 0
-else
-    echo "[FAIL] Cgroup v2 verification failed."
-    write_testcase "Cgroup v2 Support" 1 "Cgroup v2 controllers not found/mounted"
-    FINAL_RC=1
-fi
-
-# 4. Check for Namespaces
-if grep -q "\[PASS\] Namespace isolation (UTS) successfully tested" "$LOG_FILE"; then
-    echo "[PASS] Namespaces verified by init."
-    write_testcase "Namespace Support" 0
-else
-    echo "[FAIL] Namespace verification failed."
-    write_testcase "Namespace Support" 1 "Namespace unshare test failed"
-    FINAL_RC=1
-fi
-
-# 5. Check for USB Storage
-if grep -q "\[PASS\] USB Storage support detected" "$LOG_FILE"; then
-    echo "[PASS] USB Storage verified by init."
-    write_testcase "USB Storage Support" 0
-else
-    echo "[FAIL] USB Storage verification failed."
-    write_testcase "USB Storage Support" 1 "USB storage driver not found in /sys"
-    FINAL_RC=1
-fi
-
-# 6. Check for Veth
-if grep -q "\[PASS\] Veth support detected" "$LOG_FILE"; then
-    echo "[PASS] Veth verified by init."
-    write_testcase "Veth Support" 0
-else
-    echo "[FAIL] Veth verification failed."
-    write_testcase "Veth Support" 1 "Veth driver not found in /sys or kallsyms"
-    FINAL_RC=1
-fi
-
-# 7. Check for Bridge
-if grep -q "\[PASS\] Bridge support detected" "$LOG_FILE"; then
-    echo "[PASS] Bridge verified by init."
-    write_testcase "Bridge Support" 0
-else
-    echo "[FAIL] Bridge verification failed."
-    write_testcase "Bridge Support" 1 "Bridge driver not found in /sys or kallsyms"
-    FINAL_RC=1
-fi
+    if grep -q "$pattern" "$LOG_FILE"; then
+        echo "[PASS] $name successful."
+        write_testcase "$name" 0
+    else
+        echo "[FAIL] $name failed."
+        write_testcase "$name" 1 "$fail_msg"
+        FINAL_RC=1
+    fi
+done
 
 echo "</testsuite>" >> "$XML_REPORT"
 
 echo "--- Analysis Complete: JUnit report generated at $XML_REPORT ---"
-exit ${FINAL_RC:-0}
+exit ${FINAL_RC}
