@@ -139,6 +139,24 @@ func main() {
 		fmt.Println("[FAIL] USB UAS support MISSING")
 	}
 
+	// 10. Check for VXLAN support
+	vxlanFound := false
+	if f, err := os.Open("/proc/kallsyms"); err == nil {
+		scanner := bufio.NewScanner(f)
+		for scanner.Scan() {
+			if strings.Contains(scanner.Text(), " vxlan_newlink") {
+				vxlanFound = true
+				break
+			}
+		}
+		f.Close()
+	}
+	if vxlanFound {
+		fmt.Println("[PASS] VXLAN support detected")
+	} else {
+		fmt.Println("[FAIL] VXLAN support MISSING")
+	}
+
 	fmt.Println("SUCCESS: Kernel booted and validation completed (u-root)")
 
 	// Direct syscall to power off the machine.

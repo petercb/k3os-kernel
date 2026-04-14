@@ -123,6 +123,7 @@ TESTS=(
     "Bridge Support|\[PASS\] Bridge support detected|Bridge driver not found in /sys or kallsyms"
     "IP Advanced Router Support|\[PASS\] IP Advanced Router support detected|Advanced Router support not found in kallsyms"
     "USB UAS Support|\[PASS\] USB UAS support detected|USB UAS driver not found in /sys or kallsyms"
+    "VXLAN Support|\[PASS\] VXLAN support detected|VXLAN driver not found in kallsyms"
 )
 
 # Helper to write JUnit XML testcase
