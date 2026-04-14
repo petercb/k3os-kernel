@@ -111,6 +111,9 @@ jobs:
       - run:
           name: Test Kernel (QEMU boot)
           command: ./test-kernel.sh << parameters.arch >>
+      - store_test_results:
+          path: test-results
+
 
   draft-release:
     executor:
