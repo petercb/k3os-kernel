@@ -124,6 +124,10 @@ TESTS=(
     "IP Advanced Router Support|\[PASS\] IP Advanced Router support detected|Advanced Router support not found in kallsyms"
     "USB UAS Support|\[PASS\] USB UAS support detected|USB UAS driver not found in /sys or kallsyms"
     "VXLAN Support|\[PASS\] VXLAN support detected|VXLAN driver not found in kallsyms"
+    "Netfilter Support|\[PASS\] Netfilter support detected|Netfilter core not found"
+    "IPTables Support|\[PASS\] IPTables support detected|IPTables core not found"
+    "Netfilter Masquerade Support|\[PASS\] Netfilter Masquerade support detected|Masquerade target not found"
+    "Netfilter XT Match Comment Support|\[PASS\] Netfilter XT Match Comment support detected|XT Match Comment not found"
 )
 
 # Helper to write JUnit XML testcase

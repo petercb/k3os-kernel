@@ -140,21 +140,38 @@ func main() {
 	}
 
 	// 10. Check for VXLAN support
-	vxlanFound := false
-	if f, err := os.Open("/proc/kallsyms"); err == nil {
-		scanner := bufio.NewScanner(f)
-		for scanner.Scan() {
-			if strings.Contains(scanner.Text(), " vxlan_newlink") {
-				vxlanFound = true
-				break
-			}
-		}
-		f.Close()
-	}
-	if vxlanFound {
+	if checkSymbols(" vxlan_newlink") {
 		fmt.Println("[PASS] VXLAN support detected")
 	} else {
 		fmt.Println("[FAIL] VXLAN support MISSING")
+	}
+
+	// 11. Check for Netfilter core support
+	if checkSymbols(" nf_register_net_hooks") {
+		fmt.Println("[PASS] Netfilter support detected")
+	} else {
+		fmt.Println("[FAIL] Netfilter support MISSING")
+	}
+
+	// 12. Check for IPTables support
+	if checkSymbols(" ipt_register_table") || checkSymbols(" ipt_do_table") {
+		fmt.Println("[PASS] IPTables support detected")
+	} else {
+		fmt.Println("[FAIL] IPTables support MISSING")
+	}
+
+	// 13. Check for Masquerade support
+	if checkSymbols(" masquerade_tg_reg") || checkSymbols(" nf_nat_masquerade_ipv4") {
+		fmt.Println("[PASS] Netfilter Masquerade support detected")
+	} else {
+		fmt.Println("[FAIL] Netfilter Masquerade support MISSING")
+	}
+
+	// 14. Check for XT Match Comment support
+	if checkSymbols(" comment_mt") {
+		fmt.Println("[PASS] Netfilter XT Match Comment support detected")
+	} else {
+		fmt.Println("[FAIL] Netfilter XT Match Comment support MISSING")
 	}
 
 	fmt.Println("SUCCESS: Kernel booted and validation completed (u-root)")
@@ -166,4 +183,20 @@ func main() {
 	for {
 		time.Sleep(time.Hour)
 	}
+}
+
+func checkSymbols(pattern string) bool {
+	f, err := os.Open("/proc/kallsyms")
+	if err != nil {
+		return false
+	}
+	defer f.Close()
+
+	scanner := bufio.NewScanner(f)
+	for scanner.Scan() {
+		if strings.Contains(scanner.Text(), pattern) {
+			return true
+		}
+	}
+	return false
 }
