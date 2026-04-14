@@ -1,5 +1,5 @@
 #!/bin/bash
-set -ex
+set -e
 set -o pipefail
 
 # Detect architecture
@@ -61,23 +61,31 @@ echo "Checking files before QEMU run:"
 chmod 644 "$KERNEL"
 ls -lh "$KERNEL" "$INITRD"
 
+LOG_FILE="qemu.log"
 echo "Booting $KERNEL in QEMU..."
 set +e
 if [ "$TARGETARCH" == "amd64" ]; then
-    timeout 60s qemu-system-x86_64 -machine q35 -cpu max -m 512 -append "console=ttyS0 panic=-1" -display none -serial file:qemu.log -no-reboot -kernel "$KERNEL" -initrd "$INITRD"
+    timeout 60s qemu-system-x86_64 -machine q35 -cpu max -m 512 -append "console=ttyS0 panic=-1" -display none -serial file:"$LOG_FILE" -no-reboot -kernel "$KERNEL" -initrd "$INITRD"
 elif [ "$TARGETARCH" == "arm64" ]; then
-    timeout 60s qemu-system-aarch64 -machine virt -cpu max -smp 1 -m 512 -append "console=ttyAMA0 panic=-1" -display none -serial file:qemu.log -no-reboot -kernel "$KERNEL" -initrd "$INITRD"
+    timeout 60s qemu-system-aarch64 -machine virt -cpu max -smp 1 -m 512 -append "console=ttyAMA0 panic=-1" -display none -serial file:"$LOG_FILE" -no-reboot -kernel "$KERNEL" -initrd "$INITRD"
 fi
-rc=$?
 set -e
-cat qemu.log
+cat "$LOG_FILE"
 rm -rf "$INITRD_DIR"
 
 # Verify output
-if grep -q "SUCCESS: Kernel booted and executed init" qemu.log; then
-    echo "Kernel boot test passed for $TARGETARCH!"
-    exit 0
-else
-    echo "Kernel boot test failed with exit code $rc for $TARGETARCH!"
+echo "--- Analyzing Kernel Boot Log ---"
+
+# 1. Check for basic boot success
+if ! grep -q "SUCCESS: Kernel booted and validation completed" "$LOG_FILE"; then
+    echo "[FAIL] Kernel failed to execute init process correctly."
+    if grep -q "Kernel panic" "$LOG_FILE"; then
+        echo "[CRITICAL] Kernel Panic detected!"
+        grep -A 10 "Kernel panic" "$LOG_FILE"
+    fi
     exit 1
 fi
+echo "[PASS] Basic boot and init execution successful."
+
+echo "--- Analysis Complete: Kernel boot test passed for $TARGETARCH! ---"
+exit 0
