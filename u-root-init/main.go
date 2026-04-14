@@ -101,6 +101,44 @@ func main() {
 		fmt.Println("[FAIL] Bridge support MISSING")
 	}
 
+	// 8. Check for Advanced Router support
+	advRouterFound := false
+	if f, err := os.Open("/proc/kallsyms"); err == nil {
+		scanner := bufio.NewScanner(f)
+		for scanner.Scan() {
+			if strings.Contains(scanner.Text(), " fib_rules_register") {
+				advRouterFound = true
+				break
+			}
+		}
+		f.Close()
+	}
+	if advRouterFound {
+		fmt.Println("[PASS] IP Advanced Router support detected")
+	} else {
+		fmt.Println("[FAIL] IP Advanced Router support MISSING")
+	}
+
+	// 9. Check for USB UAS support
+	uasFound := false
+	if _, err := os.Stat("/sys/bus/usb/drivers/uas"); err == nil {
+		uasFound = true
+	} else if f, err := os.Open("/proc/kallsyms"); err == nil {
+		scanner := bufio.NewScanner(f)
+		for scanner.Scan() {
+			if strings.Contains(scanner.Text(), " uas_driver") {
+				uasFound = true
+				break
+			}
+		}
+		f.Close()
+	}
+	if uasFound {
+		fmt.Println("[PASS] USB UAS support detected")
+	} else {
+		fmt.Println("[FAIL] USB UAS support MISSING")
+	}
+
 	fmt.Println("SUCCESS: Kernel booted and validation completed (u-root)")
 
 	// Direct syscall to power off the machine.

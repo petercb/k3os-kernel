@@ -121,6 +121,8 @@ TESTS=(
     "USB Storage Support|\[PASS\] USB Storage support detected|USB storage driver not found in /sys"
     "Veth Support|\[PASS\] Veth support detected|Veth driver not found in /sys or kallsyms"
     "Bridge Support|\[PASS\] Bridge support detected|Bridge driver not found in /sys or kallsyms"
+    "IP Advanced Router Support|\[PASS\] IP Advanced Router support detected|Advanced Router support not found in kallsyms"
+    "USB UAS Support|\[PASS\] USB UAS support detected|USB UAS driver not found in /sys or kallsyms"
 )
 
 # Helper to write JUnit XML testcase
