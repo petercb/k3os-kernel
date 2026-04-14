@@ -11,12 +11,17 @@ import (
 	"time"
 )
 
+var symbols map[string]bool
+
 func main() {
 	fmt.Println("--- Starting K3s-Ready Kernel Validation ---")
 
 	// 1. Mount essential filesystems
 	syscall.Mount("proc", "/proc", "proc", 0, "")
 	syscall.Mount("sysfs", "/sys", "sysfs", 0, "")
+
+	// Load symbols into memory once to speed up checks
+	loadSymbols()
 
 	// Mount cgroup2
 	os.MkdirAll("/sys/fs/cgroup", 0755)
@@ -63,63 +68,63 @@ func main() {
 	}
 
 	// 6. Check for Veth support
-	if checkSymbols(" veth_setup") {
+	if hasSymbol("veth_setup") {
 		fmt.Println("[PASS] Veth support detected (via kallsyms)")
 	} else {
 		fmt.Println("[FAIL] Veth support MISSING")
 	}
 
 	// 7. Check for Bridge support
-	if _, err := os.Stat("/sys/module/bridge"); err == nil || checkSymbols(" br_init") {
+	if _, err := os.Stat("/sys/module/bridge"); err == nil || hasSymbol("br_init") {
 		fmt.Println("[PASS] Bridge support detected")
 	} else {
 		fmt.Println("[FAIL] Bridge support MISSING")
 	}
 
 	// 8. Check for Advanced Router support
-	if checkSymbols(" fib_rules_register") {
+	if hasSymbol("fib_rules_register") {
 		fmt.Println("[PASS] IP Advanced Router support detected")
 	} else {
 		fmt.Println("[FAIL] IP Advanced Router support MISSING")
 	}
 
 	// 9. Check for USB UAS support
-	if _, err := os.Stat("/sys/bus/usb/drivers/uas"); err == nil || checkSymbols(" uas_driver") {
+	if _, err := os.Stat("/sys/bus/usb/drivers/uas"); err == nil || hasSymbol("uas_driver") {
 		fmt.Println("[PASS] USB UAS support detected")
 	} else {
 		fmt.Println("[FAIL] USB UAS support MISSING")
 	}
 
 	// 10. Check for VXLAN support
-	if checkSymbols(" vxlan_newlink") {
+	if hasSymbol("vxlan_newlink") {
 		fmt.Println("[PASS] VXLAN support detected")
 	} else {
 		fmt.Println("[FAIL] VXLAN support MISSING")
 	}
 
 	// 11. Check for Netfilter core support
-	if checkSymbols(" nf_register_net_hooks") {
+	if hasSymbol("nf_register_net_hooks") {
 		fmt.Println("[PASS] Netfilter support detected")
 	} else {
 		fmt.Println("[FAIL] Netfilter support MISSING")
 	}
 
 	// 12. Check for IPTables support
-	if checkSymbols(" ipt_register_table") || checkSymbols(" ipt_do_table") {
+	if hasSymbol("ipt_register_table") || hasSymbol("ipt_do_table") {
 		fmt.Println("[PASS] IPTables support detected")
 	} else {
 		fmt.Println("[FAIL] IPTables support MISSING")
 	}
 
 	// 13. Check for Masquerade support
-	if checkSymbols(" masquerade_tg_reg") || checkSymbols(" nf_nat_masquerade_ipv4") {
+	if hasSymbol("masquerade_tg_reg") || hasSymbol("nf_nat_masquerade_ipv4") {
 		fmt.Println("[PASS] Netfilter Masquerade support detected")
 	} else {
 		fmt.Println("[FAIL] Netfilter Masquerade support MISSING")
 	}
 
 	// 14. Check for XT Match Comment support
-	if checkSymbols(" comment_mt") {
+	if hasSymbol("comment_mt") {
 		fmt.Println("[PASS] Netfilter XT Match Comment support detected")
 	} else {
 		fmt.Println("[FAIL] Netfilter XT Match Comment support MISSING")
@@ -136,18 +141,24 @@ func main() {
 	}
 }
 
-func checkSymbols(pattern string) bool {
+func loadSymbols() {
+	symbols = make(map[string]bool)
 	f, err := os.Open("/proc/kallsyms")
 	if err != nil {
-		return false
+		fmt.Println("[DEBUG] Failed to open /proc/kallsyms:", err)
+		return
 	}
 	defer f.Close()
 
 	scanner := bufio.NewScanner(f)
 	for scanner.Scan() {
-		if strings.Contains(scanner.Text(), pattern) {
-			return true
+		parts := strings.Fields(scanner.Text())
+		if len(parts) >= 3 {
+			symbols[parts[2]] = true
 		}
 	}
-	return false
+}
+
+func hasSymbol(name string) bool {
+	return symbols[name]
 }

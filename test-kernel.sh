@@ -101,7 +101,14 @@ case "${TARGETARCH}" in
         ;;
     *) echo "Unknown architecture: ${TARGETARCH}"; exit 1 ;;
 esac
+QEMU_RC=$?
 set -e
+
+if [ $QEMU_RC -eq 124 ]; then
+    echo "[WARN] QEMU timed out (60s). Logic may be incomplete."
+elif [ $QEMU_RC -ne 0 ]; then
+    echo "[WARN] QEMU exited with non-zero code: $QEMU_RC"
+fi
 cat "$LOG_FILE"
 rm -rf "$INITRD_DIR"
 
