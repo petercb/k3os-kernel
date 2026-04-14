@@ -128,7 +128,7 @@ write_testcase() {
 }
 
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" > "$XML_REPORT"
-echo "<testsuite name=\"kernel-boot-$TARGETARCH\" tests=\"6\">" >> "$XML_REPORT"
+echo "<testsuite name=\"kernel-boot-$TARGETARCH\" tests=\"7\">" >> "$XML_REPORT"
 
 # 1. Check for basic boot success
 if grep -q "SUCCESS: Kernel booted and validation completed" "$LOG_FILE"; then
@@ -186,7 +186,17 @@ if grep -q "\[PASS\] Veth support detected" "$LOG_FILE"; then
     write_testcase "Veth Support" 0
 else
     echo "[FAIL] Veth verification failed."
-    write_testcase "Veth Support" 1 "Veth driver not found in /sys"
+    write_testcase "Veth Support" 1 "Veth driver not found in /sys or kallsyms"
+    FINAL_RC=1
+fi
+
+# 7. Check for Bridge
+if grep -q "\[PASS\] Bridge support detected" "$LOG_FILE"; then
+    echo "[PASS] Bridge verified by init."
+    write_testcase "Bridge Support" 0
+else
+    echo "[FAIL] Bridge verification failed."
+    write_testcase "Bridge Support" 1 "Bridge driver not found in /sys or kallsyms"
     FINAL_RC=1
 fi
 

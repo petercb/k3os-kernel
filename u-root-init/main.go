@@ -81,6 +81,26 @@ func main() {
 		fmt.Println("[FAIL] Veth support MISSING")
 	}
 
+	// 7. Check for Bridge support
+	bridgeFound := false
+	if _, err := os.Stat("/sys/module/bridge"); err == nil {
+		bridgeFound = true
+	} else if f, err := os.Open("/proc/kallsyms"); err == nil {
+		scanner := bufio.NewScanner(f)
+		for scanner.Scan() {
+			if strings.Contains(scanner.Text(), " br_init") {
+				bridgeFound = true
+				break
+			}
+		}
+		f.Close()
+	}
+	if bridgeFound {
+		fmt.Println("[PASS] Bridge support detected")
+	} else {
+		fmt.Println("[FAIL] Bridge support MISSING")
+	}
+
 	fmt.Println("SUCCESS: Kernel booted and validation completed (u-root)")
 
 	// Direct syscall to power off the machine.
