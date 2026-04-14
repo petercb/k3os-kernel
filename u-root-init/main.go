@@ -55,6 +55,13 @@ func main() {
 		fmt.Println("[FAIL] Namespace isolation test FAILED:", err)
 	}
 
+	// 5. Check for USB Storage support
+	if _, err := os.Stat("/sys/bus/usb/drivers/usb-storage"); err == nil {
+		fmt.Println("[PASS] USB Storage support detected")
+	} else {
+		fmt.Println("[FAIL] USB Storage support MISSING")
+	}
+
 	fmt.Println("SUCCESS: Kernel booted and validation completed (u-root)")
 
 	// Direct syscall to power off the machine.

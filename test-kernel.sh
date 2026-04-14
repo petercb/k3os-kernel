@@ -128,7 +128,7 @@ write_testcase() {
 }
 
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" > "$XML_REPORT"
-echo "<testsuite name=\"kernel-boot-$TARGETARCH\" tests=\"4\">" >> "$XML_REPORT"
+echo "<testsuite name=\"kernel-boot-$TARGETARCH\" tests=\"5\">" >> "$XML_REPORT"
 
 # 1. Check for basic boot success
 if grep -q "SUCCESS: Kernel booted and validation completed" "$LOG_FILE"; then
@@ -167,6 +167,16 @@ if grep -q "\[PASS\] Namespace isolation (UTS) successfully tested" "$LOG_FILE";
 else
     echo "[FAIL] Namespace verification failed."
     write_testcase "Namespace Support" 1 "Namespace unshare test failed"
+    FINAL_RC=1
+fi
+
+# 5. Check for USB Storage
+if grep -q "\[PASS\] USB Storage support detected" "$LOG_FILE"; then
+    echo "[PASS] USB Storage verified by init."
+    write_testcase "USB Storage Support" 0
+else
+    echo "[FAIL] USB Storage verification failed."
+    write_testcase "USB Storage Support" 1 "USB storage driver not found in /sys"
     FINAL_RC=1
 fi
 
