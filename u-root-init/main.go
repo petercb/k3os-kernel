@@ -63,77 +63,28 @@ func main() {
 	}
 
 	// 6. Check for Veth support
-	// For built-in drivers, we can check /proc/kallsyms for the setup function
-	vethFound := false
-	if f, err := os.Open("/proc/kallsyms"); err == nil {
-		scanner := bufio.NewScanner(f)
-		for scanner.Scan() {
-			if strings.Contains(scanner.Text(), " veth_setup") {
-				vethFound = true
-				break
-			}
-		}
-		f.Close()
-	}
-	if vethFound {
+	if checkSymbols(" veth_setup") {
 		fmt.Println("[PASS] Veth support detected (via kallsyms)")
 	} else {
 		fmt.Println("[FAIL] Veth support MISSING")
 	}
 
 	// 7. Check for Bridge support
-	bridgeFound := false
-	if _, err := os.Stat("/sys/module/bridge"); err == nil {
-		bridgeFound = true
-	} else if f, err := os.Open("/proc/kallsyms"); err == nil {
-		scanner := bufio.NewScanner(f)
-		for scanner.Scan() {
-			if strings.Contains(scanner.Text(), " br_init") {
-				bridgeFound = true
-				break
-			}
-		}
-		f.Close()
-	}
-	if bridgeFound {
+	if _, err := os.Stat("/sys/module/bridge"); err == nil || checkSymbols(" br_init") {
 		fmt.Println("[PASS] Bridge support detected")
 	} else {
 		fmt.Println("[FAIL] Bridge support MISSING")
 	}
 
 	// 8. Check for Advanced Router support
-	advRouterFound := false
-	if f, err := os.Open("/proc/kallsyms"); err == nil {
-		scanner := bufio.NewScanner(f)
-		for scanner.Scan() {
-			if strings.Contains(scanner.Text(), " fib_rules_register") {
-				advRouterFound = true
-				break
-			}
-		}
-		f.Close()
-	}
-	if advRouterFound {
+	if checkSymbols(" fib_rules_register") {
 		fmt.Println("[PASS] IP Advanced Router support detected")
 	} else {
 		fmt.Println("[FAIL] IP Advanced Router support MISSING")
 	}
 
 	// 9. Check for USB UAS support
-	uasFound := false
-	if _, err := os.Stat("/sys/bus/usb/drivers/uas"); err == nil {
-		uasFound = true
-	} else if f, err := os.Open("/proc/kallsyms"); err == nil {
-		scanner := bufio.NewScanner(f)
-		for scanner.Scan() {
-			if strings.Contains(scanner.Text(), " uas_driver") {
-				uasFound = true
-				break
-			}
-		}
-		f.Close()
-	}
-	if uasFound {
+	if _, err := os.Stat("/sys/bus/usb/drivers/uas"); err == nil || checkSymbols(" uas_driver") {
 		fmt.Println("[PASS] USB UAS support detected")
 	} else {
 		fmt.Println("[FAIL] USB UAS support MISSING")
