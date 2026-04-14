@@ -62,6 +62,25 @@ func main() {
 		fmt.Println("[FAIL] USB Storage support MISSING")
 	}
 
+	// 6. Check for Veth support
+	// For built-in drivers, we can check /proc/kallsyms for the setup function
+	vethFound := false
+	if f, err := os.Open("/proc/kallsyms"); err == nil {
+		scanner := bufio.NewScanner(f)
+		for scanner.Scan() {
+			if strings.Contains(scanner.Text(), " veth_setup") {
+				vethFound = true
+				break
+			}
+		}
+		f.Close()
+	}
+	if vethFound {
+		fmt.Println("[PASS] Veth support detected (via kallsyms)")
+	} else {
+		fmt.Println("[FAIL] Veth support MISSING")
+	}
+
 	fmt.Println("SUCCESS: Kernel booted and validation completed (u-root)")
 
 	// Direct syscall to power off the machine.

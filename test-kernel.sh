@@ -128,7 +128,7 @@ write_testcase() {
 }
 
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" > "$XML_REPORT"
-echo "<testsuite name=\"kernel-boot-$TARGETARCH\" tests=\"5\">" >> "$XML_REPORT"
+echo "<testsuite name=\"kernel-boot-$TARGETARCH\" tests=\"6\">" >> "$XML_REPORT"
 
 # 1. Check for basic boot success
 if grep -q "SUCCESS: Kernel booted and validation completed" "$LOG_FILE"; then
@@ -177,6 +177,16 @@ if grep -q "\[PASS\] USB Storage support detected" "$LOG_FILE"; then
 else
     echo "[FAIL] USB Storage verification failed."
     write_testcase "USB Storage Support" 1 "USB storage driver not found in /sys"
+    FINAL_RC=1
+fi
+
+# 6. Check for Veth
+if grep -q "\[PASS\] Veth support detected" "$LOG_FILE"; then
+    echo "[PASS] Veth verified by init."
+    write_testcase "Veth Support" 0
+else
+    echo "[FAIL] Veth verification failed."
+    write_testcase "Veth Support" 1 "Veth driver not found in /sys"
     FINAL_RC=1
 fi
 
