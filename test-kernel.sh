@@ -2,27 +2,32 @@
 set -e
 set -o pipefail
 
-PKGS=(
-    golang-go
-)
-
 # Detect architecture
 if [ -z "${TARGETARCH:-}" ]; then
     ARCH=$(uname -m)
     case $ARCH in
         x86_64)
             TARGETARCH=amd64
-            PKGS+=(qemu-system-x86)
             ;;
         aarch64)
             TARGETARCH=arm64
-            PKGS+=(qemu-system-arm ipxe-qemu qemu-efi-aarch64)
             ;;
         *) echo "Unknown architecture: $ARCH"; exit 1 ;;
     esac
 fi
 
+PKGS=(
+    golang-go
+)
+
+case "${TARGETARCH}" in
+    amd64) PKGS+=(qemu-system-x86) ;;
+    arm64) PKGS+=(qemu-system-arm ipxe-qemu qemu-efi-aarch64) ;;
+    *) echo "Unknown architecture: ${TARGETARCH}"; exit 1 ;;
+esac
+
 # Install dependencies needed for QEMU test
+echo "Installing packages: ${PKGS[*]}"
 apt-get update -q
 apt-get install -yq --no-install-recommends "${PKGS[@]}"
 
@@ -68,11 +73,34 @@ ls -lh "$KERNEL" "$INITRD"
 LOG_FILE="qemu.log"
 echo "Booting $KERNEL in QEMU..."
 set +e
-if [ "$TARGETARCH" == "amd64" ]; then
-    timeout 60s qemu-system-x86_64 -machine q35 -cpu max -m 512 -append "console=ttyS0 panic=-1" -display none -serial file:"$LOG_FILE" -no-reboot -kernel "$KERNEL" -initrd "$INITRD"
-elif [ "$TARGETARCH" == "arm64" ]; then
-    timeout 60s qemu-system-aarch64 -machine virt -cpu max -smp 1 -m 512 -append "console=ttyAMA0 panic=-1" -display none -serial file:"$LOG_FILE" -no-reboot -kernel "$KERNEL" -initrd "$INITRD"
-fi
+case "${TARGETARCH}" in
+    amd64)
+        timeout 60s qemu-system-x86_64 \
+            -machine q35 \
+            -cpu max \
+            -m 512 \
+            -append "console=ttyS0 panic=-1" \
+            -display none \
+            -serial file:"$LOG_FILE" \
+            -no-reboot \
+            -kernel "$KERNEL" \
+            -initrd "$INITRD"
+        ;;
+    arm64)
+        timeout 60s qemu-system-aarch64 \
+            -machine virt \
+            -cpu max \
+            -smp 1 \
+            -m 512 \
+            -append "console=ttyAMA0 panic=-1" \
+            -display none \
+            -serial file:"$LOG_FILE" \
+            -no-reboot \
+            -kernel "$KERNEL" \
+            -initrd "$INITRD"
+        ;;
+    *) echo "Unknown architecture: ${TARGETARCH}"; exit 1 ;;
+esac
 set -e
 cat "$LOG_FILE"
 rm -rf "$INITRD_DIR"
