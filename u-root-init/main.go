@@ -121,6 +121,9 @@ func main() {
 		{"IPTables Support", []string{"ipt_register_table", "ipt_do_table"}, ""},
 		{"Netfilter Masquerade Support", []string{"masquerade_tg_reg", "nf_nat_masquerade_ipv4"}, ""},
 		{"XT Match Comment Support", []string{"comment_mt"}, ""},
+		{"NVMe over TCP Support", []string{"nvme_tcp_init"}, "/sys/module/nvme_tcp"},
+		{"VFIO PCI Support", []string{"vfio_pci_init"}, "/sys/module/vfio_pci"},
+		{"UIO PCI Generic Support", []string{"uio_pci_generic_init"}, "/sys/module/uio_pci_generic"},
 	}
 
 	for _, f := range features {
