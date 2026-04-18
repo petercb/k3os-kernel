@@ -119,63 +119,20 @@ XML_REPORT="$RESULTS_DIR/results.xml"
 
 echo "--- Analyzing Kernel Boot Log ---"
 
-# Define tests: "DisplayName|SearchPattern|FailureMessage"
-TESTS=(
-    "Boot and Init Execution|SUCCESS: Kernel booted and validation completed|Init process did not report completion"
-    "OverlayFS Support|\[PASS\] OverlayFS support detected|OverlayFS not found in /proc/filesystems"
-    "Cgroup v2 Support|\[PASS\] Cgroup v2 support detected|Cgroup v2 controllers not found/mounted"
-    "Namespace Support|\[PASS\] Namespace isolation (UTS) successfully tested|Namespace unshare test failed"
-    "USB Storage Support|\[PASS\] USB Storage support detected|USB storage driver not found in /sys"
-    "Veth Support|\[PASS\] Veth support detected|Veth driver not found in /sys or kallsyms"
-    "Bridge Support|\[PASS\] Bridge support detected|Bridge driver not found in /sys or kallsyms"
-    "IP Advanced Router Support|\[PASS\] IP Advanced Router support detected|Advanced Router support not found in kallsyms"
-    "USB UAS Support|\[PASS\] USB UAS support detected|USB UAS driver not found in /sys or kallsyms"
-    "VXLAN Support|\[PASS\] VXLAN support detected|VXLAN driver not found in kallsyms"
-    "Netfilter Support|\[PASS\] Netfilter support detected|Netfilter core not found"
-    "IPTables Support|\[PASS\] IPTables support detected|IPTables core not found"
-    "Netfilter Masquerade Support|\[PASS\] Netfilter Masquerade support detected|Masquerade target not found"
-    "Netfilter XT Match Comment Support|\[PASS\] Netfilter XT Match Comment support detected|XT Match Comment not found"
-)
+# Extract JUnit XML from log
+# The Go program wraps the XML in markers for easy extraction
+sed -n '/--- JUNIT START ---/,/--- JUNIT END ---/p' "$LOG_FILE" | grep -v -- "--- JUNIT" > "$XML_REPORT"
 
-if [ "$TARGETARCH" = "amd64" ]; then
-    TESTS+=(
-        "HFS+ Support|\[PASS\] HFS\+ filesystem support detected|HFS\+ filesystem support not found"
-    )
+if [ ! -s "$XML_REPORT" ]; then
+    echo "[FAIL] JUnit report not found in log!"
+    exit 1
 fi
 
-# Helper to write JUnit XML testcase
-write_testcase() {
-    local name=$1
-    local status=$2 # 0 for pass, 1 for fail
-    local msg=$3
-
-    if [ "$status" -eq 0 ]; then
-        echo "  <testcase name=\"$name\"/>" >> "$XML_REPORT"
-    else
-        echo "  <testcase name=\"$name\">" >> "$XML_REPORT"
-        echo "    <failure message=\"$msg\"/>" >> "$XML_REPORT"
-        echo "  </testcase>" >> "$XML_REPORT"
-    fi
-}
-
-echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" > "$XML_REPORT"
-echo "<testsuite name=\"kernel-boot-$TARGETARCH\" tests=\"${#TESTS[@]}\">" >> "$XML_REPORT"
-
-FINAL_RC=0
-for test_def in "${TESTS[@]}"; do
-    IFS="|" read -r name pattern fail_msg <<< "$test_def"
-
-    if grep -q "$pattern" "$LOG_FILE"; then
-        echo "[PASS] $name successful."
-        write_testcase "$name" 0
-    else
-        echo "[FAIL] $name failed."
-        write_testcase "$name" 1 "$fail_msg"
-        FINAL_RC=1
-    fi
-done
-
-echo "</testsuite>" >> "$XML_REPORT"
-
-echo "--- Analysis Complete: JUnit report generated at $XML_REPORT ---"
-exit ${FINAL_RC}
+# Check for overall success flag from the Go init
+if grep -q "SUCCESS: Kernel booted and validation completed" "$LOG_FILE"; then
+    echo "[PASS] Kernel boot validation successful."
+    exit 0
+else
+    echo "[FAIL] Kernel boot validation failed."
+    exit 1
+fi

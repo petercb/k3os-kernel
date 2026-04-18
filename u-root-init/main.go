@@ -4,6 +4,7 @@ package main
 
 import (
 	"bufio"
+	"encoding/xml"
 	"fmt"
 	"os"
 	"strings"
@@ -11,7 +12,42 @@ import (
 	"time"
 )
 
-var symbols map[string]bool
+type TestResult struct {
+	Name    string
+	Passed  bool
+	Message string
+}
+
+type JUnitTestSuite struct {
+	XMLName   xml.Name        `xml:"testsuite"`
+	Name      string          `xml:"name,attr"`
+	Tests     int             `xml:"tests,attr"`
+	TestCases []JUnitTestCase `xml:"testcase"`
+}
+
+type JUnitTestCase struct {
+	Name    string        `xml:"name,attr"`
+	Failure *JUnitFailure `xml:"failure,omitempty"`
+}
+
+type JUnitFailure struct {
+	Message string `xml:"message,attr"`
+}
+
+var (
+	symbols map[string]bool
+	results []TestResult
+)
+
+func runTest(name string, check func() (bool, string)) {
+	passed, msg := check()
+	results = append(results, TestResult{Name: name, Passed: passed, Message: msg})
+	if passed {
+		fmt.Printf("[PASS] %s\n", name)
+	} else {
+		fmt.Printf("[FAIL] %s: %s\n", name, msg)
+	}
+}
 
 func main() {
 	fmt.Println("--- Starting K3s-Ready Kernel Validation ---")
@@ -23,116 +59,135 @@ func main() {
 	// Load symbols into memory once to speed up checks
 	loadSymbols()
 
-	// Mount cgroup2
+	// 2. Mount cgroup2
 	os.MkdirAll("/sys/fs/cgroup", 0755)
 	if err := syscall.Mount("none", "/sys/fs/cgroup", "cgroup2", 0, ""); err != nil {
 		fmt.Println("[DEBUG] Failed to mount cgroup2:", err)
 	}
-	overlayFound := false
-	if f, err := os.Open("/proc/filesystems"); err == nil {
-		scanner := bufio.NewScanner(f)
-		for scanner.Scan() {
-			if strings.Contains(scanner.Text(), "overlay") {
-				overlayFound = true
-				break
+
+	// 3. Run individual tests
+	runTest("OverlayFS Support", func() (bool, string) {
+		overlayFound := false
+		if f, err := os.Open("/proc/filesystems"); err == nil {
+			scanner := bufio.NewScanner(f)
+			for scanner.Scan() {
+				if strings.Contains(scanner.Text(), "overlay") {
+					overlayFound = true
+					break
+				}
 			}
+			f.Close()
 		}
-		f.Close()
-	}
-	if overlayFound {
-		fmt.Println("[PASS] OverlayFS support detected in /proc/filesystems")
-	} else {
-		fmt.Println("[FAIL] OverlayFS support MISSING")
-	}
+		if overlayFound {
+			return true, ""
+		}
+		return false, "OverlayFS not found in /proc/filesystems"
+	})
 
-	// 3. Check for Cgroup v2 support
-	if _, err := os.Stat("/sys/fs/cgroup/cgroup.controllers"); err == nil {
-		fmt.Println("[PASS] Cgroup v2 support detected in /sys/fs/cgroup")
-	} else {
-		fmt.Println("[FAIL] Cgroup v2 support MISSING (or /sys/fs/cgroup not mounted)")
-	}
+	runTest("Cgroup v2 Support", func() (bool, string) {
+		if _, err := os.Stat("/sys/fs/cgroup/cgroup.controllers"); err == nil {
+			return true, ""
+		}
+		return false, "Cgroup v2 controllers not found or /sys/fs/cgroup not mounted"
+	})
 
-	// 4. Check for Namespace support (try to unshare)
-	// We try to unshare the UTS namespace as a simple test
-	if err := syscall.Unshare(syscall.CLONE_NEWUTS); err == nil {
-		fmt.Println("[PASS] Namespace isolation (UTS) successfully tested via unshare")
-	} else {
-		fmt.Println("[FAIL] Namespace isolation test FAILED:", err)
-	}
+	runTest("Namespace Support", func() (bool, string) {
+		if err := syscall.Unshare(syscall.CLONE_NEWUTS); err == nil {
+			return true, ""
+		} else {
+			return false, fmt.Sprintf("Namespace unshare test failed: %v", err)
+		}
+	})
 
-	// 5. Check for USB Storage support
-	if _, err := os.Stat("/sys/bus/usb/drivers/usb-storage"); err == nil {
-		fmt.Println("[PASS] USB Storage support detected")
-	} else {
-		fmt.Println("[FAIL] USB Storage support MISSING")
-	}
+	runTest("USB Storage Support", func() (bool, string) {
+		if _, err := os.Stat("/sys/bus/usb/drivers/usb-storage"); err == nil {
+			return true, ""
+		}
+		return false, "USB storage driver not found in /sys/bus/usb/drivers"
+	})
 
-	// 6. Check for Veth support
-	if hasSymbol("veth_setup") {
-		fmt.Println("[PASS] Veth support detected (via kallsyms)")
-	} else {
-		fmt.Println("[FAIL] Veth support MISSING")
-	}
+	runTest("Veth Support", func() (bool, string) {
+		if hasSymbol("veth_setup") {
+			return true, ""
+		}
+		return false, "Veth driver not found in kallsyms"
+	})
 
-	// 7. Check for Bridge support
-	if _, err := os.Stat("/sys/module/bridge"); err == nil || hasSymbol("br_init") {
-		fmt.Println("[PASS] Bridge support detected")
-	} else {
-		fmt.Println("[FAIL] Bridge support MISSING")
-	}
+	runTest("Bridge Support", func() (bool, string) {
+		if _, err := os.Stat("/sys/module/bridge"); err == nil || hasSymbol("br_init") {
+			return true, ""
+		}
+		return false, "Bridge driver not found in /sys/module or kallsyms"
+	})
 
-	// 8. Check for Advanced Router support
-	if hasSymbol("fib_rules_register") {
-		fmt.Println("[PASS] IP Advanced Router support detected")
-	} else {
-		fmt.Println("[FAIL] IP Advanced Router support MISSING")
-	}
+	runTest("IP Advanced Router Support", func() (bool, string) {
+		if hasSymbol("fib_rules_register") {
+			return true, ""
+		}
+		return false, "IP Advanced Router support not found in kallsyms"
+	})
 
-	// 9. Check for USB UAS support
-	if _, err := os.Stat("/sys/bus/usb/drivers/uas"); err == nil || hasSymbol("uas_driver") {
-		fmt.Println("[PASS] USB UAS support detected")
-	} else {
-		fmt.Println("[FAIL] USB UAS support MISSING")
-	}
+	runTest("USB UAS Support", func() (bool, string) {
+		if _, err := os.Stat("/sys/bus/usb/drivers/uas"); err == nil || hasSymbol("uas_driver") {
+			return true, ""
+		}
+		return false, "USB UAS driver not found in /sys/bus/usb/drivers or kallsyms"
+	})
 
-	// 10. Check for VXLAN support
-	if hasSymbol("vxlan_newlink") {
-		fmt.Println("[PASS] VXLAN support detected")
-	} else {
-		fmt.Println("[FAIL] VXLAN support MISSING")
-	}
+	runTest("VXLAN Support", func() (bool, string) {
+		if hasSymbol("vxlan_newlink") {
+			return true, ""
+		}
+		return false, "VXLAN driver not found in kallsyms"
+	})
 
-	// 11. Check for Netfilter core support
-	if hasSymbol("nf_register_net_hooks") {
-		fmt.Println("[PASS] Netfilter support detected")
-	} else {
-		fmt.Println("[FAIL] Netfilter support MISSING")
-	}
+	runTest("Netfilter Support", func() (bool, string) {
+		if hasSymbol("nf_register_net_hooks") {
+			return true, ""
+		}
+		return false, "Netfilter core support not found in kallsyms"
+	})
 
-	// 12. Check for IPTables support
-	if hasSymbol("ipt_register_table") || hasSymbol("ipt_do_table") {
-		fmt.Println("[PASS] IPTables support detected")
-	} else {
-		fmt.Println("[FAIL] IPTables support MISSING")
-	}
+	runTest("IPTables Support", func() (bool, string) {
+		if hasSymbol("ipt_register_table") || hasSymbol("ipt_do_table") {
+			return true, ""
+		}
+		return false, "IPTables support not found in kallsyms"
+	})
 
-	// 13. Check for Masquerade support
-	if hasSymbol("masquerade_tg_reg") || hasSymbol("nf_nat_masquerade_ipv4") {
-		fmt.Println("[PASS] Netfilter Masquerade support detected")
-	} else {
-		fmt.Println("[FAIL] Netfilter Masquerade support MISSING")
-	}
+	runTest("Netfilter Masquerade Support", func() (bool, string) {
+		if hasSymbol("masquerade_tg_reg") || hasSymbol("nf_nat_masquerade_ipv4") {
+			return true, ""
+		}
+		return false, "Netfilter Masquerade support not found in kallsyms"
+	})
 
-	// 14. Check for XT Match Comment support
-	if hasSymbol("comment_mt") {
-		fmt.Println("[PASS] Netfilter XT Match Comment support detected")
-	} else {
-		fmt.Println("[FAIL] Netfilter XT Match Comment support MISSING")
-	}
+	runTest("Netfilter XT Match Comment Support", func() (bool, string) {
+		if hasSymbol("comment_mt") {
+			return true, ""
+		}
+		return false, "Netfilter XT Match Comment support not found in kallsyms"
+	})
 
 	validateArchSpecific()
 
-	fmt.Println("SUCCESS: Kernel booted and validation completed (u-root)")
+	// Generate JUnit XML
+	generateJUnit()
+
+	// Check if all tests passed
+	allPassed := true
+	for _, res := range results {
+		if !res.Passed {
+			allPassed = false
+			break
+		}
+	}
+
+	if allPassed {
+		fmt.Println("SUCCESS: Kernel booted and validation completed (u-root)")
+	} else {
+		fmt.Println("FAILURE: Some kernel validation tests FAILED")
+	}
 
 	// Direct syscall to power off the machine.
 	syscall.Reboot(syscall.LINUX_REBOOT_CMD_POWER_OFF)
@@ -141,6 +196,30 @@ func main() {
 	for {
 		time.Sleep(time.Hour)
 	}
+}
+
+func generateJUnit() {
+	suite := JUnitTestSuite{
+		Name:  "kernel-boot",
+		Tests: len(results),
+	}
+
+	for _, res := range results {
+		tc := JUnitTestCase{Name: res.Name}
+		if !res.Passed {
+			tc.Failure = &JUnitFailure{Message: res.Message}
+		}
+		suite.TestCases = append(suite.TestCases, tc)
+	}
+
+	fmt.Println("--- JUNIT START ---")
+	fmt.Print(xml.Header)
+	enc := xml.NewEncoder(os.Stdout)
+	enc.Indent("  ", "  ")
+	if err := enc.Encode(suite); err != nil {
+		fmt.Printf("DEBUG: Failed to encode JUnit XML: %v\n", err)
+	}
+	fmt.Println("\n--- JUNIT END ---")
 }
 
 func loadSymbols() {
