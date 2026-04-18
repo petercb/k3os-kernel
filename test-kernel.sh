@@ -137,6 +137,12 @@ TESTS=(
     "Netfilter XT Match Comment Support|\[PASS\] Netfilter XT Match Comment support detected|XT Match Comment not found"
 )
 
+if [ "$TARGETARCH" = "amd64" ]; then
+    TESTS+=(
+        "HFS+ Support|\[PASS\] HFS\+ filesystem support detected|HFS\+ filesystem support not found"
+    )
+fi
+
 # Helper to write JUnit XML testcase
 write_testcase() {
     local name=$1

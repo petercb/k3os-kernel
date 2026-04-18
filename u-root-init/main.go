@@ -130,6 +130,8 @@ func main() {
 		fmt.Println("[FAIL] Netfilter XT Match Comment support MISSING")
 	}
 
+	validateArchSpecific()
+
 	fmt.Println("SUCCESS: Kernel booted and validation completed (u-root)")
 
 	// Direct syscall to power off the machine.

@@ -117,6 +117,9 @@ CONFIG_GPIO_CDEV_V1                             note<'TODO: update note'>
 CONFIG_GPIO_TWL4030                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_GPIO_TWL4030                             note<'TODO: update note'>
 
+CONFIG_HFSPLUS_FS                               policy<{'amd64': 'y', 'arm64': 'n'}>
+CONFIG_HFSPLUS_FS                               note<'required on amd64 for ISO boot'>
+
 CONFIG_HIBERNATION                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HIBERNATION                              note<'LP:1867753'>
 
@@ -4023,7 +4026,6 @@ CONFIG_HERMES                                   policy<{'amd64': '-', 'arm64': '
 CONFIG_HERMES_CACHE_FW_ON_INIT                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_HERMES_PRISM                             policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_HFI1_DEBUG_SDMA_ORDER                    policy<{'amd64': '-'}>
-CONFIG_HFSPLUS_FS                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HFS_FS                                   policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_HI13X1_GMAC                              policy<{'arm64': '-'}>
 CONFIG_HI3660_MBOX                              policy<{'arm64': '-'}>
