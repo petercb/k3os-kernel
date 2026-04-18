@@ -106,68 +106,39 @@ func main() {
 		return false, "USB storage driver not found in /sys/bus/usb/drivers"
 	})
 
-	runTest("Veth Support", func() (bool, string) {
-		if hasSymbol("veth_setup") {
-			return true, ""
-		}
-		return false, "Veth driver not found in kallsyms"
-	})
+	// 4. Feature tests (via symbols or sysfs paths)
+	features := []struct {
+		name    string
+		symbols []string
+		path    string
+	}{
+		{"Veth Support", []string{"veth_setup"}, ""},
+		{"Bridge Support", []string{"br_init"}, "/sys/module/bridge"},
+		{"IP Advanced Router Support", []string{"fib_rules_register"}, ""},
+		{"USB UAS Support", []string{"uas_driver"}, "/sys/bus/usb/drivers/uas"},
+		{"VXLAN Support", []string{"vxlan_newlink"}, ""},
+		{"Netfilter Support", []string{"nf_register_net_hooks"}, ""},
+		{"IPTables Support", []string{"ipt_register_table", "ipt_do_table"}, ""},
+		{"Netfilter Masquerade Support", []string{"masquerade_tg_reg", "nf_nat_masquerade_ipv4"}, ""},
+		{"XT Match Comment Support", []string{"comment_mt"}, ""},
+	}
 
-	runTest("Bridge Support", func() (bool, string) {
-		if _, err := os.Stat("/sys/module/bridge"); err == nil || hasSymbol("br_init") {
-			return true, ""
-		}
-		return false, "Bridge driver not found in /sys/module or kallsyms"
-	})
-
-	runTest("IP Advanced Router Support", func() (bool, string) {
-		if hasSymbol("fib_rules_register") {
-			return true, ""
-		}
-		return false, "IP Advanced Router support not found in kallsyms"
-	})
-
-	runTest("USB UAS Support", func() (bool, string) {
-		if _, err := os.Stat("/sys/bus/usb/drivers/uas"); err == nil || hasSymbol("uas_driver") {
-			return true, ""
-		}
-		return false, "USB UAS driver not found in /sys/bus/usb/drivers or kallsyms"
-	})
-
-	runTest("VXLAN Support", func() (bool, string) {
-		if hasSymbol("vxlan_newlink") {
-			return true, ""
-		}
-		return false, "VXLAN driver not found in kallsyms"
-	})
-
-	runTest("Netfilter Support", func() (bool, string) {
-		if hasSymbol("nf_register_net_hooks") {
-			return true, ""
-		}
-		return false, "Netfilter core support not found in kallsyms"
-	})
-
-	runTest("IPTables Support", func() (bool, string) {
-		if hasSymbol("ipt_register_table") || hasSymbol("ipt_do_table") {
-			return true, ""
-		}
-		return false, "IPTables support not found in kallsyms"
-	})
-
-	runTest("Netfilter Masquerade Support", func() (bool, string) {
-		if hasSymbol("masquerade_tg_reg") || hasSymbol("nf_nat_masquerade_ipv4") {
-			return true, ""
-		}
-		return false, "Netfilter Masquerade support not found in kallsyms"
-	})
-
-	runTest("Netfilter XT Match Comment Support", func() (bool, string) {
-		if hasSymbol("comment_mt") {
-			return true, ""
-		}
-		return false, "Netfilter XT Match Comment support not found in kallsyms"
-	})
+	for _, f := range features {
+		f := f // capture range variable
+		runTest(f.name, func() (bool, string) {
+			if f.path != "" {
+				if _, err := os.Stat(f.path); err == nil {
+					return true, ""
+				}
+			}
+			for _, sym := range f.symbols {
+				if hasSymbol(sym) {
+					return true, ""
+				}
+			}
+			return false, "Required symbols or sysfs paths not found"
+		})
+	}
 
 	validateArchSpecific()
 
