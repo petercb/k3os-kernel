@@ -18,7 +18,6 @@ fi
 
 PKGS=(
     golang-go
-    virtiofsd
 )
 
 case "${TARGETARCH}" in
@@ -66,35 +65,10 @@ if [ ! -f "$INITRD" ]; then
     exit 1
 fi
 
-RESULTS_DIR="${PROJECT_ROOT}/test-results/kernel-boot"
-rm -rf "$RESULTS_DIR"
-mkdir -p "$RESULTS_DIR"
-RESULTS_ABS=$(cd "$RESULTS_DIR" && pwd)
-
-# Setup virtiofsd
-VFS_SOCK=$(mktemp -u /tmp/vfs.sock.XXXXXX)
-# virtiofsd location can vary by distribution
-VFS_BIN="/usr/libexec/virtiofsd"
-if [ ! -x "$VFS_BIN" ]; then
-    VFS_BIN="/usr/lib/qemu/virtiofsd"
-fi
-
-echo "Starting virtiofsd at $VFS_BIN..."
-"$VFS_BIN" --socket-path="$VFS_SOCK" --shared-dir="$RESULTS_ABS" --sandbox none &
-VFS_PID=$!
-
-# Ensure cleanup
-cleanup() {
-    echo "Cleaning up..."
-    kill "$VFS_PID" 2>/dev/null || true
-    rm -f "$VFS_SOCK"
-    rm -rf "$INITRD_DIR"
-}
-trap cleanup EXIT
-
 # Run QEMU
 echo "Checking files before QEMU run:"
 chmod 644 "$KERNEL"
+ls -lh "$KERNEL" "$INITRD"
 
 LOG_FILE="qemu.log"
 echo "Booting $KERNEL in QEMU..."
@@ -108,10 +82,6 @@ case "${TARGETARCH}" in
             -append "console=ttyS0 panic=-1" \
             -display none \
             -serial file:"$LOG_FILE" \
-            -chardev socket,id=char0,path="$VFS_SOCK" \
-            -device vhost-user-fs-pci,queue-size=1024,chardev=char0,tag=results \
-            -object memory-backend-memfd,id=mem,size=512M,share=on \
-            -numa node,memdev=mem \
             -no-reboot \
             -kernel "$KERNEL" \
             -initrd "$INITRD"
@@ -125,10 +95,6 @@ case "${TARGETARCH}" in
             -append "console=ttyAMA0 panic=-1" \
             -display none \
             -serial file:"$LOG_FILE" \
-            -chardev socket,id=char0,path="$VFS_SOCK" \
-            -device vhost-user-fs-pci,queue-size=1024,chardev=char0,tag=results \
-            -object memory-backend-memfd,id=mem,size=512M,share=on \
-            -numa node,memdev=mem \
             -no-reboot \
             -kernel "$KERNEL" \
             -initrd "$INITRD"
@@ -147,12 +113,18 @@ cat "$LOG_FILE"
 rm -rf "$INITRD_DIR"
 
 # Verify output
+RESULTS_DIR="test-results/kernel-boot"
+mkdir -p "$RESULTS_DIR"
 XML_REPORT="$RESULTS_DIR/results.xml"
 
 echo "--- Analyzing Kernel Boot Log ---"
 
+# Extract JUnit XML from log
+# The Go program wraps the XML in markers for easy extraction
+sed -n '/--- JUNIT START ---/,/--- JUNIT END ---/p' "$LOG_FILE" | grep -v -- "--- JUNIT" > "$XML_REPORT"
+
 if [ ! -s "$XML_REPORT" ]; then
-    echo "[FAIL] JUnit report not found at $XML_REPORT! (virtiofs mount or write might have failed)"
+    echo "[FAIL] JUnit report not found in log!"
     exit 1
 fi
 
