@@ -186,14 +186,25 @@ func generateJUnit() {
 		suite.TestCases = append(suite.TestCases, tc)
 	}
 
-	fmt.Println("--- JUNIT START ---")
-	fmt.Print(xml.Header)
-	enc := xml.NewEncoder(os.Stdout)
-	enc.Indent("  ", "  ")
-	if err := enc.Encode(suite); err != nil {
-		fmt.Printf("DEBUG: Failed to encode JUnit XML: %v\n", err)
+	// Mount results directory if available and write to file
+	os.MkdirAll("/test-results", 0755)
+	if err := syscall.Mount("results", "/test-results", "virtiofs", 0, ""); err != nil {
+		fmt.Printf("[DEBUG] virtiofs mount of 'results' failed: %v. (Check kernel CONFIG_VIRTIO_FS)\n", err)
+	} else {
+		f, err := os.Create("/test-results/results.xml")
+		if err == nil {
+			f.WriteString(xml.Header)
+			enc := xml.NewEncoder(f)
+			enc.Indent("  ", "  ")
+			if err := enc.Encode(suite); err != nil {
+				fmt.Printf("DEBUG: Failed to encode JUnit XML to file: %v\n", err)
+			}
+			f.Close()
+			fmt.Println("[INFO] JUnit XML written to /test-results/results.xml")
+		} else {
+			fmt.Printf("[DEBUG] Failed to create /test-results/results.xml: %v\n", err)
+		}
 	}
-	fmt.Println("\n--- JUNIT END ---")
 }
 
 func loadSymbols() {
