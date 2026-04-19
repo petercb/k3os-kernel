@@ -66,9 +66,8 @@ if [ ! -f "$INITRD" ]; then
 fi
 
 # Run QEMU
-echo "Checking files before QEMU run:"
+echo "Checking files before QEMU run"
 chmod 644 "$KERNEL"
-ls -lh "$KERNEL" "$INITRD"
 
 LOG_FILE="qemu.log"
 echo "Booting $KERNEL in QEMU..."
@@ -114,6 +113,7 @@ rm -rf "$INITRD_DIR"
 
 # Verify output
 RESULTS_DIR="test-results/kernel-boot"
+rm -rf "$RESULTS_DIR"
 mkdir -p "$RESULTS_DIR"
 XML_REPORT="$RESULTS_DIR/results.xml"
 
