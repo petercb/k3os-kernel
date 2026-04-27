@@ -1,0 +1,24 @@
+graph TD
+    subgraph "Configuration"
+        A[overlay/annotations] --> B[debian/rules]
+    end
+
+    subgraph "Build Phase"
+        B --> C[Kernel Build]
+        C --> D[vmlinuz + modules]
+        E[u-root-init Source] --> F[u-root Build]
+        F --> G[test-initrd.gz]
+    end
+
+    subgraph "Validation Phase"
+        D --> H[QEMU amd64/arm64]
+        G --> H
+        H --> I[qemu.log]
+        I --> J[JUnit XML Results]
+    end
+
+    subgraph "Artifacts"
+        D --> K[k3os-vmlinuz]
+        C --> L[k3os-kernel.squashfs]
+        J --> M[CI Test Report]
+    end
