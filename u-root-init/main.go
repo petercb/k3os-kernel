@@ -53,14 +53,20 @@ func main() {
 	fmt.Println("--- Starting K3s-Ready Kernel Validation ---")
 
 	// 1. Mount essential filesystems
-	syscall.Mount("proc", "/proc", "proc", 0, "")
-	syscall.Mount("sysfs", "/sys", "sysfs", 0, "")
+	if err := syscall.Mount("proc", "/proc", "proc", 0, ""); err != nil {
+		fmt.Printf("[DEBUG] Failed to mount /proc: %v\n", err)
+	}
+	if err := syscall.Mount("sysfs", "/sys", "sysfs", 0, ""); err != nil {
+		fmt.Printf("[DEBUG] Failed to mount /sys: %v\n", err)
+	}
 
 	// Load symbols into memory once to speed up checks
 	loadSymbols()
 
 	// 2. Mount cgroup2
-	os.MkdirAll("/sys/fs/cgroup", 0755)
+	if err := os.MkdirAll("/sys/fs/cgroup", 0o755); err != nil {
+		fmt.Printf("[DEBUG] Failed to create /sys/fs/cgroup: %v\n", err)
+	}
 	if err := syscall.Mount("none", "/sys/fs/cgroup", "cgroup2", 0, ""); err != nil {
 		fmt.Println("[DEBUG] Failed to mount cgroup2:", err)
 	}
@@ -76,7 +82,9 @@ func main() {
 					break
 				}
 			}
-			f.Close()
+			if err := f.Close(); err != nil {
+				fmt.Printf("[DEBUG] Failed to close /proc/filesystems: %v\n", err)
+			}
 		}
 		if overlayFound {
 			return true, ""
@@ -164,7 +172,9 @@ func main() {
 	}
 
 	// Direct syscall to power off the machine.
-	syscall.Reboot(syscall.LINUX_REBOOT_CMD_POWER_OFF)
+	if err := syscall.Reboot(syscall.LINUX_REBOOT_CMD_POWER_OFF); err != nil {
+		fmt.Printf("[DEBUG] Failed to power off: %v\n", err)
+	}
 
 	// Safety hang
 	for {
@@ -203,7 +213,11 @@ func loadSymbols() {
 		fmt.Println("[DEBUG] Failed to open /proc/kallsyms:", err)
 		return
 	}
-	defer f.Close()
+	defer func() {
+		if err := f.Close(); err != nil {
+			fmt.Printf("[DEBUG] Failed to close /proc/kallsyms: %v\n", err)
+		}
+	}()
 
 	scanner := bufio.NewScanner(f)
 	for scanner.Scan() {
