@@ -3,6 +3,7 @@
 ## Completed Features
 - Initial modernization to Linux 7.0 (Build system update).
 - Taskfile.yml base implementation.
+- **[TASK-001] Fix failing boot validation tests for Linux 7.0**: Refactored test suite to modular Go structure, added unit tests, fixed IPTables/NFTables support, and identified Linux 7.0 specific hardware symbols for BCM2835 MMC. (2026-04-27)
 
 ## In Progress
 - **Onboarding and Documentation** (TASK-000)
@@ -12,10 +13,9 @@
     - ✅ unit_testing_guideline.md
     - ✅ tasks.md
     - 🏗️ Final Review
+- **[TASK-002] Bash to Taskfile conversion**: Migrating build and test logic from `build.sh` and `test-kernel.sh` to a unified `Taskfile.yml`.
 
 ## Pending
-- [TASK-001] Fix failing boot validation tests.
-- [TASK-002] Complete Taskfile migration.
 - [TASK-XXX] Transition to Dev Containers extension (replacing `localbuildenv.sh`).
 
 ## Known Issues

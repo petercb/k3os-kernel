@@ -6,15 +6,20 @@
 ---
 
 ## [TASK-001] Fix failing boot validation tests for Linux 7.0
+- **Status**: Done
 - **Priority**: High
-- **Status**: Planned
-- **PRD Reference**: Success Criteria - All boot tests pass.
+- **PRD Reference**: Section 5 (Boot Validation Suite)
 - **Implementation Checklist**:
-    - [ ] Run `./test-kernel.sh` inside the container to identify specific failures.
-    - [ ] Analyze `qemu.log` for symbol or driver mismatches in Linux 7.0.
-    - [ ] Fix symbol names in `u-root-init/main.go` and `main_arm64.go` if they changed in 7.0.
-    - [ ] Update `overlay/annotations` if specific modules failed to load.
-    - [ ] Verify fix with `./test-kernel.sh` for both `amd64` and `arm64`.
+    - [x] Create unit tests for `u-root-init` with mocked filesystem/kallsyms.
+    - [x] Refactor `u-root-init` for testability (extracted symbol and testing logic).
+    - [x] Identify and fix broken feature tests for Linux 7.0 using unit tests.
+    - [x] Run `CONFIGMODE=update ./build.sh` in the container to apply annotation changes.
+    - [x] Run `./build.sh` to rebuild the kernel with new configs.
+    - [x] Run `./test-kernel.sh` inside the container to verify fixes.
+    - [x] Analyze `qemu.log` for symbol or driver mismatches in Linux 7.0.
+    - [x] Fix symbol names in `u-root-init/main.go` and `main_arm64.go` if they changed in 7.0.
+    - [x] Update `overlay/annotations` if specific modules failed to load.
+    - [x] Verify fix with `./test-kernel.sh` for both `amd64` and `arm64`.
 - **Acceptance Criteria**: All tests in `u-root-init` report `[PASS]`.
 - **Complexity**: Medium
 
@@ -51,3 +56,15 @@
     - [ ] Update `overlay/annotations` for Rock 4/5.
 - **Acceptance Criteria**: Kernel boots and validates on Rockchip hardware.
 - **Complexity**: High
+
+## [TASK-005] Investigate `pault.ag/go/modprobe` integration
+- **Priority**: Low
+- **Status**: Planned
+- **PRD Reference**: Section 5.3 (Module Loading Strategy)
+- **Dependencies**: [TASK-001]
+- **Implementation Checklist**:
+    - [ ] Evaluate `pault.ag/go/modprobe` for loading modules in `u-root-init`.
+    - [ ] Determine if `initrd` needs to include `.ko` files for validation.
+    - [ ] Test loading a driver (e.g., `v3d`) as a module and validating via symbol/sysfs.
+- **Acceptance Criteria**: Proof of concept showing module loading and validation.
+- **Complexity**: Medium

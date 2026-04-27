@@ -22,13 +22,17 @@ Maintain a lean, stable, and high-performance Linux kernel specifically tailored
 4. **Deploy**: Artifacts (kernel, initrd, squashfs) are uploaded for K3OS consumption.
 
 ## 5. Features & Requirements
-- **Kernel Config Management**: Use Ubuntu-style annotations for maintainability.
-- **Boot Validation Suite**: Go-based init program (`u-root-init`) to check:
-    - Filesystems (OverlayFS, SquashFS)
-    - Container primitives (Cgroup v2, Namespaces)
-    - Hardware drivers (USB, NVMe, GPU, MMC)
-- **Multi-Arch Support**: Unified build system for `amd64` and `arm64`.
-- **JUnit Reporting**: Automated test results compatible with CI pipelines.
+### 5.1 Kernel Config Management
+Use Ubuntu-style annotations for maintainability across multiple architectures.
+
+### 5.2 Boot Validation Suite
+Go-based init program (`u-root-init`) to check:
+- **Core Primitives**: Cgroup v2, Namespaces, OverlayFS, SquashFS.
+- **Networking**: Netfilter (IPTables/NFTables), Bridge, VXLAN.
+- **Hardware Drivers**: USB Storage/UAS, NVMe, GPU (V3D), MMC (BCM2835, SDHCI).
+
+### 5.3 Module Loading Strategy
+To optimize kernel size and flexibility, investigate loading optional drivers as modules (`m`) instead of built-in (`y`). The validation suite should support probing these modules via `pault.ag/go/modprobe` before verifying their status.
 
 ## 6. Out of Scope
 - Support for non-Kubernetes workloads.

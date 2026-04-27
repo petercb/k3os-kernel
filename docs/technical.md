@@ -11,6 +11,7 @@
 - **Ubuntu-Style Annotations**: We use the `debian/rules` mechanism from Ubuntu/Debian kernels to manage configurations across multiple architectures.
 - **u-root-init**: A Go-based init program that replaces standard init during testing. It performs direct syscalls and inspects `/proc` and `/sys` to verify kernel state.
 - **Taskfile Automation**: We are moving away from monolithic bash scripts to modular `Taskfile.yml` tasks for clarity and dependency management.
+- **Dynamic Module Validation (Planned)**: Investigation into using `pault.ag/go/modprobe` to load and validate drivers dynamically, allowing for smaller kernels with more modular components.
 
 ## 3. Technology Stack
 - **Language**: Go (for `u-root-init`), Bash (primary scripts), YAML (Taskfile - WIP).
@@ -43,4 +44,17 @@
 - **AMD64**: Generic commodity hardware support (NUCs, mini PCs). Includes HFS+ support for ISO boot validation (`u-root-init/main_amd64.go`).
 - **ARM64**:
     - RPi 4/5: Uses `v3d`, `bcm2835_mmc`, `bcm2835_pinctrl`.
-    - Rockchip: Uses `rockchip_pinctrl`.
+    - **Rockchip**: Uses `rockchip_pinctrl`.
+
+## 7. Development Conventions
+
+### Git Flow
+- **Feature Branches**: `feature/[task-id]-[slug]`
+- **Main Branch**: `7.0` (for current modernization effort)
+- **Merging**: Fast-forward merges (`--ff-only`) are preferred into the main branch.
+
+### Commit Messages
+- **Convention**: [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+- **Format**: `<type>[optional scope]: <description>`
+- **Types**: `feat`, `fix`, `docs`, `refactor`, `test`, `chore`.
+- **Example**: `fix(boot): [TASK-001] resolve failing BCM2835 MMC symbols`

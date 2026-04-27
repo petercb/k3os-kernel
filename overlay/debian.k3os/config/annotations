@@ -3328,7 +3328,7 @@ CONFIG_DRM_RZG2L_DU                             policy<{'arm64': '-'}>
 CONFIG_DRM_RZG2L_MIPI_DSI                       policy<{'arm64': '-'}>
 CONFIG_DRM_RZG2L_USE_MIPI_DSI                   policy<{'arm64': '-'}>
 CONFIG_DRM_SAMSUNG_DSIM                         policy<{'arm64': 'n'}>
-CONFIG_DRM_SCHED                                policy<{'amd64': '-', 'arm64': 'm'}>
+CONFIG_DRM_SCHED                                policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_DRM_SHMOBILE                             policy<{'arm64': '-'}>
 CONFIG_DRM_SII902X                              policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_DRM_SII9234                              policy<{'amd64': '-', 'arm64': 'n'}>
@@ -3376,7 +3376,7 @@ CONFIG_DRM_TTM                                  policy<{'amd64': '-', 'arm64': '
 CONFIG_DRM_TTM_HELPER                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_DRM_TYR                                  policy<{'arm64': 'n'}>
 CONFIG_DRM_UDL                                  policy<{'amd64': '-', 'arm64': 'n'}>
-CONFIG_DRM_V3D                                  policy<{'arm64': 'm'}>
+CONFIG_DRM_V3D                                  policy<{'arm64': 'y'}>
 CONFIG_DRM_VC4                                  policy<{'arm64': '-'}>
 CONFIG_DRM_VC4_HDMI_CEC                         policy<{'arm64': '-'}>
 CONFIG_DRM_VESADRM                              policy<{'amd64': '-'}>

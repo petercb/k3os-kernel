@@ -24,7 +24,7 @@ func validateArchSpecific() {
 	})
 
 	runTest("MMC BCM2835 Support", func() (bool, string) {
-		if hasSymbol("bcm2835_mmc_probe") || hasSymbol("bcm2835_mmc_driver") || hasSymbol("mci_bcm2835_driver") || hasSymbol("bcm2835_mmc_irq") {
+		if hasSymbol("bcm2835_probe") || hasSymbol("bcm2835_driver_init") || hasSymbol("bcm2835_mmc_probe") || hasSymbol("bcm2835_mmc_driver") || hasSymbol("mci_bcm2835_driver") || hasSymbol("bcm2835_mmc_irq") || hasSymbol("sdhci_bcm2835_probe") || hasSymbol("sdhci_bcm2835_ops") || hasSymbol("bcm2835_mmc_ops") || hasSymbol("bcm2835_mmc_pdata") || hasSymbol("bcm2835_sdhost_probe") || hasSymbol("bcm2835_sdhost_driver") {
 			return true, ""
 		}
 		if _, err := os.Stat("/sys/module/bcm2835_mmc"); err == nil {
