@@ -107,5 +107,4 @@ popd
 rm -rf "${KERNEL_ROOT}"
 dpkg --remove \
     "linux-image-unsigned-${VERSION}" \
-    "linux-modules-${VERSION}" \
-    "linux-modules-extra-${VERSION}"
+    "linux-modules-${VERSION}"
