@@ -27,6 +27,7 @@ RUN <<-EOF
     sed -i 's/^Types:.*$/Types: deb deb-src/' /etc/apt/sources.list.d/ubuntu.sources
     apt-get update
     apt-get build-dep -y --no-install-recommends linux
+    curl -1sLf 'https://dl.cloudsmith.io/public/task/task/setup.deb.sh' | bash
     apt-get install -y --no-install-recommends \
         cpio \
         dwarves \
@@ -37,7 +38,8 @@ RUN <<-EOF
         linux-firmware-realtek \
         llvm \
         rsync \
-        squashfs-tools
+        squashfs-tools \
+        task
     [ "${TARGETARCH}" == "arm64" ] && apt-get install -y --no-install-recommends \
         linux-firmware-raspi
     [ "${TARGETARCH}" == "amd64" ] && apt-get install -y --no-install-recommends \
