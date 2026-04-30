@@ -1870,7 +1870,6 @@ CONFIG_CB710_DEBUG                              policy<{'amd64': '-', 'arm64': '
 CONFIG_CB710_DEBUG_ASSUMPTIONS                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CC10001_ADC                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CCS811                                   policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_CC_HAS_MARCH_NATIVE                      policy<{'amd64': '-'}>
 CONFIG_CC_HAS_UBSAN_BOUNDS                      policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CC_HAS_UBSAN_BOUNDS_STRICT               policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CDNS_I3C_MASTER                          policy<{'amd64': '-', 'arm64': '-'}>
@@ -13175,7 +13174,6 @@ CONFIG_X86_MCELOG_LEGACY                        policy<{'amd64': 'n'}>
 CONFIG_X86_MCE_INJECT                           policy<{'amd64': 'n'}>
 CONFIG_X86_MEM_ENCRYPT                          policy<{'amd64': '-'}>
 CONFIG_X86_MSR                                  policy<{'amd64': 'y'}>
-CONFIG_X86_NATIVE_CPU                           policy<{'amd64': '-'}>
 CONFIG_X86_NUMACHIP                             policy<{'amd64': '-'}>
 CONFIG_X86_P4_CLOCKMOD                          policy<{'amd64': 'n'}>
 CONFIG_X86_PKG_TEMP_THERMAL                     policy<{'amd64': 'y'}>
