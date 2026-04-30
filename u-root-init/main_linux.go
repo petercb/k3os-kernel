@@ -5,6 +5,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"strings"
 	"syscall"
 	"time"
 )
@@ -13,15 +14,36 @@ func main() {
 	fmt.Println("--- Starting K3s-Ready Kernel Validation ---")
 
 	// 1. Mount essential filesystems
+	_ = os.MkdirAll("/proc", 0o755)
 	if err := syscall.Mount("proc", "/proc", "proc", 0, ""); err != nil {
 		fmt.Printf("[DEBUG] Failed to mount /proc: %v\n", err)
 	}
+
+	_ = os.MkdirAll("/sys", 0o755)
 	if err := syscall.Mount("sysfs", "/sys", "sysfs", 0, ""); err != nil {
 		fmt.Printf("[DEBUG] Failed to mount /sys: %v\n", err)
 	}
 
 	// Load symbols into memory once to speed up checks
 	loadSymbols()
+	if !symbolsLoaded() {
+		fmt.Println("[WARN] /proc/kallsyms is empty or could not be read.")
+	}
+
+	// Check for modules directory
+	kernelVersion := "unknown"
+	if utsname, err := os.ReadFile("/proc/sys/kernel/osrelease"); err == nil {
+		kernelVersion = strings.TrimSpace(string(utsname))
+	}
+	modulePath := fmt.Sprintf("/lib/modules/%s", kernelVersion)
+	if _, err := os.Stat(modulePath); err != nil {
+		fmt.Printf("[DEBUG] Module directory %s not found: %v\n", modulePath, err)
+	} else {
+		fmt.Printf("[DEBUG] Found module directory: %s\n", modulePath)
+		if _, err := os.Stat(modulePath + "/modules.dep"); err != nil {
+			fmt.Printf("[WARN] modules.dep not found in %s. modprobe will fail.\n", modulePath)
+		}
+	}
 
 	// 2. Mount cgroup2
 	if err := os.MkdirAll("/sys/fs/cgroup", 0o755); err != nil {
@@ -34,7 +56,7 @@ func main() {
 	// 3. Run individual tests
 	runTest("OverlayFS Support", func() (bool, string) {
 		if f, err := os.Open("/proc/filesystems"); err == nil {
-			defer f.Close()
+			defer func() { _ = f.Close() }()
 			if hasFilesystem(f, "overlay") {
 				return true, ""
 			}
@@ -68,17 +90,37 @@ func main() {
 	for _, f := range Features {
 		f := f // capture range variable
 		runTest(f.Name, func() (bool, string) {
-			if f.Path != "" {
-				if _, err := os.Stat(f.Path); err == nil {
-					return true, ""
+			check := func() bool {
+				if f.Path != "" {
+					if _, err := os.Stat(f.Path); err == nil {
+						return true
+					}
+				}
+				for _, sym := range f.Symbols {
+					if hasSymbol(sym) {
+						return true
+					}
+				}
+				return false
+			}
+
+			// First check
+			if check() {
+				return true, ""
+			}
+
+			// If failed, try loading module and re-check
+			if f.Module != "" {
+				if err := tryLoadModule(f.Module); err == nil {
+					if check() {
+						return true, ""
+					}
+				} else {
+					fmt.Printf("[DEBUG] modprobe %s failed: %v\n", f.Module, err)
 				}
 			}
-			for _, sym := range f.Symbols {
-				if hasSymbol(sym) {
-					return true, ""
-				}
-			}
-			return false, "Required symbols or sysfs paths not found"
+
+			return false, "Required symbols or sysfs paths not found (even after modprobe if applicable)"
 		})
 	}
 

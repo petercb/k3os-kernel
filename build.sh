@@ -71,7 +71,7 @@ depmod "${VERSION}"
 echo "RESUME=none" > /etc/initramfs-tools/conf.d/resume
 mkinitramfs \
     -c gzip \
-    -o "/tmp/initrd" \
+    -o /tmp/initrd \
     "${VERSION}"
 cpio -id -D /tmp/initrd.old < /tmp/initrd
 mkdir -p /tmp/initrd.new/lib
@@ -81,21 +81,20 @@ rm -rf /tmp/initrd /tmp/initrd.old
 pushd /tmp/initrd.new
 find . | cpio -H newc -o | gzip -c -1 > "${DIST_DIR}/k3os-initrd-${TARGETARCH}.gz"
 popd
-rm -rf /tmp/initrd.new/lib/modules
+rm -rf /tmp/initrd.new
 
 # Assemble kernel
 mkdir -p "${KERNEL_ROOT}/lib"
 echo "${VERSION}" > "${KERNEL_ROOT}/version"
 cp "${KERNEL_ROOT}/version" "${DIST_DIR}/k3os-kernel-version-${TARGETARCH}.txt"
-mv "/boot/System.map-${VERSION}" "${KERNEL_ROOT}/System.map"
-mv "/boot/config-${VERSION}" "${KERNEL_ROOT}/config"
-mv "/boot/vmlinuz-${VERSION}" "${KERNEL_ROOT}/vmlinuz"
+cp "/boot/System.map-${VERSION}" "${KERNEL_ROOT}/System.map"
+cp "/boot/config-${VERSION}" "${KERNEL_ROOT}/config"
+cp "/boot/vmlinuz-${VERSION}" "${KERNEL_ROOT}/vmlinuz"
 cp "${KERNEL_ROOT}/vmlinuz" "${DIST_DIR}/k3os-vmlinuz-${TARGETARCH}.img"
-mv /lib/modules "${KERNEL_ROOT}/lib"
+cp -r /lib/modules "${KERNEL_ROOT}/lib/"
 
 # Assemble firmware
-mv /tmp/initrd.new/lib/firmware "${KERNEL_ROOT}/lib/"
-
+cp -r /lib/firmware "${KERNEL_ROOT}/lib/"
 
 pushd "${KERNEL_ROOT}"
 OUTFILE="${DIST_DIR}/k3os-kernel-${TARGETARCH}.squashfs"

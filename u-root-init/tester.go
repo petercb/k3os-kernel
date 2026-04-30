@@ -32,23 +32,24 @@ type FeatureTest struct {
 	Name    string
 	Symbols []string
 	Path    string
+	Module  string // New: kernel module name to try loading
 }
 
 var (
 	results  []TestResult
 	Features = []FeatureTest{
-		{"Veth Support", []string{"veth_setup"}, ""},
-		{"Bridge Support", []string{"br_init"}, "/sys/module/bridge"},
-		{"IP Advanced Router Support", []string{"fib_rules_register"}, ""},
-		{"USB UAS Support", []string{"uas_driver"}, "/sys/bus/usb/drivers/uas"},
-		{"VXLAN Support", []string{"vxlan_newlink", "vxlan_dev_setup", "vxlan_validate"}, ""},
-		{"Netfilter Support", []string{"nf_register_net_hooks", "nf_register_net_hook", "nf_register_hook"}, ""},
-		{"IPTables/NFTables Support", []string{"ipt_register_table", "ipt_do_table", "xt_register_table", "nft_register_table", "nft_do_chain"}, ""},
-		{"Netfilter Masquerade Support", []string{"masquerade_tg_reg", "nf_nat_masquerade_ipv4", "nf_nat_masquerade"}, ""},
-		{"XT Match Comment Support", []string{"comment_mt"}, ""},
-		{"NVMe over TCP Support", []string{"nvme_tcp_init"}, "/sys/module/nvme_tcp"},
-		{"VFIO PCI Support", []string{"vfio_pci_init"}, "/sys/module/vfio_pci"},
-		{"UIO PCI Generic Support", []string{"uio_pci_generic_init"}, "/sys/module/uio_pci_generic"},
+		{Name: "Veth Support", Symbols: []string{"veth_setup"}, Path: "", Module: ""},
+		{Name: "Bridge Support", Symbols: []string{"br_init"}, Path: "/sys/module/bridge", Module: "bridge"},
+		{Name: "IP Advanced Router Support", Symbols: []string{"fib_rules_register"}, Path: "", Module: ""},
+		{Name: "USB UAS Support", Symbols: []string{"uas_driver"}, Path: "/sys/bus/usb/drivers/uas", Module: "uas"},
+		{Name: "VXLAN Support", Symbols: []string{"vxlan_dev_setup", "vxlan_newlink"}, Path: "", Module: "vxlan"},
+		{Name: "Netfilter Support", Symbols: []string{"nf_register_net_hook", "nf_register_net_hooks"}, Path: "", Module: ""},
+		{Name: "IPTables/NFTables Support", Symbols: []string{"ipt_register_table", "ipt_do_table", "nft_do_chain"}, Path: "", Module: ""},
+		{Name: "Netfilter Masquerade Support", Symbols: []string{"masquerade_tg_reg", "nf_nat_masquerade_ipv4"}, Path: "", Module: ""},
+		{Name: "XT Match Comment Support", Symbols: []string{"comment_mt"}, Path: "", Module: ""},
+		{Name: "NVMe over TCP Support", Symbols: []string{"nvme_tcp_init"}, Path: "/sys/module/nvme_tcp", Module: "nvme_tcp"},
+		{Name: "VFIO PCI Support", Symbols: []string{"vfio_pci_init"}, Path: "/sys/module/vfio_pci", Module: "vfio_pci"},
+		{Name: "UIO PCI Generic Support", Symbols: []string{"uio_pci_generic_init"}, Path: "/sys/module/uio_pci_generic", Module: "uio_pci_generic"},
 	}
 )
 

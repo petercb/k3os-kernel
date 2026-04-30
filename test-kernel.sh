@@ -34,7 +34,7 @@ apt-get install -yq --no-install-recommends "${PKGS[@]}"
 PROJECT_ROOT=$(pwd)
 KERNEL="${PROJECT_ROOT}/dist/k3os-vmlinuz-${TARGETARCH}.img"
 INITRD_DIR=$(mktemp -d)
-INITRD="${INITRD_DIR}/test-initrd.gz"
+INITRD="${INITRD_DIR}/test-initrd.cpio"
 
 if [ ! -f "$KERNEL" ]; then
     echo "Kernel $KERNEL not found!"
@@ -54,10 +54,15 @@ pushd "$INITRD_DIR"
 # u-root now requires a Go workspace for multi-module builds
 go work init
 go work use ./u-root-init
+
+unsquashfs -n -d . "${PROJECT_ROOT}/dist/k3os-kernel-${TARGETARCH}.squashfs" lib
+find lib | cpio -H newc -o > base.cpio
+rm -rf lib
 u-root -o "$(basename "$INITRD")" \
-       -defaultsh="" \
-       -initcmd test-init \
-       test-init
+    -defaultsh="" \
+    -initcmd test-init \
+    -base ./base.cpio \
+    test-init
 popd
 
 if [ ! -f "$INITRD" ]; then

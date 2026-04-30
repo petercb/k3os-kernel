@@ -1,4 +1,14 @@
 # Activity Log
++
++## [2026-04-27 19:00] [TASK-005] Implemented dynamic module loading PoC.
++- **Action**: Integrated `pault.ag/go/modprobe`.
++- **Details**:
++    - Added `Module` field to `FeatureTest`.
++    - Implemented `tryLoadModule` with re-scanning of symbols.
++    - Updated test loop to attempt failover modprobe.
++    - Formatted code with `gofumpt`.
+
+ ## [2026-04-27 18:25] [TASK-001] Completed boot validation fix. All 21 tests pass in QEMU (arm64).
 
 ## [2026-04-27 18:25] [TASK-001] Completed boot validation fix. All 21 tests pass in QEMU (arm64).
 - **Action**: Completed boot validation fix.

@@ -59,12 +59,12 @@
 
 ## [TASK-005] Investigate `pault.ag/go/modprobe` integration
 - **Priority**: Low
-- **Status**: Planned
+- **Status**: Done
 - **PRD Reference**: Section 5.3 (Module Loading Strategy)
 - **Dependencies**: [TASK-001]
 - **Implementation Checklist**:
-    - [ ] Evaluate `pault.ag/go/modprobe` for loading modules in `u-root-init`.
-    - [ ] Determine if `initrd` needs to include `.ko` files for validation.
-    - [ ] Test loading a driver (e.g., `v3d`) as a module and validating via symbol/sysfs.
+    - [x] Evaluate `pault.ag/go/modprobe` for loading modules in `u-root-init`.
+    - [x] Determine if `initrd` needs to include `.ko` files for validation.
+    - [x] Test loading a driver (e.g., `v3d`) as a module and validating via symbol/sysfs.
 - **Acceptance Criteria**: Proof of concept showing module loading and validation.
 - **Complexity**: Medium
