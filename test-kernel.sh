@@ -59,6 +59,7 @@ unsquashfs -n -d . "${PROJECT_ROOT}/dist/k3os-kernel-${TARGETARCH}.squashfs" lib
 find lib | cpio -H newc -o > base.cpio
 rm -rf lib
 u-root -o "$(basename "$INITRD")" \
+    -build=binary \
     -defaultsh="" \
     -initcmd test-init \
     -base ./base.cpio \
