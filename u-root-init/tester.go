@@ -38,6 +38,9 @@ type FeatureTest struct {
 var (
 	results  []TestResult
 	Features = []FeatureTest{
+		{Name: "Loop Device Support", Symbols: []string{"loop_init", "loop_configure"}, Path: "", Module: ""},
+		{Name: "HW Random Support", Symbols: []string{"hwrng_register"}, Path: "", Module: ""},
+		{Name: "TPM Support", Symbols: []string{"tpm_chip_register", "tpm_init"}, Path: "", Module: ""},
 		{Name: "Veth Support", Symbols: []string{"veth_setup"}, Path: "", Module: ""},
 		{Name: "Bridge Support", Symbols: []string{"br_init"}, Path: "/sys/module/bridge", Module: "bridge"},
 		{Name: "IP Advanced Router Support", Symbols: []string{"fib_rules_register"}, Path: "", Module: ""},

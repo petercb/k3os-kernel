@@ -82,4 +82,70 @@ func validateArchSpecific() {
 		}
 		return false, "PINCTRL ROCKCHIP support not found in kallsyms"
 	})
+
+	runTest("BCM2835_WDT Support", func() (bool, string) {
+		if hasSymbol("bcm2835_wdt_probe") || hasSymbol("bcm2835_wdt_init") {
+			return true, ""
+		}
+		_ = tryLoadModule("bcm2835_wdt")
+		if hasSymbol("bcm2835_wdt_probe") || hasSymbol("bcm2835_wdt_init") {
+			return true, ""
+		}
+		return false, "BCM2835_WDT support not found"
+	})
+
+	runTest("DW_WATCHDOG Support", func() (bool, string) {
+		if hasSymbol("dw_wdt_probe") || hasSymbol("dw_wdt_init") || hasSymbol("dw_wdt_drv_probe") {
+			return true, ""
+		}
+		_ = tryLoadModule("dw_wdt")
+		if hasSymbol("dw_wdt_probe") || hasSymbol("dw_wdt_init") || hasSymbol("dw_wdt_drv_probe") {
+			return true, ""
+		}
+		return false, "DW_WATCHDOG support not found"
+	})
+
+	runTest("HW_RANDOM_BCM2835 Support", func() (bool, string) {
+		if hasSymbol("bcm2835_rng_probe") || hasSymbol("bcm2835_rng_init") {
+			return true, ""
+		}
+		_ = tryLoadModule("bcm2835-rng")
+		if hasSymbol("bcm2835_rng_probe") || hasSymbol("bcm2835_rng_init") {
+			return true, ""
+		}
+		return false, "HW_RANDOM_BCM2835 support not found"
+	})
+
+	runTest("HW_RANDOM_ROCKCHIP Support", func() (bool, string) {
+		if hasSymbol("rockchip_rng_probe") || hasSymbol("rockchip_rng_init") {
+			return true, ""
+		}
+		_ = tryLoadModule("rockchip-rng")
+		if hasSymbol("rockchip_rng_probe") || hasSymbol("rockchip_rng_init") {
+			return true, ""
+		}
+		return false, "HW_RANDOM_ROCKCHIP support not found"
+	})
+
+	runTest("HW_RANDOM_ARM_SMCCC_TRNG Support", func() (bool, string) {
+		if hasSymbol("smccc_trng_probe") || hasSymbol("smccc_trng_init") {
+			return true, ""
+		}
+		_ = tryLoadModule("smccc_trng")
+		if hasSymbol("smccc_trng_probe") || hasSymbol("smccc_trng_init") {
+			return true, ""
+		}
+		return false, "HW_RANDOM_ARM_SMCCC_TRNG support not found"
+	})
+
+	runTest("HW_RANDOM_IPROC_RNG200 Support", func() (bool, string) {
+		if hasSymbol("iproc_rng200_probe") || hasSymbol("iproc_rng200_init") {
+			return true, ""
+		}
+		_ = tryLoadModule("iproc-rng200")
+		if hasSymbol("iproc_rng200_probe") || hasSymbol("iproc_rng200_init") {
+			return true, ""
+		}
+		return false, "HW_RANDOM_IPROC_RNG200 support not found"
+	})
 }
