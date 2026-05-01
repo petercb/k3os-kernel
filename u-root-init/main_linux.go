@@ -89,6 +89,12 @@ func main() {
 	// 4. Feature tests (via symbols or sysfs paths)
 	for _, f := range Features {
 		f := f // capture range variable
+
+		// Skip tests not applicable to this architecture
+		if f.Arch != ArchAll && f.Arch != currentArch {
+			continue
+		}
+
 		runTest(f.Name, func() (bool, string) {
 			check := func() bool {
 				if f.Path != "" {
@@ -102,6 +108,14 @@ func main() {
 					}
 				}
 				return false
+			}
+
+			if f.Disabled {
+				// Assert the feature is NOT present
+				if check() {
+					return false, fmt.Sprintf("%s should be disabled but was found", f.Name)
+				}
+				return true, ""
 			}
 
 			// First check
@@ -123,8 +137,6 @@ func main() {
 			return false, "Required symbols or sysfs paths not found (even after modprobe if applicable)"
 		})
 	}
-
-	validateArchSpecific()
 
 	// Generate JUnit XML
 	generateJUnit()

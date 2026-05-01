@@ -2,6 +2,6 @@
 
 package main
 
-func validateArchSpecific() {
-	// No arch-specific tests for this architecture
-}
+// currentArch is empty for unsupported architectures;
+// only ArchAll tests will run.
+const currentArch = ArchAll
