@@ -45,7 +45,12 @@ if [ "${CONFIGMODE:-no}" != "no" ]; then
         gcc-aarch64-linux-gnu gcc-x86-64-linux-gnu
     if ! debian/rules ${CONFIGMODE}configs
     then
-        sed -i -e "/^CONFIG_CC_CAN_LINK/d" -e "/^CONFIG_CC_VERSION_TEXT/d" debian.k3os/config/annotations
+        sed -i \
+            -e "/^CONFIG_CC_CAN_LINK/d" \
+            -e "/^CONFIG_CC_VERSION_TEXT/d" \
+            -e "/^CONFIG_CC_HAS_MARCH_NATIVE/d" \
+            -e "/^CONFIG_X86_NATIVE_CPU/d" \
+            debian.k3os/config/annotations
         cp debian.k3os/config/annotations \
             "${PROJECT_ROOT}/overlay/debian.k3os/config/annotations"
         exit 1
