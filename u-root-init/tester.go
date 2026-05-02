@@ -78,8 +78,8 @@ var (
 		{Name: "NVRAM Support", Symbols: []string{"nvram_init", "nvram_read_byte"}, Arch: ArchAMD64},
 		{Name: "ITCO_WDT Support", Symbols: []string{"iTCO_wdt_init", "iTCO_wdt_probe"}, Module: "iTCO_wdt", Arch: ArchAMD64},
 		{Name: "IT87_WDT Support", Symbols: []string{"it87_wdt_init", "it87_wdt_probe"}, Module: "it87_wdt", Arch: ArchAMD64},
-		{Name: "HW_RANDOM_AMD Support", Symbols: []string{"amd_rng_init", "amd_rng_probe"}, Module: "amd-rng", Arch: ArchAMD64},
-		{Name: "HW_RANDOM_INTEL Support", Symbols: []string{"intel_rng_init", "intel_rng_probe"}, Module: "intel-rng", Arch: ArchAMD64},
+		{Name: "HW_RANDOM_AMD Support", Symbols: []string{"amd_rng_mod_init", "amd_rng_init", "amd_rng_read"}, Module: "amd-rng", Arch: ArchAMD64},
+		{Name: "HW_RANDOM_INTEL Support", Symbols: []string{"intel_rng_mod_init", "intel_rng_init", "intel_rng_hw_init"}, Module: "intel-rng", Arch: ArchAMD64},
 
 		// === ARM64-only ===
 		{Name: "DRM V3D Support", Symbols: []string{"v3d_v71_ops", "v3d_driver"}, Path: "/sys/module/v3d", Module: "v3d", Arch: ArchARM64},
@@ -95,9 +95,9 @@ var (
 		{Name: "BCM2835_WDT Support", Symbols: []string{"bcm2835_wdt_probe", "bcm2835_wdt_init"}, Module: "bcm2835_wdt", Arch: ArchARM64},
 		{Name: "DW_WATCHDOG Support", Symbols: []string{"dw_wdt_probe", "dw_wdt_init", "dw_wdt_drv_probe"}, Module: "dw_wdt", Arch: ArchARM64},
 		{Name: "HW_RANDOM_BCM2835 Support", Symbols: []string{"bcm2835_rng_probe", "bcm2835_rng_init"}, Module: "bcm2835-rng", Arch: ArchARM64},
-		{Name: "HW_RANDOM_ROCKCHIP Support", Symbols: []string{"rockchip_rng_probe", "rockchip_rng_init"}, Module: "rockchip-rng", Arch: ArchARM64},
-		{Name: "HW_RANDOM_ARM_SMCCC_TRNG Support", Symbols: []string{"smccc_trng_probe", "smccc_trng_init"}, Module: "smccc_trng", Arch: ArchARM64},
-		{Name: "HW_RANDOM_IPROC_RNG200 Support", Symbols: []string{"iproc_rng200_probe", "iproc_rng200_init"}, Module: "iproc-rng200", Arch: ArchARM64},
+		{Name: "HW_RANDOM_ROCKCHIP Support", Symbols: []string{"rk_rng_probe", "rk_rng_driver", "rk3568_rng_read", "rk3568_rng_init", "rk3576_rng_init"}, Module: "rockchip-rng", Arch: ArchARM64},
+		{Name: "HW_RANDOM_ARM_SMCCC_TRNG Support", Symbols: []string{"smccc_trng_probe", "smccc_trng_init", "smccc_trng_driver"}, Module: "smccc_trng", Arch: ArchARM64},
+		{Name: "HW_RANDOM_IPROC_RNG200 Support", Symbols: []string{"iproc_rng200_probe", "iproc_rng200_init", "iproc_rng200_driver"}, Module: "iproc-rng200", Arch: ArchARM64},
 	}
 )
 
