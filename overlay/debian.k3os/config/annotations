@@ -1435,11 +1435,11 @@ CONFIG_BATMAN_ADV_TRACING                       policy<{'amd64': '-', 'arm64': '
 CONFIG_BATTERY_88PM860X                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BATTERY_ACT8945A                         policy<{'arm64': '-'}>
 CONFIG_BATTERY_AXP20X                           policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_BATTERY_BQ27XXX                          policy<{'amd64': 'n', 'arm64': 'y'}>
-CONFIG_BATTERY_BQ27XXX_DT_UPDATES_NVM           policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_BATTERY_BQ27XXX                          policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_BATTERY_BQ27XXX_DT_UPDATES_NVM           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BATTERY_BQ27XXX_HDQ                      policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_BATTERY_BQ27XXX_I2C                      policy<{'amd64': '-', 'arm64': 'y'}>
-CONFIG_BATTERY_CHAGALL                          policy<{'amd64': 'n', 'arm64': 'm'}>
+CONFIG_BATTERY_BQ27XXX_I2C                      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_BATTERY_CHAGALL                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BATTERY_CPCAP                            policy<{'arm64': '-'}>
 CONFIG_BATTERY_CW2015                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BATTERY_DA9030                           policy<{'amd64': '-', 'arm64': '-'}>
@@ -1456,8 +1456,9 @@ CONFIG_BATTERY_INTEL_DC_TI                      policy<{'amd64': '-'}>
 CONFIG_BATTERY_LENOVO_YOGA_C630                 policy<{'arm64': '-'}>
 CONFIG_BATTERY_MAX17040                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BATTERY_MAX17042                         policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_BATTERY_MAX1720X                         policy<{'amd64': 'n', 'arm64': 'm'}>
+CONFIG_BATTERY_MAX1720X                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BATTERY_MAX1721X                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_BATTERY_OLPC                             policy<{'arm64': 'n'}>
 CONFIG_BATTERY_PM8916_BMS_VM                    policy<{'arm64': '-'}>
 CONFIG_BATTERY_QCOM_BATTMGR                     policy<{'arm64': '-'}>
 CONFIG_BATTERY_RT5033                           policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -1944,7 +1945,7 @@ CONFIG_CHARGER_MAX77693                         policy<{'amd64': '-', 'arm64': '
 CONFIG_CHARGER_MAX77705                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CHARGER_MAX77976                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CHARGER_MAX8903                          policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_CHARGER_MAX8971                          policy<{'amd64': 'n', 'arm64': 'm'}>
+CONFIG_CHARGER_MAX8971                          policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CHARGER_MAX8997                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CHARGER_MAX8998                          policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_CHARGER_MP2629                           policy<{'amd64': '-', 'arm64': '-'}>
@@ -1960,7 +1961,7 @@ CONFIG_CHARGER_RT5033                           policy<{'amd64': '-', 'arm64': '
 CONFIG_CHARGER_RT9455                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CHARGER_RT9467                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CHARGER_RT9471                           policy<{'amd64': 'n', 'arm64': 'n'}>
-CONFIG_CHARGER_RT9756                           policy<{'amd64': 'n', 'arm64': 'm'}>
+CONFIG_CHARGER_RT9756                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CHARGER_SBS                              policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_CHARGER_SC2731                           policy<{'arm64': '-'}>
 CONFIG_CHARGER_SMB347                           policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -4069,7 +4070,7 @@ CONFIG_FTL                                      policy<{'amd64': '-', 'arm64': '
 CONFIG_FTM_QUADDEC                              policy<{'arm64': '-'}>
 CONFIG_FUEL_GAUGE_MM8013                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_FUEL_GAUGE_SC27XX                        policy<{'arm64': '-'}>
-CONFIG_FUEL_GAUGE_STC3117                       policy<{'amd64': 'n', 'arm64': 'm'}>
+CONFIG_FUEL_GAUGE_STC3117                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_FUJITSU_ES                               policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_FUJITSU_LAPTOP                           policy<{'amd64': 'n'}>
 CONFIG_FUJITSU_TABLET                           policy<{'amd64': 'n'}>
