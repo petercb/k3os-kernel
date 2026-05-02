@@ -150,6 +150,9 @@ CONFIG_I2C_CHARDEV                              note<'LP:1417032'>
 CONFIG_IDLE_PAGE_TRACKING                       policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_IDLE_PAGE_TRACKING                       note<'is there a cost associated with this?'>
 
+CONFIG_IGH_ECAT                                 policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_IGH_ECAT                                 note<'TODO: update note'>
+
 CONFIG_IIO_SIMPLE_DUMMY_BUFFER                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_IIO_SIMPLE_DUMMY_BUFFER                  note<'TODO: update note'>
 
@@ -4859,8 +4862,8 @@ CONFIG_IGB_DCA                                  policy<{'amd64': '-'}>
 CONFIG_IGB_HWMON                                policy<{'amd64': 'y', 'arm64': '-'}>
 CONFIG_IGC                                      policy<{'amd64': 'y', 'arm64': '-'}>
 CONFIG_IGC_LEDS                                 policy<{'amd64': '-', 'arm64': '-'}>
-CONFIG_IGH_ECAT_ENABLE_EOE                      policy<{'amd64': 'n', 'arm64': '-'}>
-CONFIG_IGH_ECAT_GENERIC_DEVICE                  policy<{'amd64': 'n', 'arm64': '-'}>
+CONFIG_IGH_ECAT_ENABLE_EOE                      policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_IGH_ECAT_GENERIC_DEVICE                  policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_IIO                                      policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_IIO_ADC_HELPER                           policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_IIO_ADIS_LIB                             policy<{'amd64': '-', 'arm64': '-'}>
