@@ -1393,6 +1393,7 @@ CONFIG_BACKLIGHT_APPLE                          policy<{'amd64': 'n', 'arm64': '
 CONFIG_BACKLIGHT_APPLE_DWI                      policy<{'arm64': '-'}>
 CONFIG_BACKLIGHT_ARCXCNN                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BACKLIGHT_AS3711                         policy<{'amd64': '-', 'arm64': '-'}>
+CONFIG_BACKLIGHT_AW99706                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BACKLIGHT_BD6107                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BACKLIGHT_CARILLO_RANCH                  policy<{'amd64': '-'}>
 CONFIG_BACKLIGHT_CGBC                           policy<{'amd64': '-'}>
@@ -1400,8 +1401,10 @@ CONFIG_BACKLIGHT_DA903X                         policy<{'amd64': '-', 'arm64': '
 CONFIG_BACKLIGHT_DA9052                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BACKLIGHT_GPIO                           policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BACKLIGHT_KTD253                         policy<{'amd64': 'n', 'arm64': 'n'}>
+CONFIG_BACKLIGHT_KTD2801                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BACKLIGHT_KTZ8866                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BACKLIGHT_LED                            policy<{'arm64': 'n'}>
+CONFIG_BACKLIGHT_LM3509                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BACKLIGHT_LM3533                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_BACKLIGHT_LM3630A                        policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_BACKLIGHT_LM3639                         policy<{'amd64': 'n', 'arm64': 'n'}>
@@ -5781,6 +5784,7 @@ CONFIG_LEDS_DA903X                              policy<{'amd64': '-', 'arm64': '
 CONFIG_LEDS_DA9052                              policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_LEDS_DAC124S085                          policy<{'amd64': '-', 'arm64': 'n'}>
 CONFIG_LEDS_EL15203000                          policy<{'amd64': '-', 'arm64': 'n'}>
+CONFIG_LEDS_EXPRESSWIRE                         policy<{'amd64': '-', 'arm64': '-'}>
 CONFIG_LEDS_GPIO                                policy<{'amd64': 'n', 'arm64': 'y'}>
 CONFIG_LEDS_GROUP_MULTICOLOR                    policy<{'arm64': '-'}>
 CONFIG_LEDS_INTEL_SS4200                        policy<{'amd64': 'n', 'arm64': '-'}>
