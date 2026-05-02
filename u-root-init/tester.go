@@ -75,11 +75,9 @@ var (
 
 		// === AMD64-only ===
 		{Name: "HFS+ Support", Symbols: []string{"hfsplus_fill_super"}, Arch: ArchAMD64},
-		{Name: "NVRAM Support", Symbols: []string{"nvram_init", "nvram_read_byte"}, Arch: ArchAMD64},
+		{Name: "NVRAM Support", Symbols: []string{"nvram_misc_open", "pc_nvram_read", "pc_nvram_write"}, Arch: ArchAMD64},
 		{Name: "ITCO_WDT Support", Symbols: []string{"iTCO_wdt_init", "iTCO_wdt_probe"}, Module: "iTCO_wdt", Arch: ArchAMD64},
 		{Name: "IT87_WDT Support", Symbols: []string{"it87_wdt_init", "it87_wdt_probe"}, Module: "it87_wdt", Arch: ArchAMD64},
-		{Name: "HW_RANDOM_AMD Support", Symbols: []string{"amd_rng_mod_init", "amd_rng_init", "amd_rng_read"}, Module: "amd-rng", Arch: ArchAMD64},
-		{Name: "HW_RANDOM_INTEL Support", Symbols: []string{"intel_rng_mod_init", "intel_rng_init", "intel_rng_hw_init"}, Module: "intel-rng", Arch: ArchAMD64},
 
 		// === ARM64-only ===
 		{Name: "DRM V3D Support", Symbols: []string{"v3d_v71_ops", "v3d_driver"}, Path: "/sys/module/v3d", Module: "v3d", Arch: ArchARM64},
