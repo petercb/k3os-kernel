@@ -37,7 +37,7 @@ func RunStressTests() (bool, string) {
 	memStart := time.Now()
 	var chunks [][]byte
 	chunkSize := 10 * 1024 * 1024 // 10MB
-	numChunks := 5 // Total 50MB
+	numChunks := 5                // Total 50MB
 
 	for i := 0; i < numChunks; i++ {
 		chunk := make([]byte, chunkSize)

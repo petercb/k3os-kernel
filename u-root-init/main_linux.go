@@ -24,10 +24,10 @@ func main() {
 		fmt.Printf("[DEBUG] Failed to mount /sys: %v\n", err)
 	}
 
-	// Load symbols into memory once to speed up checks
-	loadSymbols()
-	if !symbolsLoaded() {
-		fmt.Println("[WARN] /proc/kallsyms is empty or could not be read.")
+	// Load configs
+	kernelConfigs, err := LoadKernelConfigs()
+	if err != nil {
+		fmt.Printf("[WARN] %v\n", err)
 	}
 
 	// Check for modules directory
@@ -86,7 +86,7 @@ func main() {
 		return false, "USB storage driver not found in /sys/bus/usb/drivers"
 	})
 
-	// 4. Feature tests (via symbols or sysfs paths)
+	// 4. Feature tests (via CONFIG check)
 	for _, f := range Features {
 		f := f // capture range variable
 
@@ -96,45 +96,28 @@ func main() {
 		}
 
 		runTest(f.Name, func() (bool, string) {
-			check := func() bool {
-				if f.Path != "" {
-					if _, err := os.Stat(f.Path); err == nil {
-						return true
-					}
-				}
-				for _, sym := range f.Symbols {
-					if hasSymbol(sym) {
-						return true
-					}
-				}
-				return false
+			if kernelConfigs == nil {
+				return false, "Kernel configs could not be loaded"
 			}
 
+			val, ok := kernelConfigs[f.Config]
 			if f.Disabled {
 				// Assert the feature is NOT present
-				if check() {
-					return false, fmt.Sprintf("%s should be disabled but was found", f.Name)
+				if ok && val != "n" {
+					return false, fmt.Sprintf("%s should be disabled but was found (val=%s)", f.Config, val)
 				}
 				return true, ""
 			}
 
-			// First check
-			if check() {
-				return true, ""
+			if !ok {
+				return false, fmt.Sprintf("Missing config %s", f.Config)
 			}
-
-			// If failed, try loading module and re-check
-			if f.Module != "" {
-				if err := tryLoadModule(f.Module); err == nil {
-					if check() {
-						return true, ""
-					}
-				} else {
-					fmt.Printf("[DEBUG] modprobe %s failed: %v\n", f.Module, err)
+			for _, a := range f.Allowed {
+				if val == a {
+					return true, ""
 				}
 			}
-
-			return false, "Required symbols or sysfs paths not found (even after modprobe if applicable)"
+			return false, fmt.Sprintf("Incorrect config %s (got %s, expected %v)", f.Config, val, f.Allowed)
 		})
 	}
 
@@ -170,18 +153,4 @@ func main() {
 	for {
 		time.Sleep(time.Hour)
 	}
-}
-
-func loadSymbols() {
-	f, err := os.Open("/proc/kallsyms")
-	if err != nil {
-		fmt.Println("[DEBUG] Failed to open /proc/kallsyms:", err)
-		return
-	}
-	defer func() {
-		if err := f.Close(); err != nil {
-			fmt.Printf("[DEBUG] Failed to close /proc/kallsyms: %v\n", err)
-		}
-	}()
-	loadSymbolsFromReader(f)
 }

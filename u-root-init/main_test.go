@@ -5,25 +5,6 @@ import (
 	"testing"
 )
 
-func TestLoadSymbolsFromReader(t *testing.T) {
-	input := `ffffffff81001000 T _text
-ffffffff81001000 T startup_64
-ffffffff81001100 t some_local_func
-`
-	reader := strings.NewReader(input)
-	loadSymbolsFromReader(reader)
-
-	if !hasSymbol("_text") {
-		t.Errorf("Expected symbol _text to be loaded")
-	}
-	if !hasSymbol("startup_64") {
-		t.Errorf("Expected symbol startup_64 to be loaded")
-	}
-	if !hasSymbol("some_local_func") {
-		t.Errorf("Expected symbol some_local_func to be loaded")
-	}
-}
-
 func TestHasFilesystem(t *testing.T) {
 	input := `nodev	sysfs
 nodev	tmpfs
@@ -48,43 +29,18 @@ nodev	proc
 }
 
 func TestFeatureValidation(t *testing.T) {
-	// Mock kallsyms with symbols for common features
-	input := `ffffffff81001000 T veth_setup
-ffffffff81001000 T br_init
-ffffffff81001100 T fib_rules_register
-ffffffff81001200 T uas_driver
-ffffffff81001300 T vxlan_dev_setup
-ffffffff81001400 T nf_register_net_hook
-ffffffff81001500 T ipt_register_table
-ffffffff81001600 T ipt_do_table
-ffffffff81001700 T masquerade_tg_reg
-ffffffff81001800 T nf_nat_masquerade_ipv4
-ffffffff81001900 T comment_mt
-ffffffff81001a00 T nvme_tcp_init
-ffffffff81001b00 T vfio_pci_init
-ffffffff81001c00 T uio_pci_generic_init
-ffffffff81001d00 T loop_init
-ffffffff81001e00 T hwrng_register
-ffffffff81001f00 T tpm_chip_register
-`
-	// Reset symbols for this test
-	symbols = make(map[string]bool)
-	loadSymbolsFromReader(strings.NewReader(input))
+	kernelConfigs := map[string]string{
+		"CONFIG_BLK_DEV_LOOP": "y",
+		"CONFIG_HW_RANDOM":    "m",
+		"CONFIG_NETFILTER":    "y",
+	}
 
 	for _, f := range Features {
-		// Only test ArchAll features (symbol-only, no sysfs path)
-		if f.Arch != ArchAll || f.Path != "" || f.Disabled {
-			continue
-		}
-		found := false
-		for _, sym := range f.Symbols {
-			if hasSymbol(sym) {
-				found = true
-				break
+		if f.Name == "Loop Device Support" {
+			val, ok := kernelConfigs[f.Config]
+			if !ok || val != "y" {
+				t.Errorf("Expected Loop Device Support config to be y")
 			}
-		}
-		if !found {
-			t.Errorf("Feature %s: Expected one of %v to be found", f.Name, f.Symbols)
 		}
 	}
 }
@@ -115,41 +71,33 @@ func TestArchFiltering(t *testing.T) {
 }
 
 func TestDisabledFeature(t *testing.T) {
-	// Reset symbols
-	symbols = make(map[string]bool)
-	loadSymbolsFromReader(strings.NewReader("ffffffff81001000 T bad_symbol\n"))
-
-	// A disabled feature should PASS when its symbols are NOT found
+	// A disabled feature should PASS when its config is NOT present (or is 'n')
 	disabledTest := FeatureTest{
 		Name:     "Should Be Disabled",
-		Symbols:  []string{"not_present_symbol"},
+		Config:   "CONFIG_BAD",
 		Disabled: true,
-	}
-	found := false
-	for _, sym := range disabledTest.Symbols {
-		if hasSymbol(sym) {
-			found = true
-			break
-		}
-	}
-	if found {
-		t.Error("Disabled feature should pass when symbols are absent, but symbol was found")
 	}
 
-	// A disabled feature should FAIL when its symbols ARE found
+	configs := map[string]string{
+		"CONFIG_GOOD": "y",
+	}
+
+	if val, ok := configs[disabledTest.Config]; ok && val != "n" {
+		t.Error("Disabled feature should pass when config is absent, but it was found")
+	}
+
+	// A disabled feature should FAIL when its config IS found
 	disabledTestPresent := FeatureTest{
 		Name:     "Should Be Disabled But Present",
-		Symbols:  []string{"bad_symbol"},
+		Config:   "CONFIG_BAD",
 		Disabled: true,
 	}
-	found = false
-	for _, sym := range disabledTestPresent.Symbols {
-		if hasSymbol(sym) {
-			found = true
-			break
-		}
-	}
-	if !found {
-		t.Error("Disabled feature with present symbol should have been detected")
+
+	configs["CONFIG_BAD"] = "y"
+
+	if val, ok := configs[disabledTestPresent.Config]; ok && val != "n" {
+		// correctly detected as present
+	} else {
+		t.Error("Disabled feature with present config should have been detected")
 	}
 }
