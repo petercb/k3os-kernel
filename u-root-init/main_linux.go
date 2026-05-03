@@ -138,6 +138,11 @@ func main() {
 		})
 	}
 
+	// 5. Stress Testing
+	runTest("Kernel Stress Test", func() (bool, string) {
+		return RunStressTests()
+	})
+
 	// Generate JUnit XML
 	generateJUnit()
 

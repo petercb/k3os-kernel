@@ -68,3 +68,15 @@
     - [x] Test loading a driver (e.g., `v3d`) as a module and validating via symbol/sysfs.
 - **Acceptance Criteria**: Proof of concept showing module loading and validation.
 - **Complexity**: Medium
+
+## [TASK-006] Implement basic kernel stress testing in u-root-init
+- **Priority**: Medium
+- **Status**: Planned
+- **Dependencies**:
+- **Implementation Checklist**:
+    - [x] Write unit tests for stress testing logic in `u-root-init/stress_test.go` (TDD).
+    - [x] Implement CPU and Memory stress functions in `u-root-init/stress.go`.
+    - [x] Integrate the stress test into the test runner in `u-root-init/main_linux.go`.
+    - [ ] Verify the stress tests run successfully in QEMU via `./test-kernel.sh`.
+- **Acceptance Criteria**: Kernel gracefully handles a short burst of CPU and memory stress during boot validation.
+- **Complexity**: Low
