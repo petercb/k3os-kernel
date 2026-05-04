@@ -80,8 +80,8 @@ mkinitramfs \
     "${VERSION}"
 cpio -id -D /tmp/initrd.old < /tmp/initrd
 mkdir -p /tmp/initrd.new/lib
-mv /tmp/initrd.old/usr/lib/modules /tmp/initrd.new/lib/
-mv /tmp/initrd.old/usr/lib/firmware /tmp/initrd.new/lib/
+[ -d "/tmp/initrd.old/usr/lib/modules" ] && mv /tmp/initrd.old/usr/lib/modules /tmp/initrd.new/lib/
+[ -d "/tmp/initrd.old/usr/lib/firmware" ] && mv /tmp/initrd.old/usr/lib/firmware /tmp/initrd.new/lib/
 rm -rf /tmp/initrd /tmp/initrd.old
 
 # Build early microcode cpio (must be uncompressed, prepended to initrd)
