@@ -55,7 +55,7 @@ pushd "$INITRD_DIR"
 go work init
 go work use ./u-root-init
 
-unsquashfs -n -d . "${PROJECT_ROOT}/dist/k3os-kernel-${TARGETARCH}.squashfs" lib
+unsquashfs -n -d . "${PROJECT_ROOT}/dist/k3os-kernel-${TARGETARCH}.squashfs" lib/modules
 find lib | cpio -H newc -o > base.cpio
 rm -rf lib
 u-root -o "$(basename "$INITRD")" \
