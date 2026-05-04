@@ -1,10 +1,4 @@
 package main
 
-func validateArchSpecific() {
-	runTest("HFS+ Support", func() (bool, string) {
-		if hasSymbol("hfsplus_fill_super") {
-			return true, ""
-		}
-		return false, "HFS+ filesystem support not found in kallsyms"
-	})
-}
+// currentArch identifies this build as amd64 for feature test filtering.
+const currentArch = ArchAMD64

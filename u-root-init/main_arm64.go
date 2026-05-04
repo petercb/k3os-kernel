@@ -1,5 +1,4 @@
 package main
 
-func validateArchSpecific() {
-	// No arch-specific tests for ARM64 yet
-}
+// currentArch identifies this build as arm64 for feature test filtering.
+const currentArch = ArchARM64

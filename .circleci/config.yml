@@ -9,19 +9,19 @@ orbs:
 parameters:
   kernel_version:
     type: string
-    default: "6.8.0"
+    default: "7.0.0"
   ubuntu_build:
     type: string
-    default: "107"
+    default: "14"
   ubuntu_flavour:
     type: string
     default: "generic"
   ubuntu_name:
     type: string
-    default: "noble"
+    default: "resolute"
   abi_version:
     type: string
-    default: "107"
+    default: "14"
 
 executors:
   build:

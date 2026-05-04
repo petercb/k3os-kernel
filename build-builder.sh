@@ -15,6 +15,7 @@ export BUILDKIT_PROGRESS=plain
 echo "Building ${IMAGE_FQN}:${IMAGE_TAG}"
 docker build \
     ${CI_ARGS} \
+    --platform "linux/${TARGETARCH}" \
     --tag "${IMAGE_FQN}:${IMAGE_TAG}" \
     --cache-from "${IMAGE_FQN}:${IMAGE_TAG}" \
     --build-arg "KERNEL_VERSION=${KERNEL_VERSION}" \

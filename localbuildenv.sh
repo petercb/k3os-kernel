@@ -11,5 +11,6 @@ then
 fi
 
 docker run -it --rm \
+    --platform "linux/${TARGETARCH}" \
     -v "$(git rev-parse --show-toplevel):/root/project" \
     "${IMAGE_FQN}:${IMAGE_TAG}"

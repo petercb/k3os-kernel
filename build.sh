@@ -32,7 +32,6 @@ mkdir -p "${KERNEL_WORK}"
 rsync -a "${PROJECT_ROOT}/overlay/" "${KERNEL_WORK}"
 cp -a "${KERNEL_WORK}/debian.master/changelog" "${KERNEL_WORK}/debian.${KERNEL_FLAVOUR}/"
 cp -a "${KERNEL_WORK}/debian.master/control.stub.in" "${KERNEL_WORK}/debian.${KERNEL_FLAVOUR}/"
-cp -a "${KERNEL_WORK}/debian.master/control.d/generic.inclusion-list" "${KERNEL_WORK}/debian.${KERNEL_FLAVOUR}/control.d/k3os.inclusion-list"
 cp -a "${KERNEL_WORK}"/debian.master/control.d/*.stub "${KERNEL_WORK}/debian.${KERNEL_FLAVOUR}/control.d/"
 cp -a "${KERNEL_WORK}"/debian.master/control.stub.in "${KERNEL_WORK}/debian.${KERNEL_FLAVOUR}/"
 cp -a "${KERNEL_WORK}"/debian.master/reconstruct "${KERNEL_WORK}/debian.${KERNEL_FLAVOUR}/"
@@ -46,7 +45,12 @@ if [ "${CONFIGMODE:-no}" != "no" ]; then
         gcc-aarch64-linux-gnu gcc-x86-64-linux-gnu
     if ! debian/rules ${CONFIGMODE}configs
     then
-        sed -i -e "/^CONFIG_CC_CAN_LINK/d" -e "/^CONFIG_CC_VERSION_TEXT/d" debian.k3os/config/annotations
+        sed -i \
+            -e "/^CONFIG_CC_CAN_LINK/d" \
+            -e "/^CONFIG_CC_VERSION_TEXT/d" \
+            -e "/^CONFIG_CC_HAS_MARCH_NATIVE/d" \
+            -e "/^CONFIG_X86_NATIVE_CPU/d" \
+            debian.k3os/config/annotations
         cp debian.k3os/config/annotations \
             "${PROJECT_ROOT}/overlay/debian.k3os/config/annotations"
         exit 1
@@ -60,8 +64,7 @@ debian/rules binary-${KERNEL_FLAVOUR} \
     skipdbg=true
 dpkg --unpack --no-triggers --force-depends \
     "../linux-image-unsigned-${VERSION}_${FULL_VERSION}_${TARGETARCH}.deb" \
-    "../linux-modules-${VERSION}_${FULL_VERSION}_${TARGETARCH}.deb" \
-    "../linux-modules-extra-${VERSION}_${FULL_VERSION}_${TARGETARCH}.deb"
+    "../linux-modules-${VERSION}_${FULL_VERSION}_${TARGETARCH}.deb"
 rm ../linux-*.deb
 debian/rules clean
 popd
@@ -73,7 +76,7 @@ depmod "${VERSION}"
 echo "RESUME=none" > /etc/initramfs-tools/conf.d/resume
 mkinitramfs \
     -c gzip \
-    -o "/tmp/initrd" \
+    -o /tmp/initrd \
     "${VERSION}"
 cpio -id -D /tmp/initrd.old < /tmp/initrd
 mkdir -p /tmp/initrd.new/lib
@@ -83,21 +86,20 @@ rm -rf /tmp/initrd /tmp/initrd.old
 pushd /tmp/initrd.new
 find . | cpio -H newc -o | gzip -c -1 > "${DIST_DIR}/k3os-initrd-${TARGETARCH}.gz"
 popd
-rm -rf /tmp/initrd.new/lib/modules
+rm -rf /tmp/initrd.new
 
 # Assemble kernel
 mkdir -p "${KERNEL_ROOT}/lib"
 echo "${VERSION}" > "${KERNEL_ROOT}/version"
 cp "${KERNEL_ROOT}/version" "${DIST_DIR}/k3os-kernel-version-${TARGETARCH}.txt"
-mv "/boot/System.map-${VERSION}" "${KERNEL_ROOT}/System.map"
-mv "/boot/config-${VERSION}" "${KERNEL_ROOT}/config"
-mv "/boot/vmlinuz-${VERSION}" "${KERNEL_ROOT}/vmlinuz"
+cp "/boot/System.map-${VERSION}" "${KERNEL_ROOT}/System.map"
+cp "/boot/config-${VERSION}" "${KERNEL_ROOT}/config"
+cp "/boot/vmlinuz-${VERSION}" "${KERNEL_ROOT}/vmlinuz"
 cp "${KERNEL_ROOT}/vmlinuz" "${DIST_DIR}/k3os-vmlinuz-${TARGETARCH}.img"
-mv /lib/modules "${KERNEL_ROOT}/lib"
+cp -r /lib/modules "${KERNEL_ROOT}/lib/"
 
 # Assemble firmware
-mv /tmp/initrd.new/lib/firmware "${KERNEL_ROOT}/lib/"
-
+cp -r /lib/firmware "${KERNEL_ROOT}/lib/"
 
 pushd "${KERNEL_ROOT}"
 OUTFILE="${DIST_DIR}/k3os-kernel-${TARGETARCH}.squashfs"
@@ -109,5 +111,4 @@ popd
 rm -rf "${KERNEL_ROOT}"
 dpkg --remove \
     "linux-image-unsigned-${VERSION}" \
-    "linux-modules-${VERSION}" \
-    "linux-modules-extra-${VERSION}"
+    "linux-modules-${VERSION}"
