@@ -30,9 +30,9 @@ RUN <<-EOF
     curl -1sLf 'https://dl.cloudsmith.io/public/task/task/setup.deb.sh' | bash
     apt-get install -y --no-install-recommends \
         cpio \
+        dracut \
         dwarves \
         git \
-        initramfs-tools-core \
         libncurses-dev \
         linux-firmware-misc \
         linux-firmware-realtek \

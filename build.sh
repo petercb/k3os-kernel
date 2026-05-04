@@ -69,63 +69,20 @@ rm ../linux-*.deb
 debian/rules clean
 popd
 
+mkdir -p "${DIST_DIR}"
+
 # Setup initrd
 echo "Generating initrd"
-mkdir -p "${DIST_DIR}"
 depmod "${VERSION}"
-echo "RESUME=none" > /etc/initramfs-tools/conf.d/resume
-mkinitramfs \
-    -c gzip \
-    -o /tmp/initrd \
-    "${VERSION}"
-cpio -id -D /tmp/initrd.old < /tmp/initrd
-mkdir -p /tmp/initrd.new/lib
-[ -d "/tmp/initrd.old/usr/lib/modules" ] && mv /tmp/initrd.old/usr/lib/modules /tmp/initrd.new/lib/
-[ -d "/tmp/initrd.old/usr/lib/firmware" ] && mv /tmp/initrd.old/usr/lib/firmware /tmp/initrd.new/lib/
-rm -rf /tmp/initrd /tmp/initrd.old
-
-# Build early microcode cpio (must be uncompressed, prepended to initrd)
-MICROCODE_DIR="/tmp/early-microcode"
-MICROCODE_CPIO="/tmp/microcode.cpio"
-mkdir -p "${MICROCODE_DIR}/kernel/x86/microcode"
-if [ "${TARGETARCH}" = "amd64" ]; then
-    echo "Assembling early microcode for amd64"
-    # AMD microcode
-    if [ -d /lib/firmware/amd-ucode ]; then
-        cat /lib/firmware/amd-ucode/microcode_amd*.bin \
-            > "${MICROCODE_DIR}/kernel/x86/microcode/AuthenticAMD.bin" 2>/dev/null || true
-    fi
-    # Intel microcode
-    if [ -d /lib/firmware/intel-ucode ]; then
-        cat /lib/firmware/intel-ucode/* \
-            > "${MICROCODE_DIR}/kernel/x86/microcode/GenuineIntel.bin" 2>/dev/null || true
-    fi
-    # Remove empty files
-    find "${MICROCODE_DIR}" -empty -delete
-fi
-# Create the early microcode cpio (uncompressed, newc format)
-pushd "${MICROCODE_DIR}"
-if find . -type f | grep -q .; then
-    find . | cpio -o -H newc > "${MICROCODE_CPIO}"
-    echo "Early microcode cpio created ($(du -sh "${MICROCODE_CPIO}" | cut -f1))"
-else
-    echo "No early microcode found for ${TARGETARCH}, skipping"
-    : > "${MICROCODE_CPIO}"
-fi
-popd
-
-# Assemble final initrd: early microcode + main initrd
-pushd /tmp/initrd.new
-MAIN_INITRD="/tmp/main-initrd.cpio.gz"
-find . | cpio -H newc -o | gzip -c -1 > "${MAIN_INITRD}"
-popd
-if [ -s "${MICROCODE_CPIO}" ]; then
-    cat "${MICROCODE_CPIO}" "${MAIN_INITRD}" > "${DIST_DIR}/k3os-initrd-${TARGETARCH}.gz"
-    echo "Initrd assembled with early microcode prepended"
-else
-    cp "${MAIN_INITRD}" "${DIST_DIR}/k3os-initrd-${TARGETARCH}.gz"
-fi
-rm -rf /tmp/initrd.new /tmp/early-microcode "${MICROCODE_CPIO}" "${MAIN_INITRD}"
+dracut \
+    --force \
+    --gzip \
+    --early-microcode \
+    --no-hostonly \
+    --modules "kernel-modules" \
+    --kernel-only \
+    --kver "${VERSION}" \
+    "${DIST_DIR}/k3os-initrd-${TARGETARCH}.gz"
 
 # Assemble kernel
 mkdir -p "${KERNEL_ROOT}/lib"
