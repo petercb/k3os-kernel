@@ -167,7 +167,7 @@ grep -r "MODULE_FIRMWARE" "${KERNEL_WORK}" --include='*.c' -l 2>/dev/null \
     if [ -f "${makefile}" ]; then
         # Look for lines like: obj-$(CONFIG_FOO) += srcbase.o
         matched_configs=$(grep -oP 'CONFIG_\K[A-Z0-9_]+' "${makefile}" \
-            | sort -u)
+            | sort -u || true)
         for cfg in ${matched_configs}; do
             if grep -qx "${cfg}" "${ENABLED_CONFIGS}"; then
                 # This driver is enabled — include its firmware
