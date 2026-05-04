@@ -5441,7 +5441,7 @@ CONFIG_IP6_NF_MATCH_RT                          policy<{'amd64': 'y', 'arm64': '
 CONFIG_IP6_NF_MATCH_SRH                         policy<{'amd64': 'n', 'arm64': 'n'}>
 CONFIG_IP6_NF_NAT                               policy<{'amd64': 'y', 'arm64': '-'}>
 CONFIG_IP6_NF_RAW                               policy<{'amd64': 'y', 'arm64': '-'}>
-CONFIG_IP6_NF_SECURITY                          policy<{'amd64': 'm', 'arm64': '-'}>
+CONFIG_IP6_NF_SECURITY                          policy<{'amd64': 'n', 'arm64': '-'}>
 CONFIG_IP6_NF_TARGET_HL                         policy<{'amd64': 'y', 'arm64': '-'}>
 CONFIG_IP6_NF_TARGET_MASQUERADE                 policy<{'amd64': 'n', 'arm64': '-'}>
 CONFIG_IP6_NF_TARGET_NPT                        policy<{'amd64': 'n', 'arm64': 'n'}>
