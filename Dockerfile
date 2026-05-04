@@ -43,6 +43,8 @@ RUN <<-EOF
     [ "${TARGETARCH}" == "arm64" ] && apt-get install -y --no-install-recommends \
         linux-firmware-raspi
     [ "${TARGETARCH}" == "amd64" ] && apt-get install -y --no-install-recommends \
+        amd64-microcode \
+        intel-microcode \
         linux-firmware-amd-misc \
         linux-firmware-amd-graphics \
         linux-firmware-intel-misc \
