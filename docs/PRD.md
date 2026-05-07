@@ -8,7 +8,6 @@ Maintain a lean, stable, and high-performance Linux kernel specifically tailored
 - **Stability**: Ensure the kernel is rock-solid for long-running Kubernetes clusters.
 - **Size Reduction**: Minimize the kernel image and module footprint by stripping unused features.
 - **Hardware Support**: Maintain first-class support for AMD64 and ARM64 (RPi 4), and expand to RPi 5 and Rockchip-based boards (Rock 4/5).
-- **Automation**: Fully migrate build and test workflows to `Taskfile.yml`.
 
 ## 3. User Personas/Stakeholders
 - **K3OS Developers**: Need a reliable build system to iterate on kernel configs.
@@ -17,9 +16,9 @@ Maintain a lean, stable, and high-performance Linux kernel specifically tailored
 
 ## 4. User Flow
 1. **Configure**: Developer modifies `overlay/debian.k3os/config/annotations`.
-2. **Build**: Developer runs `task build` (likely within a container).
+2. **Build**: Developer runs `./local-build.sh`.
 3. **Validate**: Automated tests run `u-root-init` via QEMU for both AMD64 and ARM64.
-4. **Deploy**: Artifacts (kernel, initrd, squashfs) are uploaded for K3OS consumption.
+4. **Deploy**: Artifacts are uploaded for K3OS consumption as part of tagged CI builds.
 
 ## 5. Features & Requirements
 ### 5.1 Kernel Config Management
@@ -32,7 +31,7 @@ Go-based init program (`u-root-init`) to check:
 - **Hardware Drivers**: USB Storage/UAS, NVMe, GPU (V3D), MMC (BCM2835, SDHCI).
 
 ### 5.3 Module Loading Strategy
-To optimize kernel size and flexibility, investigate loading optional drivers as modules (`m`) instead of built-in (`y`). The validation suite should support probing these modules via `pault.ag/go/modprobe` before verifying their status.
+To optimize kernel size and flexibility, investigate loading optional drivers as modules (`m`) instead of built-in (`y`).
 
 ## 6. Out of Scope
 - Support for non-Kubernetes workloads.
@@ -45,12 +44,12 @@ To optimize kernel size and flexibility, investigate loading optional drivers as
 - Assumes QEMU is available for CI validation.
 
 ## 8. Acceptance Criteria
-- `task build` completes successfully for all target architectures.
+- Build completes successfully for all target architectures.
 - All tests in `u-root-init` pass in QEMU.
 - Kernel image size does not regress significantly compared to 6.8.
 - Validated boot on at least one physical ARM64 device (RPi 4).
 
 ## 9. Metrics/KPIs
 - Build time (target < 20 mins in CI).
-- Artifact size (SquashFS size).
+- Artifact size
 - Test coverage (number of kernel subsystems validated).

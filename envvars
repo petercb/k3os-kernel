@@ -27,5 +27,5 @@ fi
 : "${ABI_VERSION=$(yq '.parameters.abi_version.default' .circleci/config.yml)}"
 : "${IMAGE_TAG=${KERNEL_VERSION}-${UBUNTU_BUILD}-${UBUNTU_FLAVOUR}-${TARGETARCH}}"
 : "${REPO=petercb}"
-: "${IMAGE_NAME=k3os-kernel-builder}"
+: "${IMAGE_NAME=k3os-kernel}"
 IMAGE_FQN="${REGISTRY}/${REPO}/${IMAGE_NAME}"

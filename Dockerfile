@@ -1,80 +1,206 @@
 # syntax=docker/dockerfile:1
+# hadolint global ignore=DL3008
 
 ARG UBUNTU_NAME=resolute
-
-FROM buildpack-deps:${UBUNTU_NAME}
-
-ARG TARGETARCH
 ARG KERNEL_VERSION="7.0.0"
 ARG UBUNTU_BUILD="14"
 ARG UBUNTU_FLAVOUR="generic"
-ARG UBUNTU_NAME="resolute"
 ARG ABI_VERSION="14"
-ARG IMAGE_VERSION="${KERNEL_VERSION}-${UBUNTU_BUILD}-${UBUNTU_FLAVOUR}"
-ARG FULL_VERSION="${KERNEL_VERSION}-${UBUNTU_BUILD}.${ABI_VERSION}"
+ARG KERNEL_FULL_VERSION="${KERNEL_VERSION}-${UBUNTU_BUILD}.${ABI_VERSION}"
+ARG KERNEL_FLAVOUR="k3os"
+ARG KVER="${KERNEL_VERSION}-${UBUNTU_BUILD}-${KERNEL_FLAVOUR}"
+ARG KERNEL_WORK="/usr/src/linux"
+
+############################################################
+FROM ubuntu:${UBUNTU_NAME} AS base
+############################################################
+
+ARG TARGETARCH
+ARG UBUNTU_NAME
+ARG KERNEL_VERSION
+ARG UBUNTU_BUILD
+ARG UBUNTU_FLAVOUR
+ARG ABI_VERSION
+ARG KERNEL_FULL_VERSION
+ARG KERNEL_FLAVOUR
+ARG KVER
+ARG KERNEL_WORK
 
 ENV TARGETARCH=${TARGETARCH}
-ENV FULL_VERSION=${FULL_VERSION}
-ENV IN_CONTAINER="true"
-ENV KERNEL_WORK="/usr/src/linux"
+ENV KERNEL_FULL_VERSION=${KERNEL_FULL_VERSION}
+ENV KERNEL_VERSION=${KERNEL_VERSION}
+ENV KERNEL_FLAVOUR=${KERNEL_FLAVOUR}
+ENV KVER=${KVER}
+ENV KERNEL_WORK=${KERNEL_WORK}
+
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-# hadolint ignore=DL3008
 RUN <<-EOF
+    rm -f /etc/apt/apt.conf.d/docker-clean
+    echo 'Binary::apt::APT::Keep-Downloaded-Packages "true";' > /etc/apt/apt.conf.d/keep-cache
     sed -i 's/^Types:.*$/Types: deb deb-src/' /etc/apt/sources.list.d/ubuntu.sources
-    apt-get update
-    apt-get build-dep -y --no-install-recommends linux
-    curl -1sLf 'https://dl.cloudsmith.io/public/task/task/setup.deb.sh' | bash
-    apt-get install -y --no-install-recommends \
-        cpio \
-        dracut \
-        dwarves \
-        git \
-        libncurses-dev \
-        linux-firmware-misc \
-        linux-firmware-realtek \
-        llvm \
-        rsync \
-        squashfs-tools \
-        task
-    [ "${TARGETARCH}" == "arm64" ] && apt-get install -y --no-install-recommends \
-        linux-firmware-raspi
-    [ "${TARGETARCH}" == "amd64" ] && apt-get install -y --no-install-recommends \
-        amd64-microcode \
-        intel-microcode \
-        linux-firmware-amd-misc \
-        linux-firmware-amd-graphics \
-        linux-firmware-intel-misc \
-        linux-firmware-intel-graphics
-    apt-get clean
-    rm -rf /var/lib/apt/lists/*
 EOF
 
-WORKDIR /tmp
+RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
+    --mount=type=cache,target=/var/lib/apt,sharing=locked \
+    <<-EOF
+    apt-get update
+    apt-get install -y --no-install-recommends \
+        ca-certificates
+EOF
+
+
+############################################################
+FROM base AS buildpack
+############################################################
+
+RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
+    --mount=type=cache,target=/var/lib/apt,sharing=locked \
+    <<-EOF
+    apt-get build-dep -y --no-install-recommends linux
+    apt-get install -y --no-install-recommends \
+        dwarves \
+        libncurses-dev \
+        llvm
+EOF
+
+
+############################################################
+FROM buildpack AS builder
+############################################################
+
+WORKDIR "${KERNEL_WORK}"
+# hadolint ignore=DL3020
+ADD --link \
+    "git://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/+git/${UBUNTU_NAME}#Ubuntu-${KERNEL_FULL_VERSION}" \
+    .
+COPY /overlay .
+
+WORKDIR "${KERNEL_WORK}/debian.${KERNEL_FLAVOUR}"
 RUN <<-EOF
-    wget -q https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/linux/${FULL_VERSION}/linux_${KERNEL_VERSION}.orig.tar.gz
-    wget -q https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/linux/${FULL_VERSION}/linux_${FULL_VERSION}.diff.gz
-    wget -q https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/linux/${FULL_VERSION}/linux_${FULL_VERSION}.dsc
-    dpkg-source -x linux_${FULL_VERSION}.dsc
-    rm *.gz *.dsc
-    dirs=( linux-${KERNEL_VERSION%.*}* )
-    if [ -d "${dirs[0]}" ]; then
-        mv "${dirs[0]}" "${KERNEL_WORK}"
-    else
-        echo "Error: No directory matching linux-${KERNEL_VERSION%.*} found."
-        exit 1
-    fi
+    cp -a ../debian.master/changelog .
+    cp -a ../debian.master/control.stub.in .
+    cp -a ../debian.master/control.d/*.stub control.d/
+    cp -a ../debian.master/control.stub.in .
+    cp -a ../debian.master/reconstruct .
+EOF
+
+
+############################################################
+FROM builder AS configmod
+############################################################
+
+ENV CONFIGMODE=update
+
+COPY --chmod=+x files/configmod.sh /configmod.sh
+
+RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
+    --mount=type=cache,target=/var/lib/apt,sharing=locked \
+    <<-EOF
+    apt-get install -y --no-install-recommends \
+        gcc-aarch64-linux-gnu \
+        gcc-x86-64-linux-gnu
 EOF
 
 WORKDIR "${KERNEL_WORK}"
+
+CMD ["/configmod.sh"]
+
+
+############################################################
+FROM builder AS compile
+############################################################
+
+WORKDIR "${KERNEL_WORK}"
 RUN <<-EOF
-    ls -lFah
-    chmod a+x debian/rules
-    chmod a+x debian/scripts/*
-    chmod a+x debian/scripts/misc/*
+    debian/rules clean
+    # see https://wiki.ubuntu.com/KernelTeam/KernelMaintenance#Overriding_module_check_failures
+    debian/rules "binary-${KERNEL_FLAVOUR}" \
+        skipabi=true \
+        skipmodule=true \
+        skipretpoline=true \
+        skipdbg=true
+    dpkg --unpack --no-triggers --force-depends \
+        "../linux-image-unsigned-${KVER}_${KERNEL_FULL_VERSION}_${TARGETARCH}.deb" \
+        "../linux-modules-${KVER}_${KERNEL_FULL_VERSION}_${TARGETARCH}.deb"
+    rm ../linux-*.deb
+    debian/rules clean
+    depmod "${KVER}"
 EOF
 
-WORKDIR /root/project
+WORKDIR /boot
+RUN <<-EOF
+    mv "System.map-${KVER}" System.map
+    mv "config-${KVER}" config
+    mv "vmlinuz-${KVER}" vmlinuz
+    echo "${KVER}" > kversion
+EOF
+
+WORKDIR /tmp
+COPY --chmod=+x files/select_firmware.sh ./
+RUN ./select_firmware.sh
+
+
+############################################################
+FROM base AS test
+############################################################
+
+ENV GOPATH=/root/go
+ENV PATH=${GOPATH}/bin:${PATH}
+ENV INITRD="/tmp/test-initrd.cpio"
+ENV KERNEL="/tmp/vmlinuz"
+ENV LOG_FILE="/tmp/qemu.log"
+
+# hadolint ignore=SC3054
+RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
+    --mount=type=cache,target=/var/lib/apt,sharing=locked \
+    <<-EOF
+    #!/bin/bash
+    PKGS=(
+        cpio golang-go
+    )
+    case "${TARGETARCH}" in
+        amd64) PKGS+=(qemu-system-x86) ;;
+        arm64) PKGS+=(qemu-system-arm ipxe-qemu qemu-efi-aarch64) ;;
+        *) echo "Unknown architecture: ${TARGETARCH}"; exit 1 ;;
+    esac
+    echo "Installing packages: ${PKGS[*]}"
+    apt-get install -y --no-install-recommends "${PKGS[@]}"
+EOF
+
+WORKDIR /tmp/initrd/u-root
+ADD --link https://github.com/u-root/u-root.git#v0.16.0 .
+RUN go install
+
+WORKDIR /tmp/initrd
+COPY --parents u-root-init ./
+COPY --from=compile /lib/modules ./lib/
+RUN <<-EOF
+    go work init ./u-root
+    go work use ./u-root-init
+    u-root -o "${INITRD}" \
+        -build=binary \
+        -defaultsh="" \
+        -initcmd test-init \
+        -files ./lib \
+        test-init
+    cpio -ivt < "${INITRD}"
+EOF
+
+COPY --from=compile --chmod=644 "/boot/vmlinuz" "${KERNEL}"
+
+COPY --chmod=+x files/test_kernel.sh /bin/test_kernel.sh
+WORKDIR /output
+RUN /bin/test_kernel.sh
+
+
+############################################################
+FROM base AS output
+############################################################
+
+COPY --from=compile --parents /boot /
+COPY --from=compile --parents /usr/lib/modules /
+COPY --from=test /output/results.xml /output/
