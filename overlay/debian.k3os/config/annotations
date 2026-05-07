@@ -8160,6 +8160,7 @@ CONFIG_PHY_MVEBU_CP110_COMPHY                   policy<{'arm64': '-'}>
 CONFIG_PHY_MVEBU_CP110_UTMI                     policy<{'arm64': '-'}>
 CONFIG_PHY_NS2_PCIE                             policy<{'arm64': 'y'}>
 CONFIG_PHY_NS2_USB_DRD                          policy<{'arm64': 'y'}>
+CONFIG_PHY_NXP_PTN3222                          policy<{'arm64': 'n'}>
 CONFIG_PHY_OCELOT_SERDES                        policy<{'arm64': 'n'}>
 CONFIG_PHY_PACKAGE                              policy<{'amd64': '-', 'arm64': 'y'}>
 CONFIG_PHY_PXA_28NM_HSIC                        policy<{'amd64': 'n', 'arm64': 'y'}>
@@ -8205,6 +8206,8 @@ CONFIG_PHY_ROCKCHIP_INNO_HDMI                   policy<{'arm64': 'y'}>
 CONFIG_PHY_ROCKCHIP_INNO_USB2                   policy<{'arm64': 'y'}>
 CONFIG_PHY_ROCKCHIP_NANENG_COMBO_PHY            policy<{'arm64': 'n'}>
 CONFIG_PHY_ROCKCHIP_PCIE                        policy<{'arm64': 'y'}>
+CONFIG_PHY_ROCKCHIP_SAMSUNG_DCPHY               policy<{'arm64': 'n'}>
+CONFIG_PHY_ROCKCHIP_SAMSUNG_HDPTX               policy<{'arm64': 'n'}>
 CONFIG_PHY_ROCKCHIP_SNPS_PCIE3                  policy<{'arm64': 'y'}>
 CONFIG_PHY_ROCKCHIP_TYPEC                       policy<{'arm64': 'y'}>
 CONFIG_PHY_ROCKCHIP_USB                         policy<{'arm64': 'y'}>
