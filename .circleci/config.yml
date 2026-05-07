@@ -4,7 +4,7 @@ version: 2.1
 orbs:
   docker: circleci/docker@3
   github: circleci/github-cli@2
-  go: circleci/go@1
+  go: circleci/go@3
 
 parameters:
   kernel_version:
@@ -49,7 +49,6 @@ jobs:
       - image: cimg/base:current
     resource_class: <<parameters.resource_class>>
     environment:
-      IMAGE_FQN: << pipeline.git.repo_owner >>/<< pipeline.git.repo_name >>
       IMAGE_TAG: << pipeline.git.tag == "" and pipeline.git.branch or pipeline.git.tag >>-<< parameters.arch >>
       REGISTRY: ghcr.io
     steps:
@@ -60,11 +59,11 @@ jobs:
           docker_username: CIRCLE_PROJECT_USERNAME
           registry: ${REGISTRY}
       - docker/build:
-          image: ${IMAGE_FQN}
+          image: ${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}
           registry: ${REGISTRY}
           tag: ${IMAGE_TAG}
           use_buildkit: true
-          cache_from: ${REGISTRY}/${IMAGE_FQN}:${IMAGE_TAG}
+          cache_from: ${REGISTRY}/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}:${IMAGE_TAG}
           extra_build_args: >-
             --build-arg BUILDKIT_INLINE_CACHE=1
             --build-arg KERNEL_VERSION=<< pipeline.parameters.kernel_version >>
@@ -82,7 +81,7 @@ jobs:
           environment:
             DCID: kernel_output
           command: |
-            docker create --name "${DCID}" "${REGISTRY}/${IMAGE_FQN}:${IMAGE_TAG}"
+            docker create --name "${DCID}" "${REGISTRY}/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}:${IMAGE_TAG}"
             mkdir test-results
             docker cp "${DCID}":/output/results.xml test-results/
             mkdir dist
@@ -91,6 +90,10 @@ jobs:
             docker rm "${DCID}"
       - store_test_results:
           path: test-results
+      - when:
+          condition: << pipeline.git.tag >>
+          steps:
+            - push-artifacts
 
 
   draft-release:
@@ -147,15 +150,13 @@ workflows:
     jobs:
       - build:
           <<: *amd64-build
+          name: AMD64 release build
           filters: &filter-tags
             branches:
               ignore: /.*/
             tags:
               only: /.*/
-          post-steps:
-            - push-artifacts
       - build:
           <<: *arm64-build
+          name: ARM64 release build
           filters: *filter-tags
-          post-steps:
-            - push-artifacts
