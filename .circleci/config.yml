@@ -49,7 +49,7 @@ jobs:
       - image: cimg/base:current
     resource_class: <<parameters.resource_class>>
     environment:
-      IMAGE_FQN: ${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}
+      IMAGE_FQN: << pipeline.git.repo_owner >>/<< pipeline.git.repo_name >>
       IMAGE_TAG: << pipeline.git.tag == "" and pipeline.git.branch or pipeline.git.tag >>-<< parameters.arch >>
       REGISTRY: ghcr.io
     steps:
@@ -96,7 +96,7 @@ jobs:
   draft-release:
     executor:
       name: go/default
-      tag: "1.21"
+      tag: "1.26"
     resource_class: small
     steps:
       - checkout

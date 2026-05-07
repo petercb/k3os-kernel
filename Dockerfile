@@ -122,13 +122,14 @@ RUN <<-EOF
         skipabi=true \
         skipmodule=true \
         skipretpoline=true \
-        skipdbg=true
+        skipdbg=true \
+        skipdtb=true
     dpkg --unpack --no-triggers --force-depends \
         "../linux-image-unsigned-${KVER}_${KERNEL_FULL_VERSION}_${TARGETARCH}.deb" \
         "../linux-modules-${KVER}_${KERNEL_FULL_VERSION}_${TARGETARCH}.deb"
+    depmod "${KVER}"
     rm ../linux-*.deb
     debian/rules clean
-    depmod "${KVER}"
 EOF
 
 WORKDIR /boot
