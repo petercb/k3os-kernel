@@ -50,7 +50,7 @@ jobs:
     resource_class: <<parameters.resource_class>>
     environment:
       IMAGE_FQN: ${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}
-      IMAGE_TAG: << pipeline.git.tag or pipeline.git.branch >>-<< parameters.arch >>
+      IMAGE_TAG: << pipeline.git.tag == "" and pipeline.git.branch or pipeline.git.tag >>-<< parameters.arch >>
       REGISTRY: ghcr.io
     steps:
       - setup_remote_docker
