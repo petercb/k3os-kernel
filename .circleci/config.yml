@@ -85,7 +85,7 @@ jobs:
             docker cp -L "${DCID}":/usr/lib/modules - | gzip > dist/modules.tar.gz
             docker rm "${DCID}"
             ls -lFah dist
-            zcat dist/modules.tar.gz | cpio -ivt
+            tar -tvf dist/modules.tar.gz
       - store_test_results:
           path: test-results
       - docker/push:
