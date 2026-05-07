@@ -36,17 +36,14 @@ ENV KERNEL_WORK=${KERNEL_WORK}
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
 
-SHELL ["/bin/bash", "-o", "pipefail", "-c"]
-
-RUN <<-EOF
-    rm -f /etc/apt/apt.conf.d/docker-clean
-    echo 'Binary::apt::APT::Keep-Downloaded-Packages "true";' > /etc/apt/apt.conf.d/keep-cache
-    sed -i 's/^Types:.*$/Types: deb deb-src/' /etc/apt/sources.list.d/ubuntu.sources
-EOF
+SHELL ["/bin/bash", "-euo", "pipefail", "-c"]
 
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
     <<-EOF
+    rm -f /etc/apt/apt.conf.d/docker-clean
+    echo 'Binary::apt::APT::Keep-Downloaded-Packages "true";' > /etc/apt/apt.conf.d/keep-cache
+    sed -i 's/^Types:.*$/Types: deb deb-src/' /etc/apt/sources.list.d/ubuntu.sources
     apt-get update
     apt-get install -y --no-install-recommends \
         ca-certificates
@@ -69,7 +66,7 @@ EOF
 
 
 ############################################################
-FROM buildpack AS builder
+FROM base AS source
 ############################################################
 
 WORKDIR "${KERNEL_WORK}"
@@ -77,6 +74,14 @@ WORKDIR "${KERNEL_WORK}"
 ADD --link \
     "git://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/+git/${UBUNTU_NAME}#Ubuntu-${KERNEL_FULL_VERSION}" \
     .
+
+
+############################################################
+FROM buildpack AS builder
+############################################################
+
+WORKDIR "${KERNEL_WORK}"
+COPY --from=source "${KERNEL_WORK}" .
 COPY /overlay .
 
 WORKDIR "${KERNEL_WORK}/debian.${KERNEL_FLAVOUR}"
@@ -122,8 +127,7 @@ RUN <<-EOF
         skipabi=true \
         skipmodule=true \
         skipretpoline=true \
-        skipdbg=true \
-        skipdtb=true
+        skipdbg=true
     dpkg --unpack --no-triggers --force-depends \
         "../linux-image-unsigned-${KVER}_${KERNEL_FULL_VERSION}_${TARGETARCH}.deb" \
         "../linux-modules-${KVER}_${KERNEL_FULL_VERSION}_${TARGETARCH}.deb"
