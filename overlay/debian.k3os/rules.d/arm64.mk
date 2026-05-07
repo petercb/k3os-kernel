@@ -18,7 +18,7 @@ do_tools_perf   = true
 do_tools_perf_jvmti = true
 do_tools_bpftool = true
 
-do_dtbs		= true
+do_dtbs		= false
 do_zfs      = false
 do_v4l2loopback = false
 do_iwlwifi = false
