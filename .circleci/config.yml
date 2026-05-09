@@ -90,9 +90,11 @@ jobs:
             docker cp "${DCID}":/output/results.xml test-results/
             mkdir dist
             docker cp "${DCID}":/boot/vmlinuz dist/k3os-vmlinuz-${TARGETARCH}.img
+            docker cp "${DCID}":/boot/firmware-list.txt dist/k3os-firmware-list-${TARGETARCH}.txt
             docker cp -L "${DCID}":/usr/lib/modules - | gzip > dist/k3os-modules-${TARGETARCH}.tar.gz
             docker rm "${DCID}"
             ls -lFah dist
+            cat dist/k3os-firmware-list-${TARGETARCH}.txt
       - store_test_results:
           path: test-results
       - docker/push:
