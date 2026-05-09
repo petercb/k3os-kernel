@@ -42,6 +42,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
     <<-EOF
     rm -f /etc/apt/apt.conf.d/docker-clean
+    echo 'Dir::Cache::pkgcache ""; Dir::Cache::srcpkgcache "";' > /etc/apt/apt.conf.d/00_no_cache
     echo 'Binary::apt::APT::Keep-Downloaded-Packages "true";' > /etc/apt/apt.conf.d/keep-cache
     sed -i 's/^Types:.*$/Types: deb deb-src/' /etc/apt/sources.list.d/ubuntu.sources
     apt-get update
@@ -56,10 +57,12 @@ FROM base AS go-builder
 
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
+    <<-EOF
+    apt-get update
     apt-get install -y --no-install-recommends \
-    cpio \
-    golang-go
-
+        cpio \
+        golang-go
+EOF
 
 ############################################################
 FROM go-builder AS fw-selector-builder
@@ -77,6 +80,7 @@ FROM base AS buildpack
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
     <<-EOF
+    apt-get update
     apt-get build-dep -y --no-install-recommends linux
     apt-get install -y --no-install-recommends \
         curl \
@@ -126,6 +130,7 @@ COPY --chmod=+x files/configmod.sh /configmod.sh
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
     <<-EOF
+    apt-get update
     apt-get install -y --no-install-recommends \
         gcc-aarch64-linux-gnu \
         gcc-x86-64-linux-gnu
@@ -201,6 +206,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
         *) echo "Unknown architecture: ${TARGETARCH}"; exit 1 ;;
     esac
     echo "Installing packages: ${PKGS[*]}"
+    apt-get update
     apt-get install -y --no-install-recommends "${PKGS[@]}"
 EOF
 
