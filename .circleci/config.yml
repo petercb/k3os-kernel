@@ -49,9 +49,16 @@ jobs:
       - image: cimg/base:current
     resource_class: <<parameters.resource_class>>
     environment:
-      IMAGE_TAG: << pipeline.git.tag == "" and pipeline.git.branch or pipeline.git.tag >>-<< parameters.arch >>
       REGISTRY: ghcr.io
     steps:
+      - run:
+          name: Sanitize IMAGE_TAG
+          command: |
+            GIT_REF="<< pipeline.git.tag == "" and pipeline.git.branch or pipeline.git.tag >>"
+            # Replace / with - to satisfy docker tag requirements
+            # shellcheck disable=SC2001
+            SANITIZED_REF=$(echo "${GIT_REF}" | sed 's/\//-/g')
+            echo "export IMAGE_TAG=\"${SANITIZED_REF}-<< parameters.arch >>\"" >> "$BASH_ENV"
       - setup_remote_docker
       - checkout
       - docker/check:
