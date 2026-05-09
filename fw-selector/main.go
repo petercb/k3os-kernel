@@ -86,6 +86,7 @@ func main() {
 	defer func() { _ = outFile.Close() }()
 
 	for _, fw := range uniqueFirmware {
+		fmt.Println(fw)
 		_, _ = fmt.Fprintln(outFile, fw)
 	}
 }
