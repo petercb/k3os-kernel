@@ -16,6 +16,9 @@
 
 ## Pending
 - [TASK-XXX] Transition to Dev Containers extension (replacing `localbuildenv.sh`).
+- [TASK-003] Add support for RPi 5
+- [TASK-004] Add support for Rock 4/5
+- [TASK-007] Optimize firmware selection tool
 
 ## Known Issues
 - Boot validation tests failing on Linux 7.0 update.

@@ -51,12 +51,19 @@ EOF
 
 
 ############################################################
-FROM base AS fw-selector-builder
+FROM base AS go-builder
 ############################################################
 
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
-    apt-get install -y --no-install-recommends golang-go
+    apt-get install -y --no-install-recommends \
+    cpio \
+    golang-go
+
+
+############################################################
+FROM go-builder AS fw-selector-builder
+############################################################
 
 WORKDIR /src
 COPY fw-selector/ .
@@ -72,6 +79,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     <<-EOF
     apt-get build-dep -y --no-install-recommends linux
     apt-get install -y --no-install-recommends \
+        curl \
         dwarves \
         libncurses-dev \
         llvm
@@ -158,19 +166,19 @@ RUN <<-EOF
 EOF
 
 COPY --from=fw-selector-builder /bin/fw-selector /usr/local/bin/fw-selector
-RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
-    --mount=type=cache,target=/var/lib/apt,sharing=locked \
-    <<-EOF
-    apt-get install -y --no-install-recommends curl
-    # Fetch WHENCE file from kernel.org. If it fails, touch an empty file to fallback to extracting everything.
-    curl -sfL -o /tmp/WHENCE https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/WHENCE || touch /tmp/WHENCE
-    fw-selector --config /boot/config --source-dir "${KERNEL_WORK}" --whence /tmp/WHENCE --arch "${TARGETARCH}" --output /boot/firmware-list.txt
-    rm /tmp/WHENCE
-EOF
+ADD --link \
+    https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/WHENCE \
+    /tmp/WHENCE
+RUN fw-selector \
+    --config /boot/config \
+    --source-dir "${KERNEL_WORK}" \
+    --whence /tmp/WHENCE \
+    --arch "${TARGETARCH}" \
+    --output /boot/firmware-list.txt
 
 
 ############################################################
-FROM base AS test
+FROM go-builder AS test
 ############################################################
 
 ENV GOPATH=/root/go
@@ -226,7 +234,7 @@ RUN /bin/test_kernel.sh
 FROM base AS output
 ############################################################
 
-LABEL org.opencontainers.image.source = "https://github.com/petercb/k3os-kernel"
+LABEL org.opencontainers.image.source=https://github.com/petercb/k3os-kernel
 
 COPY --from=compile --parents /boot /
 COPY --from=compile --parents /usr/lib/modules /
