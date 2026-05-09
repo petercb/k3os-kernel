@@ -6,6 +6,7 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"sort"
 )
 
 func main() {
@@ -22,6 +23,69 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Printf("fw-selector: config=%s source=%s whence=%s arch=%s output=%s\n",
-		*configPath, *sourceDir, *whencePath, *arch, *output)
+	configFile, err := os.Open(*configPath)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "error opening config: %v\n", err)
+		os.Exit(1)
+	}
+	defer func() { _ = configFile.Close() }()
+
+	enabledConfigs, err := ParseKernelConfig(configFile)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "error parsing config: %v\n", err)
+		os.Exit(1)
+	}
+
+	knownFirmware := make(map[string]bool)
+	if *whencePath != "" {
+		var whenceFile *os.File
+		whenceFile, err = os.Open(*whencePath)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "fw-selector warning: could not open WHENCE file: %v\n", err)
+		} else {
+			defer func() { _ = whenceFile.Close() }()
+			knownFirmware, err = ParseWhence(whenceFile)
+			if err != nil {
+				fmt.Fprintf(os.Stderr, "fw-selector warning: error parsing WHENCE file: %v\n", err)
+			}
+		}
+	}
+
+	selector := &Selector{
+		EnabledConfigs: enabledConfigs,
+		SourceDir:      *sourceDir,
+		KnownFirmware:  knownFirmware,
+		Arch:           *arch,
+	}
+
+	firmwareList, err := selector.SelectFirmware()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "error selecting firmware: %v\n", err)
+		os.Exit(1)
+	}
+
+	platformFw := GetPlatformFirmware(*arch)
+	firmwareList = append(firmwareList, platformFw...)
+
+	firmwareSet := make(map[string]bool)
+	var uniqueFirmware []string
+	for _, fw := range firmwareList {
+		if !firmwareSet[fw] {
+			firmwareSet[fw] = true
+			uniqueFirmware = append(uniqueFirmware, fw)
+		}
+	}
+
+	sort.Strings(uniqueFirmware)
+
+	outFile, err := os.Create(*output)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "error creating output file: %v\n", err)
+		os.Exit(1)
+	}
+	defer func() { _ = outFile.Close() }()
+
+	for _, fw := range uniqueFirmware {
+		_, _ = fmt.Fprintln(outFile, fw)
+	}
 }
