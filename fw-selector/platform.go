@@ -21,12 +21,9 @@ func GetPlatformFirmware(arch string) []string {
 	}
 
 	if arch == "amd64" {
-		// Include entire directories for these complex GPU drivers
-		// as their firmware needs are extensive and model-dependent.
-		return []string{
-			"i915/",
-			"amdgpu/",
-		}
+		// Firmware for GPUs like i915 and amdgpu are now automatically
+		// resolved by parsing multi-part Makefile objects.
+		return []string{}
 	}
 
 	return nil

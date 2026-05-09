@@ -116,6 +116,18 @@ obj-$(CONFIG_BAR) += bar.o`,
 			},
 			wantLen: 1,
 		},
+		{
+			name: "multi-part objects",
+			input: `obj-$(CONFIG_AMDGPU) += amdgpu.o
+amdgpu-y := amdgpu_drv.o amdgpu_device.o
+obj-$(CONFIG_IWLWIFI) += iwlwifi.o
+iwlwifi-objs += iwl-drv.o iwl-debug.o`,
+			want: map[string][]string{
+				"AMDGPU":  {"amdgpu_drv.o", "amdgpu_device.o"},
+				"IWLWIFI": {"iwl-drv.o", "iwl-debug.o"},
+			},
+			wantLen: 2,
+		},
 	}
 
 	for _, tt := range tests {

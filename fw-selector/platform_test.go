@@ -30,10 +30,7 @@ func TestGetPlatformFirmware(t *testing.T) {
 		{
 			name: "amd64 firmware",
 			arch: "amd64",
-			want: []string{
-				"i915/",
-				"amdgpu/",
-			},
+			want: []string{},
 		},
 		{
 			name: "unknown architecture",
