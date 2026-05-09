@@ -8,6 +8,7 @@
 - Integrated validation against the upstream `linux-firmware` `WHENCE` manifest to ensure only valid firmware paths are included.
 - Refactored the `Dockerfile` to build the tool in a dedicated `go-builder` stage and fetch the `WHENCE` file efficiently.
 - Verified that the resulting `firmware-list.txt` is clean and free of false-positive entries from disabled drivers.
+- Added verbose output to `fw-selector` to print each included firmware path to stdout during execution.
 
 ## 🔗 PRD Alignment
 - Fulfilled the requirement to optimize the firmware inclusion pipeline and clean up build logs by filtering out invalid paths.
