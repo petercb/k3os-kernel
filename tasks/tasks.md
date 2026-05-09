@@ -82,62 +82,62 @@
 - **Complexity**: Low
 
 ## [TASK-007] Optimize firmware selection tool
+- **Status**: Done (2026-05-09)
 - **Priority**: Medium
-- **Status**: Planned
 - **PRD Reference**: N/A (Internal optimization)
 - **Dependencies**: [TASK-001]
 - **Implementation Checklist**:
-    - [ ] **Step 1: Scaffold `fw-selector` module**
-        - [ ] Create `fw-selector/go.mod` with `module fw-selector` and `go 1.22.1`.
-        - [ ] Create `fw-selector/main.go` with CLI flags: `--config`, `--source-dir`, `--whence`, `--arch`, `--output`.
-        - [ ] Verify the module compiles with `go build ./fw-selector/...`.
-    - [ ] **Step 2: Implement kernel config parser (TDD)**
-        - [ ] Write `config_test.go` (CONFIG_FOO=y, CONFIG_BAR=m, comments, blank lines, empty file).
-        - [ ] Run test → verify RED.
-        - [ ] Implement `config.go`: `ParseKernelConfig(reader io.Reader) (map[string]bool, error)`.
-        - [ ] Run test → verify GREEN.
-    - [ ] **Step 3: Implement Makefile parser (TDD)**
-        - [ ] Write `makefile_test.go` (obj-$(CONFIG_FOO), tabs/spaces, continuation lines, obj-y/obj-m, no CONFIG_ entries).
-        - [ ] Run test → verify RED.
-        - [ ] Implement `makefile.go`: `ParseMakefile(reader io.Reader) (map[string][]string, error)`.
-        - [ ] Run test → verify GREEN.
-    - [ ] **Step 4: Implement MODULE_FIRMWARE extractor (TDD)**
-        - [ ] Write `firmware_test.go` (single/multiple MODULE_FIRMWARE, macro-expanded paths, no MODULE_FIRMWARE).
-        - [ ] Run test → verify RED.
-        - [ ] Implement `firmware.go`: `ExtractModuleFirmware(reader io.Reader) ([]string, error)`.
-        - [ ] Run test → verify GREEN.
-    - [ ] **Step 5: Implement WHENCE manifest parser (TDD)**
-        - [ ] Write `whence_test.go` (File: entries, Link: entries, quoted paths, ignored lines, empty file).
-        - [ ] Run test → verify RED.
-        - [ ] Implement `whence.go`: `ParseWhence(reader io.Reader) (map[string]bool, error)`.
-        - [ ] Run test → verify GREEN.
-    - [ ] **Step 6: Implement platform firmware lists (TDD)**
-        - [ ] Write `platform_test.go` (arm64 RPi/Rockchip, amd64 i915/amdgpu, unknown arch).
-        - [ ] Run test → verify RED.
-        - [ ] Implement `platform.go`: `GetPlatformFirmware(arch string) []string`.
-        - [ ] Run test → verify GREEN.
-    - [ ] **Step 7: Implement selector orchestrator (TDD)**
-        - [ ] Write `selector_test.go` (enabled/disabled drivers, false-positive scenario, WHENCE validation, missing source files).
-        - [ ] Run test → verify RED.
-        - [ ] Implement `selector.go`: `Selector.SelectFirmware() ([]string, error)`.
-        - [ ] Run test → verify GREEN.
-    - [ ] **Step 8: Implement CLI entrypoint**
-        - [ ] Wire up `main.go` (parse flags, load WHENCE, call Selector, merge platform, deduplicate, output).
-        - [ ] Verify `go build ./fw-selector` produces a working binary.
-    - [ ] **Step 9: Integration validation**
-        - [ ] Create golden-file test with synthetic kernel source layout + testdata/WHENCE.
-        - [ ] Run test → compare output to golden file.
-        - [ ] Compare output to current `select_firmware.sh` output within Docker.
-    - [ ] **Step 10: Update Dockerfile**
-        - [ ] Fetch WHENCE file during compile stage (`ADD` from linux-firmware.git).
-        - [ ] Add build stage to compile `fw-selector` from Go source.
-        - [ ] Replace `select_firmware.sh` invocation with Go binary + `--whence /tmp/WHENCE`.
-    - [ ] **Step 11: Final validation**
-        - [ ] Run full Docker build for amd64 (`./local-build.sh`).
-        - [ ] Run full Docker build for arm64 (`./local-build.sh` or CI).
-        - [ ] Compare `firmware-list.txt` — confirm fewer false-positive entries.
-        - [ ] Verify boot tests pass (QEMU).
-        - [ ] Run `task lint` and `task fmt`.
+    - [x] **Step 1: Scaffold `fw-selector` module**
+        - [x] Create `fw-selector/go.mod` with `module fw-selector` and `go 1.22.1`.
+        - [x] Create `fw-selector/main.go` with CLI flags: `--config`, `--source-dir`, `--whence`, `--arch`, `--output`.
+        - [x] Verify the module compiles with `go build ./fw-selector/...`.
+    - [x] **Step 2: Implement kernel config parser (TDD)**
+        - [x] Write `config_test.go` (y/m values, comments, blank lines, empty, string/numeric values).
+        - [x] Run test → verify RED.
+        - [x] Implement `config.go`: `ParseKernelConfig(reader io.Reader) (map[string]bool, error)`.
+        - [x] Run test → verify GREEN.
+    - [x] **Step 3: Implement Makefile parser (TDD)**
+        - [x] Write `makefile_test.go` (single/multi obj, tabs, continuation lines, obj-y, obj-m, subdir filtering).
+        - [x] Run test → verify RED.
+        - [x] Implement `makefile.go`: `ParseMakefile(reader io.Reader) (map[string][]string, error)`.
+        - [x] Run test → verify GREEN.
+    - [x] **Step 4: Implement MODULE_FIRMWARE extractor (TDD)**
+        - [x] Write `firmware_test.go` (single/multiple, mixed code, macro-expanded paths, spacing).
+        - [x] Run test → verify RED.
+        - [x] Implement `firmware.go`: `ExtractModuleFirmware(reader io.Reader) ([]string, error)`.
+        - [x] Run test → verify GREEN.
+    - [x] **Step 5: Implement WHENCE manifest parser (TDD)**
+        - [x] Write `whence_test.go` (File: entries, Link: entries, quoted paths, ignored lines, empty file).
+        - [x] Run test → verify RED.
+        - [x] Implement `whence.go`: `ParseWhence(reader io.Reader) (map[string]bool, error)`.
+        - [x] Run test → verify GREEN.
+    - [x] **Step 6: Implement platform firmware lists (TDD)**
+        - [x] Write `platform_test.go` (arm64 RPi/Rockchip, amd64 i915/amdgpu, unknown arch).
+        - [x] Run test → verify RED.
+        - [x] Implement `platform.go`: `GetPlatformFirmware(arch string) []string`.
+        - [x] Run test → verify GREEN.
+    - [x] **Step 7: Implement selector orchestrator (TDD)**
+        - [x] Write `selector_test.go` (enabled/disabled drivers, false-positive scenario, WHENCE validation, missing source files).
+        - [x] Run test → verify RED.
+        - [x] Implement `selector.go`: `Selector.SelectFirmware() ([]string, error)`.
+        - [x] Run test → verify GREEN.
+    - [x] **Step 8: Implement CLI entrypoint**
+        - [x] Wire up `main.go` (parse flags, load WHENCE, call Selector, merge platform, deduplicate, output).
+        - [x] Verify `go build ./fw-selector` produces a working binary.
+    - [x] **Step 9: Integration validation**
+        - [x] Create golden-file test with synthetic kernel source layout + testdata/WHENCE.
+        - [x] Run test → compare output to golden file.
+        - [x] Compare output to current `select_firmware.sh` output within Docker.
+    - [x] **Step 10: Update Dockerfile**
+        - [x] Fetch WHENCE file during compile stage (`ADD` from linux-firmware.git).
+        - [x] Add build stage to compile `fw-selector` from Go source.
+        - [x] Replace `select_firmware.sh` invocation with Go binary + `--whence /tmp/WHENCE`.
+    - [x] **Step 11: Final validation**
+        - [x] Run full Docker build for amd64 (`./local-build.sh`).
+        - [x] Run full Docker build for arm64 (`./local-build.sh` or CI).
+        - [x] Compare `firmware-list.txt` — confirm fewer false-positive entries.
+        - [x] Verify boot tests pass (QEMU).
+        - [x] Run `task lint` and `task fmt`.
 - **Acceptance Criteria**:
     - `firmware-list.txt` contains only firmware for enabled drivers, avoiding false positives from same-directory disabled drivers.
     - Extracted firmware paths are validated against the upstream WHENCE manifest.
