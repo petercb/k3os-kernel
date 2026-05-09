@@ -50,6 +50,7 @@ jobs:
     resource_class: <<parameters.resource_class>>
     environment:
       REGISTRY: ghcr.io
+      BUILDKIT_PROGRESS: "plain"
     steps:
       - run:
           name: Sanitize IMAGE_TAG
