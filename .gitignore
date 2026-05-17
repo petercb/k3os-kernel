@@ -4,3 +4,5 @@ build/
 .semrel/
 test-results/
 qemu.log
+tmp/
+fw-selector/fw-selector

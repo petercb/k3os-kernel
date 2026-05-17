@@ -42,6 +42,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
     <<-EOF
     rm -f /etc/apt/apt.conf.d/docker-clean
+    echo 'Dir::Cache::pkgcache ""; Dir::Cache::srcpkgcache "";' > /etc/apt/apt.conf.d/00_no_cache
     echo 'Binary::apt::APT::Keep-Downloaded-Packages "true";' > /etc/apt/apt.conf.d/keep-cache
     sed -i 's/^Types:.*$/Types: deb deb-src/' /etc/apt/sources.list.d/ubuntu.sources
     apt-get update
@@ -51,14 +52,38 @@ EOF
 
 
 ############################################################
+FROM base AS go-builder
+############################################################
+
+RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
+    --mount=type=cache,target=/var/lib/apt,sharing=locked \
+    <<-EOF
+    apt-get update
+    apt-get install -y --no-install-recommends \
+        cpio \
+        golang-go
+EOF
+
+############################################################
+FROM go-builder AS fw-selector-builder
+############################################################
+
+WORKDIR /src
+COPY fw-selector/ .
+RUN go build -o /bin/fw-selector .
+
+
+############################################################
 FROM base AS buildpack
 ############################################################
 
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
     <<-EOF
+    apt-get update
     apt-get build-dep -y --no-install-recommends linux
     apt-get install -y --no-install-recommends \
+        curl \
         dwarves \
         libncurses-dev \
         llvm
@@ -105,6 +130,7 @@ COPY --chmod=+x files/configmod.sh /configmod.sh
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
     <<-EOF
+    apt-get update
     apt-get install -y --no-install-recommends \
         gcc-aarch64-linux-gnu \
         gcc-x86-64-linux-gnu
@@ -144,13 +170,20 @@ RUN <<-EOF
     echo "${KVER}" > kversion
 EOF
 
-WORKDIR /tmp
-COPY --chmod=+x files/select_firmware.sh ./
-RUN ./select_firmware.sh
+COPY --from=fw-selector-builder /bin/fw-selector /usr/local/bin/fw-selector
+ADD --link \
+    https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/WHENCE \
+    /tmp/WHENCE
+RUN fw-selector \
+    --config /boot/config \
+    --source-dir "${KERNEL_WORK}" \
+    --whence /tmp/WHENCE \
+    --arch "${TARGETARCH}" \
+    --output /boot/firmware-list.txt
 
 
 ############################################################
-FROM base AS test
+FROM go-builder AS test
 ############################################################
 
 ENV GOPATH=/root/go
@@ -173,6 +206,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
         *) echo "Unknown architecture: ${TARGETARCH}"; exit 1 ;;
     esac
     echo "Installing packages: ${PKGS[*]}"
+    apt-get update
     apt-get install -y --no-install-recommends "${PKGS[@]}"
 EOF
 
@@ -205,6 +239,8 @@ RUN /bin/test_kernel.sh
 ############################################################
 FROM base AS output
 ############################################################
+
+LABEL org.opencontainers.image.source=https://github.com/petercb/k3os-kernel
 
 COPY --from=compile --parents /boot /
 COPY --from=compile --parents /usr/lib/modules /

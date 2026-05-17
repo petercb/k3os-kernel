@@ -1,0 +1,28 @@
+version: "2"
+
+run:
+  timeout: 5m
+
+linters:
+  enable:
+    - bodyclose
+    - gocognit
+    - govet
+    - misspell
+    - revive
+    - unconvert
+    - unparam
+  settings:
+    govet:
+      enable:
+        - shadow
+    gocognit:
+      min-complexity: 20
+
+formatters:
+  enable:
+    - gofumpt
+    - goimports
+
+issues:
+  fix: true

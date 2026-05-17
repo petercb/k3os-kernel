@@ -49,9 +49,17 @@ jobs:
       - image: cimg/base:current
     resource_class: <<parameters.resource_class>>
     environment:
-      IMAGE_TAG: << pipeline.git.tag == "" and pipeline.git.branch or pipeline.git.tag >>-<< parameters.arch >>
       REGISTRY: ghcr.io
+      BUILDKIT_PROGRESS: "plain"
     steps:
+      - run:
+          name: Sanitize IMAGE_TAG
+          command: |
+            GIT_REF="<< pipeline.git.tag == "" and pipeline.git.branch or pipeline.git.tag >>"
+            # Replace / with - to satisfy docker tag requirements
+            # shellcheck disable=SC2001
+            SANITIZED_REF=$(echo "${GIT_REF}" | sed 's/\//-/g')
+            echo "export IMAGE_TAG=\"${SANITIZED_REF}-<< parameters.arch >>\"" >> "$BASH_ENV"
       - setup_remote_docker
       - checkout
       - docker/check:
@@ -83,9 +91,11 @@ jobs:
             docker cp "${DCID}":/output/results.xml test-results/
             mkdir dist
             docker cp "${DCID}":/boot/vmlinuz dist/k3os-vmlinuz-${TARGETARCH}.img
+            docker cp "${DCID}":/boot/firmware-list.txt dist/k3os-firmware-list-${TARGETARCH}.txt
             docker cp -L "${DCID}":/usr/lib/modules - | gzip > dist/k3os-modules-${TARGETARCH}.tar.gz
             docker rm "${DCID}"
             ls -lFah dist
+            cat dist/k3os-firmware-list-${TARGETARCH}.txt
       - store_test_results:
           path: test-results
       - docker/push:
